@@ -1,3 +1,5 @@
+> [Chinese Translation](translation/README.md)
+
 # Functional Programming in Idris 2
 
 [中文翻译](https://github.com/running-grass/idris2-tutorial-zh/blob/main/translation/README.md)
