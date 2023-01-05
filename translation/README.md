@@ -1,5 +1,3 @@
-> 这里是中文版！
-
 # Idris 2 中的函数式编程
 
 [中文翻译](https://github.com/running-grass/idris2-tutorial-zh/blob/main/translation/README.md)
