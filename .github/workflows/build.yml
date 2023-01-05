@@ -1,0 +1,24 @@
+name: 构建测试
+
+on:
+  workflow_run:
+    workflows: [更新翻译进度]
+    types:
+      - completed
+defaults:
+  run:
+    shell: bash
+jobs:
+  build:
+    name: Build ${{ github.repository }} with pack latest
+    runs-on: ubuntu-latest
+    env:
+      PACK_DIR: /root/.pack
+    strategy:
+      fail-fast: false
+    container: ghcr.io/stefan-hoeck/idris2-pack:latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Build lib
+        run: cd translation && pack install tutorial
