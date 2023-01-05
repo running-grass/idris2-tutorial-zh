@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: idris 2-tutorial\n"
 "POT-Creation-Date: 2023-01-05 08:49+0000\n"
-"PO-Revision-Date: 2022-12-08 01:35+0000\n"
+"PO-Revision-Date: 2023-01-06 09:54+0000\n"
 "Last-Translator: grass <467195537@qq.com>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.grass.work:30443/"
 "projects/idris-lang/idris2-tutorial/zh_Hans/>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 4.15\n"
 
 #. type: Title #
 #: ../README.md:1
@@ -29,6 +29,8 @@ msgstr "Idris 2 中的函数式编程"
 #, no-wrap
 msgid "[中文翻译](https://github.com/running-grass/idris2-tutorial-zh/blob/main/translation/README.md)\n"
 msgstr ""
+"[中文翻译](https://github.com/running-grass/idris2-tutorial-zh/blob/main/"
+"translation/README.md)\n"
 
 #. type: Plain text
 #: ../README.md:9
@@ -523,7 +525,7 @@ msgstr "附录可用作手头主题的参考。我计划最终对 Idris 语法�
 #: ../README.md:116
 #, no-wrap
 msgid "[Getting Started with pack and Idris2](src/Appendices/Install.md)\n"
-msgstr ""
+msgstr "[pack 和 Idris2 入门](src/Appendices/Install.md)\n"
 
 #. type: Bullet: '2. '
 #: ../README.md:116
@@ -533,10 +535,9 @@ msgstr "[Neovim 中的交互式编辑](src/Appendices/Neovim.md)\n"
 
 #. type: Bullet: '3. '
 #: ../README.md:116
-#, fuzzy, no-wrap
-#| msgid "[Interactive Editing in Neovim](src/Appendices/Neovim.md)\n"
+#, no-wrap
 msgid "[Structuring Idris Projects](src/Appendices/Projects.md)\n"
-msgstr "[Neovim 中的交互式编辑](src/Appendices/Neovim.md)\n"
+msgstr "[构造 Idris 项目](src/Appendices/Projects.md)\n"
 
 #. type: Title ##
 #: ../README.md:117
@@ -546,19 +547,16 @@ msgstr "前置条件"
 
 #. type: Plain text
 #: ../README.md:123
-#, fuzzy, no-wrap
-#| msgid ""
-#| "At the moment, this project is being actively developed and\n"
-#| "evolved against the main branch of the Idris 2 repository.\n"
-#| "It is being tested nightly on GitHub and built against\n"
-#| "the latest commit of the Idris 2 main branch as well as the\n"
-#| "Idris 2 commit listed in file `.idris-version`.\n"
+#, no-wrap
 msgid ""
 "At the moment, this project is being actively developed and\n"
 "evolved against the main branch of the Idris 2 repository.\n"
 "It is being tested nightly on GitHub and built against\n"
 "the latest version of [pack's package collection](https://github.com/stefan-hoeck/idris2-pack-db).\n"
-msgstr "目前，该项目正在针对 Idris 2 存储库的主要分支进行积极开发和演进。它每晚在 GitHub 上进行测试，并针对 Idris 2 主分支的最新提交以及文件 `.idris-version` 中列出的 Idris 2 提交进行构建。\n"
+msgstr ""
+"目前，该项目正在针对 Idris 2 存储库的主要分支进行积极开发和演进。它每晚在 "
+"GitHub 上进行测试，并针对 [pack包集合](https://github.com/stefan-hoeck/idris2"
+"-pack-db) 中的最新版本进行构建。\n"
 
 #. type: Plain text
 #: ../README.md:125
@@ -5084,20 +5082,17 @@ msgstr "请注意，在 `replicate'` 的实现中，我们可以引用 `n` 并�
 
 #. type: Plain text
 #: ../src/Tutorial/Dependent.md:820
-#, fuzzy, no-wrap
-#| msgid ""
-#| "Deciding whether to pass potentially inferable arguments to a function implicitly\n"
-#| "or explicitly is a question of how often the arguments actually *are* inferable\n"
-#| "by Idris. Sometimes it might even be useful to have both verions\n"
-#| "of a function. Remember, however, that even in case of an implicit argument\n"
-#| "we can still pass the value explicitly:\n"
+#, no-wrap
 msgid ""
 "Deciding whether to pass potentially inferable arguments to a function implicitly\n"
 "or explicitly is a question of how often the arguments actually *are* inferable\n"
 "by Idris. Sometimes it might even be useful to have both versions\n"
 "of a function. Remember, however, that even in case of an implicit argument\n"
 "we can still pass the value explicitly:\n"
-msgstr "决定是否将潜在的可推断参数隐式或显式传递给函数是一个问题，即 Idris 实际 *是* 可推断参数的使用频率。有时，同时拥有一个函数的两个版本甚至可能很有用。但是请记住，即使是隐式参数，我们仍然可以显式传递值：\n"
+msgstr ""
+"决定是否将潜在的可推断参数隐式或显式传递给函数是一个问题，即 Idris 实际 *是* "
+"可推断参数的使用频率。有时，同时拥有一个函数的两个版本甚至可能很有用。但是请"
+"记住，即使是隐式参数，我们仍然可以显式传递值：\n"
 
 #. type: Fenced code block (idris)
 #: ../src/Tutorial/Dependent.md:821
@@ -19919,20 +19914,17 @@ msgstr "编写实际上*做*某些事情（具有一些可观察到的效果）�
 
 #. type: Plain text
 #: ../src/Tutorial/Intro.md:97
-#, fuzzy, no-wrap
-#| msgid ""
-#| "Idris is a strongly, statically typed programming language. This\n"
-#| "means, that ever Idris expression is given a *type* (for instance:\n"
-#| "integer, list of strings, boolean, function from integer to boolean, etc.)\n"
-#| "and types are verified at compile time to rule out certain\n"
-#| "common programming errors.\n"
+#, no-wrap
 msgid ""
 "Idris is a strongly, statically typed programming language. This\n"
 "means, that every Idris expression is given a *type* (for instance:\n"
 "integer, list of strings, boolean, function from integer to boolean, etc.)\n"
 "and types are verified at compile time to rule out certain\n"
 "common programming errors.\n"
-msgstr "Idris 是一种强静态类型的编程语言。这意味着，给 Idris 表达式一个*类型*（例如：整数、字符串列表、布尔值、从整数到布尔值的函数等），并且在编译时验证类型以排除某些常见的编程错误。\n"
+msgstr ""
+"Idris 是一种强静态类型的编程语言。这意味着，会给每个 Idris 表达式一个*类型*（"
+"例如：整数、字符串列表、布尔值、从整数到布尔值的函数等），并且在编译时验证类"
+"型以排除某些常见的编程错误。\n"
 
 #. type: Plain text
 #: ../src/Tutorial/Intro.md:103
@@ -19995,16 +19987,7 @@ msgstr "*全*函数是一个纯函数，它保证在有限的时间内为每个�
 
 #. type: Plain text
 #: ../src/Tutorial/Intro.md:136
-#, fuzzy, no-wrap
-#| msgid ""
-#| "Idris comes with a totality checker built in, which enables us to\n"
-#| "verify the functions we write to be provably total. Totality\n"
-#| "in Idris is opt-in, as in general, checking the totality of\n"
-#| "an arbitrary computer program is undecidable\n"
-#| "(see also the [halting problem](https://en.wikipedia.org/wiki/Halting_problem)).\n"
-#| "However, if we annotate a function with the `total` keyword,\n"
-#| "Idris will fail with a type error, if its totality checker\n"
-#| "cannot verify that the function in question is indeed total.\n"
+#, no-wrap
 msgid ""
 "Idris comes with a totality checker built-in, which enables us to\n"
 "verify the functions we write to be provably total. Totality\n"
@@ -20014,7 +19997,15 @@ msgid ""
 "However, if we annotate a function with the `total` keyword,\n"
 "Idris will fail with a type error, if its totality checker\n"
 "cannot verify that the function in question is indeed total.\n"
-msgstr "Idris 内置了一个完全性检查器，它使我们能够验证我们编写的函数是否是可证明的完全性。 Idris 中的完全性是可选的，因为一般来说，检查任意计算机程序的完全性是无法确定的（另请参见 [停机问题](https://en.wikipedia.org/wiki/Halting_problem)）。但是，如果我们使用 `total` 关键字注释函数，如果 Idris 的完全性检查器无法验证所讨论的函数确实是完全的，则 Idris 将失败并出现类型错误。\n"
+msgstr ""
+"Idris "
+"内置了一个完全性检查器，它使我们能够验证我们编写的函数是否是可证明的完全性。 "
+"Idris "
+"中的完全性是可选的，因为一般来说，检查任意计算机程序的完全性是无法确定的（"
+"另请参见 [停机问题](https://en.wikipedia.org/wiki/Halting_problem)）。但是，"
+"如果我们使用 `total` 关键字注释函数，如果 Idris "
+"的完全性检查器无法验证所讨论的函数确实是完全的，则 Idris "
+"将失败并出现类型错误。\n"
 
 #. type: Title ##
 #: ../src/Tutorial/Intro.md:137
@@ -20024,26 +20015,23 @@ msgstr "使用 REPL"
 
 #. type: Plain text
 #: ../src/Tutorial/Intro.md:144
-#, fuzzy, no-wrap
-#| msgid ""
-#| "Idris comes with a useful REPL (an acronym for *Read Evaluate\n"
-#| "Print Loop*), which we will use for tinkering with small\n"
-#| "ideas, and for quickly experimenting with the code we just wrote.\n"
-#| "In order to start a REPL session, run the following command\n"
-#| "in a terminal.\n"
+#, no-wrap
 msgid ""
 "Idris comes with a useful REPL (an acronym for *Read Evaluate\n"
 "Print Loop*), which we will use for tinkering with small\n"
 "ideas, and for quickly experimenting with the code we just wrote.\n"
 "In order to start a REPL session, run the following command\n"
 "in a terminal:\n"
-msgstr "Idris 附带了一个有用的 REPL（*Read Evaluate Print Loop* 的首字母缩写词），我们将使用它来修补小想法，并快速试验我们刚刚编写的代码。要启动 REPL 会话，请在终端中运行以下命令。\n"
+msgstr ""
+"Idris 附带了一个有用的 REPL（*Read Evaluate Print Loop* "
+"的首字母缩写词），我们将使用它来修补小想法，并快速试验我们刚刚编写的代码。"
+"要启动 REPL 会话，请在终端中运行以下命令：\n"
 
 #. type: Fenced code block (repl)
 #: ../src/Tutorial/Intro.md:145
 #, no-wrap
 msgid "pack repl\n"
-msgstr ""
+msgstr "pack repl\n"
 
 #. type: Plain text
 #: ../src/Tutorial/Intro.md:150
@@ -20186,10 +20174,9 @@ msgstr "稍后我们将详细检查上面的代码，但首先我们要编译并
 
 #. type: Fenced code block (sh)
 #: ../src/Tutorial/Intro.md:216
-#, fuzzy, no-wrap
-#| msgid "idris2 --find-ipkg -o hello src/Tutorial/Intro.md\n"
+#, no-wrap
 msgid "pack -o hello exec src/Tutorial/Intro.md\n"
-msgstr "idris2 --find-ipkg -o hello src/Tutorial/Intro.md\n"
+msgstr "pack -o hello exec src/Tutorial/Intro.md\n"
 
 #. type: Plain text
 #: ../src/Tutorial/Intro.md:224
@@ -20242,10 +20229,9 @@ msgstr "作为替代方案，您还可以在 REPL 会话中加载此源文件并
 
 #. type: Fenced code block (sh)
 #: ../src/Tutorial/Intro.md:242
-#, fuzzy, no-wrap
-#| msgid "idris2 --find-ipkg -o hello src/Tutorial/Intro.md\n"
+#, no-wrap
 msgid "pack repl src/Tutorial/Intro.md\n"
-msgstr "idris2 --find-ipkg -o hello src/Tutorial/Intro.md\n"
+msgstr "pack repl src/Tutorial/Intro.md\n"
 
 #. type: Fenced code block (repl)
 #: ../src/Tutorial/Intro.md:246
