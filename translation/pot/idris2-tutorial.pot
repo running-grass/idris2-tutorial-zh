@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-12-12 03:50+0000\n"
+"POT-Creation-Date: 2023-01-05 08:43+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,6 +26,12 @@ msgstr ""
 #: ../README.md:3
 #, markdown-text, no-wrap
 msgid "Functional Programming in Idris 2"
+msgstr ""
+
+#. type: Plain text
+#: ../README.md:6
+#, markdown-text, no-wrap
+msgid "[中文翻译](https://github.com/running-grass/idris2-tutorial-zh/blob/main/translation/README.md)\n"
 msgstr ""
 
 #. type: Plain text
@@ -556,26 +562,48 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '1. '
-#: ../README.md:116
+#: ../README.md:118
+#, markdown-text, no-wrap
+msgid "[Getting Started with pack and Idris2](src/Appendices/Install.md)\n"
+msgstr ""
+
+#. type: Bullet: '2. '
+#: ../README.md:118
 #, markdown-text, no-wrap
 msgid "[Interactive Editing in Neovim](src/Appendices/Neovim.md)\n"
 msgstr ""
 
+#. type: Bullet: '3. '
+#: ../README.md:118
+#, markdown-text, no-wrap
+msgid "[Structuring Idris Projects](src/Appendices/Projects.md)\n"
+msgstr ""
+
 #. type: Title ##
-#: ../README.md:117
+#: ../README.md:119
 #, markdown-text, no-wrap
 msgid "Prerequisites"
 msgstr ""
 
 #. type: Plain text
-#: ../README.md:123
+#: ../README.md:125
 #, markdown-text, no-wrap
 msgid ""
 "At the moment, this project is being actively developed and\n"
 "evolved against the main branch of the Idris 2 repository.\n"
 "It is being tested nightly on GitHub and built against\n"
-"the latest commit of the Idris 2 main branch as well as the\n"
-"Idris 2 commit listed in file `.idris-version`.\n"
+"the latest version of [pack's package "
+"collection](https://github.com/stefan-hoeck/idris2-pack-db).\n"
+msgstr ""
+
+#. type: Plain text
+#: ../README.md:127
+#, markdown-text, no-wrap
+msgid ""
+"In order to follow along with this tutorial, it is strongly suggested to "
+"install\n"
+"Idris via the pack package manager as described "
+"[here](src/Appendices/Install.md).\n"
 msgstr ""
 
 #. type: Title #
@@ -2994,7 +3022,7 @@ msgid ""
 msgstr ""
 
 #. type: Title ###
-#: ../src/Tutorial/Dependent.md:1 ../src/Tutorial/Intro.md:76
+#: ../src/Tutorial/Dependent.md:1 ../src/Tutorial/Intro.md:90
 #, markdown-text, no-wrap
 msgid "Dependent Types"
 msgstr ""
@@ -4468,7 +4496,7 @@ msgid ""
 "implicitly\n"
 "or explicitly is a question of how often the arguments actually *are* "
 "inferable\n"
-"by Idris. Sometimes it might even be useful to have both verions\n"
+"by Idris. Sometimes it might even be useful to have both versions\n"
 "of a function. Remember, however, that even in case of an implicit "
 "argument\n"
 "we can still pass the value explicitly:\n"
@@ -15585,7 +15613,7 @@ msgid ""
 msgstr ""
 
 #. type: Title ###
-#: ../src/Tutorial/Functor.md:1420 ../src/Tutorial/Intro.md:430
+#: ../src/Tutorial/Functor.md:1420 ../src/Tutorial/Intro.md:444
 #, markdown-text, no-wrap
 msgid "What's next?"
 msgstr ""
@@ -17194,7 +17222,20 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Intro.md:19
+#: ../src/Tutorial/Intro.md:23
+#, markdown-text, no-wrap
+msgid ""
+"Before we begin, make sure to install the Idris compiler on your system.\n"
+"Throughout this tutorial, I assume you installed the *pack* package\n"
+"manager and setup a skeleton package as described\n"
+"[here](../Appendices/Install.md). It is\n"
+"certainly possible to follow along with just the Idris compiler installed\n"
+"by other means, but some adjustments will be necessary\n"
+"when starting REPL sessions or building executables.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Intro.md:27
 #, markdown-text, no-wrap
 msgid ""
 "Every Idris source file should typically start with a module\n"
@@ -17203,13 +17244,13 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (idris)
-#: ../src/Tutorial/Intro.md:20
+#: ../src/Tutorial/Intro.md:28
 #, no-wrap
 msgid "module Tutorial.Intro\n"
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Intro.md:27
+#: ../src/Tutorial/Intro.md:35
 #, markdown-text, no-wrap
 msgid ""
 "A module name consists of a list of identifiers separated\n"
@@ -17218,13 +17259,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ##
-#: ../src/Tutorial/Intro.md:28
+#: ../src/Tutorial/Intro.md:36
 #, markdown-text, no-wrap
 msgid "About the Idris Programming Language"
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Intro.md:33
+#: ../src/Tutorial/Intro.md:41
 #, markdown-text, no-wrap
 msgid ""
 "Idris is a *pure*, *dependently typed*, *total* *functional*\n"
@@ -17233,13 +17274,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ###
-#: ../src/Tutorial/Intro.md:34
+#: ../src/Tutorial/Intro.md:42
 #, markdown-text, no-wrap
 msgid "Functional Programming"
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Intro.md:42
+#: ../src/Tutorial/Intro.md:56
 #, markdown-text, no-wrap
 msgid ""
 "In functional programming languages, functions are first-class\n"
@@ -17247,11 +17288,17 @@ msgid ""
 "passed as arguments to other functions, and returned as results\n"
 "from functions. Unlike for instance in\n"
 "object-oriented programming languages, in functional programming,\n"
-"functions are the main form of abstraction.\n"
+"functions are the main form of abstraction. This means that whenever\n"
+"we find a common pattern or (almost) identical code in several\n"
+"parts of a project, we try to abstract over this in order to\n"
+"have to write the corresponding code only once.\n"
+"We do this by introducing one or more new functions\n"
+"implementing this behavior. Doing so, we often try to be as general\n"
+"as possible to make our functions as versatile to use as possible.\n"
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Intro.md:46
+#: ../src/Tutorial/Intro.md:60
 #, markdown-text, no-wrap
 msgid ""
 "Functional programming languages are concerned with the evaluation\n"
@@ -17260,13 +17307,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ###
-#: ../src/Tutorial/Intro.md:47
+#: ../src/Tutorial/Intro.md:61
 #, markdown-text, no-wrap
 msgid "Pure Functional Programming"
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Intro.md:57
+#: ../src/Tutorial/Intro.md:71
 #, markdown-text, no-wrap
 msgid ""
 "Pure functional programming languages come with an additional\n"
@@ -17281,13 +17328,13 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Intro.md:59
+#: ../src/Tutorial/Intro.md:73
 #, markdown-text, no-wrap
 msgid "Pure functions have several advantages:\n"
 msgstr ""
 
 #. type: Bullet: '* '
-#: ../src/Tutorial/Intro.md:62
+#: ../src/Tutorial/Intro.md:76
 #, markdown-text, no-wrap
 msgid ""
 "They can easily be tested by specifying (possibly randomly generated)\n"
@@ -17295,7 +17342,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '* '
-#: ../src/Tutorial/Intro.md:66
+#: ../src/Tutorial/Intro.md:80
 #, markdown-text, no-wrap
 msgid ""
 "They are thread-safe, since the don't mutate global state, and\n"
@@ -17304,13 +17351,13 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Intro.md:68
+#: ../src/Tutorial/Intro.md:82
 #, markdown-text, no-wrap
 msgid "There are, of course, also some disadvantages:\n"
 msgstr ""
 
 #. type: Bullet: '* '
-#: ../src/Tutorial/Intro.md:71
+#: ../src/Tutorial/Intro.md:85
 #, markdown-text, no-wrap
 msgid ""
 "Some algorithms are hard to implement efficiently using\n"
@@ -17318,7 +17365,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '* '
-#: ../src/Tutorial/Intro.md:75
+#: ../src/Tutorial/Intro.md:89
 #, markdown-text, no-wrap
 msgid ""
 "Writing programs that actually *do* something\n"
@@ -17327,18 +17374,18 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Intro.md:83
+#: ../src/Tutorial/Intro.md:97
 #, markdown-text, no-wrap
 msgid ""
 "Idris is a strongly, statically typed programming language. This\n"
-"means, that ever Idris expression is given a *type* (for instance:\n"
+"means, that every Idris expression is given a *type* (for instance:\n"
 "integer, list of strings, boolean, function from integer to boolean, etc.)\n"
 "and types are verified at compile time to rule out certain\n"
 "common programming errors.\n"
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Intro.md:89
+#: ../src/Tutorial/Intro.md:103
 #, markdown-text, no-wrap
 msgid ""
 "For instance, if a function expects an argument of type `String`\n"
@@ -17349,7 +17396,21 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Intro.md:97
+#: ../src/Tutorial/Intro.md:111
+#, markdown-text, no-wrap
+msgid ""
+"Being *statically typed* means that the Idris compiler will catch\n"
+"type errors at *compile time*, that is, before it generates an executable\n"
+"program that can be run. The opposite to this are *dynamically typed*\n"
+"languages such as Python, which check for type errors at *runtime*, that "
+"is,\n"
+"when a program is being executed. It is the philosophy of statically typed\n"
+"languages to catch as many type errors as possible before there even is\n"
+"a program that can be run.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Intro.md:119
 #, markdown-text, no-wrap
 msgid ""
 "Even more, Idris is *dependently typed*, which is one of its most\n"
@@ -17362,26 +17423,28 @@ msgid ""
 msgstr ""
 
 #. type: Title ###
-#: ../src/Tutorial/Intro.md:98
+#: ../src/Tutorial/Intro.md:120
 #, markdown-text, no-wrap
 msgid "Total Functions"
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Intro.md:104
+#: ../src/Tutorial/Intro.md:127
 #, markdown-text, no-wrap
 msgid ""
 "A *total* function is a pure function, that is guaranteed to return\n"
 "a value of the expected return type for every possible input in\n"
-"a finite amount of time. A total function will never fail with an\n"
-"exception or loop infinitely.\n"
+"a finite number of computational steps. A total function will never fail "
+"with an\n"
+"exception or loop infinitely, although it can still take arbitrarily\n"
+"long to compute its result\n"
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Intro.md:113
+#: ../src/Tutorial/Intro.md:136
 #, markdown-text, no-wrap
 msgid ""
-"Idris comes with a totality checker built in, which enables us to\n"
+"Idris comes with a totality checker built-in, which enables us to\n"
 "verify the functions we write to be provably total. Totality\n"
 "in Idris is opt-in, as in general, checking the totality of\n"
 "an arbitrary computer program is undecidable\n"
@@ -17393,47 +17456,36 @@ msgid ""
 msgstr ""
 
 #. type: Title ##
-#: ../src/Tutorial/Intro.md:114
+#: ../src/Tutorial/Intro.md:137
 #, markdown-text, no-wrap
 msgid "Using the REPL"
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Intro.md:121
+#: ../src/Tutorial/Intro.md:144
 #, markdown-text, no-wrap
 msgid ""
 "Idris comes with a useful REPL (an acronym for *Read Evaluate\n"
 "Print Loop*), which we will use for tinkering with small\n"
 "ideas, and for quickly experimenting with the code we just wrote.\n"
 "In order to start a REPL session, run the following command\n"
-"in a terminal.\n"
+"in a terminal:\n"
 msgstr ""
 
 #. type: Fenced code block (repl)
-#: ../src/Tutorial/Intro.md:122
+#: ../src/Tutorial/Intro.md:145
 #, no-wrap
-msgid "rlwrap idris2\n"
+msgid "pack repl\n"
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Intro.md:131
-#, markdown-text, no-wrap
-msgid ""
-"(Using command-line utility `rlwrap` is optional. It\n"
-"leads to a somewhat nicer user experience, as it allows us\n"
-"to use the up and down arrow keys to scroll through a history\n"
-"of commands and expressions we entered. It should be available\n"
-"for most Linux distributions.)\n"
-msgstr ""
-
-#. type: Plain text
-#: ../src/Tutorial/Intro.md:133
+#: ../src/Tutorial/Intro.md:150
 #, markdown-text, no-wrap
 msgid "Idris should now be ready to accept you commands:\n"
 msgstr ""
 
 #. type: Fenced code block (repl)
-#: ../src/Tutorial/Intro.md:134
+#: ../src/Tutorial/Intro.md:151
 #, no-wrap
 msgid ""
 "     ____    __     _         ___\n"
@@ -17447,7 +17499,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Intro.md:147
+#: ../src/Tutorial/Intro.md:164
 #, markdown-text, no-wrap
 msgid ""
 "We can go ahead and enter some simple arithmetic expressions. Idris\n"
@@ -17455,7 +17507,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (repl)
-#: ../src/Tutorial/Intro.md:148
+#: ../src/Tutorial/Intro.md:165
 #, no-wrap
 msgid ""
 "Main> 2 * 4\n"
@@ -17465,7 +17517,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Intro.md:157
+#: ../src/Tutorial/Intro.md:174
 #, markdown-text, no-wrap
 msgid ""
 "Since every expression in Idris has an associated *type*,\n"
@@ -17473,7 +17525,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (repl)
-#: ../src/Tutorial/Intro.md:158
+#: ../src/Tutorial/Intro.md:175
 #, no-wrap
 msgid ""
 "Main> :t 2\n"
@@ -17481,7 +17533,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Intro.md:166
+#: ../src/Tutorial/Intro.md:183
 #, markdown-text, no-wrap
 msgid ""
 "Here `:t` is a command of the Idris REPL (it is not part of the\n"
@@ -17490,7 +17542,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (repl)
-#: ../src/Tutorial/Intro.md:167
+#: ../src/Tutorial/Intro.md:184
 #, no-wrap
 msgid ""
 "Main> :t 2 * 4\n"
@@ -17498,7 +17550,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Intro.md:182
+#: ../src/Tutorial/Intro.md:199
 #, markdown-text, no-wrap
 msgid ""
 "Whenever we perform calculations with integer literals without\n"
@@ -17514,13 +17566,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ##
-#: ../src/Tutorial/Intro.md:183
+#: ../src/Tutorial/Intro.md:200
 #, markdown-text, no-wrap
 msgid "A First Idris Program"
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Intro.md:190
+#: ../src/Tutorial/Intro.md:207
 #, markdown-text, no-wrap
 msgid ""
 "We will often start up a REPL for tinkering with small parts\n"
@@ -17531,7 +17583,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (idris)
-#: ../src/Tutorial/Intro.md:191
+#: ../src/Tutorial/Intro.md:208
 #, no-wrap
 msgid ""
 "main : IO ()\n"
@@ -17539,7 +17591,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Intro.md:199
+#: ../src/Tutorial/Intro.md:216
 #, markdown-text, no-wrap
 msgid ""
 "We will inspect the code above in some detail in a moment,\n"
@@ -17548,13 +17600,13 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (sh)
-#: ../src/Tutorial/Intro.md:199
+#: ../src/Tutorial/Intro.md:216
 #, no-wrap
-msgid "idris2 --find-ipkg -o hello src/Tutorial/Intro.md\n"
+msgid "pack -o hello exec src/Tutorial/Intro.md\n"
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Intro.md:207
+#: ../src/Tutorial/Intro.md:224
 #, markdown-text, no-wrap
 msgid ""
 "This will create executable `hello` in directory `build/exec`,\n"
@@ -17564,7 +17616,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (sh)
-#: ../src/Tutorial/Intro.md:208
+#: ../src/Tutorial/Intro.md:225
 #, no-wrap
 msgid ""
 "$ build/exec/hello\n"
@@ -17572,19 +17624,21 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Intro.md:219
+#: ../src/Tutorial/Intro.md:238
 #, markdown-text, no-wrap
 msgid ""
-"The `--find-ipkg` option will look for an `.ipkg` file in the\n"
-"current directory or one of its parent directories, from which\n"
+"The pack program requires an `.ipkg` to be in scope (in the current\n"
+"directory or one of its parent directories) from which\n"
 "it will get other settings like the source directory to use\n"
-"(`src` in our case). The `-o` option gives the name of the\n"
-"executable to be generated. Type `idris2 --help` for a list\n"
-"of available command-line options and environment variables.\n"
+"(`src` in our case). The optional `-o` option gives the name of the\n"
+"executable to be generated. Pack comes up with a name of its own\n"
+"it this is missing. Type `pack help` for a list\n"
+"of available command-line options and commands, and `pack help <cmd>`\n"
+"for getting help for a specific command.\n"
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Intro.md:222
+#: ../src/Tutorial/Intro.md:241
 #, markdown-text, no-wrap
 msgid ""
 "As an alternative, you can also load this source file in a REPL\n"
@@ -17592,13 +17646,13 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (sh)
-#: ../src/Tutorial/Intro.md:223
+#: ../src/Tutorial/Intro.md:242
 #, no-wrap
-msgid "rlwrap idris2 --find-ipkg src/Tutorial/Intro.md\n"
+msgid "pack repl src/Tutorial/Intro.md\n"
 msgstr ""
 
 #. type: Fenced code block (repl)
-#: ../src/Tutorial/Intro.md:227
+#: ../src/Tutorial/Intro.md:246
 #, no-wrap
 msgid ""
 "Tutorial.Intro> :exec main\n"
@@ -17606,31 +17660,21 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Intro.md:234
+#: ../src/Tutorial/Intro.md:253
 #, markdown-text, no-wrap
 msgid ""
 "Go ahead and try both ways of building and running function `main`\n"
 "on your system!\n"
 msgstr ""
 
-#. type: Plain text
-#: ../src/Tutorial/Intro.md:239
-#, markdown-text, no-wrap
-msgid ""
-"Note: It might be instructive to omit the `--find-ipkg` option.\n"
-"You will get an error message about the module name `Tutorial.Intro`\n"
-"not matching the file path `src/Tutorial/Intro.md`. You can\n"
-"also use option `--source-dir src` to silence this error.\n"
-msgstr ""
-
 #. type: Title ##
-#: ../src/Tutorial/Intro.md:240
+#: ../src/Tutorial/Intro.md:254
 #, markdown-text, no-wrap
 msgid "The Shape of an Idris Definition"
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Intro.md:244
+#: ../src/Tutorial/Intro.md:258
 #, markdown-text, no-wrap
 msgid ""
 "Now that we executed our first Idris program, we will talk\n"
@@ -17638,7 +17682,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Intro.md:251
+#: ../src/Tutorial/Intro.md:265
 #, markdown-text, no-wrap
 msgid ""
 "A typical top level function in Idris consists of three things:\n"
@@ -17650,7 +17694,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (idris)
-#: ../src/Tutorial/Intro.md:252
+#: ../src/Tutorial/Intro.md:266
 #, no-wrap
 msgid ""
 "maxBits8 : Bits8\n"
@@ -17658,7 +17702,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Intro.md:266
+#: ../src/Tutorial/Intro.md:280
 #, markdown-text, no-wrap
 msgid ""
 "The first line can be read as: \"We'd like to declare  (nullary)\n"
@@ -17673,7 +17717,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Intro.md:269
+#: ../src/Tutorial/Intro.md:283
 #, markdown-text, no-wrap
 msgid ""
 "We can inspect this at the REPL. Load this source file into\n"
@@ -17681,7 +17725,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (repl)
-#: ../src/Tutorial/Intro.md:270
+#: ../src/Tutorial/Intro.md:284
 #, no-wrap
 msgid ""
 "Tutorial.Intro> maxBits8\n"
@@ -17691,13 +17735,13 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Intro.md:278
+#: ../src/Tutorial/Intro.md:292
 #, markdown-text, no-wrap
 msgid "We can also use `maxBits8` as part of another expression:\n"
 msgstr ""
 
 #. type: Fenced code block (repl)
-#: ../src/Tutorial/Intro.md:279
+#: ../src/Tutorial/Intro.md:293
 #, no-wrap
 msgid ""
 "Tutorial.Intro> maxBits8 - 100\n"
@@ -17705,7 +17749,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Intro.md:286
+#: ../src/Tutorial/Intro.md:300
 #, markdown-text, no-wrap
 msgid ""
 "I called `maxBits8` a *nullary function*, which is just a fancy\n"
@@ -17713,7 +17757,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (idris)
-#: ../src/Tutorial/Intro.md:287
+#: ../src/Tutorial/Intro.md:301
 #, no-wrap
 msgid ""
 "distanceToMax : Bits8 -> Bits8\n"
@@ -17721,7 +17765,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Intro.md:299
+#: ../src/Tutorial/Intro.md:313
 #, markdown-text, no-wrap
 msgid ""
 "This introduces some new syntax and a new kind of type: Function\n"
@@ -17734,7 +17778,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (repl)
-#: ../src/Tutorial/Intro.md:300
+#: ../src/Tutorial/Intro.md:314
 #, no-wrap
 msgid ""
 "Tutorial.Intro> distanceToMax 12\n"
@@ -17746,7 +17790,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Intro.md:311
+#: ../src/Tutorial/Intro.md:325
 #, markdown-text, no-wrap
 msgid ""
 "As a final example, let's implement a function to calculate\n"
@@ -17754,7 +17798,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (idris)
-#: ../src/Tutorial/Intro.md:312
+#: ../src/Tutorial/Intro.md:326
 #, no-wrap
 msgid ""
 "square : Integer -> Integer\n"
@@ -17762,7 +17806,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Intro.md:325
+#: ../src/Tutorial/Intro.md:339
 #, markdown-text, no-wrap
 msgid ""
 "We now learn a very important aspect of programming\n"
@@ -17776,7 +17820,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (repl)
-#: ../src/Tutorial/Intro.md:326
+#: ../src/Tutorial/Intro.md:340
 #, no-wrap
 msgid ""
 "Tutorial.Intro> square maxBits8\n"
@@ -17784,7 +17828,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Intro.md:336
+#: ../src/Tutorial/Intro.md:350
 #, markdown-text, no-wrap
 msgid ""
 "The reason: `square` expects an argument of type `Integer`,\n"
@@ -17795,7 +17839,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (repl)
-#: ../src/Tutorial/Intro.md:337
+#: ../src/Tutorial/Intro.md:351
 #, no-wrap
 msgid ""
 "Tutorial.Intro> square (cast maxBits8)\n"
@@ -17803,7 +17847,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Intro.md:348
+#: ../src/Tutorial/Intro.md:362
 #, markdown-text, no-wrap
 msgid ""
 "Note, that in the example above the result is much larger\n"
@@ -17815,7 +17859,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (repl)
-#: ../src/Tutorial/Intro.md:349
+#: ../src/Tutorial/Intro.md:363
 #, no-wrap
 msgid ""
 "Tutorial.Intro> maxBits8 * maxBits8\n"
@@ -17823,13 +17867,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ##
-#: ../src/Tutorial/Intro.md:354
+#: ../src/Tutorial/Intro.md:368
 #, markdown-text, no-wrap
 msgid "Where to get Help"
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Intro.md:359
+#: ../src/Tutorial/Intro.md:373
 #, markdown-text, no-wrap
 msgid ""
 "There are several resources available online and in print, where\n"
@@ -17838,7 +17882,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '* '
-#: ../src/Tutorial/Intro.md:361
+#: ../src/Tutorial/Intro.md:375
 #, markdown-text, no-wrap
 msgid ""
 "[Type-Driven Development with "
@@ -17846,7 +17890,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Intro.md:368
+#: ../src/Tutorial/Intro.md:382
 #, markdown-text, no-wrap
 msgid ""
 "  *The* Idris book! This describes in great detail\n"
@@ -17859,7 +17903,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '* '
-#: ../src/Tutorial/Intro.md:370
+#: ../src/Tutorial/Intro.md:384
 #, markdown-text, no-wrap
 msgid ""
 "[A Crash Course in Idris "
@@ -17867,7 +17911,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Intro.md:375
+#: ../src/Tutorial/Intro.md:389
 #, markdown-text, no-wrap
 msgid ""
 "  The official Idris 2 tutorial. A comprehensive but dense explanation of\n"
@@ -17879,13 +17923,13 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '* '
-#: ../src/Tutorial/Intro.md:377
+#: ../src/Tutorial/Intro.md:391
 #, markdown-text, no-wrap
 msgid "[The Idris 2 GitHub Repository](https://github.com/idris-lang/Idris2)\n"
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Intro.md:384
+#: ../src/Tutorial/Intro.md:398
 #, markdown-text, no-wrap
 msgid ""
 "  Look here for detailed installation instructions and some\n"
@@ -17901,13 +17945,13 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '* '
-#: ../src/Tutorial/Intro.md:386
+#: ../src/Tutorial/Intro.md:400
 #, markdown-text, no-wrap
 msgid "[The Idris 2 Discord Channel](https://discord.gg/UX68fDs2jc)\n"
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Intro.md:392
+#: ../src/Tutorial/Intro.md:406
 #, markdown-text, no-wrap
 msgid ""
 "  If you get stuck with a piece of code, want to ask about some\n"
@@ -17918,13 +17962,13 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '* '
-#: ../src/Tutorial/Intro.md:394
+#: ../src/Tutorial/Intro.md:408
 #, markdown-text, no-wrap
 msgid "The Idris REPL\n"
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Intro.md:400
+#: ../src/Tutorial/Intro.md:414
 #, markdown-text, no-wrap
 msgid ""
 "  Finally, a lot of useful information can be provided by\n"
@@ -17936,7 +17980,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '  * '
-#: ../src/Tutorial/Intro.md:417
+#: ../src/Tutorial/Intro.md:431
 #, markdown-text, no-wrap
 msgid ""
 "use `:t` to inspect the type of an expression\n"
@@ -17944,7 +17988,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '  * '
-#: ../src/Tutorial/Intro.md:417
+#: ../src/Tutorial/Intro.md:431
 #, markdown-text, no-wrap
 msgid ""
 "use `:ti` to inspect the type of a function\n"
@@ -17952,13 +17996,13 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '  * '
-#: ../src/Tutorial/Intro.md:417
+#: ../src/Tutorial/Intro.md:431
 #, markdown-text, no-wrap
 msgid "use `:m` to list all meta variables (holes) in scope,\n"
 msgstr ""
 
 #. type: Bullet: '  * '
-#: ../src/Tutorial/Intro.md:417
+#: ../src/Tutorial/Intro.md:431
 #, markdown-text, no-wrap
 msgid ""
 "use `:doc` to access the documentation of a\n"
@@ -17969,7 +18013,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '  * '
-#: ../src/Tutorial/Intro.md:417
+#: ../src/Tutorial/Intro.md:431
 #, markdown-text, no-wrap
 msgid ""
 "use `:module` to import a module from one of the available\n"
@@ -17977,7 +18021,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '  * '
-#: ../src/Tutorial/Intro.md:417
+#: ../src/Tutorial/Intro.md:431
 #, markdown-text, no-wrap
 msgid ""
 "use `:browse` to list the names and types of all functions\n"
@@ -17985,7 +18029,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '  * '
-#: ../src/Tutorial/Intro.md:417
+#: ../src/Tutorial/Intro.md:431
 #, markdown-text, no-wrap
 msgid ""
 "use `:help` to get a list of other commands plus a short\n"
@@ -17993,13 +18037,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ##
-#: ../src/Tutorial/Intro.md:418
+#: ../src/Tutorial/Intro.md:432
 #, markdown-text, no-wrap
 msgid "Summary"
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Intro.md:425
+#: ../src/Tutorial/Intro.md:439
 #, markdown-text, no-wrap
 msgid ""
 "In this introduction we learned about the most basic\n"
@@ -18010,7 +18054,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Intro.md:429
+#: ../src/Tutorial/Intro.md:443
 #, markdown-text, no-wrap
 msgid ""
 "We also learned about the basic shape of a top level\n"
@@ -18019,7 +18063,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Intro.md:436
+#: ../src/Tutorial/Intro.md:450
 #, markdown-text, no-wrap
 msgid ""
 "In the [next chapter](Functions1.md), we start programming\n"

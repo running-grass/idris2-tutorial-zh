@@ -2,6 +2,14 @@
 
 欢迎来到我的 Idris 2 教程。我将在这里尽可能多地处理 Idris 2 编程语言的各个方面。这里的每个 `.md` 文件都是一个 Idris 的文学编程文件：它们由 Markdown 组成（因此以 `.md` 结尾），Idris 代码块会被 GitHub 美观的打印出来，同时也可以由 Idris 编译器进行类型检查和构建（稍后会详细介绍）。但是请注意，常规的 Idris 源文件使用 `.idr` 结尾，并且除非您最终编写的代码比我现在所做的更复杂，否则您将继续使用本文件类型。在本教程的后面，您将需要解答一些习题，这些习题的答案可以在 `src/Solutions` 文件夹中找到。在那里，我会使用常规的 `.idr` 文件。
 
+Before we begin, make sure to install the Idris compiler on your system.
+Throughout this tutorial, I assume you installed the *pack* package
+manager and setup a skeleton package as described
+[here](../Appendices/Install.md). It is
+certainly possible to follow along with just the Idris compiler installed
+by other means, but some adjustments will be necessary
+when starting REPL sessions or building executables.
+
 每个 Idris 源文件通常应该以模块名称和一些必要的导入开头，本文档也不例外。
 
 ```idris
@@ -16,7 +24,18 @@ Idris 是一种具有*依赖类型*的、*完全*的*纯**函数式*编程语言
 
 ### 函数式编程
 
-在函数式编程语言中，函数是一等结构，这意味着它们可以分配给变量，作为参数传递给其他函数，并作为函数的结果返回。与面向对象的编程语言不同，在函数式编程中，函数是抽象的主要形式。
+In functional programming languages, functions are first-class
+constructs, meaning that they can be assigned to variables,
+passed as arguments to other functions, and returned as results
+from functions. Unlike for instance in
+object-oriented programming languages, in functional programming,
+functions are the main form of abstraction. This means that whenever
+we find a common pattern or (almost) identical code in several
+parts of a project, we try to abstract over this in order to
+have to write the corresponding code only once.
+We do this by introducing one or more new functions
+implementing this behavior. Doing so, we often try to be as general
+as possible to make our functions as versatile to use as possible.
 
 函数式编程语言关注函数的求值，不像经典的命令式语言关注语句的执行。
 
@@ -42,27 +61,52 @@ Idris 是一种具有*依赖类型*的、*完全*的*纯**函数式*编程语言
 
 ### 依赖类型
 
-Idris 是一种强静态类型的编程语言。这意味着，给 Idris 表达式一个*类型*（例如：整数、字符串列表、布尔值、从整数到布尔值的函数等），并且在编译时验证类型以排除某些常见的编程错误。
+Idris is a strongly, statically typed programming language. This
+means, that every Idris expression is given a *type* (for instance:
+integer, list of strings, boolean, function from integer to boolean, etc.)
+and types are verified at compile time to rule out certain
+common programming errors.
 
 例如，如果一个函数需要 `String` 类型的参数（Unicode 字符序列，例如 `"Hello123"`），使用 `Integer` 类型的参数调用此函数是*类型错误*的，Idris 编译器将拒绝从此类错误类型的程序生成可执行文件。
+
+Being *statically typed* means that the Idris compiler will catch
+type errors at *compile time*, that is, before it generates an executable
+program that can be run. The opposite to this are *dynamically typed*
+languages such as Python, which check for type errors at *runtime*, that is,
+when a program is being executed. It is the philosophy of statically typed
+languages to catch as many type errors as possible before there even is
+a program that can be run.
 
 更重要的是，Idris 具有*依赖类型*，这是它在编程语言领域中最具特色的属性之一。在 Idris 中，类型是*一等*的：类型可以作为参数传递给函数，函数可以返回类型作为结果。更重要的是，类型可以*依赖于*其他*值*。这意味着什么，以及为什么这非常有用，我们将在适当的时候进行探索。
 
 ### 全函数
 
-*全*函数是一个纯函数，它保证在有限的时间内为每个可能的输入返回一个预期返回类型的值。一个全函数永远不会因异常或无限循环而失败。
+A *total* function is a pure function, that is guaranteed to return
+a value of the expected return type for every possible input in
+a finite number of computational steps. A total function will never fail with an
+exception or loop infinitely, although it can still take arbitrarily
+long to compute its result
 
-Idris 内置了一个完全性检查器，它使我们能够验证我们编写的函数是否是可证明的完全性。 Idris 中的完全性是可选的，因为一般来说，检查任意计算机程序的完全性是无法确定的（另请参见 [停机问题](https://en.wikipedia.org/wiki/Halting_problem)）。但是，如果我们使用 `total` 关键字注释函数，如果 Idris 的完全性检查器无法验证所讨论的函数确实是完全的，则 Idris 将失败并出现类型错误。
+Idris comes with a totality checker built-in, which enables us to
+verify the functions we write to be provably total. Totality
+in Idris is opt-in, as in general, checking the totality of
+an arbitrary computer program is undecidable
+(see also the [halting problem](https://en.wikipedia.org/wiki/Halting_problem)).
+However, if we annotate a function with the `total` keyword,
+Idris will fail with a type error, if its totality checker
+cannot verify that the function in question is indeed total.
 
 ## 使用 REPL
 
-Idris 附带了一个有用的 REPL（*Read Evaluate Print Loop* 的首字母缩写词），我们将使用它来修补小想法，并快速试验我们刚刚编写的代码。要启动 REPL 会话，请在终端中运行以下命令。
+Idris comes with a useful REPL (an acronym for *Read Evaluate
+Print Loop*), which we will use for tinkering with small
+ideas, and for quickly experimenting with the code we just wrote.
+In order to start a REPL session, run the following command
+in a terminal:
 
 ```repl
-rlwrap idris2
+pack repl
 ```
-
-（使用命令行实用程序 `rlwrap` 是可选的。它带来了更好的用户体验，因为它允许我们使用向上和向下箭头键滚动浏览我们输入的命令和表达式的历史记录。它应该适用于大多数 Linux 发行版。）
 
 Idris 现在应该准备好接受你的命令了：
 
@@ -113,7 +157,7 @@ main = putStrLn "Hello World!"
 
 稍后我们将详细检查上面的代码，但首先我们要编译并运行它。在此项目的根目录中，运行以下命令：
 ```sh
-idris2 --find-ipkg -o hello src/Tutorial/Intro.md
+pack -o hello exec src/Tutorial/Intro.md
 ```
 
 这将在目录 `build/exec` 中创建可执行文件 `hello`，可以像这样从命令行调用它（没有美元前缀；这里用来区分终端命令和它的输出）：
@@ -123,12 +167,19 @@ $ build/exec/hello
 Hello World!
 ```
 
-`--find-ipkg` 选项将在当前目录或其父目录之一中查找 `.ipkg` 文件，从中获取其他设置，如要使用的源码目录（在我们的例子中是 `src`）。 `-o` 选项给出要生成的可执行文件的名称。输入 `idris2 --help` 以获取可用命令行选项和环境变量的列表。
+The pack program requires an `.ipkg` to be in scope (in the current
+directory or one of its parent directories) from which
+it will get other settings like the source directory to use
+(`src` in our case). The optional `-o` option gives the name of the
+executable to be generated. Pack comes up with a name of its own
+it this is missing. Type `pack help` for a list
+of available command-line options and commands, and `pack help <cmd>`
+for getting help for a specific command.
 
 作为替代方案，您还可以在 REPL 会话中加载此源文件并从那里调用函数 `main`：
 
 ```sh
-rlwrap idris2 --find-ipkg src/Tutorial/Intro.md
+pack repl src/Tutorial/Intro.md
 ```
 
 ```repl
@@ -137,8 +188,6 @@ Hello World!
 ```
 
 继续尝试在您的系统上构建和运行函数 `main` 的两种方法！
-
-注意：省略 `--find-ipkg` 选项可能会有帮助。因为您将收到有关模块名称 `Tutorial.Intro` 与文件路径 `src/Tutorial/Intro.md` 不匹配的错误信息。您还可以使用选项 `--source-dir src` 来消除此错误。
 
 ## 如何声明一个 Idris 定义
 
