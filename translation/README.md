@@ -157,19 +157,16 @@
 
 附录可用作手头主题的参考。我计划最终对 Idris 语法、典型错误消息、模块系统、交互式编辑以及可能的其他内容有一个简明的参考。
 
-1. [Getting Started with pack and Idris2](src/Appendices/Install.md)
+1. [pack 和 Idris2 入门](src/Appendices/Install.md)
 
 2. [Neovim 中的交互式编辑](src/Appendices/Neovim.md)
 
-3. [Structuring Idris Projects](src/Appendices/Projects.md)
+3. [构造 Idris 项目](src/Appendices/Projects.md)
 
 
 ## 前置条件
 
-At the moment, this project is being actively developed and
-evolved against the main branch of the Idris 2 repository.
-It is being tested nightly on GitHub and built against
-the latest version of [pack's package collection](https://github.com/stefan-hoeck/idris2-pack-db).
+目前，该项目正在针对 Idris 2 存储库的主要分支进行积极开发和演进。它每晚在 GitHub 上进行测试，并针对 [pack包集合](https://github.com/stefan-hoeck/idris2-pack-db) 中的最新版本进行构建。
 
 In order to follow along with this tutorial, it is strongly suggested to install
 Idris via the pack package manager as described [here](src/Appendices/Install.md).

@@ -522,11 +522,7 @@ replicate' = replicate n
 
 请注意，在 `replicate'` 的实现中，我们可以引用 `n` 并将其作为显式参数传递给 `replicate`。
 
-Deciding whether to pass potentially inferable arguments to a function implicitly
-or explicitly is a question of how often the arguments actually *are* inferable
-by Idris. Sometimes it might even be useful to have both versions
-of a function. Remember, however, that even in case of an implicit argument
-we can still pass the value explicitly:
+决定是否将潜在的可推断参数隐式或显式传递给函数是一个问题，即 Idris 实际 *是* 可推断参数的使用频率。有时，同时拥有一个函数的两个版本甚至可能很有用。但是请记住，即使是隐式参数，我们仍然可以显式传递值：
 
 ```idris
 ex6 : Vect ? Bool

@@ -61,11 +61,7 @@ as possible to make our functions as versatile to use as possible.
 
 ### 依赖类型
 
-Idris is a strongly, statically typed programming language. This
-means, that every Idris expression is given a *type* (for instance:
-integer, list of strings, boolean, function from integer to boolean, etc.)
-and types are verified at compile time to rule out certain
-common programming errors.
+Idris 是一种强静态类型的编程语言。这意味着，会给每个 Idris 表达式一个*类型*（例如：整数、字符串列表、布尔值、从整数到布尔值的函数等），并且在编译时验证类型以排除某些常见的编程错误。
 
 例如，如果一个函数需要 `String` 类型的参数（Unicode 字符序列，例如 `"Hello123"`），使用 `Integer` 类型的参数调用此函数是*类型错误*的，Idris 编译器将拒绝从此类错误类型的程序生成可执行文件。
 
@@ -87,22 +83,11 @@ a finite number of computational steps. A total function will never fail with an
 exception or loop infinitely, although it can still take arbitrarily
 long to compute its result
 
-Idris comes with a totality checker built-in, which enables us to
-verify the functions we write to be provably total. Totality
-in Idris is opt-in, as in general, checking the totality of
-an arbitrary computer program is undecidable
-(see also the [halting problem](https://en.wikipedia.org/wiki/Halting_problem)).
-However, if we annotate a function with the `total` keyword,
-Idris will fail with a type error, if its totality checker
-cannot verify that the function in question is indeed total.
+Idris 内置了一个完全性检查器，它使我们能够验证我们编写的函数是否是可证明的完全性。 Idris 中的完全性是可选的，因为一般来说，检查任意计算机程序的完全性是无法确定的（另请参见 [停机问题](https://en.wikipedia.org/wiki/Halting_problem)）。但是，如果我们使用 `total` 关键字注释函数，如果 Idris 的完全性检查器无法验证所讨论的函数确实是完全的，则 Idris 将失败并出现类型错误。
 
 ## 使用 REPL
 
-Idris comes with a useful REPL (an acronym for *Read Evaluate
-Print Loop*), which we will use for tinkering with small
-ideas, and for quickly experimenting with the code we just wrote.
-In order to start a REPL session, run the following command
-in a terminal:
+Idris 附带了一个有用的 REPL（*Read Evaluate Print Loop* 的首字母缩写词），我们将使用它来修补小想法，并快速试验我们刚刚编写的代码。要启动 REPL 会话，请在终端中运行以下命令：
 
 ```repl
 pack repl
