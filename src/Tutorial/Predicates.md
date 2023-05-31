@@ -379,7 +379,7 @@ where the value we look for is at the head of the list is
 handled by the `Here` constructor, where the same variable (`x`) is used
 for the element and the head of the list. The case where the value
 is deeper within  the list is handled by the `There`
-constructor. This can be read as follows: If `x` is and element
+constructor. This can be read as follows: If `x` is an element
 of `xs`, then `x` is also an element of `y :: xs` for any
 value `y`. Let's write down some examples to get a feel
 for these:
@@ -1365,5 +1365,7 @@ arguments, which Idris should try to construct on its own if
 it has enough information about the structure of a function's
 arguments.
 
-<!-- vi: filetype=idris2
+[Next chapter](./Prim.md)
+
+<!-- vi: filetype=idris2:syntax=markdown
 -->

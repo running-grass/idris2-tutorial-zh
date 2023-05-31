@@ -905,7 +905,7 @@ like to print:
 * A value not representing a natural number was entered as an index.
   We print an according error message.
 
-That's a lot of stuff to keep track off, so let's encode this in
+That's a lot of stuff to keep track of, so let's encode this in
 a sum type:
 
 ```idris
@@ -1202,5 +1202,5 @@ contracts between values hold. These will eventually allow
 us to define pre- and post conditions for our function
 arguments and output types.
 
-<!-- vi: filetype=idris2
+<!-- vi: filetype=idris2:syntax=markdown
 -->
