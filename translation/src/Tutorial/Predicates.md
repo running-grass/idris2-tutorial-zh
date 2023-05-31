@@ -220,7 +220,18 @@ data Elem : (elem : a) -> (as : List a) -> Type where
   There : Elem x xs -> Elem x (y :: xs)
 ```
 
-这是一个描述两个值之间的契约的谓词：一个 `a` 类型的值和一个 `a` 的列表。该谓词的值是该值是列表元素的见证。请注意，这是如何递归定义的：我们查找的值位于列表头部的情况由 `Here` 构造函数处理，其中相同的变量 (`x`) 是用于元素和列表的头部。值在列表中更深的情况由 `There` 构造函数处理。可以这样理解：如果 `x` 是 `xs` 的元素，那么 `x` 也是 `y :: xs` 的元素对于任何值 `y`。让我们写一些例子来感受一下：
+This is a predicate describing a contract between two values:
+A value of type `a` and a list of `a`s. Values of this predicate
+are witnesses that the value is an element of the list.
+Note, how this is defined recursively: The case
+where the value we look for is at the head of the list is
+handled by the `Here` constructor, where the same variable (`x`) is used
+for the element and the head of the list. The case where the value
+is deeper within  the list is handled by the `There`
+constructor. This can be read as follows: If `x` is an element
+of `xs`, then `x` is also an element of `y :: xs` for any
+value `y`. Let's write down some examples to get a feel
+for these:
 
 ```idris
 MyList : List Nat
@@ -983,5 +994,7 @@ Goodbye.
 
 谓词允许我们描述类型之间的契约并细化我们接受为有效函数参数的值。它们允许我们通过将它们用作自动隐式参数来使函数在运行时 *和* 编译时安全且方便地使用 ，如果Idris有足够的关于函数参数结构的信息，Idris 应该尝试自己构造它。
 
-<!-- vi: filetype=idris2
+[Next chapter](./Prim.md)
+
+<!-- vi: filetype=idris2:syntax=markdown
 -->

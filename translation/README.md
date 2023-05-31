@@ -1,6 +1,7 @@
 # Idris 2 中的函数式编程
 
-[中文翻译](https://github.com/running-grass/idris2-tutorial-zh/blob/main/translation/README.md)
+[中文翻译](https://github.com/running-grass/idris2-tutorial-zh/blob/main/translation/README.md),
+[日本語訳](https://github.com/gemmaro/idris2-tutorial/blob/ja/translation/ja/README.md)
 
 这个项目的目标是：要成为 Idris 编程语言的全面指南，其中包含大量针对函数式编程新手的介绍性材料。
 

@@ -274,5 +274,5 @@ Neovim，连同 `idris2-lsp` 可执行文件和 `idris2-nvim` 编辑器插件，
 所以请随时询问可供您选择使用的编辑器有什么，
 例如在 [Idris 2 Discord 频道](https://discord.gg/UX68fDs2jc) 上。
 
-<!-- vi: filetype=idris2
+<!-- vi: filetype=idris2:syntax=markdown
 -->

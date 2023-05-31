@@ -34,11 +34,16 @@ Tutorial.DataTypes.Weekday : Type
 
 所以，`Monday` 是 `Weekday` 类型，而 `Weekday` 本身是 `Type` 类型。
 
-需要注意的是，`Weekday` 类型的值只能是上面列出的值之一。在需要 `Weekday` 的地方使用其他任何值都会产生一个*类型错误*。
+It is important to note that a value of type `Weekday` can only
+ever be one of the values listed above. It is a *type error* to
+use anything else where a `Weekday` is expected.
 
 ### 模式匹配
 
-为了使用我们的新数据类型作为函数参数，我们需要了解函数式编程语言中的一个重要概念：模式匹配。让我们实现一个函数，它计算一个星期几的后继：
+In order to use our new data type as a function argument, we
+need to learn about an important concept in functional programming
+languages: Pattern matching. Let's implement a function which calculates
+the successor of a weekday:
 
 ```idris
 total
@@ -56,9 +61,21 @@ next Sunday    = Monday
 
 例如，如果我们使用参数 `Thursday` 调用 `next`，前三个模式（`Monday`、`Tuesday` 和 `Wednesday`）将根据参数进行检查，但它们不匹配。第四个模式是匹配的，结果 `Friday` 被返回。然后忽略后面的模式，即使它们还会匹配输入（这与全捕获模式有关，我们稍后会谈到）。
 
-上面的函数可以证明是完全的。Idris 知道`Weekday` 类型的可能值，因此可以计算我们的模式匹配涵盖了所有可能的情况。我们可以使用 `total` 关键字注释函数，如果 Idris 无法验证函数的完全性，会得到一个类型错误。 （继续，并尝试删除其中一个 `next` 中的子句来了解错误是如何产生的，并且可以看看来自覆盖性检查器的错误消息长什么样。）
+The function above is provably total. Idris knows about the
+possible values of type `Weekday`, and can therefore figure
+out that our pattern match covers all possible cases. We can
+therefore annotate the function with the `total` keyword, and
+Idris will answer with a type error if it can't verify the
+function's totality. (Go ahead, and try removing one of
+the clauses in `next` to get an idea about how an error
+message from the coverage checker looks like.)
 
-请记住，这些来自类型检查器：给定足够的资源，一个可证明的全函数在有限时间内将*总是*返回给定类型的结果（*资源*的意思是计算资源，比如内存，或者，在递归函数情况下的堆栈空间）。
+Please remember that these are very strong guarantees from
+the type checker: Given enough resources,
+a provably total function will *always* return
+a result of the given type in a finite amount of time
+(*resources* here meaning computational resources like
+memory or, in case of recursive functions, stack space).
 
 ### 全捕获模式
 
@@ -72,8 +89,11 @@ isWeekend Sunday   = True
 isWeekend _        = False
 ```
 
-如果参数不等于 `Saturday` 或 `Sunday`，仅调用具有全捕获模式的最后一行。记住：模式匹配中的模式匹配
-从上到下的输入和第一个匹配决定将采用右侧的哪条路径。
+The final line with the catch-all pattern is only invoked
+if the argument is not equal to `Saturday` or `Sunday`.
+Remember: Patterns in a pattern match are matched against
+the input from top to bottom, and the first match decides
+which path on the right hand side will be taken.
 
 我们可以使用全捕获模式来实现等式测试`Weekday`（我们还不会为此使用 `==` 运算符；这将必须等到我们了解*接口*以后）：
 
@@ -92,7 +112,12 @@ eqWeekday _ _                  = False
 
 ### Prelude 中的枚举类型
 
-`Weekday` 等数据类型由有限集组成的值有时称为*枚举*。Idris 的 *Prelude* 为我们定义了一些常见的枚举，例如 `Bool` 和 `Ordering`。与 `Weekday` 一样，我们可以在实现函数时使用模式匹配在这些类型上：
+Data types like `Weekday` consisting of a finite set
+of values are sometimes called *enumerations*. The Idris
+*Prelude* defines some common enumerations for us: for
+instance, `Bool` and `Ordering`. As with `Weekday`,
+we can use pattern matching when implementing functions
+on these types:
 
 ```idris
 -- 这个是 *Prelude* 中的 `not` 函数的实现
@@ -130,7 +155,9 @@ maxBits8 x y =
 
 case 表达式的第一行(`case compare x y of`)将使用参数 `x` 和 `y` 调用函数`compare`。后面的（缩进）行，我们对结果进行模式匹配。compare的返回类型为 `Ordering`，所以我们期望结果是三个构造函数 `LT`、`EQ` 或 `GT` 之一。在第一行，我们明确地处理 `LT` 的情况，而其他两种情况下划线作为全捕获模式处理。
 
-请注意，缩进在这里很重要：整个 Case 块必须缩进（如果它从新行开始），并且不同的 Case 也必须缩进相同数量的空格。
+Note that indentation matters here: The case block as a whole
+must be indented (if it starts on a new line), and the different
+cases must also be indented by the same amount of whitespace.
 
 函数 `compare` 对许多数据类型进行了重载。当我们谈论接口时，我们将了解它是如何工作的。
 
@@ -144,7 +171,10 @@ maxBits8' : Bits8 -> Bits8 -> Bits8
 maxBits8' x y = if compare x y == LT then y else x
 ```
 
-请注意，`if then else` 表达式总是返回一个值。因此，不能删除 `else` 分支。这是和典型的命令式语言中的行为所不同的，其中 `if` 是可能产生副作用的声明。
+Note that the `if then else` expression always returns a value
+and, therefore, the `else` branch cannot be dropped. This is different
+from the behavior in typical imperative languages, where `if` is
+a statement with possible side effects.
 
 ### 命名约定：标识符
 
@@ -1040,5 +1070,5 @@ namespace GADT
 
 在 [下一节](Interfaces.md) 中，我们将介绍*接口*，这是*函数重载*的另一种方法。
 
-<!-- vi: filetype=idris2
+<!-- vi: filetype=idris2:syntax=markdown
 -->

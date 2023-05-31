@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-01-06 09:55+0000\n"
+"POT-Creation-Date: 2023-05-31 01:26+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,13 +23,15 @@ msgid "Functional Programming in Idris 2"
 msgstr ""
 
 #. type: Plain text
-#: ../README.md:4
+#: ../README.md:5
 #, markdown-text, no-wrap
-msgid "[中文翻译](https://github.com/running-grass/idris2-tutorial-zh/blob/main/translation/README.md)\n"
+msgid ""
+"[中文翻译](https://github.com/running-grass/idris2-tutorial-zh/blob/main/translation/README.md),\n"
+"[日本語訳](https://github.com/gemmaro/idris2-tutorial/blob/ja/translation/ja/README.md)\n"
 msgstr ""
 
 #. type: Plain text
-#: ../README.md:9
+#: ../README.md:10
 #, markdown-text, no-wrap
 msgid ""
 "The goal of this project is quickly explained: To become a more\n"
@@ -39,7 +41,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../README.md:17
+#: ../README.md:18
 #, markdown-text, no-wrap
 msgid ""
 "The content will be organized in several parts, with the part\n"
@@ -52,7 +54,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../README.md:22
+#: ../README.md:23
 #, markdown-text, no-wrap
 msgid ""
 "Right now, even the part about core language features is not\n"
@@ -62,19 +64,19 @@ msgid ""
 msgstr ""
 
 #. type: Title ##
-#: ../README.md:23
+#: ../README.md:24
 #, markdown-text, no-wrap
 msgid "Table of Contents"
 msgstr ""
 
 #. type: Title ###
-#: ../README.md:25
+#: ../README.md:26
 #, markdown-text, no-wrap
 msgid "Part 1: Core Language Features"
 msgstr ""
 
 #. type: Plain text
-#: ../README.md:31
+#: ../README.md:32
 #, markdown-text, no-wrap
 msgid ""
 "This part tries to give a solid introduction to the\n"
@@ -84,7 +86,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../README.md:36
+#: ../README.md:37
 #, markdown-text, no-wrap
 msgid ""
 "If you already used other pure functional programming languages like\n"
@@ -94,13 +96,13 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '1. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid "[Introduction](src/Tutorial/Intro.md)\n"
 msgstr ""
 
 #. type: Bullet: '   1. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid ""
 "[About the Idris Programming "
@@ -108,19 +110,19 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '   2. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid "[Using the REPL](src/Tutorial/Intro.md#using-the-repl)\n"
 msgstr ""
 
 #. type: Bullet: '   3. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid "[A First Idris Program](src/Tutorial/Intro.md#a-first-idris-program)\n"
 msgstr ""
 
 #. type: Bullet: '   4. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid ""
 "[The Shape of an Idris "
@@ -128,19 +130,19 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '   5. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid "[Where to get Help](src/Tutorial/Intro.md#where-to-get-help)\n"
 msgstr ""
 
 #. type: Bullet: '2. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid "[Functions Part 1](src/Tutorial/Functions1.md)\n"
 msgstr ""
 
 #. type: Bullet: '   1. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid ""
 "[Functions with more that one "
@@ -148,13 +150,13 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '   2. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid "[Function Composition](src/Tutorial/Functions1.md#function-composition)\n"
 msgstr ""
 
 #. type: Bullet: '   3. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid ""
 "[Higher-order "
@@ -162,55 +164,55 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '   4. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid "[Currying](src/Tutorial/Functions1.md#currying)\n"
 msgstr ""
 
 #. type: Bullet: '   5. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid "[Anonymous Functions](src/Tutorial/Functions1.md#anonymous-functions)\n"
 msgstr ""
 
 #. type: Bullet: '   6. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid "[Operators](src/Tutorial/Functions1.md#operators)\n"
 msgstr ""
 
 #. type: Bullet: '3. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid "[Algebraic Data Types](src/Tutorial/DataTypes.md)\n"
 msgstr ""
 
 #. type: Bullet: '   1. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid "[Enumerations](src/Tutorial/DataTypes.md#enumerations)\n"
 msgstr ""
 
 #. type: Bullet: '   2. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid "[Sum Types](src/Tutorial/DataTypes.md#sum-types)\n"
 msgstr ""
 
 #. type: Bullet: '   3. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid "[Records](src/Tutorial/DataTypes.md#records)\n"
 msgstr ""
 
 #. type: Bullet: '   4. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid "[Generic Data Types](src/Tutorial/DataTypes.md#generic-data-types)\n"
 msgstr ""
 
 #. type: Bullet: '   5. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid ""
 "[Alternative Syntax for Data "
@@ -218,25 +220,25 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '4. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid "[Interfaces](src/Tutorial/Interfaces.md)\n"
 msgstr ""
 
 #. type: Bullet: '   1. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid "[Interface Basics](src/Tutorial/Interfaces.md#interface-basics)\n"
 msgstr ""
 
 #. type: Bullet: '   2. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid "[More about Interfaces](src/Tutorial/Interfaces.md#more-about-interfaces)\n"
 msgstr ""
 
 #. type: Bullet: '   3. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid ""
 "[Interfaces in the "
@@ -244,13 +246,13 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '5. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid "[Functions Part 2](src/Tutorial/Functions2.md)\n"
 msgstr ""
 
 #. type: Bullet: '   1. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid ""
 "[Let Bindings and Local "
@@ -258,7 +260,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '   2. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid ""
 "[The Truth about Function "
@@ -266,7 +268,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '   3. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid ""
 "[Programming with "
@@ -274,19 +276,19 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '6. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid "[Dependent Types](src/Tutorial/Dependent.md)\n"
 msgstr ""
 
 #. type: Bullet: '   1. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid "[Length-Indexed Lists](src/Tutorial/Dependent.md#length-indexed-lists)\n"
 msgstr ""
 
 #. type: Bullet: '   2. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid ""
 "[Fin: Safe Indexing into "
@@ -294,7 +296,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '   3. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid ""
 "[Compile-Time "
@@ -302,61 +304,61 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '7. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid "[IO: Programming with Side Effects](src/Tutorial/IO.md)\n"
 msgstr ""
 
 #. type: Bullet: '   1. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid "[Pure Side Effects?](src/Tutorial/IO.md#pure-side-effects)\n"
 msgstr ""
 
 #. type: Bullet: '   2. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid "[Do Blocks, Desugared](src/Tutorial/IO.md#do-blocks-desugared)\n"
 msgstr ""
 
 #. type: Bullet: '   3. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid "[Working with Files](src/Tutorial/IO.md#working-with-files)\n"
 msgstr ""
 
 #. type: Bullet: '   4. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid "[How IO is Implemented](src/Tutorial/IO.md#how-io-is-implemented)\n"
 msgstr ""
 
 #. type: Bullet: '8. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid "[Functor and Friends](src/Tutorial/Functor.md)\n"
 msgstr ""
 
 #. type: Bullet: '   1. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid "[Functor](src/Tutorial/Functor.md#functor)\n"
 msgstr ""
 
 #. type: Bullet: '   2. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid "[Applicative](src/Tutorial/Functor.md#applicative)\n"
 msgstr ""
 
 #. type: Bullet: '   3. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid "[Monad](src/Tutorial/Functor.md#monad)\n"
 msgstr ""
 
 #. type: Bullet: '   4. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid ""
 "[Background and further "
@@ -364,19 +366,19 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '9. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid "[Recursion and Folds](src/Tutorial/Folds.md)\n"
 msgstr ""
 
 #. type: Bullet: '   1. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid "[Recursion](src/Tutorial/Folds.md#recursion)\n"
 msgstr ""
 
 #. type: Bullet: '   2. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid ""
 "[A few Notes on Totality "
@@ -384,31 +386,31 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '   3. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid "[Interface Foldable](src/Tutorial/Folds.md#interface-foldable)\n"
 msgstr ""
 
 #. type: Bullet: '10. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid "[Effectful Traversals](src/Tutorial/Traverse.md)\n"
 msgstr ""
 
 #. type: Bullet: '    1. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid "[Reading CSV Tables](src/Tutorial/Traverse.md#reading-csv-tables)\n"
 msgstr ""
 
 #. type: Bullet: '    2. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid "[Programming with State](src/Tutorial/Traverse.md#programming-with-state)\n"
 msgstr ""
 
 #. type: Bullet: '    3. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid ""
 "[The Power of "
@@ -416,25 +418,25 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '11. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid "[Sigma Types](src/Tutorial/DPair.md)\n"
 msgstr ""
 
 #. type: Bullet: '    1. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid "[Dependent Pairs](src/Tutorial/DPair.md#dependent-pairs)\n"
 msgstr ""
 
 #. type: Bullet: '    2. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid "[Use Case: Nucleic Acids](src/Tutorial/DPair.md#use-case-nucleic-acids)\n"
 msgstr ""
 
 #. type: Bullet: '    3. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid ""
 "[Use Case: CSV Files with a "
@@ -442,49 +444,49 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '12. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid "[Propositional Equality](src/Tutorial/Eq.md)\n"
 msgstr ""
 
 #. type: Bullet: '    1. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid "[Equality as a Type](src/Tutorial/Eq.md#equality-as-a-type)\n"
 msgstr ""
 
 #. type: Bullet: '    2. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid "[Programs as Proofs](src/Tutorial/Eq.md#programs-as-proofs)\n"
 msgstr ""
 
 #. type: Bullet: '    3. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid "[Into the Void](src/Tutorial/Eq.md#into-the-void)\n"
 msgstr ""
 
 #. type: Bullet: '    4. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid "[Rewrite Rules](src/Tutorial/Eq.md#rewrite-rules)\n"
 msgstr ""
 
 #. type: Bullet: '13. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid "[Predicates and Proof Search](src/Tutorial/Predicates.md)\n"
 msgstr ""
 
 #. type: Bullet: '    1. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid "[Preconditions](src/Tutorial/Predicates.md#preconditions)\n"
 msgstr ""
 
 #. type: Bullet: '    2. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid ""
 "[Contracts between "
@@ -492,7 +494,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '    3. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid ""
 "[Use Case: Flexible Error "
@@ -500,7 +502,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '    4. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid ""
 "[The Truth about "
@@ -508,13 +510,13 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '14. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid "[Primitives](src/Tutorial/Prim.md)\n"
 msgstr ""
 
 #. type: Bullet: '    1. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid ""
 "[How Primitives are "
@@ -522,31 +524,31 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '    2. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid "[Working with Strings](src/Tutorial/Prim.md#working-with-strings)\n"
 msgstr ""
 
 #. type: Bullet: '    3. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid "[Integers](src/Tutorial/Prim.md#integers)\n"
 msgstr ""
 
 #. type: Bullet: '    4. '
-#: ../README.md:105
+#: ../README.md:106
 #, markdown-text, no-wrap
 msgid "[Refined Primitives](src/Tutorial/Prim.md#refined-primitives)\n"
 msgstr ""
 
 #. type: Title ###
-#: ../README.md:106
+#: ../README.md:107
 #, markdown-text, no-wrap
 msgid "Part 2: Appendices"
 msgstr ""
 
 #. type: Plain text
-#: ../README.md:112
+#: ../README.md:113
 #, markdown-text, no-wrap
 msgid ""
 "The appendices can be used as references for the topics at\n"
@@ -556,31 +558,31 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '1. '
-#: ../README.md:116
+#: ../README.md:117
 #, markdown-text, no-wrap
 msgid "[Getting Started with pack and Idris2](src/Appendices/Install.md)\n"
 msgstr ""
 
 #. type: Bullet: '2. '
-#: ../README.md:116
+#: ../README.md:117
 #, markdown-text, no-wrap
 msgid "[Interactive Editing in Neovim](src/Appendices/Neovim.md)\n"
 msgstr ""
 
 #. type: Bullet: '3. '
-#: ../README.md:116
+#: ../README.md:117
 #, markdown-text, no-wrap
 msgid "[Structuring Idris Projects](src/Appendices/Projects.md)\n"
 msgstr ""
 
 #. type: Title ##
-#: ../README.md:117
+#: ../README.md:118
 #, markdown-text, no-wrap
 msgid "Prerequisites"
 msgstr ""
 
 #. type: Plain text
-#: ../README.md:123
+#: ../README.md:124
 #, markdown-text, no-wrap
 msgid ""
 "At the moment, this project is being actively developed and\n"
@@ -591,7 +593,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../README.md:125
+#: ../README.md:126
 #, markdown-text, no-wrap
 msgid ""
 "In order to follow along with this tutorial, it is strongly suggested to "
@@ -693,7 +695,7 @@ msgstr ""
 #: ../src/Tutorial/DataTypes.md:52
 #, markdown-text, no-wrap
 msgid ""
-"It is important to note, that a value of type `Weekday` can only\n"
+"It is important to note that a value of type `Weekday` can only\n"
 "ever be one of the values listed above. It is a *type error* to\n"
 "use anything else where a `Weekday` is expected.\n"
 msgstr ""
@@ -710,7 +712,7 @@ msgstr ""
 msgid ""
 "In order to use our new data type as a function argument, we\n"
 "need to learn about an important concept in functional programming\n"
-"languages: Pattern matching. Let's implement a function, which calculates\n"
+"languages: Pattern matching. Let's implement a function which calculates\n"
 "the successor of a weekday:\n"
 msgstr ""
 
@@ -765,7 +767,7 @@ msgid ""
 "possible values of type `Weekday`, and can therefore figure\n"
 "out that our pattern match covers all possible cases. We can\n"
 "therefore annotate the function with the `total` keyword, and\n"
-"Idris will answer with a type error, if it can't verify the\n"
+"Idris will answer with a type error if it can't verify the\n"
 "function's totality. (Go ahead, and try removing one of\n"
 "the clauses in `next` to get an idea about how an error\n"
 "message from the coverage checker looks like.)\n"
@@ -775,7 +777,7 @@ msgstr ""
 #: ../src/Tutorial/DataTypes.md:105
 #, markdown-text, no-wrap
 msgid ""
-"Please remember, that these are very strong guarantees from\n"
+"Please remember that these are very strong guarantees from\n"
 "the type checker: Given enough resources,\n"
 "a provably total function will *always* return\n"
 "a result of the given type in a finite amount of time\n"
@@ -813,10 +815,10 @@ msgstr ""
 #: ../src/Tutorial/DataTypes.md:125
 #, markdown-text, no-wrap
 msgid ""
-"The final line with the catch-all pattern is only invoked,\n"
+"The final line with the catch-all pattern is only invoked\n"
 "if the argument is not equal to `Saturday` or `Sunday`.\n"
 "Remember: Patterns in a pattern match are matched against\n"
-"the input from top to bottom and the first match decides,\n"
+"the input from top to bottom, and the first match decides\n"
 "which path on the right hand side will be taken.\n"
 msgstr ""
 
@@ -857,8 +859,8 @@ msgstr ""
 msgid ""
 "Data types like `Weekday` consisting of a finite set\n"
 "of values are sometimes called *enumerations*. The Idris\n"
-"*Prelude* defines some common enumerations for us, for\n"
-"instance `Bool` and `Ordering`. As with `Weekday`,\n"
+"*Prelude* defines some common enumerations for us: for\n"
+"instance, `Bool` and `Ordering`. As with `Weekday`,\n"
 "we can use pattern matching when implementing functions\n"
 "on these types:\n"
 msgstr ""
@@ -951,7 +953,7 @@ msgstr ""
 #: ../src/Tutorial/DataTypes.md:206
 #, markdown-text, no-wrap
 msgid ""
-"Note, that indentation matters here: The case block as a whole\n"
+"Note that indentation matters here: The case block as a whole\n"
 "must be indented (if it starts on a new line), and the different\n"
 "cases must also be indented by the same amount of whitespace.\n"
 msgstr ""
@@ -991,8 +993,8 @@ msgstr ""
 #: ../src/Tutorial/DataTypes.md:225
 #, markdown-text, no-wrap
 msgid ""
-"Note, that the `if then else` expression always returns a value\n"
-"and therefore, the `else` branch cannot be dropped. This is different\n"
+"Note that the `if then else` expression always returns a value\n"
+"and, therefore, the `else` branch cannot be dropped. This is different\n"
 "from the behavior in typical imperative languages, where `if` is\n"
 "a statement with possible side effects.\n"
 msgstr ""
@@ -3003,15 +3005,16 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Tutorial/DataTypes.md:1368 ../src/Tutorial/Dependent.md:910
-#: ../src/Tutorial/DPair.md:1206 ../src/Tutorial/Eq.md:1098
+#: ../src/Tutorial/DPair.md:1206 ../src/Tutorial/Eq.md:1100
 #: ../src/Tutorial/Folds.md:1064 ../src/Tutorial/Functions1.md:583
 #: ../src/Tutorial/Functions2.md:964 ../src/Tutorial/Functor.md:1427
-#: ../src/Tutorial/Interfaces.md:821 ../src/Tutorial/IO.md:1125
-#: ../src/Tutorial/Predicates.md:1369 ../src/Tutorial/Prim.md:1411
-#: ../src/Tutorial/Traverse.md:1148 ../src/Appendices/Neovim.md:374
+#: ../src/Tutorial/Interfaces.md:821 ../src/Tutorial/Intro.md:453
+#: ../src/Tutorial/IO.md:1125 ../src/Tutorial/Predicates.md:1371
+#: ../src/Tutorial/Prim.md:1411 ../src/Tutorial/Traverse.md:1148
+#: ../src/Appendices/Neovim.md:374
 #, markdown-text, no-wrap
 msgid ""
-"<!-- vi: filetype=idris2\n"
+"<!-- vi: filetype=idris2:syntax=markdown\n"
 "-->\n"
 msgstr ""
 
@@ -6179,7 +6182,7 @@ msgstr ""
 #: ../src/Tutorial/DPair.md:910
 #, markdown-text, no-wrap
 msgid ""
-"That's a lot of stuff to keep track off, so let's encode this in\n"
+"That's a lot of stuff to keep track of, so let's encode this in\n"
 "a sum type:\n"
 msgstr ""
 
@@ -6697,7 +6700,7 @@ msgstr ""
 #: ../src/Tutorial/Eq.md:55
 #, markdown-text, no-wrap
 msgid ""
-"We will not be able to implement `concatTables` by appending the\n"
+"We will not be able to implement `concatTables1` by appending the\n"
 "two row vectors, unless we can somehow verify that the two schemata\n"
 "are identical. \"Well,\" I hear you say, \"that shouldn't be a big issue!\n"
 "Just implement `Eq` for `ColType`\". Let's give this a try:\n"
@@ -8539,6 +8542,12 @@ msgid ""
 "thus reducing the need to return a `Maybe` or other failure type,\n"
 "because due to the restricted input, our functions can no longer\n"
 "fail.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Eq.md:1098
+#, markdown-text, no-wrap
+msgid "[Next chapter](./Predicates.md)\n"
 msgstr ""
 
 #. type: Title #
@@ -10406,7 +10415,8 @@ msgstr ""
 #: ../src/Tutorial/Folds.md:1062
 #, markdown-text, no-wrap
 msgid ""
-"In the next chapter, we are taking the concept of iterating\n"
+"In the [next chapter](./Traverse.md), we are taking the concept of "
+"iterating\n"
 "over container types one step further and look at\n"
 "effectful data traversals.\n"
 msgstr ""
@@ -11494,7 +11504,7 @@ msgid ""
 "So far, we learned about the core features of the Idris\n"
 "language, which it has in common with several other\n"
 "pure, strongly typed programming languages like Haskell:\n"
-"(Higher order) Functions, algebraic data types, pattern matching,\n"
+"(Higher-order) Functions, algebraic data types, pattern matching,\n"
 "parametric polymorphism (generic types and functions), and\n"
 "ad hoc polymorphism (interfaces and constrained functions).\n"
 msgstr ""
@@ -15547,7 +15557,7 @@ msgstr ""
 msgid ""
 "The usefulness of applicative functors as a middle ground between\n"
 "functor and monad was discovered several years after monads had\n"
-"already been in use in Haskell. They where introduced in the\n"
+"already been in use in Haskell. They were introduced in the\n"
 "article [*Applicative Programming with "
 "Effects*](https://www.staff.city.ac.uk/~ross/papers/Applicative.html),\n"
 "which is freely available online and a highly recommended read.\n"
@@ -18057,7 +18067,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Intro.md:450
+#: ../src/Tutorial/Intro.md:451
 #, markdown-text, no-wrap
 msgid ""
 "In the [next chapter](Functions1.md), we start programming\n"
@@ -19151,7 +19161,7 @@ msgid ""
 "to define another function called `eval`, we need to add\n"
 "it to its own namespace (note, that all definitions in a\n"
 "namespace must be indented by the same amount of\n"
-"white space):\n"
+"whitespace):\n"
 msgstr ""
 
 #. type: Fenced code block (idris)
@@ -19217,7 +19227,7 @@ msgid ""
 "combination of effectful computations. In this case, we\n"
 "can prefix the effectful parts with an exclamation mark\n"
 "(wrapping them in parentheses if they contain additional\n"
-"white space), while leaving pure expressions unmodified:\n"
+"whitespace), while leaving pure expressions unmodified:\n"
 msgstr ""
 
 #. type: Fenced code block (idris)
@@ -20630,7 +20640,7 @@ msgid ""
 "handled by the `Here` constructor, where the same variable (`x`) is used\n"
 "for the element and the head of the list. The case where the value\n"
 "is deeper within  the list is handled by the `There`\n"
-"constructor. This can be read as follows: If `x` is and element\n"
+"constructor. This can be read as follows: If `x` is an element\n"
 "of `xs`, then `x` is also an element of `y :: xs` for any\n"
 "value `y`. Let's write down some examples to get a feel\n"
 "for these:\n"
@@ -22095,6 +22105,12 @@ msgid ""
 "arguments.\n"
 msgstr ""
 
+#. type: Plain text
+#: ../src/Tutorial/Predicates.md:1369
+#, markdown-text, no-wrap
+msgid "[Next chapter](./Prim.md)\n"
+msgstr ""
+
 #. type: Title #
 #: ../src/Tutorial/Prim.md:1
 #, markdown-text, no-wrap
@@ -22106,7 +22122,7 @@ msgstr ""
 #, markdown-text, no-wrap
 msgid ""
 "In the topics we covered so far, we hardly ever talked about primitive\n"
-"types in Idris. They where around and we used them in some computations,\n"
+"types in Idris. They were around and we used them in some computations,\n"
 "but I never really explained how they work and where they come from,\n"
 "nor did I show in detail what we can and can't do with them.\n"
 msgstr ""
@@ -22434,7 +22450,7 @@ msgid ""
 "Note, that these functions do not return a `Bool` (which\n"
 "is *not* a primitive type in Idris), but an `Int`. They are\n"
 "therefore not as safe or convenient to use as the corresponding\n"
-"operator implementations form interfaces `Eq` and `Comp`.\n"
+"operator implementations from interfaces `Eq` and `Comp`.\n"
 "On the other hand, they do not go via a conversion to `Bool`\n"
 "and might therefore perform slightly better in performance\n"
 "critical code (which you can only identify after some\n"
@@ -23702,7 +23718,7 @@ msgstr ""
 #: ../src/Tutorial/Prim.md:808
 #, markdown-text, no-wrap
 msgid ""
-"With this, we can us (valid) string literals for coming up with\n"
+"With this, we can use (valid) string literals for coming up with\n"
 "values of type `Ascii` directly:\n"
 msgstr ""
 
@@ -24324,7 +24340,7 @@ msgstr ""
 #: ../src/Tutorial/Prim.md:1193
 #, markdown-text, no-wrap
 msgid ""
-"   Note: You should by know figure out yourself that `n` must be\n"
+"   Note: You should by now figure out yourself that `n` must be\n"
 "   available at runtime and how to make sure that this is the case.\n"
 msgstr ""
 
@@ -26758,7 +26774,7 @@ msgid ""
 "and - last but definitely not least - `Traversable`.\n"
 "There's one still missing - `Alternative` - but this will\n"
 "have to wait a bit longer, because we need to first make\n"
-"our brains smoke with some more type-level wizardry.\n"
+"our brains smoke with some more [type-level wizardry](./DPair.md).\n"
 msgstr ""
 
 #. type: Title #

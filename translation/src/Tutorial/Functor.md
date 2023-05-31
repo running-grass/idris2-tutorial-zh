@@ -1067,7 +1067,11 @@ Left (FieldError 1 2 "jon@doe.ch")
 
 *functor* 和 *monad* 等概念起源于数学分支 *范畴论*。这也是他们的定律的来源。范畴理论被发现在程序设计语言理论，特别是函数式程序设计中有应用。这是一个高度抽象的主题，但有一个非常容易理解的程序员介绍，由 [Bartosz Milewski](https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/) 编写。
 
-应用函子作为函子和单子之间的中间地带的有用性是在单子已经在 Haskell 中使用几年之后才发现的。它们在文章 [*Applicative Programming with Effects*](https://www.staff.city.ac.uk/~ross/papers/Applicative.html) 中进行了介绍，该文章可在线免费获得，并且强烈推荐阅读。
+The usefulness of applicative functors as a middle ground between
+functor and monad was discovered several years after monads had
+already been in use in Haskell. They were introduced in the
+article [*Applicative Programming with Effects*](https://www.staff.city.ac.uk/~ross/papers/Applicative.html),
+which is freely available online and a highly recommended read.
 
 ## 结论
 
@@ -1093,5 +1097,5 @@ Left (FieldError 1 2 "jon@doe.ch")
 
 在[下一章](Folds.md) 中，我们将了解更多关于递归、完全性检查和折叠容器类型的接口：`Foldable`。
 
-<!-- vi: filetype=idris2
+<!-- vi: filetype=idris2:syntax=markdown
 -->

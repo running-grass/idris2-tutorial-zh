@@ -593,5 +593,5 @@ replicate'' {n = S _} v = v :: replicate'' v
 
 在 [next section](IO.md) 中，是时候学习如何编写有效的程序以及如何在保持 * 纯 * 的同时做到这一点。
 
-<!-- vi: filetype=idris2
+<!-- vi: filetype=idris2:syntax=markdown
 -->

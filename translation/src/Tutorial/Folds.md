@@ -701,7 +701,9 @@ concatList = foldMapList id
 
 我们在本章中学到了很多关于递归、完全性检查和折叠的知识，所有这些都是纯函数式编程中的重要概念。围绕递归进行思考需要时间和经验。因此 - 像往常一样 - 尝试尽可能多地解决练习。
 
-在下一章中，我们将迭代容器类型的概念更进一步，并研究有效的数据遍历。
+In the [next chapter](./Traverse.md), we are taking the concept of iterating
+over container types one step further and look at
+effectful data traversals.
 
-<!-- vi: filetype=idris2
+<!-- vi: filetype=idris2:syntax=markdown
 -->

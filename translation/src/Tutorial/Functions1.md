@@ -395,5 +395,5 @@ Tutorial.Functions1.not : (Integer -> Bool) -> (Integer -> Bool) -> Integer -> B
 
 在 [下一节](DataTypes.md) 中，我们将学习如何定义我们自己的数据类型以及如何构造和解构这些新类型的值。我们还将学习泛型类型和函数。
 
-<!-- vi: filetype=idris2
+<!-- vi: filetype=idris2:syntax=markdown
 -->

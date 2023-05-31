@@ -593,5 +593,5 @@ hock2 = MkUser "hock" "not telling"
 
 在 [下一章](Functions2.md) 中，我们将仔细研究函数及其类型。我们将学习命名参数、隐式参数和擦除参数以及一些用于实现更复杂函数的构造函数。
 
-<!-- vi: filetype=idris2
+<!-- vi: filetype=idris2:syntax=markdown
 -->

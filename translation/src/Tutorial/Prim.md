@@ -1,6 +1,9 @@
 # 原语
 
-到目前为止，在我们讨论的主题中，我们几乎从未讨论过 Idris 中的原始类型。它们在哪里，我们在一些计算中使用它们，但我从来没有真正解释过它们是如何工作的以及它们来自哪里，我也没有详细说明我们可以用它们做什么和不能做什么。
+In the topics we covered so far, we hardly ever talked about primitive
+types in Idris. They were around and we used them in some computations,
+but I never really explained how they work and where they come from,
+nor did I show in detail what we can and can't do with them.
 
 ```idris
 module Tutorial.Prim
@@ -101,7 +104,23 @@ Tutorial.Prim> prim__add_Bits8 12 100
 112
 ```
 
-如果查看 `Bits8` 的实现接口 `Num` 的源代码，您会看到加号运算符只是在内部调用 `prim__add_Bits8`。原语接口实现中的大多数其他函数也是如此。例如，除了 `%World` 之外的每个原语类型都带有原语比较函数。对于 `Bits8`，它们是：`prim__eq_Bits8`、`prim__gt_Bits8`、`prim__lt_Bits8`、`prim__gte_Bits8` 和 `prim__lte_Bits8`。请注意，这些函数不返回 `Bool`（在 Idris 中 *不是* 原语类型），而是 `Int`。因此，它们不像接口 `Eq` 和 `Comp` 中的相应运算符实现那样安全或方便。另一方面，它们不会通过转换为 `Bool` 并且因此在性能关键代码中的性能可能会稍好一些（您只能在经过一些认真的分析后才能识别）。
+If you look at the source code implementing interface `Num`
+for `Bits8`, you will see that the plus operator just invokes
+`prim__add_Bits8` internally. The same goes for most of the other
+functions in primitive interface implementations.
+For instance, every primitive type with the exception of
+`%World` comes with primitive comparison functions.
+For `Bits8`, these are:
+`prim__eq_Bits8`, `prim__gt_Bits8`, `prim__lt_Bits8`,
+`prim__gte_Bits8`, and `prim__lte_Bits8`.
+Note, that these functions do not return a `Bool` (which
+is *not* a primitive type in Idris), but an `Int`. They are
+therefore not as safe or convenient to use as the corresponding
+operator implementations from interfaces `Eq` and `Comp`.
+On the other hand, they do not go via a conversion to `Bool`
+and might therefore perform slightly better in performance
+critical code (which you can only identify after some
+serious profiling).
 
 与原语类型一样，原语函数在编译器源代码中被列为数据类型 (`Core.TT.PrimFn`) 中的构造函数。我们将在以下部分中介绍其中的大部分内容。
 
@@ -593,7 +612,8 @@ fromString : (s : String) -> {auto 0 prf : isAsciiString s === True} -> Ascii
 fromString s = MkAscii s prf
 ```
 
-有了这个，我们可以使用（有效的）字符串文字直接得出 `Ascii` 类型的值：
+With this, we can use (valid) string literals for coming up with
+values of type `Ascii` directly:
 
 ```idris
 hello2 : Ascii
@@ -886,8 +906,8 @@ Between l u = GreaterThan l && LessThan u
    同样，实现 `Decidable Nat (m <=)`，因为我们需要
    两种谓词。
 
-   注意：您应该自己知道 `n` 必须是
-   在运行时可用以及如何确保是这种情况。
+   Note: You should by now figure out yourself that `n` must be
+   available at runtime and how to make sure that this is the case.
 
 7. 通过声明和实现相应的命题证明 `(<=)` 是自反和传递的。由于我们可能需要传递性证明来链接多个类型为 `(<=)` 的值，因此也可以为此定义一个简短的运算符别名。
 
@@ -1075,5 +1095,5 @@ Between l u = GreaterThan l && LessThan u
 
 最后的评论：在决定使用什么公理以及试图使事情在运行时和编译时表现良好时，证明关于原语的东西可能具有挑战性。我正在尝试一个处理这些问题的库。它尚未完成，但您可以在 [这里](https://github.com/stefan-hoeck/idris2-prim) 看看它。
 
-<!-- vi: filetype=idris2
+<!-- vi: filetype=idris2:syntax=markdown
 -->

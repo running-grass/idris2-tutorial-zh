@@ -393,7 +393,14 @@ Tutorial.IO> :t Tutorial.IO.(>>=)
 Tutorial.IO.>>= : Vect m a -> (a -> Vect n b) -> Vect (m * n) b
 ```
 
-由于函数名称在它们的命名空间中必须是唯一的，而且我们仍然可能希望在 Idris 模块中定义函数的两个重载版本，因此 Idris 可以为模块添加额外的命名空间。例如，为了定义另一个名为 `eval` 的函数，我们需要将它添加到它自己的命名空间中（注意，命名空间中的所有定义必须缩进相同数量的空格）：
+Since function names must be unique in their namespace and
+we still may want to define two overloaded versions of a function
+in an Idris module, Idris makes it possible to add
+additional namespaces to modules. For instance, in order
+to define another function called `eval`, we need to add
+it to its own namespace (note, that all definitions in a
+namespace must be indented by the same amount of
+whitespace):
 
 ```idris
 namespace Foo
@@ -414,7 +421,11 @@ testFooEval = Foo.eval 12 100
 
 ### 绑定，砰的一声
 
-有时，即使是 *do 块* 也过于嘈杂，无法表达有效计算的组合。在这种情况下，我们可以在副作用部分前面加上一个感叹号（如果它们包含额外的空格，则将它们括在括号中），同时保持纯表达式不变：
+Sometimes, even *do blocks* are too noisy to express a
+combination of effectful computations. In this case, we
+can prefix the effectful parts with an exclamation mark
+(wrapping them in parentheses if they contain additional
+whitespace), while leaving pure expressions unmodified:
 
 ```idris
 getHello : IO ()
@@ -724,5 +735,5 @@ data PrimIO.IORes : Type -> Type
 
 现在，我们已经了解了 *monads* 和 *bind* 运算符，是时候在 [下一章](Functor.md) 中介绍 `Monad` 和一些和现实世界相关的接口。
 
-<!-- vi: filetype=idris2
+<!-- vi: filetype=idris2:syntax=markdown
 -->

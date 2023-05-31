@@ -626,7 +626,8 @@ applyCommand (MkTable ts n rs) (Delete x)  = case n of
 * 输入了不代表自然数的值作为索引。我们打印相应的错误消息。
 
 
-有很多东西需要跟踪，所以让我们将其编码为和类型：
+That's a lot of stuff to keep track of, so let's encode this in
+a sum type:
 
 ```idris
 data Error : Type where
@@ -868,5 +869,5 @@ main = runProg $ MkTable [] _ []
 
 在[下一章](Eq.md)中，我们开始学习如何编写数据类型，我们将其用作值之间某些契约成立的证据。这些最终将允许我们为函数参数和输出类型定义前置和后置条件。
 
-<!-- vi: filetype=idris2
+<!-- vi: filetype=idris2:syntax=markdown
 -->

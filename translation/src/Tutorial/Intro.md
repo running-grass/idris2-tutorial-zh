@@ -306,3 +306,6 @@ Tutorial.Intro> maxBits8 * maxBits8
 ### 下一步是什么？
 
 在[下一章](Functions1.md)中，我们开始在 Idris 中进行真正的编程。我们学习如何编写我们自己的纯函数，函数如何组合，以及我们如何像对待其他值一样对待函数并将它们作为参数传递给其他函数。
+
+<!-- vi: filetype=idris2:syntax=markdown
+-->

@@ -1,6 +1,11 @@
 # 函数第 2 部分
 
-到目前为止，我们了解了 Idris 语言的核心特性，它与其他几种纯的强类型编程语言（如 Haskell）有共同之处：（高阶）函数、代数数据类型、模式匹配、参数多态性（泛型类型和函数）和临时多态性（接口和约束函数）。
+So far, we learned about the core features of the Idris
+language, which it has in common with several other
+pure, strongly typed programming languages like Haskell:
+(Higher-order) Functions, algebraic data types, pattern matching,
+parametric polymorphism (generic types and functions), and
+ad hoc polymorphism (interfaces and constrained functions).
 
 在本章中，我们开始真正剖析 Idris 函数及其类型。我们了解隐式参数、命名参数以及擦除和定量。但首先，我们将看看 `let` 绑定和 `where` 块，它们可以帮助我们实现过于复杂而无法在一行代码中放置的函数。让我们开始吧！
 
@@ -640,5 +645,5 @@ Left ["Unknown nucleobase: 'F'", "Unknown nucleobase: 'Q'"]
 
 在 [下一章](Dependent.md) 中，我们将开始使用依赖类型来帮助我们编写可证明正确的代码。很好地理解如何阅读 Idris 的类型签名将是至关重要的。每当您感到迷茫时，添加一个或多个孔并检查其上下文以决定下一步该做什么。
 
-<!-- vi: filetype=idris2
+<!-- vi: filetype=idris2:syntax=markdown
 -->

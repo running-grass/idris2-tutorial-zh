@@ -41,7 +41,10 @@ record Table where
 concatTables1 : Table -> Table -> Maybe Table
 ```
 
-我们将无法通过附加两个行向量来实现 `concatTables`，除非我们能够以某种方式验证两个模式是否相同。 “好吧，”我听到你说，“这应该不是什么大问题！只需为 `ColType` 实现 `Eq`”。让我们试一试：
+We will not be able to implement `concatTables1` by appending the
+two row vectors, unless we can somehow verify that the two schemata
+are identical. "Well," I hear you say, "that shouldn't be a big issue!
+Just implement `Eq` for `ColType`". Let's give this a try:
 
 ```idris
 Eq ColType where
@@ -773,5 +776,7 @@ revOnto {n = S len} xs (x :: ys) =
 
 *类型作为命题，值作为证明* 的概念是编写可证明正确的程序的非常强大的工具。因此，我们将花更多时间定义数据类型来描述值之间的协议，并将这些类型的值作为合约持有的证据。这将允许我们为我们的函数描述必要的前置条件和后置条件，从而减少返回 `Maybe` 或其他故障类型的需要，因为由于输入受限，我们的函数不能再失败。
 
-<!-- vi: filetype=idris2
+[Next chapter](./Predicates.md)
+
+<!-- vi: filetype=idris2:syntax=markdown
 -->

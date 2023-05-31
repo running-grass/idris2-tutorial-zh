@@ -973,13 +973,13 @@ Invalid (Append (FieldError 1 1 "o")
 * Traversables 在组合下也是封闭的，所以我们可以使用 `traverse` 对容器的嵌套进行操作。
 
 
-至此，我们对 *Prelude* 的介绍到此结束
-更高级的接口，从引入
-`Functor`、`Applicative` 和 `Monad`，在继续 `Foldable` 之前，
-和 - 最后但同样重要的是 - `Traversable`。
-仍然缺少一个 - `Alternative` - 但这会
-必须等待更长的时间，因为我们需要先使
-我们的大脑会冒出更多类型级别的魔法。
+For now, this concludes our introduction of the *Prelude*'s
+higher-kinded interfaces, which started with the introduction of
+`Functor`, `Applicative`, and `Monad`, before moving on to `Foldable`,
+and - last but definitely not least - `Traversable`.
+There's one still missing - `Alternative` - but this will
+have to wait a bit longer, because we need to first make
+our brains smoke with some more [type-level wizardry](./DPair.md).
 
-<!-- vi: filetype=idris2
+<!-- vi: filetype=idris2:syntax=markdown
 -->
