@@ -475,7 +475,7 @@ notSameLength f prf = f (cong length prf)
 
 ```idris
 contraCong : {0 f : _} -> Not (f a = f b) -> Not (a = b)
-contraCong fun = fun . cong f
+contraCong fun x = fun $ cong f x
 ```
 
 ### `Uninhabited` 接口

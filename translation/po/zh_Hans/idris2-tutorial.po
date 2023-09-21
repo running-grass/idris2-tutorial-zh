@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: idris 2-tutorial\n"
-"POT-Creation-Date: 2023-05-31 01:26+0000\n"
+"POT-Creation-Date: 2023-09-21 01:08+0000\n"
 "PO-Revision-Date: 2023-01-06 09:54+0000\n"
 "Last-Translator: grass <467195537@qq.com>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.grass.work:30443/"
@@ -9024,10 +9024,13 @@ msgstr "实际上，这只是 `cong` 对偶的一个特殊版本：如果从 `a 
 
 #. type: Fenced code block (idris)
 #: ../src/Tutorial/Eq.md:652
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "contraCong : {0 f : _} -> Not (f a = f b) -> Not (a = b)\n"
+#| "contraCong fun = fun . cong f\n"
 msgid ""
 "contraCong : {0 f : _} -> Not (f a = f b) -> Not (a = b)\n"
-"contraCong fun = fun . cong f\n"
+"contraCong fun x = fun $ cong f x\n"
 msgstr ""
 "contraCong : {0 f : _} -> Not (f a = f b) -> Not (a = b)\n"
 "contraCong fun = fun . cong f\n"
@@ -27815,10 +27818,24 @@ msgstr "我们还希望在编译时运行可判定的计算。这通常比在归
 
 #. type: Fenced code block (idris)
 #: ../src/Tutorial/Prim.md:1026
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "data IsYes0 : (d : Dec0 prop) -> Type where\n"
+#| "  ItIsYes0 : IsYes0 (Yes0 prf)\n"
+#| "\n"
+#| "0 fromYes0 : (d : Dec0 prop) -> (0 prf : IsYes0 d) => prop\n"
+#| "fromYes0 (Yes0 x) = x\n"
+#| "fromYes0 (No0 contra) impossible\n"
+#| "\n"
+#| "0 safeDecideOn :  (0 p : a -> Type)\n"
+#| "               -> Decidable a p\n"
+#| "               => (v : a)\n"
+#| "               -> (0 prf : IsYes0 (decideOn p v))\n"
+#| "               => p v\n"
+#| "safeDecideOn p v = fromYes0 $ decideOn p v\n"
 msgid ""
 "data IsYes0 : (d : Dec0 prop) -> Type where\n"
-"  ItIsYes0 : IsYes0 (Yes0 prf)\n"
+"  ItIsYes0 : {0 prf : _} -> IsYes0 (Yes0 prf)\n"
 "\n"
 "0 fromYes0 : (d : Dec0 prop) -> (0 prf : IsYes0 d) => prop\n"
 "fromYes0 (Yes0 x) = x\n"

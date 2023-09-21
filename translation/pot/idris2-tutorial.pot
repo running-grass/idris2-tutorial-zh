@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-05-31 01:31+0000\n"
+"POT-Creation-Date: 2023-09-21 01:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -7772,7 +7772,7 @@ msgstr ""
 #, no-wrap
 msgid ""
 "contraCong : {0 f : _} -> Not (f a = f b) -> Not (a = b)\n"
-"contraCong fun = fun . cong f\n"
+"contraCong fun x = fun $ cong f x\n"
 msgstr ""
 
 #. type: Title ###
@@ -24066,7 +24066,7 @@ msgstr ""
 #, no-wrap
 msgid ""
 "data IsYes0 : (d : Dec0 prop) -> Type where\n"
-"  ItIsYes0 : IsYes0 (Yes0 prf)\n"
+"  ItIsYes0 : {0 prf : _} -> IsYes0 (Yes0 prf)\n"
 "\n"
 "0 fromYes0 : (d : Dec0 prop) -> (0 prf : IsYes0 d) => prop\n"
 "fromYes0 (Yes0 x) = x\n"
