@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-09-21 01:08+0000\n"
+"POT-Creation-Date: 2025-05-14 15:49+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -145,7 +145,7 @@ msgstr ""
 #: ../README.md:106
 #, markdown-text, no-wrap
 msgid ""
-"[Functions with more that one "
+"[Functions with more than one "
 "Argument](src/Tutorial/Functions1.md#functions-with-more-that-one-argument)\n"
 msgstr ""
 
@@ -558,31 +558,37 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '1. '
-#: ../README.md:117
+#: ../README.md:118
 #, markdown-text, no-wrap
 msgid "[Getting Started with pack and Idris2](src/Appendices/Install.md)\n"
 msgstr ""
 
 #. type: Bullet: '2. '
-#: ../README.md:117
+#: ../README.md:118
 #, markdown-text, no-wrap
 msgid "[Interactive Editing in Neovim](src/Appendices/Neovim.md)\n"
 msgstr ""
 
 #. type: Bullet: '3. '
-#: ../README.md:117
+#: ../README.md:118
 #, markdown-text, no-wrap
 msgid "[Structuring Idris Projects](src/Appendices/Projects.md)\n"
 msgstr ""
 
-#. type: Title ##
+#. type: Bullet: '4. '
 #: ../README.md:118
+#, markdown-text, no-wrap
+msgid "[A Deep Dive into Quantitative Type Theory](src/Appendices/QTT.md)\n"
+msgstr ""
+
+#. type: Title ##
+#: ../README.md:119
 #, markdown-text, no-wrap
 msgid "Prerequisites"
 msgstr ""
 
 #. type: Plain text
-#: ../README.md:124
+#: ../README.md:125
 #, markdown-text, no-wrap
 msgid ""
 "At the moment, this project is being actively developed and\n"
@@ -593,7 +599,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../README.md:126
+#: ../README.md:127
 #, markdown-text, no-wrap
 msgid ""
 "In order to follow along with this tutorial, it is strongly suggested to "
@@ -1368,9 +1374,9 @@ msgstr ""
 #. type: Title ###
 #: ../src/Tutorial/DataTypes.md:436 ../src/Tutorial/Dependent.md:623
 #: ../src/Tutorial/DPair.md:653 ../src/Tutorial/Eq.md:555
-#: ../src/Tutorial/Folds.md:668 ../src/Tutorial/Functor.md:962
+#: ../src/Tutorial/Folds.md:668 ../src/Tutorial/Functor.md:965
 #: ../src/Tutorial/Interfaces.md:352 ../src/Tutorial/IO.md:728
-#: ../src/Tutorial/Predicates.md:672 ../src/Tutorial/Prim.md:712
+#: ../src/Tutorial/Predicates.md:672 ../src/Tutorial/Prim.md:711
 #: ../src/Tutorial/Traverse.md:574
 #, markdown-text, no-wrap
 msgid "Exercises part 2"
@@ -1932,9 +1938,9 @@ msgstr ""
 #. type: Title ###
 #: ../src/Tutorial/DataTypes.md:742 ../src/Tutorial/Dependent.md:843
 #: ../src/Tutorial/DPair.md:1128 ../src/Tutorial/Eq.md:826
-#: ../src/Tutorial/Folds.md:988 ../src/Tutorial/Functor.md:1232
+#: ../src/Tutorial/Folds.md:988 ../src/Tutorial/Functor.md:1235
 #: ../src/Tutorial/Interfaces.md:624 ../src/Tutorial/IO.md:949
-#: ../src/Tutorial/Predicates.md:1020 ../src/Tutorial/Prim.md:936
+#: ../src/Tutorial/Predicates.md:1020 ../src/Tutorial/Prim.md:935
 #: ../src/Tutorial/Traverse.md:1016
 #, markdown-text, no-wrap
 msgid "Exercises part 3"
@@ -2888,7 +2894,7 @@ msgstr ""
 #: ../src/Tutorial/DataTypes.md:1319 ../src/Tutorial/Dependent.md:872
 #: ../src/Tutorial/DPair.md:1191 ../src/Tutorial/Eq.md:1085
 #: ../src/Tutorial/Folds.md:1051 ../src/Tutorial/Functions1.md:524
-#: ../src/Tutorial/Functions2.md:924 ../src/Tutorial/Functor.md:1395
+#: ../src/Tutorial/Functions2.md:924 ../src/Tutorial/Functor.md:1398
 #: ../src/Tutorial/Interfaces.md:792 ../src/Tutorial/IO.md:1095
 #: ../src/Tutorial/Predicates.md:1358 ../src/Tutorial/Traverse.md:1109
 #: ../src/Appendices/Neovim.md:364
@@ -3007,10 +3013,10 @@ msgstr ""
 #: ../src/Tutorial/DataTypes.md:1368 ../src/Tutorial/Dependent.md:910
 #: ../src/Tutorial/DPair.md:1206 ../src/Tutorial/Eq.md:1100
 #: ../src/Tutorial/Folds.md:1064 ../src/Tutorial/Functions1.md:583
-#: ../src/Tutorial/Functions2.md:964 ../src/Tutorial/Functor.md:1427
+#: ../src/Tutorial/Functions2.md:964 ../src/Tutorial/Functor.md:1430
 #: ../src/Tutorial/Interfaces.md:821 ../src/Tutorial/Intro.md:453
 #: ../src/Tutorial/IO.md:1125 ../src/Tutorial/Predicates.md:1371
-#: ../src/Tutorial/Prim.md:1411 ../src/Tutorial/Traverse.md:1148
+#: ../src/Tutorial/Prim.md:1410 ../src/Tutorial/Traverse.md:1148
 #: ../src/Appendices/Neovim.md:374
 #, markdown-text, no-wrap
 msgid ""
@@ -7475,7 +7481,7 @@ msgstr ""
 #: ../src/Tutorial/Eq.md:495
 #, no-wrap
 msgid ""
-"mapMaybeId1 : (ma : Maybe a) -> map Prelude.id ma = ma\n"
+"mapMaybeId1 : (ma : Maybe a) -> map id ma = ma\n"
 "mapMaybeId1 Nothing  = Refl\n"
 "mapMaybeId1 (Just x) = ?mapMaybeId1_rhs\n"
 msgstr ""
@@ -8188,7 +8194,7 @@ msgstr ""
 #, markdown-text, no-wrap
 msgid ""
 "However, the example below can't be implemented as easily\n"
-"(try id!), because Idris can't figure out on its own\n"
+"(try it!), because Idris can't figure out on its own\n"
 "that the two lengths unify.\n"
 msgstr ""
 
@@ -8804,7 +8810,7 @@ msgstr ""
 #: ../src/Tutorial/Folds.md:145
 #, no-wrap
 msgid ""
-"idris2 --cg node -o test.js --find-ipkg -src/Tutorial/Folds.md\n"
+"idris2 --cg node -o test.js --find-ipkg src/Tutorial/Folds.md\n"
 "node build/exec/test.js\n"
 msgstr ""
 
@@ -9578,8 +9584,7 @@ msgid ""
 "Second note: *Ex falso quodlibet*, also called\n"
 "[the principle of "
 "explosion](https://en.wikipedia.org/wiki/Principle_of_explosion)\n"
-"is a law in classical logic: From a contradiction, any statement can be "
-"proven.\n"
+"is a law in logic: From a contradiction, any statement can be proven.\n"
 "In our case, the contradiction was our proof of `Void`: The claim that we "
 "wrote\n"
 "a total function producing such a value, although `Void` is an uninhabited "
@@ -10166,7 +10171,7 @@ msgstr ""
 msgid ""
 "While this technique can sometimes lead to very elegant code, always\n"
 "remember that `rightFold` is not stack safe in the general case. So,\n"
-"unless your accumulator is not guaranteed to return a result after\n"
+"unless your accumulator is guaranteed to return a result after\n"
 "not too many iterations, consider implementing your function\n"
 "tail recursively with an explicit pattern match. Your code will be\n"
 "slightly more verbose, but with the guaranteed benefit of stack safety.\n"
@@ -10717,7 +10722,7 @@ msgstr ""
 #. type: Plain text
 #: ../src/Tutorial/Functions1.md:164 ../src/Tutorial/Functions1.md:227
 #: ../src/Tutorial/Interfaces.md:504 ../src/Tutorial/Predicates.md:461
-#: ../src/Tutorial/Prim.md:646
+#: ../src/Tutorial/Prim.md:645
 #, markdown-text, no-wrap
 msgid "And at the REPL:\n"
 msgstr ""
@@ -11967,7 +11972,7 @@ msgid ""
 "Second, we defined two *local* functions in a `where` block: `lookupUser`,\n"
 "and `lookupAlbum`. Both of these have access to all variables\n"
 "in the surrounding scope. For instance, `lookupUser` uses the\n"
-"`album` variable from the pattern match in the implementation's\n"
+"`email` variable from the pattern match in the implementation's\n"
 "first line. Likewise, `lookupAlbum` makes use of the `album`\n"
 "variable.\n"
 msgstr ""
@@ -11986,7 +11991,7 @@ msgstr ""
 #: ../src/Tutorial/Functions2.md:318
 #, markdown-text, no-wrap
 msgid ""
-"Local definitions can also be introduce *before* a function's\n"
+"Local definitions can also be introduced *before* a function's\n"
 "implementation by using the `let` keyword. This usage\n"
 "of `let` is not to be confused with *let bindings* described\n"
 "above, which are used to bind and reuse the results of intermediate\n"
@@ -12545,7 +12550,7 @@ msgid ""
 "We have already learned about one such occasion: Catch-all patterns.\n"
 "If a variable in a pattern match is not used on the right hand side,\n"
 "we can't just drop it, as this would make it impossible for\n"
-"Idris, which of several arguments we were planning to drop,\n"
+"Idris to know, which of several arguments we were planning to drop,\n"
 "but we can use an underscore as a placeholder instead:\n"
 msgstr ""
 
@@ -14321,6 +14326,9 @@ msgid ""
 "\n"
 "isPasswordChar : Char -> Bool\n"
 "isPasswordChar ' ' = True\n"
+"-- please note that isSpace holds as well for other characaters than ' '\n"
+"-- e.g. for non-breaking space: isSpace '\\160' = True\n"
+"-- but only ' ' shall be llowed in passwords\n"
 "isPasswordChar c   = not (isControl c) && not (isSpace c)\n"
 "\n"
 "isValidPassword : String -> Bool\n"
@@ -14333,7 +14341,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:745
+#: ../src/Tutorial/Functor.md:748
 #, markdown-text, no-wrap
 msgid ""
 "In a later chapter, we will learn about refinement types and\n"
@@ -14342,7 +14350,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:749
+#: ../src/Tutorial/Functor.md:752
 #, markdown-text, no-wrap
 msgid ""
 "We can now start to decode whole lines in a CSV file.\n"
@@ -14351,7 +14359,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (idris)
-#: ../src/Tutorial/Functor.md:750
+#: ../src/Tutorial/Functor.md:753
 #, no-wrap
 msgid ""
 "data CSVError : Type where\n"
@@ -14362,7 +14370,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:760
+#: ../src/Tutorial/Functor.md:763
 #, markdown-text, no-wrap
 msgid ""
 "We can now use `CSVField` to read a single field at a given\n"
@@ -14371,7 +14379,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (idris)
-#: ../src/Tutorial/Functor.md:761
+#: ../src/Tutorial/Functor.md:764
 #, no-wrap
 msgid ""
 "readField : CSVField a => (line, column : Nat) -> String -> Either CSVError "
@@ -14381,7 +14389,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:772
+#: ../src/Tutorial/Functor.md:775
 #, markdown-text, no-wrap
 msgid ""
 "If we know in advance the number of fields we need to read,\n"
@@ -14392,7 +14400,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (idris)
-#: ../src/Tutorial/Functor.md:773
+#: ../src/Tutorial/Functor.md:776
 #, no-wrap
 msgid ""
 "toVect : (n : Nat) -> (line, col : Nat) -> List a -> Either CSVError (Vect n "
@@ -14404,7 +14412,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:783
+#: ../src/Tutorial/Functor.md:786
 #, markdown-text, no-wrap
 msgid ""
 "Finally, we can implement function `readUser` to try and convert\n"
@@ -14412,7 +14420,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (idris)
-#: ../src/Tutorial/Functor.md:784
+#: ../src/Tutorial/Functor.md:787
 #, no-wrap
 msgid ""
 "readUser' : (line : Nat) -> List String -> Either CSVError User\n"
@@ -14430,13 +14438,13 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:800 ../src/Tutorial/Traverse.md:122
+#: ../src/Tutorial/Functor.md:803 ../src/Tutorial/Traverse.md:122
 #, markdown-text, no-wrap
 msgid "Let's give this a go at the REPL:\n"
 msgstr ""
 
 #. type: Fenced code block (repl)
-#: ../src/Tutorial/Functor.md:801
+#: ../src/Tutorial/Functor.md:804
 #, no-wrap
 msgid ""
 "Tutorial.Functor> readUser 1 \"Joe,Foo,46,j@f.ch,m,pw1234567\"\n"
@@ -14447,7 +14455,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:816
+#: ../src/Tutorial/Functor.md:819
 #, markdown-text, no-wrap
 msgid ""
 "Note, how in the implementation of `readUser'` we used\n"
@@ -14460,7 +14468,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:819
+#: ../src/Tutorial/Functor.md:822
 #, markdown-text, no-wrap
 msgid ""
 "However, the idiom bracket above looks still quite repetitive.\n"
@@ -14468,13 +14476,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ####
-#: ../src/Tutorial/Functor.md:820
+#: ../src/Tutorial/Functor.md:823
 #, markdown-text, no-wrap
 msgid "A Case for Heterogeneous Lists"
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:827
+#: ../src/Tutorial/Functor.md:830
 #, markdown-text, no-wrap
 msgid ""
 "It is time to learn about a family of types, which can\n"
@@ -14485,7 +14493,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (idris)
-#: ../src/Tutorial/Functor.md:828
+#: ../src/Tutorial/Functor.md:831
 #, no-wrap
 msgid ""
 "namespace HList\n"
@@ -14496,7 +14504,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:841
+#: ../src/Tutorial/Functor.md:844
 #, markdown-text, no-wrap
 msgid ""
 "A heterogeneous list is a list type indexed over a *list of types*.\n"
@@ -14507,7 +14515,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (idris)
-#: ../src/Tutorial/Functor.md:842
+#: ../src/Tutorial/Functor.md:845
 #, no-wrap
 msgid ""
 "hlist1 : HList [Bool, Nat, Maybe String]\n"
@@ -14515,7 +14523,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:854
+#: ../src/Tutorial/Functor.md:857
 #, markdown-text, no-wrap
 msgid ""
 "You could argue that heterogeneous lists are just tuples\n"
@@ -14528,7 +14536,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:859
+#: ../src/Tutorial/Functor.md:862
 #, markdown-text, no-wrap
 msgid ""
 "But first, we'll make use of `HList` as a means to\n"
@@ -14538,7 +14546,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (idris)
-#: ../src/Tutorial/Functor.md:860
+#: ../src/Tutorial/Functor.md:863
 #, no-wrap
 msgid ""
 "interface CSVLine a where\n"
@@ -14546,7 +14554,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:871
+#: ../src/Tutorial/Functor.md:874
 #, markdown-text, no-wrap
 msgid ""
 "We'll now write two implementations of `CSVLine` for `HList`:\n"
@@ -14558,7 +14566,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (idris)
-#: ../src/Tutorial/Functor.md:872
+#: ../src/Tutorial/Functor.md:875
 #, no-wrap
 msgid ""
 "CSVLine (HList []) where\n"
@@ -14571,7 +14579,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:887
+#: ../src/Tutorial/Functor.md:890
 #, markdown-text, no-wrap
 msgid ""
 "And that's it! All we need to add is two utility function\n"
@@ -14582,7 +14590,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (idris)
-#: ../src/Tutorial/Functor.md:888
+#: ../src/Tutorial/Functor.md:891
 #, no-wrap
 msgid ""
 "decode : CSVLine a => (line : Nat) -> String -> Either CSVError a\n"
@@ -14597,7 +14605,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:902
+#: ../src/Tutorial/Functor.md:905
 #, markdown-text, no-wrap
 msgid ""
 "It's time to reap the fruits of our labour and give this a go at\n"
@@ -14605,7 +14613,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (repl)
-#: ../src/Tutorial/Functor.md:903
+#: ../src/Tutorial/Functor.md:906
 #, no-wrap
 msgid ""
 "Tutorial.Functor> hdecode [Bool,Nat,Double] 1 \"f,100,12.123\"\n"
@@ -14615,13 +14623,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ###
-#: ../src/Tutorial/Functor.md:910
+#: ../src/Tutorial/Functor.md:913
 #, markdown-text, no-wrap
 msgid "Applicative Laws"
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:914
+#: ../src/Tutorial/Functor.md:917
 #, markdown-text, no-wrap
 msgid ""
 "Again, `Applicative` implementations must follow certain\n"
@@ -14629,7 +14637,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '* '
-#: ../src/Tutorial/Functor.md:917
+#: ../src/Tutorial/Functor.md:920
 #, markdown-text, no-wrap
 msgid ""
 "`pure id <*> fa = fa`: Lifting and applying the identity\n"
@@ -14637,7 +14645,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '* '
-#: ../src/Tutorial/Functor.md:922
+#: ../src/Tutorial/Functor.md:925
 #, markdown-text, no-wrap
 msgid ""
 "`[| f . g |] <*> v = f <*> (g <*> v)`:\n"
@@ -14647,7 +14655,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:925
+#: ../src/Tutorial/Functor.md:928
 #, markdown-text, no-wrap
 msgid ""
 "  The above might be hard to understand, so here\n"
@@ -14655,7 +14663,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (idris)
-#: ../src/Tutorial/Functor.md:926
+#: ../src/Tutorial/Functor.md:929
 #, no-wrap
 msgid ""
 "  compL : Maybe (b -> c) -> Maybe (a -> b) -> Maybe a -> Maybe c\n"
@@ -14666,7 +14674,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:936
+#: ../src/Tutorial/Functor.md:939
 #, markdown-text, no-wrap
 msgid ""
 "  The second applicative law states, that the two implementations\n"
@@ -14674,7 +14682,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '* '
-#: ../src/Tutorial/Functor.md:939
+#: ../src/Tutorial/Functor.md:942
 #, markdown-text, no-wrap
 msgid ""
 "`pure f <*> pure x = pure (f x)`. This is also called the\n"
@@ -14682,7 +14690,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '* '
-#: ../src/Tutorial/Functor.md:942
+#: ../src/Tutorial/Functor.md:945
 #, markdown-text, no-wrap
 msgid ""
 "`f <*> pure v = pure ($ v) <*> f`. This is called the law\n"
@@ -14690,13 +14698,13 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:944
+#: ../src/Tutorial/Functor.md:947
 #, markdown-text, no-wrap
 msgid "  This should again be explained with a concrete example:\n"
 msgstr ""
 
 #. type: Fenced code block (idris)
-#: ../src/Tutorial/Functor.md:945
+#: ../src/Tutorial/Functor.md:948
 #, no-wrap
 msgid ""
 "  interL : Maybe (a -> b) -> a -> Maybe b\n"
@@ -14707,7 +14715,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:957
+#: ../src/Tutorial/Functor.md:960
 #, markdown-text, no-wrap
 msgid ""
 "  Note, that `($ v)` has type `(a -> b) -> b`, so this\n"
@@ -14717,7 +14725,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:961
+#: ../src/Tutorial/Functor.md:964
 #, markdown-text, no-wrap
 msgid ""
 "  The law of interchange states that it must not matter\n"
@@ -14726,13 +14734,13 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '1. '
-#: ../src/Tutorial/Functor.md:965
+#: ../src/Tutorial/Functor.md:968
 #, markdown-text, no-wrap
 msgid "Implement `Applicative'` for `Either e` and `Identity`.\n"
 msgstr ""
 
 #. type: Bullet: '2. '
-#: ../src/Tutorial/Functor.md:970
+#: ../src/Tutorial/Functor.md:973
 #, markdown-text, no-wrap
 msgid ""
 "Implement `Applicative'` for `Vect n`. Note: In order to\n"
@@ -14742,13 +14750,13 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (idris)
-#: ../src/Tutorial/Functor.md:971
+#: ../src/Tutorial/Functor.md:974
 #, no-wrap
 msgid "   implementation {n : _} -> Applicative' (Vect n) where\n"
 msgstr ""
 
 #. type: Bullet: '3. '
-#: ../src/Tutorial/Functor.md:977
+#: ../src/Tutorial/Functor.md:980
 #, markdown-text, no-wrap
 msgid ""
 "Implement `Applicative'` for `Pair e`, with `e` having\n"
@@ -14756,7 +14764,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '4. '
-#: ../src/Tutorial/Functor.md:980
+#: ../src/Tutorial/Functor.md:983
 #, markdown-text, no-wrap
 msgid ""
 "Implement `Applicative` for `Const e`, with `e` having\n"
@@ -14764,7 +14772,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '5. '
-#: ../src/Tutorial/Functor.md:985
+#: ../src/Tutorial/Functor.md:988
 #, markdown-text, no-wrap
 msgid ""
 "Implement `Applicative` for `Validated e`, with `e` having\n"
@@ -14774,7 +14782,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '6. '
-#: ../src/Tutorial/Functor.md:990
+#: ../src/Tutorial/Functor.md:993
 #, markdown-text, no-wrap
 msgid ""
 "Add an additional data constructor of\n"
@@ -14784,7 +14792,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '7. '
-#: ../src/Tutorial/Functor.md:994
+#: ../src/Tutorial/Functor.md:997
 #, markdown-text, no-wrap
 msgid ""
 "Refactor our CSV-parsers and all related functions so that\n"
@@ -14793,7 +14801,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:1000
+#: ../src/Tutorial/Functor.md:1003
 #, markdown-text, no-wrap
 msgid ""
 "   Two things to note: You will have to adjust very little of\n"
@@ -14804,7 +14812,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (repl)
-#: ../src/Tutorial/Functor.md:1001
+#: ../src/Tutorial/Functor.md:1004
 #, no-wrap
 msgid ""
 "   Solutions.Functor> hdecode [Bool,Nat,Gender] 1 \"t,12,f\"\n"
@@ -14817,7 +14825,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:1015
+#: ../src/Tutorial/Functor.md:1018
 #, markdown-text, no-wrap
 msgid ""
 "   Behold the power of applicative functors and heterogeneous lists: With\n"
@@ -14827,7 +14835,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '8. '
-#: ../src/Tutorial/Functor.md:1018
+#: ../src/Tutorial/Functor.md:1021
 #, markdown-text, no-wrap
 msgid ""
 "Since we introduced heterogeneous lists in this chapter, it\n"
@@ -14835,7 +14843,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:1027
+#: ../src/Tutorial/Functor.md:1030
 #, markdown-text, no-wrap
 msgid ""
 "   This exercise is meant to sharpen your skills in type wizardry.\n"
@@ -14849,25 +14857,25 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '   1. '
-#: ../src/Tutorial/Functor.md:1029
+#: ../src/Tutorial/Functor.md:1032
 #, markdown-text, no-wrap
 msgid "Implement `head` for `HList`.\n"
 msgstr ""
 
 #. type: Bullet: '   2. '
-#: ../src/Tutorial/Functor.md:1031
+#: ../src/Tutorial/Functor.md:1034
 #, markdown-text, no-wrap
 msgid "Implement `tail` for `HList`.\n"
 msgstr ""
 
 #. type: Bullet: '   3. '
-#: ../src/Tutorial/Functor.md:1033
+#: ../src/Tutorial/Functor.md:1036
 #, markdown-text, no-wrap
 msgid "Implement `(++)` for `HList`.\n"
 msgstr ""
 
 #. type: Bullet: '   4. '
-#: ../src/Tutorial/Functor.md:1037
+#: ../src/Tutorial/Functor.md:1040
 #, markdown-text, no-wrap
 msgid ""
 "Implement `index` for `HList`. This might be harder than the other three.\n"
@@ -14876,7 +14884,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '   5. '
-#: ../src/Tutorial/Functor.md:1043
+#: ../src/Tutorial/Functor.md:1046
 #, markdown-text, no-wrap
 msgid ""
 "Package *contrib*, which is part of the Idris project, provides\n"
@@ -14888,7 +14896,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:1046
+#: ../src/Tutorial/Functor.md:1049
 #, markdown-text, no-wrap
 msgid ""
 "      Write your own implementation of `HVect` together with functions\n"
@@ -14896,7 +14904,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '   6. '
-#: ../src/Tutorial/Functor.md:1050
+#: ../src/Tutorial/Functor.md:1053
 #, markdown-text, no-wrap
 msgid ""
 "For a real challenge, try implementing a function for\n"
@@ -14905,7 +14913,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:1057
+#: ../src/Tutorial/Functor.md:1060
 #, markdown-text, no-wrap
 msgid ""
 "      Note: In order to implement this, you'll need to pattern match\n"
@@ -14917,7 +14925,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:1061
+#: ../src/Tutorial/Functor.md:1064
 #, markdown-text, no-wrap
 msgid ""
 "      Also, don't worry if you get stuck on this one. It took me several\n"
@@ -14927,7 +14935,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:1065
+#: ../src/Tutorial/Functor.md:1068
 #, markdown-text, no-wrap
 msgid ""
 "      Note, however, that such a function might be useful when working "
@@ -14938,7 +14946,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '9. '
-#: ../src/Tutorial/Functor.md:1069
+#: ../src/Tutorial/Functor.md:1072
 #, markdown-text, no-wrap
 msgid ""
 "Show, that the composition of two applicative functors is\n"
@@ -14947,7 +14955,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '10. '
-#: ../src/Tutorial/Functor.md:1073
+#: ../src/Tutorial/Functor.md:1076
 #, markdown-text, no-wrap
 msgid ""
 "Show, that the product of two applicative functors is\n"
@@ -14956,13 +14964,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ##
-#: ../src/Tutorial/Functor.md:1074
+#: ../src/Tutorial/Functor.md:1077
 #, markdown-text, no-wrap
 msgid "Monad"
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:1081
+#: ../src/Tutorial/Functor.md:1084
 #, markdown-text, no-wrap
 msgid ""
 "Finally, `Monad`. A lot of ink has been spilled about this one.\n"
@@ -14973,7 +14981,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (idris)
-#: ../src/Tutorial/Functor.md:1082
+#: ../src/Tutorial/Functor.md:1085
 #, no-wrap
 msgid ""
 "interface Applicative' m => Monad' m where\n"
@@ -14982,7 +14990,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:1091
+#: ../src/Tutorial/Functor.md:1094
 #, markdown-text, no-wrap
 msgid ""
 "Implementers of `Monad` are free to choose to either implement\n"
@@ -14991,7 +14999,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:1099
+#: ../src/Tutorial/Functor.md:1102
 #, markdown-text, no-wrap
 msgid ""
 "The big difference between `Monad` and `Applicative` is, that the\n"
@@ -15004,13 +15012,13 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (repl)
-#: ../src/Tutorial/Functor.md:1100
+#: ../src/Tutorial/Functor.md:1103
 #, no-wrap
 msgid "(<*>) : IO (a -> b) -> IO a -> IO b\n"
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:1115
+#: ../src/Tutorial/Functor.md:1118
 #, markdown-text, no-wrap
 msgid ""
 "The two `IO` actions have already been decided on when they\n"
@@ -15027,7 +15035,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:1121
+#: ../src/Tutorial/Functor.md:1124
 #, markdown-text, no-wrap
 msgid ""
 "Let's demonstrate the difference with an example. Assume\n"
@@ -15038,7 +15046,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (idris)
-#: ../src/Tutorial/Functor.md:1122
+#: ../src/Tutorial/Functor.md:1125
 #, no-wrap
 msgid ""
 "data Crud : (i : Type) -> (a : Type) -> Type where\n"
@@ -15049,7 +15057,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:1134
+#: ../src/Tutorial/Functor.md:1137
 #, markdown-text, no-wrap
 msgid ""
 "We need a way to on each line decide, which data constructor\n"
@@ -15059,7 +15067,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (idris)
-#: ../src/Tutorial/Functor.md:1135
+#: ../src/Tutorial/Functor.md:1138
 #, no-wrap
 msgid ""
 "hlift : (a -> b) -> HList [a] -> b\n"
@@ -15086,7 +15094,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:1164
+#: ../src/Tutorial/Functor.md:1167
 #, markdown-text, no-wrap
 msgid ""
 "I added two utility function for helping with type inference\n"
@@ -15097,13 +15105,13 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:1166
+#: ../src/Tutorial/Functor.md:1169
 #, markdown-text, no-wrap
 msgid "Here's how this works at the REPL:\n"
 msgstr ""
 
 #. type: Fenced code block (repl)
-#: ../src/Tutorial/Functor.md:1167
+#: ../src/Tutorial/Functor.md:1170
 #, no-wrap
 msgid ""
 "Tutorial.Functor> decodeCRUD {i = Nat} {a = Email} 1 \"Create,jon@doe.ch\"\n"
@@ -15116,7 +15124,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:1184
+#: ../src/Tutorial/Functor.md:1187
 #, markdown-text, no-wrap
 msgid ""
 "To conclude, `Monad`, unlike `Applicative`, allows us to\n"
@@ -15130,7 +15138,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:1190
+#: ../src/Tutorial/Functor.md:1193
 #, markdown-text, no-wrap
 msgid ""
 "Note, however, that `Monad` has one important drawback\n"
@@ -15141,19 +15149,19 @@ msgid ""
 msgstr ""
 
 #. type: Title ###
-#: ../src/Tutorial/Functor.md:1191
+#: ../src/Tutorial/Functor.md:1194
 #, markdown-text, no-wrap
 msgid "Monad Laws"
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:1194
+#: ../src/Tutorial/Functor.md:1197
 #, markdown-text, no-wrap
 msgid "Without further ado, here are the laws for `Monad`:\n"
 msgstr ""
 
 #. type: Bullet: '* '
-#: ../src/Tutorial/Functor.md:1198
+#: ../src/Tutorial/Functor.md:1201
 #, markdown-text, no-wrap
 msgid ""
 "`ma >>= pure = ma` and `pure v >>= f = f v`.\n"
@@ -15162,7 +15170,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (idris)
-#: ../src/Tutorial/Functor.md:1199
+#: ../src/Tutorial/Functor.md:1202
 #, no-wrap
 msgid ""
 "  id1L : Maybe a -> Maybe a\n"
@@ -15176,7 +15184,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:1212
+#: ../src/Tutorial/Functor.md:1215
 #, markdown-text, no-wrap
 msgid ""
 "  These two laws state that `pure` should behave\n"
@@ -15184,7 +15192,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '* '
-#: ../src/Tutorial/Functor.md:1218
+#: ../src/Tutorial/Functor.md:1221
 #, markdown-text, no-wrap
 msgid ""
 "`(m >>= f) >>= g = m >>= (f >=> g)`.\n"
@@ -15195,7 +15203,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (repl)
-#: ../src/Tutorial/Functor.md:1219
+#: ../src/Tutorial/Functor.md:1222
 #, no-wrap
 msgid ""
 "  Tutorial.Functor> :t (>=>)\n"
@@ -15203,7 +15211,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:1229
+#: ../src/Tutorial/Functor.md:1232
 #, markdown-text, no-wrap
 msgid ""
 "The above are the *official* monad laws. However, we need to\n"
@@ -15214,13 +15222,13 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '* '
-#: ../src/Tutorial/Functor.md:1231
+#: ../src/Tutorial/Functor.md:1234
 #, markdown-text, no-wrap
 msgid "`mf <*> ma = mf >>= (\\fun => map (fun $) ma)`.\n"
 msgstr ""
 
 #. type: Bullet: '1. '
-#: ../src/Tutorial/Functor.md:1237
+#: ../src/Tutorial/Functor.md:1240
 #, markdown-text, no-wrap
 msgid ""
 "`Applicative` extends `Functor`, because every `Applicative`\n"
@@ -15229,7 +15237,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '2. '
-#: ../src/Tutorial/Functor.md:1241
+#: ../src/Tutorial/Functor.md:1244
 #, markdown-text, no-wrap
 msgid ""
 "`Monad` extends `Applicative`, because every `Monad` is\n"
@@ -15238,7 +15246,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '3. '
-#: ../src/Tutorial/Functor.md:1244
+#: ../src/Tutorial/Functor.md:1247
 #, markdown-text, no-wrap
 msgid ""
 "Implement `(>>=)` in terms of `join` and other functions\n"
@@ -15246,7 +15254,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '4. '
-#: ../src/Tutorial/Functor.md:1247
+#: ../src/Tutorial/Functor.md:1250
 #, markdown-text, no-wrap
 msgid ""
 "Implement `join` in terms of `(>>=)` and other functions\n"
@@ -15254,7 +15262,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '5. '
-#: ../src/Tutorial/Functor.md:1250
+#: ../src/Tutorial/Functor.md:1253
 #, markdown-text, no-wrap
 msgid ""
 "There is no lawful `Monad` implementation for `Validated e`.\n"
@@ -15262,7 +15270,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '6. '
-#: ../src/Tutorial/Functor.md:1256
+#: ../src/Tutorial/Functor.md:1259
 #, markdown-text, no-wrap
 msgid ""
 "In this slightly extended exercise, we are going to simulate\n"
@@ -15273,7 +15281,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (idris)
-#: ../src/Tutorial/Functor.md:1257
+#: ../src/Tutorial/Functor.md:1260
 #, no-wrap
 msgid ""
 "   DB : Type\n"
@@ -15281,7 +15289,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:1267
+#: ../src/Tutorial/Functor.md:1270
 #, markdown-text, no-wrap
 msgid ""
 "   Most operations on a database come with a risk of failure:\n"
@@ -15292,7 +15300,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (idris)
-#: ../src/Tutorial/Functor.md:1268
+#: ../src/Tutorial/Functor.md:1271
 #, no-wrap
 msgid ""
 "   data DBError : Type where\n"
@@ -15302,7 +15310,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:1277
+#: ../src/Tutorial/Functor.md:1280
 #, markdown-text, no-wrap
 msgid ""
 "   In general, our functions will therefore have a\n"
@@ -15310,13 +15318,13 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (idris)
-#: ../src/Tutorial/Functor.md:1278
+#: ../src/Tutorial/Functor.md:1281
 #, no-wrap
 msgid "   someDBProg : arg1 -> arg2 -> DB -> IO (Either DBError a)\n"
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:1284
+#: ../src/Tutorial/Functor.md:1287
 #, markdown-text, no-wrap
 msgid ""
 "   We'd like to abstract over this, by introducing a new wrapper\n"
@@ -15324,7 +15332,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (idris)
-#: ../src/Tutorial/Functor.md:1285
+#: ../src/Tutorial/Functor.md:1288
 #, no-wrap
 msgid ""
 "   record Prog a where\n"
@@ -15333,7 +15341,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:1294
+#: ../src/Tutorial/Functor.md:1297
 #, markdown-text, no-wrap
 msgid ""
 "   We are now ready to write us some utility functions. Make sure\n"
@@ -15342,7 +15350,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '   * '
-#: ../src/Tutorial/Functor.md:1297
+#: ../src/Tutorial/Functor.md:1300
 #, markdown-text, no-wrap
 msgid ""
 "Email addresses in the DB must be unique. (Consider\n"
@@ -15350,13 +15358,13 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '   * '
-#: ../src/Tutorial/Functor.md:1299
+#: ../src/Tutorial/Functor.md:1302
 #, markdown-text, no-wrap
 msgid "The size limit of 1000 entries must not be exceeded.\n"
 msgstr ""
 
 #. type: Bullet: '   * '
-#: ../src/Tutorial/Functor.md:1303
+#: ../src/Tutorial/Functor.md:1306
 #, markdown-text, no-wrap
 msgid ""
 "Operations trying to lookup a user by their ID must\n"
@@ -15365,7 +15373,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:1308
+#: ../src/Tutorial/Functor.md:1311
 #, markdown-text, no-wrap
 msgid ""
 "   You'll need the following functions from `Data.IORef` when working\n"
@@ -15375,25 +15383,25 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '   1. '
-#: ../src/Tutorial/Functor.md:1310
+#: ../src/Tutorial/Functor.md:1313
 #, markdown-text, no-wrap
 msgid "Implement interfaces `Functor`, `Applicative`, and `Monad` for `Prog`.\n"
 msgstr ""
 
 #. type: Bullet: '   2. '
-#: ../src/Tutorial/Functor.md:1312
+#: ../src/Tutorial/Functor.md:1315
 #, markdown-text, no-wrap
 msgid "Implement interface `HasIO` for `Prog`.\n"
 msgstr ""
 
 #. type: Bullet: '   3. '
-#: ../src/Tutorial/Functor.md:1314
+#: ../src/Tutorial/Functor.md:1317
 #, markdown-text, no-wrap
 msgid "Implement the following utility functions:\n"
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:1317
+#: ../src/Tutorial/Functor.md:1320
 #, markdown-text, no-wrap
 msgid ""
 "      ```idris\n"
@@ -15401,13 +15409,13 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:1319
+#: ../src/Tutorial/Functor.md:1322
 #, markdown-text, no-wrap
 msgid "      getUsers : Prog (List (Nat,User))\n"
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:1322
+#: ../src/Tutorial/Functor.md:1325
 #, markdown-text, no-wrap
 msgid ""
 "      -- check the size limit!\n"
@@ -15415,7 +15423,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:1326
+#: ../src/Tutorial/Functor.md:1329
 #, markdown-text, no-wrap
 msgid ""
 "      -- implement this in terms of `getUsers` and `putUsers`\n"
@@ -15424,7 +15432,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '   4. '
-#: ../src/Tutorial/Functor.md:1330
+#: ../src/Tutorial/Functor.md:1333
 #, markdown-text, no-wrap
 msgid ""
 "Implement function `lookupUser`. This should fail\n"
@@ -15433,7 +15441,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:1334
+#: ../src/Tutorial/Functor.md:1337
 #, markdown-text, no-wrap
 msgid ""
 "      ```idris\n"
@@ -15442,7 +15450,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '   5. '
-#: ../src/Tutorial/Functor.md:1339
+#: ../src/Tutorial/Functor.md:1342
 #, markdown-text, no-wrap
 msgid ""
 "Implement function `deleteUser`. This should fail\n"
@@ -15452,7 +15460,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:1343
+#: ../src/Tutorial/Functor.md:1346
 #, markdown-text, no-wrap
 msgid ""
 "      ```idris\n"
@@ -15461,7 +15469,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '   6. '
-#: ../src/Tutorial/Functor.md:1349
+#: ../src/Tutorial/Functor.md:1352
 #, markdown-text, no-wrap
 msgid ""
 "Implement function `addUser`. This should fail, if\n"
@@ -15472,7 +15480,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:1353
+#: ../src/Tutorial/Functor.md:1356
 #, markdown-text, no-wrap
 msgid ""
 "      ```idris\n"
@@ -15481,7 +15489,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '   7. '
-#: ../src/Tutorial/Functor.md:1358
+#: ../src/Tutorial/Functor.md:1361
 #, markdown-text, no-wrap
 msgid ""
 "Implement function `updateUser`. This should fail, if\n"
@@ -15491,7 +15499,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:1362
+#: ../src/Tutorial/Functor.md:1365
 #, markdown-text, no-wrap
 msgid ""
 "      ```idris\n"
@@ -15500,7 +15508,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '   8. '
-#: ../src/Tutorial/Functor.md:1366
+#: ../src/Tutorial/Functor.md:1369
 #, markdown-text, no-wrap
 msgid ""
 "Data type `Prog` is actually too specific. We could just\n"
@@ -15509,7 +15517,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:1372
+#: ../src/Tutorial/Functor.md:1375
 #, markdown-text, no-wrap
 msgid ""
 "      ```idris\n"
@@ -15520,7 +15528,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:1378
+#: ../src/Tutorial/Functor.md:1381
 #, markdown-text, no-wrap
 msgid ""
 "      Verify, that all interface implementations you wrote\n"
@@ -15531,13 +15539,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ##
-#: ../src/Tutorial/Functor.md:1379
+#: ../src/Tutorial/Functor.md:1382
 #, markdown-text, no-wrap
 msgid "Background and further Reading"
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:1388
+#: ../src/Tutorial/Functor.md:1391
 #, markdown-text, no-wrap
 msgid ""
 "Concepts like *functor* and *monad* have their origin in *category "
@@ -15552,7 +15560,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:1394
+#: ../src/Tutorial/Functor.md:1397
 #, markdown-text, no-wrap
 msgid ""
 "The usefulness of applicative functors as a middle ground between\n"
@@ -15564,7 +15572,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '* '
-#: ../src/Tutorial/Functor.md:1401
+#: ../src/Tutorial/Functor.md:1404
 #, markdown-text, no-wrap
 msgid ""
 "Interfaces `Functor`, `Applicative`, and `Monad` abstract over\n"
@@ -15574,7 +15582,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '* '
-#: ../src/Tutorial/Functor.md:1404
+#: ../src/Tutorial/Functor.md:1407
 #, markdown-text, no-wrap
 msgid ""
 "`Functor` allows us to *map* over values in a context without\n"
@@ -15582,7 +15590,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '* '
-#: ../src/Tutorial/Functor.md:1407
+#: ../src/Tutorial/Functor.md:1410
 #, markdown-text, no-wrap
 msgid ""
 "`Applicative` allows us to apply n-ary functions to n effectful\n"
@@ -15590,7 +15598,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '* '
-#: ../src/Tutorial/Functor.md:1411
+#: ../src/Tutorial/Functor.md:1414
 #, markdown-text, no-wrap
 msgid ""
 "`Monad` allows us to chain effectful computations, where the\n"
@@ -15599,7 +15607,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '* '
-#: ../src/Tutorial/Functor.md:1415
+#: ../src/Tutorial/Functor.md:1418
 #, markdown-text, no-wrap
 msgid ""
 "Unlike `Monad`, `Functor` and `Applicative` compose: The\n"
@@ -15608,7 +15616,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '* '
-#: ../src/Tutorial/Functor.md:1419
+#: ../src/Tutorial/Functor.md:1422
 #, markdown-text, no-wrap
 msgid ""
 "Idris provides syntactic sugar for working with some of\n"
@@ -15617,13 +15625,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ###
-#: ../src/Tutorial/Functor.md:1420 ../src/Tutorial/Intro.md:444
+#: ../src/Tutorial/Functor.md:1423 ../src/Tutorial/Intro.md:444
 #, markdown-text, no-wrap
 msgid "What's next?"
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Functor.md:1425
+#: ../src/Tutorial/Functor.md:1428
 #, markdown-text, no-wrap
 msgid ""
 "In the [next chapter](Folds.md) we get to learn more about\n"
@@ -17213,7 +17221,7 @@ msgstr ""
 msgid ""
 "Welcome to my Idris 2 tutorial. I'll try and treat as many aspects\n"
 "of the Idris 2 programming language as possible here.\n"
-"All `.md` files in here a literate Idris files: They consist of\n"
+"All `.md` files in here are literate Idris files: They consist of\n"
 "Markdown (hence the `.md` ending), which is being pretty printed\n"
 "by GitHub together with Idris code blocks, which can be\n"
 "type checked and built by the Idris compiler (more on this later).\n"
@@ -17349,7 +17357,7 @@ msgstr ""
 #: ../src/Tutorial/Intro.md:80
 #, markdown-text, no-wrap
 msgid ""
-"They are thread-safe, since the don't mutate global state, and\n"
+"They are thread-safe, since they don't mutate global state, and\n"
 "as such can be freely used in several computations running\n"
 "in parallel.\n"
 msgstr ""
@@ -17382,7 +17390,7 @@ msgstr ""
 #, markdown-text, no-wrap
 msgid ""
 "Idris is a strongly, statically typed programming language. This\n"
-"means, that every Idris expression is given a *type* (for instance:\n"
+"means that every Idris expression is given a *type* (for instance:\n"
 "integer, list of strings, boolean, function from integer to boolean, etc.)\n"
 "and types are verified at compile time to rule out certain\n"
 "common programming errors.\n"
@@ -17711,7 +17719,7 @@ msgstr ""
 msgid ""
 "The first line can be read as: \"We'd like to declare  (nullary)\n"
 "function `maxBits8`. It is of type `Bits8`\". This is\n"
-"called the *function declaration*: We declare, that there\n"
+"called the *function declaration*: we declare that there\n"
 "shall be a function of the given name and type. The second line\n"
 "reads: \"The result of invoking `maxBits8` should be `255`.\"\n"
 "(As you can see, we can use integer literals for other integral\n"
@@ -23255,7 +23263,7 @@ msgid "Signed Integers"
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:549
+#: ../src/Tutorial/Prim.md:548
 #, markdown-text, no-wrap
 msgid ""
 "Like the unsigned integer types, the signed fixed precision\n"
@@ -23263,15 +23271,15 @@ msgid ""
 "implementations of all integral interfaces and\n"
 "the two interfaces for bitwise operations (`Bits` and `FiniteBits`).\n"
 "Overflows are handled by calculating the remainder\n"
-"modulo `2^bitsize` and adding the lower bound (a negative number)\n"
-"if the result is still out of range. For instance, for `Int8`, all "
-"operations\n"
-"calculate their results modulo 256, subtracting 128 if the\n"
-"result is still out of bounds:\n"
+"modulo `2^bitsize` and subtracting `2^bitsize` if the result is still out "
+"of\n"
+"range. For instance, for `Int8`, all operations calculate their results "
+"modulo\n"
+"256, subtracting 256 if the result is still out of bounds:\n"
 msgstr ""
 
 #. type: Fenced code block (repl)
-#: ../src/Tutorial/Prim.md:550
+#: ../src/Tutorial/Prim.md:549
 #, no-wrap
 msgid ""
 "Main> the Int8 2 * 127\n"
@@ -23281,13 +23289,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ###
-#: ../src/Tutorial/Prim.md:557
+#: ../src/Tutorial/Prim.md:556
 #, markdown-text, no-wrap
 msgid "Bitwise Operations"
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:568
+#: ../src/Tutorial/Prim.md:567
 #, markdown-text, no-wrap
 msgid ""
 "Module `Data.Bits` exports interfaces for performing bitwise\n"
@@ -23303,7 +23311,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:573
+#: ../src/Tutorial/Prim.md:572
 #, markdown-text, no-wrap
 msgid ""
 "An unsigned 8-bit binary number is represented internally as\n"
@@ -23313,7 +23321,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (repl)
-#: ../src/Tutorial/Prim.md:574
+#: ../src/Tutorial/Prim.md:573
 #, no-wrap
 msgid ""
 "23 in binary:    0  0  0  1    0  1  1  1\n"
@@ -23323,7 +23331,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:583
+#: ../src/Tutorial/Prim.md:582
 #, markdown-text, no-wrap
 msgid ""
 "We can use function `testBit` to check if the bit at the given\n"
@@ -23331,7 +23339,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (repl)
-#: ../src/Tutorial/Prim.md:584
+#: ../src/Tutorial/Prim.md:583
 #, no-wrap
 msgid ""
 "Tutorial.Prim> testBit (the Bits8 23) 0\n"
@@ -23343,7 +23351,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:595
+#: ../src/Tutorial/Prim.md:594
 #, markdown-text, no-wrap
 msgid ""
 "Likewise, we can use functions `setBit` and `clearBit` to\n"
@@ -23351,7 +23359,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (repl)
-#: ../src/Tutorial/Prim.md:596
+#: ../src/Tutorial/Prim.md:595
 #, no-wrap
 msgid ""
 "Tutorial.Prim> setBit (the Bits8 23) 3\n"
@@ -23361,7 +23369,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:610
+#: ../src/Tutorial/Prim.md:609
 #, markdown-text, no-wrap
 msgid ""
 "There are also operators `(.&.)` (bitwise *and*) and `(.|.)`\n"
@@ -23374,7 +23382,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (repl)
-#: ../src/Tutorial/Prim.md:611
+#: ../src/Tutorial/Prim.md:610
 #, no-wrap
 msgid ""
 "23 in binary:          0  0  0  1    0  1  1  1\n"
@@ -23386,13 +23394,13 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:621
+#: ../src/Tutorial/Prim.md:620
 #, markdown-text, no-wrap
 msgid "And here are the examples at the REPL:\n"
 msgstr ""
 
 #. type: Fenced code block (repl)
-#: ../src/Tutorial/Prim.md:622
+#: ../src/Tutorial/Prim.md:621
 #, no-wrap
 msgid ""
 "Tutorial.Prim> the Bits8 23 .&. 11\n"
@@ -23404,7 +23412,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:637
+#: ../src/Tutorial/Prim.md:636
 #, markdown-text, no-wrap
 msgid ""
 "Finally, it is possible to shift all bits to the right or left\n"
@@ -23416,7 +23424,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (repl)
-#: ../src/Tutorial/Prim.md:638
+#: ../src/Tutorial/Prim.md:637
 #, no-wrap
 msgid ""
 "22 in binary:            0  0  0  1    0  1  1  0\n"
@@ -23426,7 +23434,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (repl)
-#: ../src/Tutorial/Prim.md:647
+#: ../src/Tutorial/Prim.md:646
 #, no-wrap
 msgid ""
 "Tutorial.Prim> the Bits8 22 `shiftL` 2\n"
@@ -23436,7 +23444,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:657
+#: ../src/Tutorial/Prim.md:656
 #, markdown-text, no-wrap
 msgid ""
 "Bitwise operations are often used in specialized code or\n"
@@ -23445,13 +23453,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ###
-#: ../src/Tutorial/Prim.md:658
+#: ../src/Tutorial/Prim.md:657
 #, markdown-text, no-wrap
 msgid "Integer Literals"
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:666
+#: ../src/Tutorial/Prim.md:665
 #, markdown-text, no-wrap
 msgid ""
 "So far, we always required an implementation of `Num` in order to\n"
@@ -23463,7 +23471,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:671
+#: ../src/Tutorial/Prim.md:670
 #, markdown-text, no-wrap
 msgid ""
 "For instance, assume we'd like to define a data type for\n"
@@ -23473,7 +23481,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (idris)
-#: ../src/Tutorial/Prim.md:672
+#: ../src/Tutorial/Prim.md:671
 #, no-wrap
 msgid ""
 "record Charge where\n"
@@ -23482,7 +23490,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:683
+#: ../src/Tutorial/Prim.md:682
 #, markdown-text, no-wrap
 msgid ""
 "It makes sense to be able to sum up charges, but not to\n"
@@ -23493,7 +23501,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (idris)
-#: ../src/Tutorial/Prim.md:684
+#: ../src/Tutorial/Prim.md:683
 #, no-wrap
 msgid ""
 "fromInteger : Integer -> Charge\n"
@@ -23507,13 +23515,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ####
-#: ../src/Tutorial/Prim.md:695
+#: ../src/Tutorial/Prim.md:694
 #, markdown-text, no-wrap
 msgid "Alternative Bases"
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:702
+#: ../src/Tutorial/Prim.md:701
 #, markdown-text, no-wrap
 msgid ""
 "In addition to the well known decimal literals, it is also\n"
@@ -23524,7 +23532,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (repl)
-#: ../src/Tutorial/Prim.md:703
+#: ../src/Tutorial/Prim.md:702
 #, no-wrap
 msgid ""
 "Tutorial.Prim> 0b1101\n"
@@ -23536,7 +23544,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '1. '
-#: ../src/Tutorial/Prim.md:716
+#: ../src/Tutorial/Prim.md:715
 #, markdown-text, no-wrap
 msgid ""
 "Define a wrapper record for integral values and implement\n"
@@ -23544,7 +23552,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:719
+#: ../src/Tutorial/Prim.md:718
 #, markdown-text, no-wrap
 msgid ""
 "   Hint: Have a look at the functions available from interface\n"
@@ -23552,7 +23560,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '2. '
-#: ../src/Tutorial/Prim.md:722
+#: ../src/Tutorial/Prim.md:721
 #, markdown-text, no-wrap
 msgid ""
 "Define a wrapper record for integral values and implement\n"
@@ -23560,7 +23568,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '3. '
-#: ../src/Tutorial/Prim.md:725
+#: ../src/Tutorial/Prim.md:724
 #, markdown-text, no-wrap
 msgid ""
 "Use bitwise operations to implement a function, which tests if\n"
@@ -23568,13 +23576,13 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '4. '
-#: ../src/Tutorial/Prim.md:727
+#: ../src/Tutorial/Prim.md:726
 #, markdown-text, no-wrap
 msgid "Convert a value of type `Bits64` to a string in binary representation.\n"
 msgstr ""
 
 #. type: Bullet: '5. '
-#: ../src/Tutorial/Prim.md:729
+#: ../src/Tutorial/Prim.md:728
 #, markdown-text, no-wrap
 msgid ""
 "Convert a value of type `Bits64` to a string in hexadecimal "
@@ -23582,7 +23590,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:732
+#: ../src/Tutorial/Prim.md:731
 #, markdown-text, no-wrap
 msgid ""
 "   Hint: Use `shiftR` and `(.&. 15)` to access subsequent packages of\n"
@@ -23590,13 +23598,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ##
-#: ../src/Tutorial/Prim.md:733
+#: ../src/Tutorial/Prim.md:732
 #, markdown-text, no-wrap
 msgid "Refined Primitives"
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:741
+#: ../src/Tutorial/Prim.md:740
 #, markdown-text, no-wrap
 msgid ""
 "We often do not want to allow all values of a type in a certain\n"
@@ -23608,7 +23616,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:749
+#: ../src/Tutorial/Prim.md:748
 #, markdown-text, no-wrap
 msgid ""
 "We have learned how we can write elegant predicates, with\n"
@@ -23621,13 +23629,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ###
-#: ../src/Tutorial/Prim.md:750
+#: ../src/Tutorial/Prim.md:749
 #, markdown-text, no-wrap
 msgid "Use Case: ASCII Strings"
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:756
+#: ../src/Tutorial/Prim.md:755
 #, markdown-text, no-wrap
 msgid ""
 "String encodings is a difficult topic, so in many low level routines\n"
@@ -23637,7 +23645,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (idris)
-#: ../src/Tutorial/Prim.md:757
+#: ../src/Tutorial/Prim.md:756
 #, no-wrap
 msgid ""
 "isAsciiChar : Char -> Bool\n"
@@ -23648,7 +23656,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:767
+#: ../src/Tutorial/Prim.md:766
 #, markdown-text, no-wrap
 msgid ""
 "We can now *refine* a string value by pairing it with an erased\n"
@@ -23656,7 +23664,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (idris)
-#: ../src/Tutorial/Prim.md:768
+#: ../src/Tutorial/Prim.md:767
 #, no-wrap
 msgid ""
 "record Ascii where\n"
@@ -23666,7 +23674,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:779
+#: ../src/Tutorial/Prim.md:778
 #, markdown-text, no-wrap
 msgid ""
 "It is now *impossible* to at runtime or compile time create\n"
@@ -23676,7 +23684,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (idris)
-#: ../src/Tutorial/Prim.md:780
+#: ../src/Tutorial/Prim.md:779
 #, no-wrap
 msgid ""
 "hello : Ascii\n"
@@ -23684,7 +23692,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:800
+#: ../src/Tutorial/Prim.md:799
 #, markdown-text, no-wrap
 msgid ""
 "And yet, it would be much more convenient to still use string\n"
@@ -23706,7 +23714,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (idris)
-#: ../src/Tutorial/Prim.md:801
+#: ../src/Tutorial/Prim.md:800
 #, no-wrap
 msgid ""
 "fromString : (s : String) -> {auto 0 prf : isAsciiString s === True} -> "
@@ -23715,7 +23723,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:808
+#: ../src/Tutorial/Prim.md:807
 #, markdown-text, no-wrap
 msgid ""
 "With this, we can use (valid) string literals for coming up with\n"
@@ -23723,7 +23731,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (idris)
-#: ../src/Tutorial/Prim.md:809
+#: ../src/Tutorial/Prim.md:808
 #, no-wrap
 msgid ""
 "hello2 : Ascii\n"
@@ -23731,7 +23739,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:817
+#: ../src/Tutorial/Prim.md:816
 #, markdown-text, no-wrap
 msgid ""
 "In order to at runtime create values of type `Ascii` from strings\n"
@@ -23740,7 +23748,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (idris)
-#: ../src/Tutorial/Prim.md:818
+#: ../src/Tutorial/Prim.md:817
 #, no-wrap
 msgid ""
 "test : (b : Bool) -> Dec (b === True)\n"
@@ -23754,13 +23762,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ####
-#: ../src/Tutorial/Prim.md:829
+#: ../src/Tutorial/Prim.md:828
 #, markdown-text, no-wrap
 msgid "Disadvantages of Boolean Proofs"
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:834
+#: ../src/Tutorial/Prim.md:833
 #, markdown-text, no-wrap
 msgid ""
 "For many use cases, what we described above for ASCII strings can\n"
@@ -23769,7 +23777,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:839
+#: ../src/Tutorial/Prim.md:838
 #, markdown-text, no-wrap
 msgid ""
 "For instance, we know it will be perfectly fine to concatenate\n"
@@ -23779,7 +23787,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (idris)
-#: ../src/Tutorial/Prim.md:840
+#: ../src/Tutorial/Prim.md:839
 #, no-wrap
 msgid ""
 "0 allAppend :  (f : Char -> Bool)\n"
@@ -23797,7 +23805,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:861
+#: ../src/Tutorial/Prim.md:860
 #, markdown-text, no-wrap
 msgid ""
 "The same goes for all operations extracting a substring from\n"
@@ -23809,13 +23817,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ###
-#: ../src/Tutorial/Prim.md:862
+#: ../src/Tutorial/Prim.md:861
 #, markdown-text, no-wrap
 msgid "Use Case: Sanitized HTML"
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:869
+#: ../src/Tutorial/Prim.md:868
 #, markdown-text, no-wrap
 msgid ""
 "Assume you write a simple web application for scientific\n"
@@ -23826,19 +23834,19 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:871
+#: ../src/Tutorial/Prim.md:870
 #, markdown-text, no-wrap
 msgid "Assume now a user decides to enter the following text:\n"
 msgstr ""
 
 #. type: Fenced code block (html)
-#: ../src/Tutorial/Prim.md:872
+#: ../src/Tutorial/Prim.md:871
 #, no-wrap
 msgid "<script>alert(\"Hello World!\")</script>\n"
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:884
+#: ../src/Tutorial/Prim.md:883
 #, markdown-text, no-wrap
 msgid ""
 "Well, it could have been (much) worse. Still, unless we take measures\n"
@@ -23853,7 +23861,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:891
+#: ../src/Tutorial/Prim.md:890
 #, markdown-text, no-wrap
 msgid ""
 "We want to make sure, that this cannot happen on our own web page.\n"
@@ -23865,7 +23873,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (idris)
-#: ../src/Tutorial/Prim.md:892
+#: ../src/Tutorial/Prim.md:891
 #, no-wrap
 msgid ""
 "escape : String -> String\n"
@@ -23880,7 +23888,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:910
+#: ../src/Tutorial/Prim.md:909
 #, markdown-text, no-wrap
 msgid ""
 "What we now want to do is to store a string together with\n"
@@ -23892,7 +23900,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (idris)
-#: ../src/Tutorial/Prim.md:911
+#: ../src/Tutorial/Prim.md:910
 #, no-wrap
 msgid ""
 "record Escaped where\n"
@@ -23903,7 +23911,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:925
+#: ../src/Tutorial/Prim.md:924
 #, markdown-text, no-wrap
 msgid ""
 "Whenever we now embed a string of unknown origin in our web page,\n"
@@ -23915,7 +23923,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (idris)
-#: ../src/Tutorial/Prim.md:926
+#: ../src/Tutorial/Prim.md:925
 #, no-wrap
 msgid ""
 "namespace Escaped\n"
@@ -23928,7 +23936,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:941
+#: ../src/Tutorial/Prim.md:940
 #, markdown-text, no-wrap
 msgid ""
 "In this massive set of exercises, you are going to build\n"
@@ -23937,7 +23945,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '* '
-#: ../src/Tutorial/Prim.md:955
+#: ../src/Tutorial/Prim.md:954
 #, markdown-text, no-wrap
 msgid ""
 "We want to use the usual operations of propositional logic to\n"
@@ -23946,7 +23954,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '* '
-#: ../src/Tutorial/Prim.md:955
+#: ../src/Tutorial/Prim.md:954
 #, markdown-text, no-wrap
 msgid ""
 "All predicates should be erased at runtime. If we proof\n"
@@ -23955,7 +23963,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '* '
-#: ../src/Tutorial/Prim.md:955
+#: ../src/Tutorial/Prim.md:954
 #, markdown-text, no-wrap
 msgid ""
 "Calculations on predicates should make no appearance\n"
@@ -23963,7 +23971,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '* '
-#: ../src/Tutorial/Prim.md:955
+#: ../src/Tutorial/Prim.md:954
 #, markdown-text, no-wrap
 msgid ""
 "Recursive calculations on predicates should be tail recursive if\n"
@@ -23974,7 +23982,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:980
+#: ../src/Tutorial/Prim.md:979
 #, markdown-text, no-wrap
 msgid ""
 "A note on efficiency: In order to be able to run\n"
@@ -24004,7 +24012,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:983
+#: ../src/Tutorial/Prim.md:982
 #, markdown-text, no-wrap
 msgid ""
 "Enough talk, let's begin!\n"
@@ -24012,7 +24020,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (idris)
-#: ../src/Tutorial/Prim.md:984
+#: ../src/Tutorial/Prim.md:983
 #, no-wrap
 msgid ""
 "-- Like `Dec` but with erased proofs. Constructors `Yes0`\n"
@@ -24051,7 +24059,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1025
+#: ../src/Tutorial/Prim.md:1024
 #, markdown-text, no-wrap
 msgid ""
 "We also want to run decidable computations at compile time. This\n"
@@ -24062,7 +24070,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (idris)
-#: ../src/Tutorial/Prim.md:1026
+#: ../src/Tutorial/Prim.md:1025
 #, no-wrap
 msgid ""
 "data IsYes0 : (d : Dec0 prop) -> Type where\n"
@@ -24081,7 +24089,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1045
+#: ../src/Tutorial/Prim.md:1044
 #, markdown-text, no-wrap
 msgid ""
 "Finally, as we are planning to refine mostly primitives, we will\n"
@@ -24090,7 +24098,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (idris)
-#: ../src/Tutorial/Prim.md:1046
+#: ../src/Tutorial/Prim.md:1045
 #, no-wrap
 msgid ""
 "-- only use this if you are sure that `decideOn p v`\n"
@@ -24104,7 +24112,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '1. '
-#: ../src/Tutorial/Prim.md:1058
+#: ../src/Tutorial/Prim.md:1057
 #, markdown-text, no-wrap
 msgid ""
 "We start with equality proofs. Implement `Decidable` for\n"
@@ -24112,7 +24120,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1061
+#: ../src/Tutorial/Prim.md:1060
 #, markdown-text, no-wrap
 msgid ""
 "   Hint: Use `DecEq` from module `Decidable.Equality` as a constraint\n"
@@ -24120,13 +24128,13 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '2. '
-#: ../src/Tutorial/Prim.md:1063
+#: ../src/Tutorial/Prim.md:1062
 #, markdown-text, no-wrap
 msgid "We want to be able to negate a predicate:\n"
 msgstr ""
 
 #. type: Fenced code block (idris)
-#: ../src/Tutorial/Prim.md:1064
+#: ../src/Tutorial/Prim.md:1063
 #, no-wrap
 msgid ""
 "   data Neg : (p : a -> Type) -> a -> Type where\n"
@@ -24134,19 +24142,19 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1070
+#: ../src/Tutorial/Prim.md:1069
 #, markdown-text, no-wrap
 msgid "   Implement `Decidable` for `Neg p` using a suitable constraint.\n"
 msgstr ""
 
 #. type: Bullet: '3. '
-#: ../src/Tutorial/Prim.md:1072
+#: ../src/Tutorial/Prim.md:1071
 #, markdown-text, no-wrap
 msgid "We want to describe the conjunction of two predicates:\n"
 msgstr ""
 
 #. type: Fenced code block (idris)
-#: ../src/Tutorial/Prim.md:1073
+#: ../src/Tutorial/Prim.md:1072
 #, no-wrap
 msgid ""
 "   data (&&) : (p,q : a -> Type) -> a -> Type where\n"
@@ -24155,13 +24163,13 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1079
+#: ../src/Tutorial/Prim.md:1078
 #, markdown-text, no-wrap
 msgid "   Implement `Decidable` for `(p && q)` using suitable constraints.\n"
 msgstr ""
 
 #. type: Bullet: '4. '
-#: ../src/Tutorial/Prim.md:1083
+#: ../src/Tutorial/Prim.md:1082
 #, markdown-text, no-wrap
 msgid ""
 "Come up with a data type called `(||)` for the\n"
@@ -24170,7 +24178,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '5. '
-#: ../src/Tutorial/Prim.md:1086
+#: ../src/Tutorial/Prim.md:1085
 #, markdown-text, no-wrap
 msgid ""
 "Proof [De Morgan's laws](https://en.wikipedia.org/wiki/De_Morgan%27s_laws)\n"
@@ -24178,7 +24186,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (idris)
-#: ../src/Tutorial/Prim.md:1087
+#: ../src/Tutorial/Prim.md:1086
 #, no-wrap
 msgid ""
 "   negOr : Neg (p || q) v -> (Neg p && Neg q) v\n"
@@ -24189,7 +24197,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1100
+#: ../src/Tutorial/Prim.md:1099
 #, markdown-text, no-wrap
 msgid ""
 "   The last of De Morgan's implications is harder to type and proof\n"
@@ -24200,7 +24208,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (idris)
-#: ../src/Tutorial/Prim.md:1101
+#: ../src/Tutorial/Prim.md:1100
 #, no-wrap
 msgid ""
 "   0 negAnd :  Decidable a p\n"
@@ -24210,7 +24218,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1111
+#: ../src/Tutorial/Prim.md:1110
 #, markdown-text, no-wrap
 msgid ""
 "   When you implement `negAnd`, remember that you can freely access\n"
@@ -24219,7 +24227,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1117
+#: ../src/Tutorial/Prim.md:1116
 #, markdown-text, no-wrap
 msgid ""
 "So far, we implemented the tools to algebraically describe\n"
@@ -24230,7 +24238,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (idris)
-#: ../src/Tutorial/Prim.md:1118
+#: ../src/Tutorial/Prim.md:1117
 #, no-wrap
 msgid ""
 "-- Proof that m <= n\n"
@@ -24240,7 +24248,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1128
+#: ../src/Tutorial/Prim.md:1127
 #, markdown-text, no-wrap
 msgid ""
 "This is similar to `Data.Nat.LTE` but I find operator\n"
@@ -24249,7 +24257,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (repl)
-#: ../src/Tutorial/Prim.md:1129
+#: ../src/Tutorial/Prim.md:1128
 #, no-wrap
 msgid ""
 "(>=) : (m,n : Nat) -> Type\n"
@@ -24281,7 +24289,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '6. '
-#: ../src/Tutorial/Prim.md:1171
+#: ../src/Tutorial/Prim.md:1170
 #, markdown-text, no-wrap
 msgid ""
 "Coming up with a value of type `m <= n` by pattern\n"
@@ -24300,7 +24308,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1175
+#: ../src/Tutorial/Prim.md:1174
 #, markdown-text, no-wrap
 msgid ""
 "   We therefore need to proof the following two lemmas (make\n"
@@ -24309,7 +24317,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (idris)
-#: ../src/Tutorial/Prim.md:1176
+#: ../src/Tutorial/Prim.md:1175
 #, no-wrap
 msgid ""
 "   0 fromLTE : (n1,n2 : Nat) -> (n1 <= n2) === True -> n1 <= n2\n"
@@ -24318,7 +24326,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1185
+#: ../src/Tutorial/Prim.md:1184
 #, markdown-text, no-wrap
 msgid ""
 "   They come with a quantity of 0, because they are just as inefficient\n"
@@ -24327,7 +24335,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1190
+#: ../src/Tutorial/Prim.md:1189
 #, markdown-text, no-wrap
 msgid ""
 "   Now, implement `Decidable Nat (<= n)`, making use of `test0`,\n"
@@ -24337,7 +24345,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1193
+#: ../src/Tutorial/Prim.md:1192
 #, markdown-text, no-wrap
 msgid ""
 "   Note: You should by now figure out yourself that `n` must be\n"
@@ -24345,7 +24353,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '7. '
-#: ../src/Tutorial/Prim.md:1198
+#: ../src/Tutorial/Prim.md:1197
 #, markdown-text, no-wrap
 msgid ""
 "Proof that `(<=)` is reflexive and transitive by declaring and\n"
@@ -24355,13 +24363,13 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '8. '
-#: ../src/Tutorial/Prim.md:1200
+#: ../src/Tutorial/Prim.md:1199
 #, markdown-text, no-wrap
 msgid "Proof that from `n > 0` follows `IsSucc n` and vise versa.\n"
 msgstr ""
 
 #. type: Bullet: '9. '
-#: ../src/Tutorial/Prim.md:1207
+#: ../src/Tutorial/Prim.md:1206
 #, markdown-text, no-wrap
 msgid ""
 "Declare and implement safe division and modulo functions\n"
@@ -24373,7 +24381,7 @@ msgid ""
 msgstr ""
 
 #. type: Fenced code block (idris)
-#: ../src/Tutorial/Prim.md:1208
+#: ../src/Tutorial/Prim.md:1207
 #, no-wrap
 msgid ""
 "   safeMod :  (x,y : Bits64)\n"
@@ -24382,7 +24390,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '10. '
-#: ../src/Tutorial/Prim.md:1218
+#: ../src/Tutorial/Prim.md:1217
 #, markdown-text, no-wrap
 msgid ""
 "We will use the predicates and utilities we defined so\n"
@@ -24392,7 +24400,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1223
+#: ../src/Tutorial/Prim.md:1222
 #, markdown-text, no-wrap
 msgid ""
 "    ```idris\n"
@@ -24402,7 +24410,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1228
+#: ../src/Tutorial/Prim.md:1227
 #, markdown-text, no-wrap
 msgid ""
 "    record Base where\n"
@@ -24412,13 +24420,13 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1230
+#: ../src/Tutorial/Prim.md:1229
 #, markdown-text, no-wrap
 msgid "    base : Bits64 -> Maybe Base\n"
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1235
+#: ../src/Tutorial/Prim.md:1234
 #, markdown-text, no-wrap
 msgid ""
 "    namespace Base\n"
@@ -24429,7 +24437,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1241
+#: ../src/Tutorial/Prim.md:1240
 #, markdown-text, no-wrap
 msgid ""
 "    Finally, implement `digits`, using `safeDiv` and `safeMod`\n"
@@ -24440,7 +24448,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1245
+#: ../src/Tutorial/Prim.md:1244
 #, markdown-text, no-wrap
 msgid ""
 "    ```idris\n"
@@ -24449,7 +24457,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1255
+#: ../src/Tutorial/Prim.md:1254
 #, markdown-text, no-wrap
 msgid ""
 "We will now turn our focus on strings. Two of the most\n"
@@ -24464,7 +24472,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '11. '
-#: ../src/Tutorial/Prim.md:1258
+#: ../src/Tutorial/Prim.md:1257
 #, markdown-text, no-wrap
 msgid ""
 "Implement the following aliases for useful predicates on\n"
@@ -24472,7 +24480,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1262
+#: ../src/Tutorial/Prim.md:1261
 #, markdown-text, no-wrap
 msgid ""
 "    Hint: Use `cast` to convert characters to natural numbers,\n"
@@ -24481,7 +24489,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1266
+#: ../src/Tutorial/Prim.md:1265
 #, markdown-text, no-wrap
 msgid ""
 "    ```idris\n"
@@ -24490,7 +24498,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1269
+#: ../src/Tutorial/Prim.md:1268
 #, markdown-text, no-wrap
 msgid ""
 "    -- Characters <= 255\n"
@@ -24498,7 +24506,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1272
+#: ../src/Tutorial/Prim.md:1271
 #, markdown-text, no-wrap
 msgid ""
 "    -- Characters in the interval ['A','Z']\n"
@@ -24506,7 +24514,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1275
+#: ../src/Tutorial/Prim.md:1274
 #, markdown-text, no-wrap
 msgid ""
 "    -- Characters in the interval ['a','z']\n"
@@ -24514,7 +24522,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1278
+#: ../src/Tutorial/Prim.md:1277
 #, markdown-text, no-wrap
 msgid ""
 "    -- Lower or upper case characters\n"
@@ -24522,7 +24530,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1281
+#: ../src/Tutorial/Prim.md:1280
 #, markdown-text, no-wrap
 msgid ""
 "    -- Characters in the range ['0','9']\n"
@@ -24530,7 +24538,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1284
+#: ../src/Tutorial/Prim.md:1283
 #, markdown-text, no-wrap
 msgid ""
 "    -- Digits or characters from the alphabet\n"
@@ -24538,7 +24546,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1287
+#: ../src/Tutorial/Prim.md:1286
 #, markdown-text, no-wrap
 msgid ""
 "    -- Characters in the ranges [0,31] or [127,159]\n"
@@ -24546,7 +24554,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1290
+#: ../src/Tutorial/Prim.md:1289
 #, markdown-text, no-wrap
 msgid ""
 "    -- An ASCII character that is not a control character\n"
@@ -24554,7 +24562,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1294
+#: ../src/Tutorial/Prim.md:1293
 #, markdown-text, no-wrap
 msgid ""
 "    -- A latin character that is not a control character\n"
@@ -24563,7 +24571,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '12. '
-#: ../src/Tutorial/Prim.md:1301
+#: ../src/Tutorial/Prim.md:1300
 #, markdown-text, no-wrap
 msgid ""
 "The advantage of this more modular approach to predicates\n"
@@ -24575,7 +24583,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1304
+#: ../src/Tutorial/Prim.md:1303
 #, markdown-text, no-wrap
 msgid ""
 "    ```idris\n"
@@ -24583,37 +24591,37 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1306
+#: ../src/Tutorial/Prim.md:1305
 #, markdown-text, no-wrap
 msgid "    0 digitToAlphaNum : IsDigit c -> IsAlphaNum c\n"
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1308
+#: ../src/Tutorial/Prim.md:1307
 #, markdown-text, no-wrap
 msgid "    0 alphaToAlphaNum : IsAlpha c -> IsAlphaNum c\n"
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1310
+#: ../src/Tutorial/Prim.md:1309
 #, markdown-text, no-wrap
 msgid "    0 lowerToAlpha : IsLower c -> IsAlpha c\n"
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1312
+#: ../src/Tutorial/Prim.md:1311
 #, markdown-text, no-wrap
 msgid "    0 upperToAlpha : IsUpper c -> IsAlpha c\n"
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1314
+#: ../src/Tutorial/Prim.md:1313
 #, markdown-text, no-wrap
 msgid "    0 lowerToAlphaNum : IsLower c -> IsAlphaNum c\n"
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1317
+#: ../src/Tutorial/Prim.md:1316
 #, markdown-text, no-wrap
 msgid ""
 "    0 upperToAlphaNum : IsUpper c -> IsAlphaNum c\n"
@@ -24621,7 +24629,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1324
+#: ../src/Tutorial/Prim.md:1323
 #, markdown-text, no-wrap
 msgid ""
 "    The following (`asciiToLatin`) is trickier. Remember that\n"
@@ -24634,7 +24642,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1327
+#: ../src/Tutorial/Prim.md:1326
 #, markdown-text, no-wrap
 msgid ""
 "    ```idris\n"
@@ -24642,7 +24650,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1330
+#: ../src/Tutorial/Prim.md:1329
 #, markdown-text, no-wrap
 msgid ""
 "    0 plainAsciiToPlainLatin : IsPlainAscii c -> IsPlainLatin c\n"
@@ -24650,7 +24658,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1334
+#: ../src/Tutorial/Prim.md:1333
 #, markdown-text, no-wrap
 msgid ""
 "Before we turn our full attention to predicates on strings,\n"
@@ -24659,13 +24667,13 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '13. '
-#: ../src/Tutorial/Prim.md:1336
+#: ../src/Tutorial/Prim.md:1335
 #, markdown-text, no-wrap
 msgid "Implement `Decidable` for `Head`:\n"
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1341
+#: ../src/Tutorial/Prim.md:1340
 #, markdown-text, no-wrap
 msgid ""
 "    ```idris\n"
@@ -24675,13 +24683,13 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '14. '
-#: ../src/Tutorial/Prim.md:1343
+#: ../src/Tutorial/Prim.md:1342
 #, markdown-text, no-wrap
 msgid "Implement `Decidable` for `Length`:\n"
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1350
+#: ../src/Tutorial/Prim.md:1349
 #, markdown-text, no-wrap
 msgid ""
 "    ```idris\n"
@@ -24693,7 +24701,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '15. '
-#: ../src/Tutorial/Prim.md:1354
+#: ../src/Tutorial/Prim.md:1353
 #, markdown-text, no-wrap
 msgid ""
 "The following predicate is a proof that all values in a list\n"
@@ -24702,7 +24710,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1363
+#: ../src/Tutorial/Prim.md:1362
 #, markdown-text, no-wrap
 msgid ""
 "    ```idris\n"
@@ -24716,13 +24724,13 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1365
+#: ../src/Tutorial/Prim.md:1364
 #, markdown-text, no-wrap
 msgid "    Implement `Decidable` for `All`.\n"
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1373
+#: ../src/Tutorial/Prim.md:1372
 #, markdown-text, no-wrap
 msgid ""
 "    For a real challenge, try to make your implementation of\n"
@@ -24737,7 +24745,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '16. '
-#: ../src/Tutorial/Prim.md:1379
+#: ../src/Tutorial/Prim.md:1378
 #, markdown-text, no-wrap
 msgid ""
 "It's time to come to an end here. An identifier in Idris is a sequence\n"
@@ -24748,7 +24756,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1382
+#: ../src/Tutorial/Prim.md:1381
 #, markdown-text, no-wrap
 msgid ""
 "    ```idris\n"
@@ -24756,7 +24764,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1388
+#: ../src/Tutorial/Prim.md:1387
 #, markdown-text, no-wrap
 msgid ""
 "    record Identifier where\n"
@@ -24767,7 +24775,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1391
+#: ../src/Tutorial/Prim.md:1390
 #, markdown-text, no-wrap
 msgid ""
 "    Implement a factory method `identifier` for converting strings\n"
@@ -24775,7 +24783,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1395
+#: ../src/Tutorial/Prim.md:1394
 #, markdown-text, no-wrap
 msgid ""
 "    ```idris\n"
@@ -24784,7 +24792,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1398
+#: ../src/Tutorial/Prim.md:1397
 #, markdown-text, no-wrap
 msgid ""
 "    In addition, implement `fromString` for `Identifier` and verify,\n"
@@ -24792,7 +24800,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1403
+#: ../src/Tutorial/Prim.md:1402
 #, markdown-text, no-wrap
 msgid ""
 "    ```idris\n"
@@ -24802,7 +24810,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ../src/Tutorial/Prim.md:1409
+#: ../src/Tutorial/Prim.md:1408
 #, markdown-text, no-wrap
 msgid ""
 "Final remarks: Proofing stuff about the primitives can be challenging,\n"

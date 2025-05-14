@@ -185,11 +185,25 @@ handleRequest db (MkRequest (MkCredentials email pw) album) =
           if x == album then Success album else lookupAlbum xs
 ```
 
-我想在这个例子中指出几件事。首先，请注意我们如何在单个模式匹配中从嵌套记录中提取值。其次，我们在 `where` 块中定义了两个 *局部* 函数：`lookupUser` 和 `lookupAlbum`。这两者都可以访问作用域内的所有变量。例如，`lookupUser` 在实现的第一行中使用来自模式匹配的 `album` 变量。同样，`lookupAlbum` 使用 `album` 变量。
+I'd like to point out several things in this example. First,
+note how we can extract values from nested records in a
+single pattern match.
+Second, we defined two *local* functions in a `where` block: `lookupUser`,
+and `lookupAlbum`. Both of these have access to all variables
+in the surrounding scope. For instance, `lookupUser` uses the
+`email` variable from the pattern match in the implementation's
+first line. Likewise, `lookupAlbum` makes use of the `album`
+variable.
 
 `where` 块引入了新的局部定义，只能从作用域和稍后在同一 `where` 块中定义的其他函数访问。这些需要以相同数量的空格输入和缩进。
 
-局部定义也可以通过使用 `let` 关键字在函数实现 *之前* 引入。 `let` 的这种用法不要与上面描述的 *let bindings* 混淆，后者用于绑定和重用中间计算的结果。下面是我们如何使用 `let` 关键字引入的本地定义来实现 `handleRequest`。同样，所有定义都必须正确输入和缩进：
+Local definitions can also be introduced *before* a function's
+implementation by using the `let` keyword. This usage
+of `let` is not to be confused with *let bindings* described
+above, which are used to bind and reuse the results of intermediate
+computations. Below is how we could have implemented `handleRequest` with
+local definitions introduced by the `let` keyword. Again,
+all definitions have to be properly typed and indented:
 
 ```idris
 handleRequest' : DB -> Request -> Response
@@ -396,7 +410,13 @@ Prelude.id : {0 a : Type} -> a -> a
 
 ### 下划线
 
-通常希望只编写必要的代码，让 Idris 解决剩下的问题。我们已经了解了这样一种情况：全捕获模式。如果模式匹配中的变量未在右侧使用，我们不能直接删除它，因为这会使 Idris 无法使用，但我们可以使用下划线作为一个占位符，表明我们计划删除几个参数中的哪一个：
+It is often desirable, to only write as little code as necessary
+and let Idris figure out the rest.
+We have already learned about one such occasion: Catch-all patterns.
+If a variable in a pattern match is not used on the right hand side,
+we can't just drop it, as this would make it impossible for
+Idris to know, which of several arguments we were planning to drop,
+but we can use an underscore as a placeholder instead:
 
 ```idris
 isRight : Either a b -> Bool

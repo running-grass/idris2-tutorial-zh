@@ -1,6 +1,17 @@
 # 介绍
 
-欢迎来到我的 Idris 2 教程。我将在这里尽可能多地处理 Idris 2 编程语言的各个方面。这里的每个 `.md` 文件都是一个 Idris 的文学编程文件：它们由 Markdown 组成（因此以 `.md` 结尾），Idris 代码块会被 GitHub 美观的打印出来，同时也可以由 Idris 编译器进行类型检查和构建（稍后会详细介绍）。但是请注意，常规的 Idris 源文件使用 `.idr` 结尾，并且除非您最终编写的代码比我现在所做的更复杂，否则您将继续使用本文件类型。在本教程的后面，您将需要解答一些习题，这些习题的答案可以在 `src/Solutions` 文件夹中找到。在那里，我会使用常规的 `.idr` 文件。
+Welcome to my Idris 2 tutorial. I'll try and treat as many aspects
+of the Idris 2 programming language as possible here.
+All `.md` files in here are literate Idris files: They consist of
+Markdown (hence the `.md` ending), which is being pretty printed
+by GitHub together with Idris code blocks, which can be
+type checked and built by the Idris compiler (more on this later).
+Note, however, that regular Idris source files use an `.idr` ending,
+and that you go with that file type unless you end up writing
+much more prose than code as I do at the moment. Later in this
+tutorial, you'll have to solve some exercises, the solutions of
+which can be found in the `src/Solutions` subfolder. There, I
+use regular `.idr` files.
 
 Before we begin, make sure to install the Idris compiler on your system.
 Throughout this tutorial, I assume you installed the *pack* package
@@ -48,7 +59,9 @@ as possible to make our functions as versatile to use as possible.
 * 它们可以通过指定（可能是随机生成的）输入参数集以及预期结果来轻松测试。
 
 
-* 它们是线程安全的，因为不会改变全局状态，因此可以在并行运行的多个计算中自由使用。
+* They are thread-safe, since they don't mutate global state, and
+  as such can be freely used in several computations running
+  in parallel.
 
 
 当然，也有一些缺点：
@@ -61,7 +74,11 @@ as possible to make our functions as versatile to use as possible.
 
 ### 依赖类型
 
-Idris 是一种强静态类型的编程语言。这意味着，会给每个 Idris 表达式一个*类型*（例如：整数、字符串列表、布尔值、从整数到布尔值的函数等），并且在编译时验证类型以排除某些常见的编程错误。
+Idris is a strongly, statically typed programming language. This
+means that every Idris expression is given a *type* (for instance:
+integer, list of strings, boolean, function from integer to boolean, etc.)
+and types are verified at compile time to rule out certain
+common programming errors.
 
 例如，如果一个函数需要 `String` 类型的参数（Unicode 字符序列，例如 `"Hello123"`），使用 `Integer` 类型的参数调用此函数是*类型错误*的，Idris 编译器将拒绝从此类错误类型的程序生成可执行文件。
 
@@ -185,7 +202,15 @@ maxBits8 : Bits8
 maxBits8 = 255
 ```
 
-第一行可以读作：“我们想声明（零元）函数 `maxBits8`。它的类型是 `Bits8`”。这称为*函数声明*：我们声明，应该有一个给定名称和类型的函数。第二行读作：“调用 `maxBits8` 的结果应该是 `255`。” （如您所见，我们可以将整数字面量用于其他整数类型，而不仅仅是 `Integer`。）第二行称为*函数定义*：此处应该描述函数 `maxBits8` 在求值时的表现。
+The first line can be read as: "We'd like to declare  (nullary)
+function `maxBits8`. It is of type `Bits8`". This is
+called the *function declaration*: we declare that there
+shall be a function of the given name and type. The second line
+reads: "The result of invoking `maxBits8` should be `255`."
+(As you can see, we can use integer literals for other integral
+types than just `Integer`.) This is called the *function definition*:
+Function `maxBits8` should behave as described here when being
+evaluated.
 
 我们可以在 REPL 进行检查。将此源文件加载到 Idris REPL 中（如上所述），然后运行以下测试。
 

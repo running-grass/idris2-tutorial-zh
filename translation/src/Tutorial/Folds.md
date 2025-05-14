@@ -95,7 +95,7 @@ main = printLn . len $ replicateList 10000 10
 如果您的系统上安装了 [Node.js](https://nodejs.org/en/)，您可以尝试以下实验。使用 Idris 的 *Node.js* 后端而不是默认的 *Chez Scheme* 后端编译并运行此模块，并使用 Node.js 二进制文件运行生成的 JavaScript 源文件：
 
 ```sh
-idris2 --cg node -o test.js --find-ipkg -src/Tutorial/Folds.md
+idris2 --cg node -o test.js --find-ipkg src/Tutorial/Folds.md
 node build/exec/test.js
 ```
 
@@ -387,7 +387,13 @@ ERROR: No clauses
 
 注意：我不希望你理解上面代码中所有的黑魔法。我将在适当的时候在另一章中解释细节。
 
-第二注：*Ex falso quodlibet*，也称为[爆炸原理](https://en.wikipedia.org/wiki/Principle_of_explosion) 是经典逻辑中的一条定律：从矛盾中，任何陈述都可以被证明。在我们的例子中，矛盾在于我们对 `Void` 的证明：声称我们编写了一个产生这样一个值的全函数，尽管 `Void` 是一种无人居住的类型。您可以通过在 REPL 中使用 `:doc Void` 检查 `Void` 来验证这一点：它没有数据构造函数。
+Second note: *Ex falso quodlibet*, also called
+[the principle of explosion](https://en.wikipedia.org/wiki/Principle_of_explosion)
+is a law in logic: From a contradiction, any statement can be proven.
+In our case, the contradiction was our proof of `Void`: The claim that we wrote
+a total function producing such a value, although `Void` is an uninhabited type.
+You can verify this by inspecting `Void` at the REPL with `:doc Void`: It
+has no data constructors.
 
 ### 案例 2：通过函数调用进行递归
 
@@ -602,7 +608,12 @@ folded
 Just 1
 ```
 
-虽然这种技术有时会产生非常优雅的代码，但请始终记住 `rightFold` 在一般情况下不是堆栈安全的。因此，除非您的累加器不能保证在没有太多迭代后返回结果，否则请考虑使用显式模式匹配的尾递归地实现您的函数。您的代码会稍微冗长一些，但可以保证堆栈安全。
+While this technique can sometimes lead to very elegant code, always
+remember that `rightFold` is not stack safe in the general case. So,
+unless your accumulator is guaranteed to return a result after
+not too many iterations, consider implementing your function
+tail recursively with an explicit pattern match. Your code will be
+slightly more verbose, but with the guaranteed benefit of stack safety.
 
 ### 折叠和幺半群
 

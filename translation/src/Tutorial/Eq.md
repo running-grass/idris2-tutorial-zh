@@ -359,7 +359,7 @@ showReadColType Float   = Refl
 在写下我们上面所做的证明类型时，必须非常小心不要落入以下陷阱：通常，Idris 会将函数类型中的小写标识符视为类型参数（已删除的隐式参数）。例如，这里尝试证明 `Maybe` 的恒等函子定律：
 
 ```idris
-mapMaybeId1 : (ma : Maybe a) -> map Prelude.id ma = ma
+mapMaybeId1 : (ma : Maybe a) -> map id ma = ma
 mapMaybeId1 Nothing  = Refl
 mapMaybeId1 (Just x) = ?mapMaybeId1_rhs
 ```
@@ -648,7 +648,9 @@ leftZero :  List (Vect n Nat)
 leftZero = (++)
 ```
 
-但是，下面的示例无法轻松实现（尝试 id！），因为 Idris 无法自行确定这两个长度是否统一。
+However, the example below can't be implemented as easily
+(try it!), because Idris can't figure out on its own
+that the two lengths unify.
 
 ```idris
 rightZero' :  List (Vect n Nat)

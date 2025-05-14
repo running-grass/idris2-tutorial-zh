@@ -427,7 +427,14 @@ Main> the Bits8 12 - 13
 
 ### 有符号整数
 
-与无符号整数类型一样，有符号固定精度整数类型（`Int8`、`Int16`、`Int32` 和 `Int64`）具有以下实现所有整数接口和用于按位运算的两个接口（`Bits` 和 `FiniteBits`）。如果结果仍然超出范围，则通过计算余数模 `2^bitsize` 并添加下限（负数）来处理溢出。例如，对于 `Int8`，所有操作都以 256 为模计算结果，如果结果仍然超出范围，则减去 128：
+Like the unsigned integer types, the signed fixed precision
+integer types (`Int8`, `Int16`, `Int32`, and `Int64`) come with
+implementations of all integral interfaces and
+the two interfaces for bitwise operations (`Bits` and `FiniteBits`).
+Overflows are handled by calculating the remainder
+modulo `2^bitsize` and subtracting `2^bitsize` if the result is still out of
+range. For instance, for `Int8`, all operations calculate their results modulo
+256, subtracting 256 if the result is still out of bounds:
 
 ```repl
 Main> the Int8 2 * 127

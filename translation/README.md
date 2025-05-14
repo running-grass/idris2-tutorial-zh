@@ -31,7 +31,7 @@
 
 2. [函数第 1 部分](src/Tutorial/Functions1.md)
 
-   1. [多参函数](src/Tutorial/Functions1.md#多参函数)
+   1. [Functions with more than one Argument](src/Tutorial/Functions1.md#functions-with-more-that-one-argument)
 
    2. [函数组合](src/Tutorial/Functions1.md#函数组合])
 
@@ -163,6 +163,8 @@
 2. [Neovim 中的交互式编辑](src/Appendices/Neovim.md)
 
 3. [构造 Idris 项目](src/Appendices/Projects.md)
+
+4. [A Deep Dive into Quantitative Type Theory](src/Appendices/QTT.md)
 
 
 ## 前置条件
