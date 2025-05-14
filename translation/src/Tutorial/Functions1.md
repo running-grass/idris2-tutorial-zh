@@ -8,7 +8,7 @@ Idris 是一种*函数式*编程语言。这意味着，函数是它的主要抽
 module Tutorial.Functions1
 ```
 
-## 具有多个参数的函数
+## 多参函数
 
 让我们实现一个函数，它检查它的三个 `Integer` 参数是否形成一个 [勾股三元组](https://en.wikipedia.org/wiki/Pythagorean_triple)。我们为此使用一个新的运算符：`==`，相等运算符。
 
