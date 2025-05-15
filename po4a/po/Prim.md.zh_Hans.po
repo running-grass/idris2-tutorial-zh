@@ -70,7 +70,7 @@ msgstr ""
 #: ../src/Tutorial/Interfaces.md:504 ../src/Tutorial/Predicates.md:461
 #: ../src/Tutorial/Prim.md:645
 msgid "And at the REPL:"
-msgstr "在 REPL 试一下："
+msgstr "在 REPL 里试一下："
 
 #. type: Title #
 #: ../src/Tutorial/Prim.md:1

@@ -297,7 +297,7 @@ hlist = [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
         , Nothing ]
 ```
 
-在 REPL 试一下：
+在 REPL 里试一下：
 
 ```repl
 Tutorial.Predicates> get (Maybe String) hlist

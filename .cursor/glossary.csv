@@ -121,7 +121,7 @@ operator section,运算符块
 minus operator,减号运算符
 operator overloading,运算符重载
 boolean algebra,布尔代数
-point-free style,无值风格
+point-free style,无参风格
 predicate,谓词
 Boolean,布尔值
 function application,函数应用

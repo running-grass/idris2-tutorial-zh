@@ -483,7 +483,7 @@ Tutorial.Prim> the Bits8 23 `xor` 11
 22 `shiftR` 1 in binary: 0  0  0  0    1  0  1  1
 ```
 
-在 REPL 试一下：
+在 REPL 里试一下：
 
 ```repl
 Tutorial.Prim> the Bits8 22 `shiftL` 2
