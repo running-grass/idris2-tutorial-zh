@@ -6,7 +6,6 @@ on:
   push:
     branches:
       - 'main'
-      - 'translate'
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -24,4 +23,11 @@ jobs:
         run: cd po4a && make update
 
       - name: 提交修改
-        run: git add . && git commit -m "更新翻译进度" && git push
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git add .
+            git commit -m "更新翻译进度"
+            git push
+          else
+            echo "没有文件变动，无需提交。"
+          fi
