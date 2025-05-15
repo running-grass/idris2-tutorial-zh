@@ -1,110 +1,75 @@
-# 介绍
+# 引言
 
-Welcome to my Idris 2 tutorial. I'll try and treat as many aspects
-of the Idris 2 programming language as possible here.
-All `.md` files in here are literate Idris files: They consist of
-Markdown (hence the `.md` ending), which is being pretty printed
-by GitHub together with Idris code blocks, which can be
-type checked and built by the Idris compiler (more on this later).
-Note, however, that regular Idris source files use an `.idr` ending,
-and that you go with that file type unless you end up writing
-much more prose than code as I do at the moment. Later in this
-tutorial, you'll have to solve some exercises, the solutions of
-which can be found in the `src/Solutions` subfolder. There, I
-use regular `.idr` files.
+欢迎来到我的 Idris 2 教程。我会尽量全面地介绍 Idris 2 编程语言的各个方面。这里的所有 `.md` 文件都是文学化 Idris
+文件：它们由 Markdown 组成（因此以 `.md` 结尾），GitHub 会将其与 Idris 代码块一起美观地渲染，这些代码块可以被 Idris
+编译器类型检查和构建（稍后会详细介绍）。需要注意的是，常规 Idris 源文件使用 `.idr`
+作为后缀，除非你像我现在这样写了大量说明性文字，否则建议使用 `.idr` 文件类型。在本教程后续，你需要完成一些练习，答案可以在
+`src/Solutions` 子目录中找到，那里我使用的是常规的 `.idr` 文件。
 
-Before we begin, make sure to install the Idris compiler on your system.
-Throughout this tutorial, I assume you installed the *pack* package
-manager and setup a skeleton package as described
-[here](../Appendices/Install.md). It is
-certainly possible to follow along with just the Idris compiler installed
-by other means, but some adjustments will be necessary
-when starting REPL sessions or building executables.
+在开始之前，请确保你已经在系统上安装了 Idris 编译器。本教程假定你已安装 *pack*
+包管理器，并按照[这里](../Appendices/Install.md)的说明配置了一个基础包。当然，仅通过其他方式安装 Idris
+编译器也可以学习本教程，但在启动 REPL 会话或构建可执行文件时，可能需要做一些调整。
 
-每个 Idris 源文件通常应该以模块名称和一些必要的导入开头，本文档也不例外。
+每个 Idris 源文件通常都以模块名和一些必要的导入语句开头，本教程也不例外：
 
 ```idris
 module Tutorial.Intro
 ```
 
-模块名称由以点分隔的标识符列表组成，并且必须反映文件夹结构加上模块文件的名称。
+模块名由用点分隔的标识符组成，必须与文件夹结构及模块文件名相对应。
 
 ## 关于 Idris 编程语言
 
-Idris 是一种具有*依赖类型*的、*完全*的*纯**函数式*编程语言。我将在本节中快速解释这些形容词。
+Idris 是一种*纯*、*依值类型*、*完全*的*函数式*编程语言。本节将简要解释这些术语的含义。
 
 ### 函数式编程
 
-In functional programming languages, functions are first-class
-constructs, meaning that they can be assigned to variables,
-passed as arguments to other functions, and returned as results
-from functions. Unlike for instance in
-object-oriented programming languages, in functional programming,
-functions are the main form of abstraction. This means that whenever
-we find a common pattern or (almost) identical code in several
-parts of a project, we try to abstract over this in order to
-have to write the corresponding code only once.
-We do this by introducing one or more new functions
-implementing this behavior. Doing so, we often try to be as general
-as possible to make our functions as versatile to use as possible.
+在函数式编程语言中，函数是一等公民，这意味着它们可以赋值给变量、作为参数传递给其他函数，也可以作为函数的返回值。与面向对象编程语言不同，函数式编程中，函数是主要的抽象手段。这意味着当我们在项目的多个部分发现相同或类似的代码时，会通过抽象出一个或多个新函数来实现复用，从而只需编写一次相关代码。通常我们会尽量让函数设计得通用，以便在更多场景下复用。
 
-函数式编程语言关注函数的求值，不像经典的命令式语言关注语句的执行。
+函数式编程语言关注的是函数的求值，而传统命令式语言关注的是语句的执行。
 
 ### 纯函数式编程
 
-纯函数式编程语言有一个额外的重要保证：函数不会产生像写入文件或改变全局状态这样的副作用。他们只能通过调用其他纯函数，给定参数来获取计算结果，*而没有其它的途径*。因此，给定相同的输入，它们将*总是*生成相同的输出。此属性称为 [引用透明](https://en.wikipedia.org/wiki/Referential_transparency)。
+纯函数式编程语言还提供了一个重要保证：函数不会产生诸如写文件或修改全局状态等副作用。它们只能通过参数（以及可能调用其他纯函数）来计算结果，*除此之外别无他法*。因此，给定相同的输入，它们*总是*产生相同的输出。这一特性被称为[引用透明](https://en.wikipedia.org/wiki/Referential_transparency)。
 
-纯函数有几个优点：
+纯函数有诸多优点：
 
-* 它们可以通过指定（可能是随机生成的）输入参数集以及预期结果来轻松测试。
+* 可以通过指定（甚至随机生成）输入参数及期望结果，轻松对其进行测试。
 
+* 由于不会修改全局状态，纯函数是线程安全的，因此可以在多个并发计算中自由使用。
 
-* They are thread-safe, since they don't mutate global state, and
-  as such can be freely used in several computations running
-  in parallel.
+当然，纯函数也有一些局限：
 
+* 有些算法仅用纯函数难以高效实现。
 
-当然，也有一些缺点：
-
-* 仅使用纯函数很难有效地实现某些算法。
-
-
-* 编写实际上*做*某些事情（具有一些可观察到的效果）的程序有点棘手，但肯定是可能的。
-
+* 要编写真正*产生效果*（即有可观察副作用）的程序会更复杂一些，但绝对可行。
 
 ### 依赖类型
 
-Idris is a strongly, statically typed programming language. This
-means that every Idris expression is given a *type* (for instance:
-integer, list of strings, boolean, function from integer to boolean, etc.)
-and types are verified at compile time to rule out certain
-common programming errors.
+Idris 是一种强类型、静态类型的编程语言。这意味着每个 Idris
+表达式都有一个*类型*（如：整数、字符串列表、布尔值、从整数到布尔值的函数等），并且类型会在编译时被检查，以避免常见的编程错误。
 
-例如，如果一个函数需要 `String` 类型的参数（Unicode 字符序列，例如 `"Hello123"`），使用 `Integer` 类型的参数调用此函数是*类型错误*的，Idris 编译器将拒绝从此类错误类型的程序生成可执行文件。
+例如，如果某个函数需要 `String` 类型的参数（即 Unicode 字符序列，如 `"Hello123"`），而你用 `Integer`
+类型的参数调用它，这就是*类型错误*，Idris 编译器会拒绝为这种类型错误的程序生成可执行文件。
 
-Being *statically typed* means that the Idris compiler will catch
-type errors at *compile time*, that is, before it generates an executable
-program that can be run. The opposite to this are *dynamically typed*
-languages such as Python, which check for type errors at *runtime*, that is,
-when a program is being executed. It is the philosophy of statically typed
-languages to catch as many type errors as possible before there even is
-a program that can be run.
+*静态类型*意味着 Idris 编译器会在*编译时*捕获类型错误，也就是说，在生成可执行程序之前就能发现错误。与之相对的是*动态类型*语言（如
+Python），它们会在*运行时*（即程序执行时）检查类型错误。静态类型语言的理念是在程序运行前尽可能多地发现类型错误。
 
-更重要的是，Idris 具有*依赖类型*，这是它在编程语言领域中最具特色的属性之一。在 Idris 中，类型是*一等*的：类型可以作为参数传递给函数，函数可以返回类型作为结果。更重要的是，类型可以*依赖于*其他*值*。这意味着什么，以及为什么这非常有用，我们将在适当的时候进行探索。
+此外，Idris 还支持*依值类型*，这是其在编程语言领域最具代表性的特性之一。在 Idris
+中，类型是一等公民：类型可以作为参数传递给函数，函数也可以返回类型作为结果。更进一步，类型还可以*依赖于*其他*值*。这些特性意味着什么，以及它们为何如此强大，我们会在后续详细探讨。
 
 ### 全函数
 
-A *total* function is a pure function, that is guaranteed to return
-a value of the expected return type for every possible input in
-a finite number of computational steps. A total function will never fail with an
-exception or loop infinitely, although it can still take arbitrarily
-long to compute its result
+*全*函数是一类纯函数，它保证对每一个可能的输入，都能在有限的计算步骤内返回一个符合预期类型的值。全函数不会因异常而失败，也不会陷入无限循环（尽管计算时间可能很长）。
 
-Idris 内置了一个完全性检查器，它使我们能够验证我们编写的函数是否是可证明的完全性。 Idris 中的完全性是可选的，因为一般来说，检查任意计算机程序的完全性是无法确定的（另请参见 [停机问题](https://en.wikipedia.org/wiki/Halting_problem)）。但是，如果我们使用 `total` 关键字注释函数，如果 Idris 的完全性检查器无法验证所讨论的函数确实是完全的，则 Idris 将失败并出现类型错误。
+Idris 内置了完全性检查器，可以帮助我们验证所写函数是否真正"全"。在 Idris
+中，完全性检查是可选的，因为一般来说，判断任意程序是否完全是不可判定的（参见[停机问题](https://en.wikipedia.org/wiki/Halting_problem)）。但如果你用
+`total` 关键字标注某个函数，而 Idris 检查器无法证明其完全性，则会报类型错误。
 
 ## 使用 REPL
 
-Idris 附带了一个有用的 REPL（*Read Evaluate Print Loop* 的首字母缩写词），我们将使用它来修补小想法，并快速试验我们刚刚编写的代码。要启动 REPL 会话，请在终端中运行以下命令：
+Idris 自带了一个非常实用的 REPL（即 *Read Evaluate Print
+Loop*，读-求值-打印-循环），我们可以用它来尝试小想法，或快速测试刚写的代码。要启动 REPL 会话，请在终端输入：
 
 ```repl
 pack repl
@@ -123,7 +88,7 @@ Welcome to Idris 2.  Enjoy yourself!
 Main>
 ```
 
-我们可以继续输入一些简单的算术表达式。 Idris 将进行*求值*并打印结果：
+我们可以输入一些简单的算术表达式，Idris 会*求值*并输出结果：
 
 ```repl
 Main> 2 * 4
@@ -132,25 +97,29 @@ Main> 3 * (7 + 100)
 321
 ```
 
-由于 Idris 中的每个表达式都有一个关联的*类型*，我们可能还想检查这些：
+由于 Idris 中每个表达式都有对应的*类型*，我们也可以查看它们的类型信息：
 
 ```repl
 Main> :t 2
 2 : Integer
 ```
 
-这里的 `:t` 是 Idris REPL 的命令（它不是 Idris 编程语言的一部分），它用于检查表达式的类型。
+这里的 `:t` 是 Idris REPL 的命令（不是 Idris 语言本身的一部分），用于查看表达式的类型。
 
 ```repl
 Main> :t 2 * 4
 2 * 4 : Integer
 ```
 
-每当我们使用整数字面量执行计算而没有明确说明我们想要使用的类型时，Idris 将使用 `Integer` 作为默认值。 `Integer` 是任意精度的有符号整数类型。它是语言中内置的*原语类型*之一。其他原语包括固定精度有符号和无符号整数类型（`Bits8`、`Bits16`、`Bits32` `Bits64`、`Int8`、 `Int16`、`Int32` 和 `Int64`）、双精度（64 位）浮点数（`Double`）、Unicode 字符（`Char`) 和 Unicode 字符串 (`String`)。我们将在适当的时候会使用到大多数。
+当我们用整数字面量进行计算而未明确指定类型时，Idris 默认使用 `Integer` 类型。`Integer`
+是一种任意精度的有符号整数，是语言内置的*原语类型*之一。其他原语类型还包括定长有符号和无符号整数（如
+`Bits8`、`Bits16`、`Bits32`、`Bits64`、`Int8`、`Int16`、`Int32`、`Int64`）、双精度（64
+位）浮点数（`Double`）、Unicode 字符（`Char`）和 Unicode 字符串（`String`）等。后续我们会用到其中许多类型。
 
 ## 第一个 Idris 程序
 
-我们经常会启动一个 REPL 来修补 Idris 语言的一小部分，阅读一些文档，或检查 Idris 模块的内容，但现在我们将编写一个最小的 Idris 程序来开始使用该语言。这是强制性的 *Hello World*：
+我们经常会启动一个 REPL 来修补 Idris 语言的一小部分，阅读一些文档，或检查 Idris 模块的内容，但现在我们将编写一个最小的 Idris
+程序来开始使用该语言。这是强制性的 *Hello World*：
 
 ```idris
 main : IO ()
@@ -169,14 +138,7 @@ $ build/exec/hello
 Hello World!
 ```
 
-The pack program requires an `.ipkg` to be in scope (in the current
-directory or one of its parent directories) from which
-it will get other settings like the source directory to use
-(`src` in our case). The optional `-o` option gives the name of the
-executable to be generated. Pack comes up with a name of its own
-it this is missing. Type `pack help` for a list
-of available command-line options and commands, and `pack help <cmd>`
-for getting help for a specific command.
+`--find-ipkg` 选项将在当前目录或其父目录之一中查找 `.ipkg` 文件，从中获取其他设置，如要使用的源码目录（在我们的例子中是 `src`）。`-o` 选项给出要生成的可执行文件的名称。输入 `idris2 --help` 以获取可用命令行选项和环境变量的列表。
 
 作为替代方案，您还可以在 REPL 会话中加载此源文件并从那里调用函数 `main`：
 
@@ -195,22 +157,18 @@ Hello World!
 
 现在我们执行了第一个 Idris 程序，接下来我们将更多地讨论我们如何编写代码来定义它。
 
-Idris 中一个典型的顶级函数由三部分组成：函数的名称（在我们的例子中是 `main`），它的类型（`IO ()`）加上它的实现（`putStrLn "你好世界”`）。用几个简单的例子来解释这些事情会更容易。下面，我们为最大的无符号八位整数定义一个顶级常量：
+Idris 中一个典型的顶级函数由三部分组成：函数的名称（在我们的例子中是 `main`），它的类型（`IO ()`）加上它的实现（`putStrLn
+"Hello World"`）。用几个简单的例子来解释这些事情会更容易。下面，我们为最大的无符号八位整数定义一个顶级常量：
 
 ```idris
 maxBits8 : Bits8
 maxBits8 = 255
 ```
 
-The first line can be read as: "We'd like to declare  (nullary)
-function `maxBits8`. It is of type `Bits8`". This is
-called the *function declaration*: we declare that there
-shall be a function of the given name and type. The second line
-reads: "The result of invoking `maxBits8` should be `255`."
-(As you can see, we can use integer literals for other integral
-types than just `Integer`.) This is called the *function definition*:
-Function `maxBits8` should behave as described here when being
-evaluated.
+第一行可以读作："我们想声明（零元）函数 `maxBits8`。它的类型是
+`Bits8`"。这称为*函数声明*：我们声明，应该有一个给定名称和类型的函数。第二行读作："调用 `maxBits8` 的结果应该是
+`255`。"（如您所见，我们可以将整数字面量用于其他整数类型，而不仅仅是 `Integer`。）第二行称为*函数定义*：此处应该描述函数
+`maxBits8` 在求值时的表现。
 
 我们可以在 REPL 进行检查。将此源文件加载到 Idris REPL 中（如上所述），然后运行以下测试。
 
@@ -235,7 +193,7 @@ distanceToMax : Bits8 -> Bits8
 distanceToMax n = maxBits8 - n
 ```
 
-这引入了一些新语法和一种新类型：函数类型。 `distanceToMax : Bits8 -> Bits8` 可以这样读：“`distanceToMax` 是具有一个 `Bits8` 类型参数的函数，它返回 `Bits8` 类型的结果”。在实现中，参数给定一个本地标识符 `n`，然后在右侧计算。再次在 REPL 中尝试函数：
+这引入了一些新语法和一种新类型：函数类型。 `distanceToMax : Bits8 -> Bits8` 可以这样读："`distanceToMax` 是具有一个 `Bits8` 类型参数的函数，它返回 `Bits8` 类型的结果"。在实现中，参数给定一个本地标识符 `n`，然后在右侧计算。再次在 REPL 中尝试函数：
 
 ```repl
 Tutorial.Intro> distanceToMax 12
@@ -253,21 +211,24 @@ square : Integer -> Integer
 square n = n * n
 ```
 
-我们现在学习 Idris 编程的一个非常重要的方面：Idris 是一种*静态类型*的编程语言。我们不允许随意混合类型。这样做会导致来自类型检查器的错误消息（这是 Idris 编译过程的一部分）。例如，如果我们在 REPL 中尝试以下操作，我们将收到类型错误：
+我们现在要学习 Idris 编程的一个非常重要的方面：Idris 是*静态类型*编程语言，不能随意混用不同类型。否则会收到类型检查器的报错（类型检查是
+Idris 编译过程的一部分）。例如，在 REPL 中尝试如下操作时会报类型错误：
 
 ```repl
 Tutorial.Intro> square maxBits8
 Error: ...
 ```
 
-原因：`square` 需要 `Integer` 类型的参数，但 `maxBits8` 的类型是 `Bits8`。许多原语类型可以使用函数 `cast` 相互转换（有时会有精度损失的风险）（稍后会详细介绍）：
+原因是：`square` 需要 `Integer` 类型的参数，而 `maxBits8` 的类型是 `Bits8`。许多原语类型之间可以用 `cast`
+函数进行转换（有时可能会丢失精度，后面会详细介绍）：
 
 ```repl
 Tutorial.Intro> square (cast maxBits8)
 65025
 ```
 
-请注意，在上面的示例中，结果比 `maxBits8` 大得多。原因是，首先将 `maxBits8` 转换为相同值的 `Integer`，然后对其进行平方。另一方面，如果我们直接将 `maxBits8` 平方，结果将被截断以适应 `Bits8` 的有效范围：
+请注意，上例的结果远大于 `maxBits8`。这是因为 `maxBits8` 先被转换为同值的 `Integer`，再进行平方。如果直接对
+`maxBits8` 求平方，结果会被截断以适应 `Bits8` 的取值范围：
 
 ```repl
 Tutorial.Intro> maxBits8 * maxBits8
@@ -276,61 +237,55 @@ Tutorial.Intro> maxBits8 * maxBits8
 
 ## 在哪里可以获得帮助
 
-有多种在线资源和印刷资源，您可以在其中找到有关 Idris 编程语言的帮助和文档。以下是它们的非全面列表：
+有许多线上和纸质资源可以查阅 Idris 编程语言的帮助和文档，下面列出部分常用参考：
 
-* [使用 Idris 进行类型驱动开发](https://www.manning.com/books/type-driven-development-with-idris)
+* [使用 Idris
+  进行类型驱动开发](https://www.manning.com/books/type-driven-development-with-idris)
 
+*专门*讲 Idris 的书！这描述得很详细。使用 Idris 和依赖类型的核心概念编写健壮和简洁的代码。它使用 Idris 1 实现书中的例子，所以使用 Idris 2 时它的一部分必须稍微调整，有一个[所需更新列表](https://idris2.readthedocs.io/en/latest/typedd/typedd.html)。
 
-  *专门*讲 Idris 的书！这描述得很详细。使用 Idris 和依赖类型的核心概念编写健壮和简洁的代码。它使用 Idris 1 实现书中的例子，所以使用 Idris 2 时它的一部分必须稍微调整，有一个[所需更新列表](https://idris2.readthedocs.io/en/latest/typedd/typedd.html)。
+* [Idris 2
+  速成课程](https://idris2.readthedocs.io/en/latest/tutorial/index.html)
 
-* [Idris 2 速成课程](https://idris2.readthedocs.io/en/latest/tutorial/index.html)
-
-
-  Idris 2 官方教程。全面而密集的解释 Idris 2 的所有功能。我发现这作为参考很有用，因此它是高度可访问的。但是，它不是函数式编程或类型驱动开发的入门介绍
+Idris 2 官方教程，对 Idris 2 的所有特性做了全面而深入的讲解，适合作为参考手册。但它并不是函数式编程或类型驱动开发的入门读物。
 
 * [Idris 2 GitHub 存储库](https://github.com/idris-lang/Idris2)
-
 
   在这里查看详细的安装说明和一些介绍材料。还有一个[wiki](https://github.com/idris-lang/Idris2/wiki)，
   在这里你可以找到[编辑器插件列表](https://github.com/idris-lang/Idris2/wiki/The-Idris-editor-experience)，
   [社区库列表](https://github.com/idris-lang/Idris2/wiki/Libraries),
   [外部后端列表](https://github.com/idris-lang/Idris2/wiki/External-backends),
-和其他有用的信息。
+  和其他有用的信息。
 
 * [Idris 2 Discord 频道](https://discord.gg/UX68fDs2jc)
 
-
-  如果你被一段代码卡住了，想问一些晦涩的语言功能，想推广你的新库，或者想和其他 Idris 程序员一起出去玩，可以来这个地方。Discord 频道非常活跃且对新人*非常*友好。
+  如果你被一段代码卡住了，想问一些晦涩的语言功能，想推广你的新库，或者想和其他 Idris 程序员一起出去玩，可以来这个地方。  Discord 频道非常活跃且对新人*非常*友好。
 
 * Idris REPL
-
 
   最后，Idris 本身可以提供很多有用的信息。在 Idris 编程的时间我倾向于至少打开一个 REPL 会话。我的编辑器（neovim）已设置使用 [Idris 2 的语言服务器](https://github.com/idris-community/idris2-lsp)，在 REPL 中这非常有用。
 
   * 使用 `:t` 检查表达式或元变量（孔）的类型：`:t foldl`,
-
   * 使用 `:ti` 检查包含隐式参数的函数类型：`:ti foldl`,
-
   * 使用 `:m` 列出作用域内的所有元变量（孔），
-
-  * 使用 `:doc` 访问顶级函数 (`:doc the`) 的文档，一种数据类型及其所有构造函数和可用提示 (`:doc Bool` )，语言特性（`:doc case`, `:doc let`, `:doc interface`, `:doc record`，甚至是 `:doc ?`)，或者一个接口（`:doc Uninhabited`），
-
+  * 使用 `:doc` 访问顶级函数 (`:doc the`) 的文档，一种数据类型及其所有构造函数和可用提示 (`:doc Bool`
+    )，语言特性（`:doc case`, `:doc let`, `:doc interface`, `:doc record`，甚至是
+    `:doc ?`)，或者一个接口（`:doc Uninhabited`），
   * 使用 `:module` 从可用包之一导入模块：`:module Data.Vect`,
-
   * 使用 `:browse` 列出加载模块导出的所有函数的名称和类型： `:browse Data.Vect`,
-
   * 使用 `:help` 获取其他命令的列表以及每个命令的简短描述。
-
 
 ## 概括
 
-在本介绍中，我们了解了 Idris 编程语言的最基本功能。我们使用 REPL 来修改我们的想法并检查代码中事物的类型，我们使用 Idris 编译器将 Idris 源文件编译为可执行文件。
+在本介绍中，我们了解了 Idris 编程语言的最基本功能。我们使用 REPL 来修改我们的想法并检查代码中事物的类型，我们使用 Idris 编译器将
+Idris 源文件编译为可执行文件。
 
 我们还了解了 Idris 中顶级定义的基本形式，它始终由标识符（其名称）、类型和实现组成。
 
-### 下一步是什么？
+### 接下来做什么？
 
-在[下一章](Functions1.md)中，我们开始在 Idris 中进行真正的编程。我们学习如何编写我们自己的纯函数，函数如何组合，以及我们如何像对待其他值一样对待函数并将它们作为参数传递给其他函数。
+在[下一章](Functions1.md)中，我们开始在 Idris
+中进行真正的编程。我们学习如何编写我们自己的纯函数，函数如何组合，以及我们如何像对待其他值一样对待函数并将它们作为参数传递给其他函数。
 
 <!-- vi: filetype=idris2:syntax=markdown
 -->

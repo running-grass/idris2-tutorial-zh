@@ -1,0 +1,39 @@
+---
+description: 
+globs: *.po,*.pot
+alwaysApply: false
+---
+# PO 文件格式与翻译规则
+
+本规则基于 [GNU gettext PO 文件格式官方文档](https:/www.gnu.org/software/gettext/manual/html_node/PO-Files.html)。
+
+## PO 文件结构
+- PO 文件由多个条目（entry）组成，每个条目描述原文字符串（msgid）与其翻译（msgstr）的对应关系。
+- 条目之间通常用空行分隔。
+- 每个条目可包含若干注释行（以 `#` 开头），注释类型如下：
+  - `# ` 译者注释（译者可自由添加）
+  - `#.` 提取注释（程序员写给译者的说明）
+  - `#:` 源码引用（文件名:行号）
+  - `#,` 标志（如 fuzzy、c-format 等）
+  - `#|` 之前的原文或上下文
+- 注释均为可选。
+
+## 主要字段
+- `msgid`：原文字符串，**不可修改**。
+- `msgstr`：翻译字符串，仅此字段可由译者编辑。
+- 可选：`msgctxt`（上下文）、`msgid_plural`（复数原文）、`msgstr[0]`/`msgstr[1]`（复数翻译）。
+
+## 折行规范
+- 长字符串可拆分为多行，每行用 `"` 包裹，自动拼接。
+- 译文（msgstr）建议折行，避免单行过长。
+- 字符串内部的 `\n` 表示实际换行，文件内换行仅为格式美观。
+
+## 翻译注意事项
+- **严禁修改 `msgid`、代码块、内联代码块（反引号包裹内容）及注释内容。**
+- 仅编辑 `msgstr` 字段，保持其它结构和格式不变。
+- 若条目带有 `#, fuzzy` 标志，表示翻译可能不准确，需人工确认。
+- 复数形式需分别翻译 `msgstr[0]`、`msgstr[1]` 等。
+- 头部 entry（`msgid ""`）为元信息，不是实际翻译内容。
+
+## 参考
+- [GNU gettext PO 文件格式官方文档](https:/www.gnu.org/software/gettext/manual/html_node/PO-Files.html)

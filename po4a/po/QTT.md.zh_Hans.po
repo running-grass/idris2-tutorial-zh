@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: po 4a\n"
-"POT-Creation-Date: 2025-05-15 04:14+0000\n"
+"POT-Creation-Date: 2025-05-15 07:57+0000\n"
 "PO-Revision-Date: 2025-05-15 04:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -70,26 +70,23 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/QTT.md:9
-#, no-wrap
 msgid ""
-"In the tutorial proper, when discussing functions, Idris 2's quantity\n"
-"system was introduced. The description was intentionally a bit\n"
-"simplified - the inner workings of quantities are complicated, and\n"
-"that complication would have only confused any newcomers to Idris 2.\n"
+"In the tutorial proper, when discussing functions, Idris 2's quantity system "
+"was introduced. The description was intentionally a bit simplified - the "
+"inner workings of quantities are complicated, and that complication would "
+"have only confused any newcomers to Idris 2."
 msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/QTT.md:18
-#, no-wrap
 msgid ""
-"Here, I'll provide a more proper and thorough treatment of\n"
-"Quantitative Type Theory (QTT), including how quantity checking is\n"
-"performed and the theory behind it. Most of the information here will\n"
-"be unnecessary for understanding and writing Idris programs, and you\n"
-"are free to keep thinking about quantities like they were explained\n"
-"before. When working with quantities in their full complexity,\n"
-"however, a better understanding of how they work can be helpful to\n"
-"avoid misconceptions.\n"
+"Here, I'll provide a more proper and thorough treatment of Quantitative Type "
+"Theory (QTT), including how quantity checking is performed and the theory "
+"behind it. Most of the information here will be unnecessary for "
+"understanding and writing Idris programs, and you are free to keep thinking "
+"about quantities like they were explained before. When working with "
+"quantities in their full complexity, however, a better understanding of how "
+"they work can be helpful to avoid misconceptions."
 msgstr ""
 
 #. type: Title ##
@@ -100,32 +97,28 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/QTT.md:26
-#, no-wrap
 msgid ""
-"Quantitative Type Theory, as you probably already know, uses a set of\n"
-"quantities. The core theory allows for any quantities to be used, but\n"
-"Idris 2 in particular has three: erased, linear, and unrestricted.\n"
-"These are usually written as `0`, `1`, and `ω` (the Greek lowercase\n"
-"omega) respectively.\n"
+"Quantitative Type Theory, as you probably already know, uses a set of "
+"quantities. The core theory allows for any quantities to be used, but Idris "
+"2 in particular has three: erased, linear, and unrestricted.  These are "
+"usually written as `0`, `1`, and `ω` (the Greek lowercase omega) "
+"respectively."
 msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/QTT.md:34
-#, no-wrap
 msgid ""
-"As QTT requires, these three quantities are equipped with the\n"
-"structure of an *ordered semiring*. The exact mathematical details of\n"
-"what that means aren't important; what it means for us is that\n"
-"quantities can be added and multiplied together, and that there is an\n"
-"ordering relation on them. Here are the tables for each of these\n"
-"operations, where the first argument is on the left and the second is\n"
-"on the top:\n"
+"As QTT requires, these three quantities are equipped with the structure of "
+"an *ordered semiring*. The exact mathematical details of what that means "
+"aren't important; what it means for us is that quantities can be added and "
+"multiplied together, and that there is an ordering relation on them. Here "
+"are the tables for each of these operations, where the first argument is on "
+"the left and the second is on the top:"
 msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/QTT.md:36
-#, fuzzy, no-wrap
-#| msgid "`(+)`: Addition\n"
+#, no-wrap
 msgid "**Addition**\n"
 msgstr "`(+)`：加法\n"
 
@@ -142,8 +135,7 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/QTT.md:44
-#, fuzzy, no-wrap
-#| msgid "`(*)`: Multiplication\n"
+#, no-wrap
 msgid "**Multiplication**\n"
 msgstr "`(*)`：乘法\n"
 
@@ -177,98 +169,83 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/QTT.md:63
-#, no-wrap
 msgid ""
-"These operations behave mostly how you might expect, with `0` and `1`\n"
-"being the usual numbers and `ω` being a sort of \"infinity\" value. (We\n"
-"have `1 + 1 = ω` instead of `2` because there isn't a `2` quantity in\n"
-"our system.)\n"
+"These operations behave mostly how you might expect, with `0` and `1` being "
+"the usual numbers and `ω` being a sort of \"infinity\" value. (We have `1 + "
+"1 = ω` instead of `2` because there isn't a `2` quantity in our system.)"
 msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/QTT.md:69
-#, no-wrap
 msgid ""
-"There is one big difference in our ordering, though: `0 ≤ 1` is false!\n"
-"We have that `0 ≤ ω` and `1 ≤ ω`, but not `0 ≤ 1`, or `1 ≤ 0` for that\n"
-"matter. In the language of mathematics, we say that `0` and `1` are\n"
-"*incomparable*. We'll get into why this is the case later, when we\n"
-"talk about what these operations mean and how they're used.\n"
+"There is one big difference in our ordering, though: `0 ≤ 1` is false! We "
+"have that `0 ≤ ω` and `1 ≤ ω`, but not `0 ≤ 1`, or `1 ≤ 0` for that matter. "
+"In the language of mathematics, we say that `0` and `1` are *incomparable*. "
+"We'll get into why this is the case later, when we talk about what these "
+"operations mean and how they're used."
 msgstr ""
 
 #. type: Title ##
 #: ../src/Appendices/QTT.md:70
-#, fuzzy, no-wrap
-#| msgid "Table of Contents"
+#, no-wrap
 msgid "Variables and Contexts"
 msgstr "目录"
 
 #. type: Plain text
 #: ../src/Appendices/QTT.md:75
-#, no-wrap
 msgid ""
-"In QTT, each variable in each context has an associated quantity.\n"
-"These quantities can be plainly seen when inspecting holes in the\n"
-"REPL. Here's an example from the tutorial:\n"
+"In QTT, each variable in each context has an associated quantity.  These "
+"quantities can be plainly seen when inspecting holes in the REPL. Here's an "
+"example from the tutorial:"
 msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/QTT.md:89
-#, no-wrap
 msgid ""
-"In this hole's context, The type variables `a` and `b` have `0`\n"
-"quantity, while the others have `ω` quantity.\n"
+"In this hole's context, The type variables `a` and `b` have `0` quantity, "
+"while the others have `ω` quantity."
 msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/QTT.md:92
-#, no-wrap
 msgid ""
-"Since the context is what stores quantities, only names that appear in\n"
-"the context can have a quantity, including:\n"
+"Since the context is what stores quantities, only names that appear in the "
+"context can have a quantity, including:"
 msgstr ""
 
 #. type: Bullet: '- '
 #: ../src/Appendices/QTT.md:96
-#, no-wrap
-msgid "Function/lambda parameters\n"
+msgid "Function/lambda parameters"
 msgstr ""
 
 #. type: Bullet: '- '
 #: ../src/Appendices/QTT.md:96
-#, fuzzy, no-wrap
-#| msgid "Pattern Matching"
-msgid "Pattern matching bindings\n"
+msgid "Pattern matching bindings"
 msgstr "模式匹配"
 
 #. type: Bullet: '- '
 #: ../src/Appendices/QTT.md:96
-#, no-wrap
-msgid "`let` bindings\n"
+msgid "`let` bindings"
 msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/QTT.md:98
-#, no-wrap
-msgid "These do not appear in the context, and thus do NOT have quantities:\n"
+msgid "These do not appear in the context, and thus do NOT have quantities:"
 msgstr ""
 
 #. type: Bullet: '- '
 #: ../src/Appendices/QTT.md:102
-#, no-wrap
-msgid "Top-level definitions\n"
+msgid "Top-level definitions"
 msgstr ""
 
 #. type: Bullet: '- '
 #: ../src/Appendices/QTT.md:102
-#, no-wrap
-msgid "`where` definitions\n"
+msgid "`where` definitions"
 msgstr ""
 
 #. type: Bullet: '- '
 #: ../src/Appendices/QTT.md:102
-#, no-wrap
-msgid "All non-variable expressions\n"
+msgid "All non-variable expressions"
 msgstr ""
 
 #. type: Title ###
@@ -279,33 +256,27 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/QTT.md:111
-#, no-wrap
 msgid ""
-"When writing Idris programs using holes, we tend to use a\n"
-"top-to-bottom approach: we start with looking at the context for the\n"
-"whole function, and then we look at smaller and smaller\n"
-"sub-expressions as we fill in the code. This means that quantities in\n"
-"the context tend to decrease over time - if the variable `x` has\n"
-"quantity `1` and you use it once, the quantity will decrease to `0`.\n"
+"When writing Idris programs using holes, we tend to use a top-to-bottom "
+"approach: we start with looking at the context for the whole function, and "
+"then we look at smaller and smaller sub-expressions as we fill in the code. "
+"This means that quantities in the context tend to decrease over time - if "
+"the variable `x` has quantity `1` and you use it once, the quantity will "
+"decrease to `0`."
 msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/QTT.md:117
-#, no-wrap
 msgid ""
-"When looking at how typechecking works, however, it's more natural to\n"
-"look at contexts in the other direction, from smaller sub-expressions\n"
-"to larger ones. This means that the quantities we're looking at will\n"
-"tend to increase instead. As an example, let's look at this simple\n"
-"function:\n"
+"When looking at how typechecking works, however, it's more natural to look "
+"at contexts in the other direction, from smaller sub-expressions to larger "
+"ones. This means that the quantities we're looking at will tend to increase "
+"instead. As an example, let's look at this simple function:"
 msgstr ""
 
 #. type: Fenced code block (idris)
 #: ../src/Appendices/QTT.md:118
-#, fuzzy, no-wrap
-#| msgid ""
-#| "square : Integer -> Integer\n"
-#| "square n = n * n\n"
+#, no-wrap
 msgid ""
 "square : Num a => a -> a\n"
 "square x = x * x\n"
@@ -315,10 +286,9 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/QTT.md:125
-#, no-wrap
 msgid ""
-"Let's first look at the context for the smallest sub-expression of\n"
-"this function, just the variable `x`:\n"
+"Let's first look at the context for the smallest sub-expression of this "
+"function, just the variable `x`:"
 msgstr ""
 
 #. type: Fenced code block (repl)
@@ -333,8 +303,7 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/QTT.md:134
-#, no-wrap
-msgid "Now let's look at the context for the larger expression `x * x`:\n"
+msgid "Now let's look at the context for the larger expression `x * x`:"
 msgstr ""
 
 #. type: Fenced code block (repl)
@@ -349,12 +318,11 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/QTT.md:146
-#, no-wrap
 msgid ""
-"The quantity of the parameter `x` increased from `1` to `ω`, since we\n"
-"went from using it once to using it multiple times. When looking at\n"
-"expressions like this, we can think of the quantity `q` as saying that\n"
-"the variable is \"used `q` times\" in the expression.\n"
+"The quantity of the parameter `x` increased from `1` to `ω`, since we went "
+"from using it once to using it multiple times. When looking at expressions "
+"like this, we can think of the quantity `q` as saying that the variable is "
+"\"used `q` times\" in the expression."
 msgstr ""
 
 #. type: Title ##
@@ -365,28 +333,23 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/QTT.md:153
-#, no-wrap
 msgid ""
-"With all of that background information established, we can finally\n"
-"see how quantity checking actually works. Let's follow what happens to\n"
-"a single variable `x` in our context as we perform different\n"
-"operations.\n"
+"With all of that background information established, we can finally see how "
+"quantity checking actually works. Let's follow what happens to a single "
+"variable `x` in our context as we perform different operations."
 msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/QTT.md:158
-#, no-wrap
 msgid ""
-"To illustrate how quantities evolve, I will provide Idris-style\n"
-"context diagrams showing the various cases. In these, capital-letter\n"
-"names `T`, `E`, etc. stand for any expression, and `q`, `r`, etc.\n"
-"stand for any quantity.\n"
+"To illustrate how quantities evolve, I will provide Idris-style context "
+"diagrams showing the various cases. In these, capital-letter names `T`, `E`, "
+"etc. stand for any expression, and `q`, `r`, etc.  stand for any quantity."
 msgstr ""
 
 #. type: Title ###
 #: ../src/Appendices/QTT.md:159
-#, fuzzy, no-wrap
-#| msgid "Overloaded Literals"
+#, no-wrap
 msgid "Variables and Literals"
 msgstr "字面量重载"
 
@@ -401,12 +364,11 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/QTT.md:171
-#, no-wrap
 msgid ""
-"In the simplest case, an expression is just a single variable. That\n"
-"variable will have quantity `1` in the context, while all others have\n"
-"quantity `0`. (Other variables may also be missing entirely, which for\n"
-"quantity checking is equivalent to them having `0` quantity.)\n"
+"In the simplest case, an expression is just a single variable. That variable "
+"will have quantity `1` in the context, while all others have quantity `0`. "
+"(Other variables may also be missing entirely, which for quantity checking "
+"is equivalent to them having `0` quantity.)"
 msgstr ""
 
 #. type: Fenced code block (repl)
@@ -420,19 +382,17 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/QTT.md:181
-#, no-wrap
 msgid ""
-"For literals such as `1`, or constructors such as `True`, all\n"
-"variables in the context have quantity 0, since all variables are used\n"
-"0 times in a constructor.\n"
+"For literals such as `1`, or constructors such as `True`, all variables in "
+"the context have quantity 0, since all variables are used 0 times in a "
+"constructor."
 msgstr ""
 
 #. type: Title ###
 #: ../src/Appendices/QTT.md:182
-#, fuzzy, no-wrap
-#| msgid "`($)`: Function application\n"
+#, no-wrap
 msgid "Function Application"
-msgstr "`($)`：函数应用\n"
+msgstr "`($)`：函数应用"
 
 #. type: Fenced code block (repl)
 #: ../src/Appendices/QTT.md:184
@@ -453,22 +413,20 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/QTT.md:202
-#, no-wrap
 msgid ""
-"This is the most complicated of QTT's rules. We have a function `F`\n"
-"whose parameter has `r` quantity, and we're applying it to `E`. If our\n"
-"variable `x` is used `qf` times in `F` and `qe` times in `E`, then it\n"
-"is used `qf + r*qe` times in the full expression.\n"
+"This is the most complicated of QTT's rules. We have a function `F` whose "
+"parameter has `r` quantity, and we're applying it to `E`. If our variable "
+"`x` is used `qf` times in `F` and `qe` times in `E`, then it is used `qf + "
+"r*qe` times in the full expression."
 msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/QTT.md:207
-#, no-wrap
 msgid ""
-"To better understand this rule, let's look at some simpler cases.\n"
-"First, let's assume that `x` is not used in the function `F`, so that\n"
-"`qf = 0`. Then, `x`'s full quantity is `r * qe`. For example, let's\n"
-"look at these two functions:\n"
+"To better understand this rule, let's look at some simpler cases.  First, "
+"let's assume that `x` is not used in the function `F`, so that `qf = 0`. "
+"Then, `x`'s full quantity is `r * qe`. For example, let's look at these two "
+"functions:"
 msgstr ""
 
 #. type: Fenced code block (idris)
@@ -495,12 +453,10 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/QTT.md:226
-#, no-wrap
 msgid ""
-"As another simplified case, let's assume that `F` is a linear\n"
-"function, meaning that `r = 1`. Then `x`'s full quantity is `qf + qe`,\n"
-"the simple sum of the quantities of each part. Here's a function that\n"
-"demonstrates this:\n"
+"As another simplified case, let's assume that `F` is a linear function, "
+"meaning that `r = 1`. Then `x`'s full quantity is `qf + qe`, the simple sum "
+"of the quantities of each part. Here's a function that demonstrates this:"
 msgstr ""
 
 #. type: Fenced code block (idris)
@@ -511,16 +467,14 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/QTT.md:239
-#, no-wrap
 msgid ""
-"The linear pair constructor `(#)` is linear in both arguments, so to\n"
-"find the quantity of `x` in the full expression we can just add up the\n"
-"quantities in each part. `x` is used zero times in `(#)` and one time\n"
-"in `x`, so the total quantity is `0 + 1 + 1 = ω`. If the second `x`\n"
-"were replaced by something else, like a literal, the quantity would\n"
-"only be `0 + 1 + 0 = 1`. Intuitively, you can think of these as\n"
-"\"parallel expressions\", and the addition operation tells you how\n"
-"quantities combine in parallel.\n"
+"The linear pair constructor `(#)` is linear in both arguments, so to find "
+"the quantity of `x` in the full expression we can just add up the quantities "
+"in each part. `x` is used zero times in `(#)` and one time in `x`, so the "
+"total quantity is `0 + 1 + 1 = ω`. If the second `x` were replaced by "
+"something else, like a literal, the quantity would only be `0 + 1 + 0 = 1`. "
+"Intuitively, you can think of these as \"parallel expressions\", and the "
+"addition operation tells you how quantities combine in parallel."
 msgstr ""
 
 #. type: Title ###
@@ -546,19 +500,17 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/QTT.md:259
-#, no-wrap
 msgid ""
-"This rule is where the order relation on quantities comes in. It\n"
-"allows us to convert a quantity in our context to another one, given\n"
-"that the new context is greater than or equal to the old one. Type\n"
-"theorists call this *subusaging*, as it lets us use variables less\n"
-"often than we claim in our types.\n"
+"This rule is where the order relation on quantities comes in. It allows us "
+"to convert a quantity in our context to another one, given that the new "
+"context is greater than or equal to the old one. Type theorists call this "
+"*subusaging*, as it lets us use variables less often than we claim in our "
+"types."
 msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/QTT.md:261
-#, no-wrap
-msgid "Subusaging is why this function definition is allowed:\n"
+msgid "Subusaging is why this function definition is allowed:"
 msgstr ""
 
 #. type: Fenced code block (idris)
@@ -571,20 +523,18 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/QTT.md:270
-#, no-wrap
 msgid ""
-"The input `x` is used zero times, which would normally mean its\n"
-"quantity would have to be `0`; however, since `0 ≤ ω`, we can use\n"
-"subusaging to increase the quantity to `ω`.\n"
+"The input `x` is used zero times, which would normally mean its quantity "
+"would have to be `0`; however, since `0 ≤ ω`, we can use subusaging to "
+"increase the quantity to `ω`."
 msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/QTT.md:274
-#, no-wrap
 msgid ""
-"This also explains the mysterious fact we pointed out earlier, that\n"
-"`0 ≰ 1` in our quantity ordering. If it were true that `0 ≤ 1`, then we\n"
-"could also increase the quantity of `x` from `0` to `1`:\n"
+"This also explains the mysterious fact we pointed out earlier, that `0 ≰ 1` "
+"in our quantity ordering. If it were true that `0 ≤ 1`, then we could also "
+"increase the quantity of `x` from `0` to `1`:"
 msgstr ""
 
 #. type: Fenced code block (idris)
@@ -597,11 +547,10 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/QTT.md:283
-#, no-wrap
 msgid ""
-"This would mean that the quantity `1` would be for variables used *at\n"
-"most* once, rather than *exactly* once. Idris's designers decided that\n"
-"they wanted linearity to have the second meaning, not the first.\n"
+"This would mean that the quantity `1` would be for variables used *at most* "
+"once, rather than *exactly* once. Idris's designers decided that they wanted "
+"linearity to have the second meaning, not the first."
 msgstr ""
 
 #. type: Title ###
@@ -642,10 +591,9 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/QTT.md:308
-#, no-wrap
 msgid ""
-"To see how quantity checking would work with this let-expression, we\n"
-"can simply desugar it into its equivalent lambda form:\n"
+"To see how quantity checking would work with this let-expression, we can "
+"simply desugar it into its equivalent lambda form:"
 msgstr ""
 
 #. type: Fenced code block (idris)
@@ -656,22 +604,18 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/QTT.md:317
-#, no-wrap
 msgid ""
-"An explicit quantity `q` isn't given for the lambda in this\n"
-"expression, so Idris will try to infer the quantity, then check to see\n"
-"if it's valid. In this case, Idris will infer that `x` is\n"
-"unrestricted.\n"
+"An explicit quantity `q` isn't given for the lambda in this expression, so "
+"Idris will try to infer the quantity, then check to see if it's valid. In "
+"this case, Idris will infer that `x` is unrestricted."
 msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/QTT.md:324
-#, no-wrap
 msgid ""
-"All of the binding constructs that this rule applies to support\n"
-"pattern matching, so we need to determine how quantities interact with\n"
-"patterns. To be more specific, if we have a function that\n"
-"pattern-matches like this:\n"
+"All of the binding constructs that this rule applies to support pattern "
+"matching, so we need to determine how quantities interact with patterns. To "
+"be more specific, if we have a function that pattern-matches like this:"
 msgstr ""
 
 #. type: Fenced code block (idris)
@@ -684,20 +628,17 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/QTT.md:332
-#, no-wrap
 msgid ""
-"How does the linear quantity of this function's input \"descend\" into\n"
-"the bindings `x` and `y`?\n"
+"How does the linear quantity of this function's input \"descend\" into the "
+"bindings `x` and `y`?"
 msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/QTT.md:337
-#, no-wrap
 msgid ""
-"A simple rule is to apply the same function-application rule we looked\n"
-"at earlier, but to the left side of the equation. For example, here's\n"
-"how we compute the quantity required for `x` in this function\n"
-"definition:\n"
+"A simple rule is to apply the same function-application rule we looked at "
+"earlier, but to the left side of the equation. For example, here's how we "
+"compute the quantity required for `x` in this function definition:"
 msgstr ""
 
 #. type: Fenced code block (idris)
@@ -710,37 +651,27 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/QTT.md:349
-#, no-wrap
 msgid ""
-"We start from the outside and work our way inwards, applying the\n"
-"`qf + r*qe` rule as we go. `x` is used zero times in the constant\n"
-"`func`, and its argument is linear. We know that `x` is used once\n"
-"inside of the linear pair `(x # y)` (aside from being obvious, we can\n"
-"compute this fact ourselves), so the number of times `x` must be used\n"
-"in `func`'s definition is `0 + 1 * 1 = 1`.\n"
+"We start from the outside and work our way inwards, applying the `qf + r*qe` "
+"rule as we go. `x` is used zero times in the constant `func`, and its "
+"argument is linear. We know that `x` is used once inside of the linear pair "
+"`(x # y)` (aside from being obvious, we can compute this fact ourselves), so "
+"the number of times `x` must be used in `func`'s definition is `0 + 1 * 1 = "
+"1`."
 msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/QTT.md:354
-#, no-wrap
 msgid ""
-"The same argument applies to `y`, meaning that `y` should also be used\n"
-"once inside of `func` for this definition to pass quantity checking.\n"
-"And in fact, if we look at the context of the hole `?impl`, that's\n"
-"exactly what we see!\n"
+"The same argument applies to `y`, meaning that `y` should also be used once "
+"inside of `func` for this definition to pass quantity checking.  And in "
+"fact, if we look at the context of the hole `?impl`, that's exactly what we "
+"see!"
 msgstr ""
 
 #. type: Fenced code block (repl)
 #: ../src/Appendices/QTT.md:355
-#, fuzzy, no-wrap
-#| msgid ""
-#| "Tutorial.Functions2> :t impl_0\n"
-#| " 0 b : Type\n"
-#| " 0 a : Type\n"
-#| " 0 e : Type\n"
-#| "   fun : a -> Either e b\n"
-#| "------------------------------\n"
-#| "impl_0 : Either e (List b)\n"
+#, no-wrap
 msgid ""
 " 0 a : Type\n"
 " 0 b : Type\n"
@@ -760,13 +691,12 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/QTT.md:370
-#, no-wrap
 msgid ""
-"As a final note, pattern matching in Idris 2 is only allowed when the\n"
-"value in question exists at runtime, meaning that it isn't erased.\n"
-"This is because in QTT, a value must be constructed before it can be\n"
-"pattern-matched: if you match on a variable `x`, the resources\n"
-"required to make that variable's value are added to the total count.\n"
+"As a final note, pattern matching in Idris 2 is only allowed when the value "
+"in question exists at runtime, meaning that it isn't erased.  This is "
+"because in QTT, a value must be constructed before it can be pattern-"
+"matched: if you match on a variable `x`, the resources required to make that "
+"variable's value are added to the total count."
 msgstr ""
 
 #. type: Fenced code block (repl)
@@ -788,12 +718,11 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/QTT.md:389
-#, no-wrap
 msgid ""
-"For this reason, the total uses of the variable `x` when\n"
-"pattern-matching on it must be `1 + q`, where `q` is the uses of `x`\n"
-"after the pattern-match (`x` is still possible to use with an\n"
-"as-pattern `x@...`). This prevents the quantity from being `0`.\n"
+"For this reason, the total uses of the variable `x` when pattern-matching on "
+"it must be `1 + q`, where `q` is the uses of `x` after the pattern-match "
+"(`x` is still possible to use with an as-pattern `x@...`). This prevents the "
+"quantity from being `0`."
 msgstr ""
 
 #. type: Title ##
@@ -804,12 +733,11 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/QTT.md:396
-#, no-wrap
 msgid ""
-"Earlier I stated that only variables in the context can have\n"
-"quantities, which in particular means top-level definitions cannot\n"
-"have them. This is *mostly* true, but there is one slight exception: a\n"
-"function can be marked as erased by placing a `0` before its name.\n"
+"Earlier I stated that only variables in the context can have quantities, "
+"which in particular means top-level definitions cannot have them. This is "
+"*mostly* true, but there is one slight exception: a function can be marked "
+"as erased by placing a `0` before its name."
 msgstr ""
 
 #. type: Fenced code block (idris)
@@ -822,36 +750,32 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/QTT.md:408
-#, no-wrap
 msgid ""
-"This tells the type system to define this function within the *erased\n"
-"fragment*, which is a fragment of the type system wherein all quantity\n"
-"checks are ignored. In the `erasedId` function above, we use the\n"
-"function's input `x` once despite labeling it as erased. This would\n"
-"normally result in a quantity error, but this function is allowed due\n"
-"to being defined in the erased fragment.\n"
+"This tells the type system to define this function within the *erased "
+"fragment*, which is a fragment of the type system wherein all quantity "
+"checks are ignored. In the `erasedId` function above, we use the function's "
+"input `x` once despite labeling it as erased. This would normally result in "
+"a quantity error, but this function is allowed due to being defined in the "
+"erased fragment."
 msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/QTT.md:413
-#, no-wrap
 msgid ""
-"This quantity freedom the erased fragment gives us comes with a big\n"
-"drawback, though - erased functions are banned from being used at\n"
-"runtime. In terms of the type theory, what this means is that an\n"
-"erased function can only ever be used in these two places:\n"
+"This quantity freedom the erased fragment gives us comes with a big "
+"drawback, though - erased functions are banned from being used at runtime. "
+"In terms of the type theory, what this means is that an erased function can "
+"only ever be used in these two places:"
 msgstr ""
 
 #. type: Bullet: '1. '
 #: ../src/Appendices/QTT.md:416
-#, no-wrap
-msgid "Inside of another erased-fragment function or expression;\n"
+msgid "Inside of another erased-fragment function or expression;"
 msgstr ""
 
 #. type: Bullet: '2. '
 #: ../src/Appendices/QTT.md:416
-#, no-wrap
-msgid "Inside of a function argument that's erased:\n"
+msgid "Inside of a function argument that's erased:"
 msgstr ""
 
 #. type: Fenced code block (idris)
@@ -867,20 +791,17 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/QTT.md:427
-#, no-wrap
 msgid ""
-"This makes sure that quantities are always handled correctly at\n"
-"runtime, which is where it matters!\n"
+"This makes sure that quantities are always handled correctly at runtime, "
+"which is where it matters!"
 msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/QTT.md:432
-#, no-wrap
 msgid ""
-"There is another important place where the erased fragment comes into\n"
-"play, and that's in type signatures. The type signatures of\n"
-"definitions are always erased, so erased functions can be used inside\n"
-"of them.\n"
+"There is another important place where the erased fragment comes into play, "
+"and that's in type signatures. The type signatures of definitions are always "
+"erased, so erased functions can be used inside of them."
 msgstr ""
 
 #. type: Fenced code block (idris)
@@ -893,40 +814,34 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/QTT.md:441
-#, no-wrap
 msgid ""
-"For this reason, erased functions are sometimes thought of as\n"
-"\"exclusively type-level functions\", though as we've seen, that's not\n"
-"entirely accurate.\n"
+"For this reason, erased functions are sometimes thought of as \"exclusively "
+"type-level functions\", though as we've seen, that's not entirely accurate."
 msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/QTT.md:453
-#, no-wrap
 msgid ""
-"This concludes our thorough discussion of Quantitative Type Theory. In\n"
-"this section, we learned about the various operations on quantities:\n"
-"their addition, multiplication, and ordering. We saw how quantities\n"
-"were linked to the context, and how to properly think about the\n"
-"context when analyzing type systems (bottom-to-top instead of\n"
-"top-to-bottom). We then moved on to studying QTT proper, and we saw\n"
-"how the quantities in our context change as the expressions we write\n"
-"grow more complex. Finally, we looked at the erased fragment, and how\n"
-"we can define erased functions.\n"
+"This concludes our thorough discussion of Quantitative Type Theory. In this "
+"section, we learned about the various operations on quantities: their "
+"addition, multiplication, and ordering. We saw how quantities were linked to "
+"the context, and how to properly think about the context when analyzing type "
+"systems (bottom-to-top instead of top-to-bottom). We then moved on to "
+"studying QTT proper, and we saw how the quantities in our context change as "
+"the expressions we write grow more complex. Finally, we looked at the erased "
+"fragment, and how we can define erased functions."
 msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/QTT.md:462
-#, no-wrap
 msgid ""
-"In Idris 2's current state, most of this information is still entirely\n"
-"unnecessary for learning the language. That may not always be the\n"
-"case, though: there have been some discussions to change the quantity\n"
-"semiring that Idris 2 uses, or even to allow the programmer to choose\n"
-"which set of quantities to use. Whether those discussions lead to\n"
-"anything or not, it can still useful to better understand how\n"
-"Quantitative Type Theory functions in order to write better Idris 2\n"
-"code.\n"
+"In Idris 2's current state, most of this information is still entirely "
+"unnecessary for learning the language. That may not always be the case, "
+"though: there have been some discussions to change the quantity semiring "
+"that Idris 2 uses, or even to allow the programmer to choose which set of "
+"quantities to use. Whether those discussions lead to anything or not, it can "
+"still useful to better understand how Quantitative Type Theory functions in "
+"order to write better Idris 2 code."
 msgstr ""
 
 #. type: Title ###
@@ -937,350 +852,55 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/QTT.md:471
-#, no-wrap
 msgid ""
-"The information in this appendix is partially based on Robert Atkey's\n"
-"2018 paper [Syntax and Semantics of Quantitative Type\n"
-"Theory](https://bentnib.org/quantitative-type-theory.pdf), which\n"
-"outlines QTT in the standard language of type theory. The QTT\n"
-"presented in Atkey's paper is roughly similar to Idris 2's type system\n"
-"except for these differences:\n"
+"The information in this appendix is partially based on Robert Atkey's 2018 "
+"paper [Syntax and Semantics of Quantitative Type Theory](https://bentnib.org/"
+"quantitative-type-theory.pdf), which outlines QTT in the standard language "
+"of type theory. The QTT presented in Atkey's paper is roughly similar to "
+"Idris 2's type system except for these differences:"
 msgstr ""
 
 #. type: Bullet: '1. '
 #: ../src/Appendices/QTT.md:478
-#, no-wrap
 msgid ""
-"Atkey's theory does not have subusaging, and so the quantity\n"
-"semiring in Atkey's paper is not ordered.\n"
+"Atkey's theory does not have subusaging, and so the quantity semiring in "
+"Atkey's paper is not ordered."
 msgstr ""
 
 #. type: Bullet: '2. '
 #: ../src/Appendices/QTT.md:478
-#, no-wrap
 msgid ""
-"In Atkey's theory, types can only be constructed in the erased\n"
-"fragment, which means it is impossible to construct a type at\n"
-"runtime. Idris 2 allows constructing types at runtime, but still\n"
-"uses the erased fragment when inside of type signatures.\n"
+"In Atkey's theory, types can only be constructed in the erased fragment, "
+"which means it is impossible to construct a type at runtime. Idris 2 allows "
+"constructing types at runtime, but still uses the erased fragment when "
+"inside of type signatures."
 msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/QTT.md:482
-#, no-wrap
 msgid ""
-"To resolve these differences, I directly observed how Idris 2's type\n"
-"system behaved in practice in order to determine where to deviate from\n"
-"Atkey's paper.\n"
+"To resolve these differences, I directly observed how Idris 2's type system "
+"behaved in practice in order to determine where to deviate from Atkey's "
+"paper."
 msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/QTT.md:494
-#, no-wrap
 msgid ""
-"While I tried to be as mathematically accurate as possible in this\n"
-"section, some accuracy had to be sacrificed for the sake of\n"
-"simplicity. In particular, the description of pattern matching given\n"
-"here is substantially oversimplified. A proper formal treatment of\n"
-"pattern matching would require introducing an eliminator function for\n"
-"each datatype; this eliminator would serve to determine how that\n"
-"datatype's constructors interacted with quantity checking. The details\n"
-"of how this would work for a few simple types (such as the boolean\n"
-"type `Bool`) are in Atkey's paper above. I did not include these\n"
-"details because I decided that what I was describing was complicated\n"
-"enough already.\n"
+"While I tried to be as mathematically accurate as possible in this section, "
+"some accuracy had to be sacrificed for the sake of simplicity. In "
+"particular, the description of pattern matching given here is substantially "
+"oversimplified. A proper formal treatment of pattern matching would require "
+"introducing an eliminator function for each datatype; this eliminator would "
+"serve to determine how that datatype's constructors interacted with quantity "
+"checking. The details of how this would work for a few simple types (such as "
+"the boolean type `Bool`) are in Atkey's paper above. I did not include these "
+"details because I decided that what I was describing was complicated enough "
+"already."
 msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/QTT.md:495
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "<!-- vi: filetype=idris2:syntax=markdown -->\n"
-msgstr ""
-"#-#-#-#-#  README.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"<!-- vi: filetype=idris2\n"
-"-->\n"
-"#-#-#-#-#  Neovim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  README.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"<!-- vi: filetype=idris2\n"
-"-->\n"
-"#-#-#-#-#  Neovim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DPair.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DataTypes.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Dependent.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Eq.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Folds.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions1.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions2.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functor.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  IO.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Interfaces.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Intro.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Predicates.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Prim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Traverse.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DPair.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  README.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"<!-- vi: filetype=idris2\n"
-"-->\n"
-"#-#-#-#-#  Neovim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DPair.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DataTypes.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Dependent.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Eq.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Folds.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions1.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions2.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functor.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  IO.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Interfaces.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Intro.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Predicates.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Prim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Traverse.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DataTypes.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  README.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"<!-- vi: filetype=idris2\n"
-"-->\n"
-"#-#-#-#-#  Neovim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DPair.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DataTypes.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Dependent.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Eq.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Folds.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions1.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions2.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functor.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  IO.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Interfaces.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Intro.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Predicates.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Prim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Traverse.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Dependent.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  README.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"<!-- vi: filetype=idris2\n"
-"-->\n"
-"#-#-#-#-#  Neovim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DPair.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DataTypes.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Dependent.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Eq.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Folds.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions1.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions2.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functor.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  IO.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Interfaces.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Intro.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Predicates.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Prim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Traverse.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Eq.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  README.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"<!-- vi: filetype=idris2\n"
-"-->\n"
-"#-#-#-#-#  Neovim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DPair.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DataTypes.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Dependent.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Eq.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Folds.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions1.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions2.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functor.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  IO.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Interfaces.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Intro.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Predicates.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Prim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Traverse.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Folds.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  README.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"<!-- vi: filetype=idris2\n"
-"-->\n"
-"#-#-#-#-#  Neovim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DPair.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DataTypes.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Dependent.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Eq.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Folds.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions1.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions2.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functor.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  IO.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Interfaces.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Intro.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Predicates.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Prim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Traverse.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions1.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  README.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"<!-- vi: filetype=idris2\n"
-"-->\n"
-"#-#-#-#-#  Neovim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DPair.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DataTypes.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Dependent.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Eq.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Folds.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions1.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions2.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functor.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  IO.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Interfaces.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Intro.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Predicates.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Prim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Traverse.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions2.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  README.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"<!-- vi: filetype=idris2\n"
-"-->\n"
-"#-#-#-#-#  Neovim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DPair.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DataTypes.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Dependent.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Eq.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Folds.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions1.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions2.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functor.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  IO.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Interfaces.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Intro.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Predicates.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Prim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Traverse.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functor.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  README.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"<!-- vi: filetype=idris2\n"
-"-->\n"
-"#-#-#-#-#  Neovim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DPair.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DataTypes.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Dependent.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Eq.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Folds.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions1.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions2.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functor.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  IO.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Interfaces.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Intro.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Predicates.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Prim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Traverse.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  IO.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  README.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"<!-- vi: filetype=idris2\n"
-"-->\n"
-"#-#-#-#-#  Neovim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DPair.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DataTypes.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Dependent.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Eq.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Folds.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions1.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions2.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functor.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  IO.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Interfaces.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Intro.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Predicates.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Prim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Traverse.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Interfaces.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  README.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"<!-- vi: filetype=idris2\n"
-"-->\n"
-"#-#-#-#-#  Neovim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DPair.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DataTypes.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Dependent.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Eq.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Folds.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions1.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions2.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functor.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  IO.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Interfaces.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Intro.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Predicates.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Prim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Traverse.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Intro.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  README.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"<!-- vi: filetype=idris2\n"
-"-->\n"
-"#-#-#-#-#  Neovim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DPair.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DataTypes.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Dependent.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Eq.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Folds.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions1.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions2.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functor.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  IO.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Interfaces.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Intro.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Predicates.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Prim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Traverse.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Predicates.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  README.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"<!-- vi: filetype=idris2\n"
-"-->\n"
-"#-#-#-#-#  Neovim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DPair.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DataTypes.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Dependent.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Eq.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Folds.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions1.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions2.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functor.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  IO.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Interfaces.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Intro.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Predicates.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Prim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Traverse.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Prim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  README.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"<!-- vi: filetype=idris2\n"
-"-->\n"
-"#-#-#-#-#  Neovim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DPair.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DataTypes.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Dependent.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Eq.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Folds.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions1.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions2.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functor.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  IO.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Interfaces.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Intro.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Predicates.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Prim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Traverse.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Traverse.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  README.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"<!-- vi: filetype=idris2\n"
-"-->\n"
-"#-#-#-#-#  Neovim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DPair.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DataTypes.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Dependent.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Eq.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Folds.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions1.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions2.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functor.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  IO.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Interfaces.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Intro.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Predicates.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Prim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Traverse.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
+msgstr "<!-- vi: filetype=idris2:syntax=markdown -->\n"

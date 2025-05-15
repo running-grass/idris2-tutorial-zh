@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: po 4a\n"
-"POT-Creation-Date: 2025-05-15 03:33+0000\n"
+"POT-Creation-Date: 2025-05-15 07:57+0000\n"
 "PO-Revision-Date: 2025-05-15 03:06+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -22,7 +22,8 @@ msgstr ""
 #: ../src/Tutorial/Functions2.md:924 ../src/Tutorial/Functor.md:1398
 #: ../src/Tutorial/Interfaces.md:792 ../src/Tutorial/IO.md:1095
 #: ../src/Tutorial/Predicates.md:1358 ../src/Tutorial/Traverse.md:1109
-#: ../src/Appendices/Neovim.md:364
+#: ../src/Appendices/Install.md:102 ../src/Appendices/Neovim.md:364
+#: ../src/Appendices/Projects.md:878 ../src/Appendices/QTT.md:442
 #, no-wrap
 msgid "Conclusion"
 msgstr "结论"
@@ -43,300 +44,14 @@ msgstr "下一步是什么"
 #: ../src/Tutorial/Interfaces.md:821 ../src/Tutorial/Intro.md:453
 #: ../src/Tutorial/IO.md:1125 ../src/Tutorial/Predicates.md:1371
 #: ../src/Tutorial/Prim.md:1410 ../src/Tutorial/Traverse.md:1148
-#: ../src/Appendices/Neovim.md:374
-#, fuzzy, no-wrap
+#: ../src/Appendices/Neovim.md:374 ../src/Appendices/Projects.md:890
+#, no-wrap
 msgid ""
 "<!-- vi: filetype=idris2:syntax=markdown\n"
 "-->\n"
 msgstr ""
-"#-#-#-#-#  README.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"<!-- vi: filetype=idris2\n"
+"<!-- vi: filetype=idris2:syntax=markdown\n"
 "-->\n"
-"#-#-#-#-#  Neovim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  README.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"<!-- vi: filetype=idris2\n"
-"-->\n"
-"#-#-#-#-#  Neovim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DPair.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DataTypes.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Dependent.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Eq.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Folds.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions1.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions2.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functor.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  IO.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Interfaces.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Intro.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Predicates.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Prim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Traverse.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DPair.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  README.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"<!-- vi: filetype=idris2\n"
-"-->\n"
-"#-#-#-#-#  Neovim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DPair.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DataTypes.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Dependent.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Eq.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Folds.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions1.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions2.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functor.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  IO.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Interfaces.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Intro.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Predicates.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Prim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Traverse.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DataTypes.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  README.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"<!-- vi: filetype=idris2\n"
-"-->\n"
-"#-#-#-#-#  Neovim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DPair.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DataTypes.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Dependent.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Eq.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Folds.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions1.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions2.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functor.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  IO.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Interfaces.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Intro.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Predicates.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Prim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Traverse.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Dependent.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  README.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"<!-- vi: filetype=idris2\n"
-"-->\n"
-"#-#-#-#-#  Neovim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DPair.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DataTypes.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Dependent.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Eq.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Folds.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions1.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions2.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functor.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  IO.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Interfaces.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Intro.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Predicates.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Prim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Traverse.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Eq.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  README.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"<!-- vi: filetype=idris2\n"
-"-->\n"
-"#-#-#-#-#  Neovim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DPair.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DataTypes.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Dependent.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Eq.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Folds.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions1.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions2.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functor.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  IO.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Interfaces.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Intro.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Predicates.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Prim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Traverse.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Folds.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  README.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"<!-- vi: filetype=idris2\n"
-"-->\n"
-"#-#-#-#-#  Neovim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DPair.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DataTypes.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Dependent.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Eq.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Folds.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions1.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions2.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functor.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  IO.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Interfaces.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Intro.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Predicates.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Prim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Traverse.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions1.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  README.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"<!-- vi: filetype=idris2\n"
-"-->\n"
-"#-#-#-#-#  Neovim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DPair.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DataTypes.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Dependent.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Eq.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Folds.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions1.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions2.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functor.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  IO.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Interfaces.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Intro.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Predicates.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Prim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Traverse.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions2.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  README.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"<!-- vi: filetype=idris2\n"
-"-->\n"
-"#-#-#-#-#  Neovim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DPair.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DataTypes.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Dependent.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Eq.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Folds.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions1.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions2.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functor.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  IO.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Interfaces.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Intro.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Predicates.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Prim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Traverse.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functor.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  README.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"<!-- vi: filetype=idris2\n"
-"-->\n"
-"#-#-#-#-#  Neovim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DPair.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DataTypes.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Dependent.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Eq.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Folds.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions1.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions2.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functor.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  IO.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Interfaces.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Intro.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Predicates.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Prim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Traverse.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  IO.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  README.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"<!-- vi: filetype=idris2\n"
-"-->\n"
-"#-#-#-#-#  Neovim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DPair.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DataTypes.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Dependent.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Eq.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Folds.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions1.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions2.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functor.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  IO.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Interfaces.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Intro.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Predicates.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Prim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Traverse.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Interfaces.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  README.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"<!-- vi: filetype=idris2\n"
-"-->\n"
-"#-#-#-#-#  Neovim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DPair.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DataTypes.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Dependent.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Eq.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Folds.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions1.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions2.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functor.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  IO.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Interfaces.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Intro.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Predicates.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Prim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Traverse.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Intro.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  README.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"<!-- vi: filetype=idris2\n"
-"-->\n"
-"#-#-#-#-#  Neovim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DPair.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DataTypes.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Dependent.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Eq.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Folds.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions1.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions2.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functor.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  IO.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Interfaces.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Intro.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Predicates.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Prim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Traverse.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Predicates.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  README.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"<!-- vi: filetype=idris2\n"
-"-->\n"
-"#-#-#-#-#  Neovim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DPair.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DataTypes.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Dependent.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Eq.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Folds.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions1.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions2.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functor.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  IO.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Interfaces.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Intro.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Predicates.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Prim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Traverse.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Prim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  README.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"<!-- vi: filetype=idris2\n"
-"-->\n"
-"#-#-#-#-#  Neovim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DPair.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DataTypes.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Dependent.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Eq.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Folds.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions1.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions2.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functor.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  IO.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Interfaces.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Intro.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Predicates.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Prim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Traverse.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Traverse.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  README.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"<!-- vi: filetype=idris2\n"
-"-->\n"
-"#-#-#-#-#  Neovim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DPair.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  DataTypes.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Dependent.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Eq.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Folds.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions1.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functions2.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Functor.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  IO.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Interfaces.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Intro.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Predicates.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Prim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Traverse.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
 
 #. type: Title #
 #: ../src/Tutorial/Functions1.md:1
@@ -346,27 +61,29 @@ msgstr "函数第 1 部分"
 
 #. type: Plain text
 #: ../src/Tutorial/Functions1.md:12
-#, no-wrap
 msgid ""
-"Idris is a *functional* programming language. This means,\n"
-"that functions are its main form of abstraction (unlike for\n"
-"instance in an object oriented language like Java, where\n"
-"*objects* and *classes* are the main form of abstraction). It also\n"
-"means that we expect Idris to make it very easy for\n"
-"us to compose and combine functions to create new\n"
-"functions. In fact, in Idris functions are *first class*:\n"
-"Functions can take other functions as arguments and\n"
-"can return functions as their results.\n"
-msgstr "Idris 是一种*函数式*编程语言。这意味着，函数是它的主要抽象形式（与 Java 等面向对象的语言不同，其中 *objects* 和 *classes* 是抽象的主要形式）。这也意味着我们希望 Idris 能够让我们非常轻松地组合函数以创建新函数。实际上，在 Idris 中，函数是*一等*的：函数可以将其他函数作为参数，并且可以将函数作为结果返回。\n"
+"Idris is a *functional* programming language. This means, that functions are "
+"its main form of abstraction (unlike for instance in an object oriented "
+"language like Java, where *objects* and *classes* are the main form of "
+"abstraction). It also means that we expect Idris to make it very easy for us "
+"to compose and combine functions to create new functions. In fact, in Idris "
+"functions are *first class*: Functions can take other functions as arguments "
+"and can return functions as their results."
+msgstr ""
+"Idris 是一种*函数式*编程语言。这意味着，函数是它的主要抽象形式（与 Java 等面"
+"向对象的语言不同，其中 *objects* 和 *classes* 是抽象的主要形式）。这也意味着"
+"我们希望 Idris 能够让我们非常轻松地组合函数以创建新函数。实际上，在 Idris "
+"中，函数是*一等*的：函数可以将其他函数作为参数，并且可以将函数作为结果返回。"
 
 #. type: Plain text
 #: ../src/Tutorial/Functions1.md:16
-#, no-wrap
 msgid ""
-"We already learned about the basic shape of top level\n"
-"function declarations in Idris in the [introduction](Intro.md),\n"
-"so we will continue from what we learned there.\n"
-msgstr "我们已经在 [介绍](Intro.md) 中了解了 Idris 中顶级函数声明的基本形式，因此我们将从那里学到的内容继续。\n"
+"We already learned about the basic shape of top level function declarations "
+"in Idris in the [introduction](Intro.md), so we will continue from what we "
+"learned there."
+msgstr ""
+"我们已经在 [介绍](Intro.md) 中了解了 Idris 中顶级函数声明的基本形式，因此我们"
+"将从那里学到的内容继续。"
 
 #. type: Fenced code block (idris)
 #: ../src/Tutorial/Functions1.md:17
@@ -382,14 +99,15 @@ msgstr "具有多个参数的函数"
 
 #. type: Plain text
 #: ../src/Tutorial/Functions1.md:28
-#, no-wrap
 msgid ""
-"Let's implement a function, which checks if its three\n"
-"`Integer` arguments form a\n"
-"[Pythagorean triple](https://en.wikipedia.org/wiki/Pythagorean_triple).\n"
-"We get to use a new operator for this: `==`, the equality\n"
-"operator.\n"
-msgstr "让我们实现一个函数，它检查它的三个 `Integer` 参数是否形成一个 [勾股三元组](https://en.wikipedia.org/wiki/Pythagorean_triple)。我们为此使用一个新的运算符：`==`，相等运算符。\n"
+"Let's implement a function, which checks if its three `Integer` arguments "
+"form a [Pythagorean triple](https://en.wikipedia.org/wiki/"
+"Pythagorean_triple).  We get to use a new operator for this: `==`, the "
+"equality operator."
+msgstr ""
+"让我们实现一个函数，它检查它的三个 `Integer` 参数是否形成一个 [勾股三元组]"
+"(https://en.wikipedia.org/wiki/Pythagorean_triple)。我们为此使用一个新的运算"
+"符：`==`，相等运算符。"
 
 #. type: Fenced code block (idris)
 #: ../src/Tutorial/Functions1.md:29
@@ -403,11 +121,9 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Tutorial/Functions1.md:36
-#, no-wrap
 msgid ""
-"Let's give this a spin at the REPL before we talk a bit\n"
-"about the types:\n"
-msgstr "在讨论类型之前，让我们先在 REPL 上试一下：\n"
+"Let's give this a spin at the REPL before we talk a bit about the types:"
+msgstr "在讨论类型之前，让我们先在 REPL 上试一下："
 
 #. type: Fenced code block (repl)
 #: ../src/Tutorial/Functions1.md:37
@@ -436,43 +152,47 @@ msgstr "从这个例子可以看出，多参函数的类型包含一个参数类
 
 #. type: Plain text
 #: ../src/Tutorial/Functions1.md:61
-#, no-wrap
 msgid ""
-"The implementation looks a bit like a mathematical equation:\n"
-"We list the arguments on the left hand side of `=` and describe the\n"
-"computation(s) to perform with them on the right hand\n"
-"side. Function implementations in functional programming\n"
-"languages often have this more mathematical look compared\n"
-"to implementations in imperative  languages, which often\n"
-"describe not *what* to compute, but *how* to\n"
-"compute it by describing an algorithm as a sequence of\n"
-"imperative statements. We will later see that this\n"
-"imperative style is also available in Idris, but whenever\n"
-"possible we prefer the declarative style.\n"
-msgstr "该实现看起来有点像一个数学方程：我们在 `=` 的左侧列出参数，并在右侧描述要使用它们执行的计算。与命令式语言中的实现相比，函数式编程语言中的函数实现通常具有更多的数学外观，命令式语言通常不是描述*要计算什么*，而是通过将算法描述为*如何*来计算它命令式语句的序列。我们稍后会看到这种命令式风格在 Idris 中也可用，但只要有可能，我们更喜欢声明式风格。\n"
+"The implementation looks a bit like a mathematical equation: We list the "
+"arguments on the left hand side of `=` and describe the computation(s) to "
+"perform with them on the right hand side. Function implementations in "
+"functional programming languages often have this more mathematical look "
+"compared to implementations in imperative languages, which often describe "
+"not *what* to compute, but *how* to compute it by describing an algorithm as "
+"a sequence of imperative statements. We will later see that this imperative "
+"style is also available in Idris, but whenever possible we prefer the "
+"declarative style."
+msgstr ""
+"该实现看起来有点像一个数学方程：我们在 `=` 的左侧列出参数，并在右侧描述要使用"
+"它们执行的计算。与命令式语言中的实现相比，函数式编程语言中的函数实现通常具有"
+"更多的数学外观，命令式语言通常不是描述*要计算什么*，而是通过将算法描述为*如何"
+"*来计算它命令式语句的序列。我们稍后会看到这种命令式风格在 Idris 中也可用，但"
+"只要有可能，我们更喜欢声明式风格。"
 
 #. type: Plain text
 #: ../src/Tutorial/Functions1.md:68
-#, no-wrap
 msgid ""
-"As can be seen in the REPL example, functions can be invoked\n"
-"by passing the arguments separated by whitespace. No parentheses\n"
-"are necessary unless one of the expressions we pass as the\n"
-"function's arguments contains itself additional whitespace.\n"
-"This comes in very handy when we apply functions\n"
-"only partially (see later in this chapter).\n"
-msgstr "从 REPL 示例中可以看出，可以通过传递由空格分隔的参数来调用函数。除非我们作为将包含额外的空格的表达式作为函数参数进行传递，否则不需要括号。当我们仅部分应用函数时，这非常方便（见本章后面）。\n"
+"As can be seen in the REPL example, functions can be invoked by passing the "
+"arguments separated by whitespace. No parentheses are necessary unless one "
+"of the expressions we pass as the function's arguments contains itself "
+"additional whitespace.  This comes in very handy when we apply functions "
+"only partially (see later in this chapter)."
+msgstr ""
+"从 REPL 示例中可以看出，可以通过传递由空格分隔的参数来调用函数。除非我们作为"
+"将包含额外的空格的表达式作为函数参数进行传递，否则不需要括号。当我们仅部分应"
+"用函数时，这非常方便（见本章后面）。"
 
 #. type: Plain text
 #: ../src/Tutorial/Functions1.md:74
-#, no-wrap
 msgid ""
-"Note that, unlike `Integer` or `Bits8`, `Bool` is not a primitive\n"
-"data type built into the Idris language but just a custom\n"
-"data type that you could have written yourself. We will\n"
-"learn more about declaring new data types in the\n"
-"next chapter.\n"
-msgstr "请注意，与 `Integer` 或 `Bits8` 不同，`Bool` 不是 Idris 语言中内置的原语数据类型，而只是您可以自己编写的自定义数据类型.我们将在下一章了解更多关于声明新数据类型的内容。\n"
+"Note that, unlike `Integer` or `Bits8`, `Bool` is not a primitive data type "
+"built into the Idris language but just a custom data type that you could "
+"have written yourself. We will learn more about declaring new data types in "
+"the next chapter."
+msgstr ""
+"请注意，与 `Integer` 或 `Bits8` 不同，`Bool` 不是 Idris 语言中内置的原语数据"
+"类型，而只是您可以自己编写的自定义数据类型.我们将在下一章了解更多关于声明新数"
+"据类型的内容。"
 
 #. type: Title ##
 #: ../src/Tutorial/Functions1.md:75
@@ -482,11 +202,10 @@ msgstr "函数组合"
 
 #. type: Plain text
 #: ../src/Tutorial/Functions1.md:79
-#, no-wrap
 msgid ""
-"Functions can be combined in several ways, the most direct\n"
-"probably being the dot operator:\n"
-msgstr "函数可以通过多种方式组合，最直接的可能是点运算符：\n"
+"Functions can be combined in several ways, the most direct probably being "
+"the dot operator:"
+msgstr "函数可以通过多种方式组合，最直接的可能是点运算符："
 
 #. type: Fenced code block (idris)
 #: ../src/Tutorial/Functions1.md:80
@@ -512,17 +231,15 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Tutorial/Functions1.md:92
-#, no-wrap
-msgid "Give this a try at the REPL! Does it do what you'd expect?\n"
-msgstr "在 REPL 试试这个！它是否符合您的预期？\n"
+msgid "Give this a try at the REPL! Does it do what you'd expect?"
+msgstr "在 REPL 试试这个！它是否符合您的预期？"
 
 #. type: Plain text
 #: ../src/Tutorial/Functions1.md:95
-#, no-wrap
 msgid ""
-"We could have implemented `squareTimes2` without using\n"
-"the dot operator as follows:\n"
-msgstr "我们可以在不使用点运算符的情况下实现 `squareTimes2`，如下所示：\n"
+"We could have implemented `squareTimes2` without using the dot operator as "
+"follows:"
+msgstr "我们可以在不使用点运算符的情况下实现 `squareTimes2`，如下所示："
 
 #. type: Fenced code block (idris)
 #: ../src/Tutorial/Functions1.md:96
@@ -546,11 +263,10 @@ msgstr "需要注意的是，由点链接的函数，运算符会从右到左调
 
 #. type: Plain text
 #: ../src/Tutorial/Functions1.md:108
-#, no-wrap
 msgid ""
-"We can conveniently chain several functions using the\n"
-"dot operator to write more complex functions:\n"
-msgstr "我们可以方便地使用点运算符链接多个函数来编写更复杂的函数：\n"
+"We can conveniently chain several functions using the dot operator to write "
+"more complex functions:"
+msgstr "我们可以方便地使用点运算符链接多个函数来编写更复杂的函数："
 
 #. type: Fenced code block (idris)
 #: ../src/Tutorial/Functions1.md:109
@@ -564,14 +280,15 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Tutorial/Functions1.md:119
-#, no-wrap
 msgid ""
-"This will first multiply the argument by four, then square\n"
-"it twice before converting it to a string (`show`) and\n"
-"reversing the resulting `String` (functions `show` and\n"
-"`reverse` are part of the Idris *Prelude* and as such are\n"
-"available in every Idris program).\n"
-msgstr "这将首先将参数乘以四，然后将其平方两次，然后将其转换为字符串 (`show`) 并反转结果 `String`（函数 `show` 和 `reverse` 是 Idris *Prelude* 的一部分，因此在每个 Idris 程序中都可用）。\n"
+"This will first multiply the argument by four, then square it twice before "
+"converting it to a string (`show`) and reversing the resulting `String` "
+"(functions `show` and `reverse` are part of the Idris *Prelude* and as such "
+"are available in every Idris program)."
+msgstr ""
+"这将首先将参数乘以四，然后将其平方两次，然后将其转换为字符串 (`show`) 并反转"
+"结果 `String`（函数 `show` 和 `reverse` 是 Idris *Prelude* 的一部分，因此在每"
+"个 Idris 程序中都可用）。"
 
 #. type: Title ##
 #: ../src/Tutorial/Functions1.md:120
@@ -581,13 +298,13 @@ msgstr "高阶函数"
 
 #. type: Plain text
 #: ../src/Tutorial/Functions1.md:126
-#, no-wrap
 msgid ""
-"Functions can take other functions as arguments. This is\n"
-"an incredibly powerful concept and we can go crazy with\n"
-"this very easily. But for sanity's sake, we'll start\n"
-"slowly:\n"
-msgstr "函数可以将其他函数作为参数。这是一个非常强大的概念，我们可以很容易地为此发疯。但为了理智起见，我们将慢慢开始：\n"
+"Functions can take other functions as arguments. This is an incredibly "
+"powerful concept and we can go crazy with this very easily. But for sanity's "
+"sake, we'll start slowly:"
+msgstr ""
+"函数可以将其他函数作为参数。这是一个非常强大的概念，我们可以很容易地为此发"
+"疯。但为了理智起见，我们将慢慢开始："
 
 #. type: Fenced code block (idris)
 #: ../src/Tutorial/Functions1.md:127
@@ -607,16 +324,17 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Tutorial/Functions1.md:142
-#, no-wrap
 msgid ""
-"First `isEven` uses the `mod` function to check, whether\n"
-"an integer is divisible by two. But the interesting function\n"
-"is `testSquare`. It takes two arguments: The first argument\n"
-"is of type *function from `Integer` to `Bool`*, and the second\n"
-"of type `Integer`. This second argument is squared before\n"
-"being passed to the first argument. Again, give this a go\n"
-"at the REPL:\n"
-msgstr "首先 `isEven` 使用 `mod` 函数来检查一个整数是否可以被 2 整除。但有趣的函数是 `testSquare`。它有两个参数：第一个参数的类型是 *从 `Integer` 到 `Bool` 的函数*，第二个参数是 `Integer` 类型。在传递给应用第一个参数之前，先把第二个参数进行平方计算。继续在 REPL 上试一试：\n"
+"First `isEven` uses the `mod` function to check, whether an integer is "
+"divisible by two. But the interesting function is `testSquare`. It takes two "
+"arguments: The first argument is of type *function from `Integer` to "
+"`Bool`*, and the second of type `Integer`. This second argument is squared "
+"before being passed to the first argument. Again, give this a go at the REPL:"
+msgstr ""
+"首先 `isEven` 使用 `mod` 函数来检查一个整数是否可以被 2 整除。但有趣的函数是 "
+"`testSquare`。它有两个参数：第一个参数的类型是 *从 `Integer` 到 `Bool` 的函数"
+"*，第二个参数是 `Integer` 类型。在传递给应用第一个参数之前，先把第二个参数进"
+"行平方计算。继续在 REPL 上试一试："
 
 #. type: Fenced code block (repl)
 #: ../src/Tutorial/Functions1.md:143
@@ -630,23 +348,23 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Tutorial/Functions1.md:154
-#, no-wrap
 msgid ""
-"Take your time to understand what's going on here. We pass\n"
-"function `isEven` as an argument to `testSquare`. The\n"
-"second argument is an integer, which will first be squared\n"
-"and then passed to `isEven`. While this is not very interesting,\n"
-"we will see lots of use cases for passing functions as\n"
-"arguments to other functions.\n"
-msgstr "花点时间了解这里发生了什么。我们将函数 `isEven` 作为参数传递给 `testSquare`。第二个参数是一个整数，它首先会被平方，然后传递给 `isEven`。虽然这不是很有趣，但我们会看到很多将函数作为参数传递给其他函数的用例。\n"
+"Take your time to understand what's going on here. We pass function `isEven` "
+"as an argument to `testSquare`. The second argument is an integer, which "
+"will first be squared and then passed to `isEven`. While this is not very "
+"interesting, we will see lots of use cases for passing functions as "
+"arguments to other functions."
+msgstr ""
+"花点时间了解这里发生了什么。我们将函数 `isEven` 作为参数传递给 `testSquare`。"
+"第二个参数是一个整数，它首先会被平方，然后传递给 `isEven`。虽然这不是很有趣，"
+"但我们会看到很多将函数作为参数传递给其他函数的用例。"
 
 #. type: Plain text
 #: ../src/Tutorial/Functions1.md:157
-#, no-wrap
 msgid ""
-"I said above, we could go crazy pretty easily.\n"
-"Consider for instance the following example:\n"
-msgstr "我在上面说过，我们很容易发疯。例如，考虑以下示例：\n"
+"I said above, we could go crazy pretty easily.  Consider for instance the "
+"following example:"
+msgstr "我在上面说过，我们很容易发疯。例如，考虑以下示例："
 
 #. type: Fenced code block (idris)
 #: ../src/Tutorial/Functions1.md:158
@@ -662,9 +380,8 @@ msgstr ""
 #: ../src/Tutorial/Functions1.md:164 ../src/Tutorial/Functions1.md:227
 #: ../src/Tutorial/Interfaces.md:504 ../src/Tutorial/Predicates.md:461
 #: ../src/Tutorial/Prim.md:645
-#, no-wrap
-msgid "And at the REPL:\n"
-msgstr "在 REPL 试一下：\n"
+msgid "And at the REPL:"
+msgstr "在 REPL 试一下："
 
 #. type: Fenced code block (repl)
 #: ../src/Tutorial/Functions1.md:165
@@ -686,12 +403,12 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Tutorial/Functions1.md:177
-#, no-wrap
 msgid ""
-"You might be surprised about this behavior, so we'll try\n"
-"and break it down. The following two expressions are identical\n"
-"in their behavior:\n"
-msgstr "您可能会对这种行为感到惊讶，因此我们将尝试对其进行分解。以下两个表达式的行为相同：\n"
+"You might be surprised about this behavior, so we'll try and break it down. "
+"The following two expressions are identical in their behavior:"
+msgstr ""
+"您可能会对这种行为感到惊讶，因此我们将尝试对其进行分解。以下两个表达式的行为"
+"相同："
 
 #. type: Fenced code block (idris)
 #: ../src/Tutorial/Functions1.md:178
@@ -711,17 +428,17 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Tutorial/Functions1.md:194
-#, no-wrap
 msgid ""
-"So, `square` raises its argument to the 2nd power,\n"
-"`twice square` raises it to its 4th power (by invoking\n"
-"`square` twice in succession),\n"
-"`twice (twice square)` raises it to its 16th power\n"
-"(by invoking `twice square` twice in succession),\n"
-"and so on, until `twice (twice (twice (twice square)))`\n"
-"raises it to its 65536th power resulting in an impressively\n"
-"huge result.\n"
-msgstr "因此，`square` 将其参数提升到 2 次方，`twice square` 将其提升到 4 次方（通过连续调用 `square` 两次），`twice (twice square)` 将其提升到其 16 次方（通过连续调用 `twice square` 两次），依此类推，直到 `twice (twice (twice (twice square))))` 将其提高到 65536 次方，从而产生了令人印象深刻的巨大结果。\n"
+"So, `square` raises its argument to the 2nd power, `twice square` raises it "
+"to its 4th power (by invoking `square` twice in succession), `twice (twice "
+"square)` raises it to its 16th power (by invoking `twice square` twice in "
+"succession), and so on, until `twice (twice (twice (twice square)))` raises "
+"it to its 65536th power resulting in an impressively huge result."
+msgstr ""
+"因此，`square` 将其参数提升到 2 次方，`twice square` 将其提升到 4 次方（通过"
+"连续调用 `square` 两次），`twice (twice square)` 将其提升到其 16 次方（通过连"
+"续调用 `twice square` 两次），依此类推，直到 `twice (twice (twice (twice "
+"square))))` 将其提高到 65536 次方，从而产生了令人印象深刻的巨大结果。"
 
 #. type: Title ##
 #: ../src/Tutorial/Functions1.md:195
@@ -731,19 +448,18 @@ msgstr "柯里化"
 
 #. type: Plain text
 #: ../src/Tutorial/Functions1.md:201
-#, no-wrap
 msgid ""
-"Once we start using higher-order functions, the concept\n"
-"of partial function application (also called *currying*\n"
-"after mathematician and logician Haskell Curry) becomes\n"
-"very important.\n"
-msgstr "一旦我们开始使用高阶函数，偏应用函数的概念（在数学家和逻辑学家 Haskell Curry 之后也称为 *柯里化*）变得非常重要。\n"
+"Once we start using higher-order functions, the concept of partial function "
+"application (also called *currying* after mathematician and logician Haskell "
+"Curry) becomes very important."
+msgstr ""
+"一旦我们开始使用高阶函数，偏应用函数的概念（在数学家和逻辑学家 Haskell Curry "
+"之后也称为 *柯里化*）变得非常重要。"
 
 #. type: Plain text
 #: ../src/Tutorial/Functions1.md:203
-#, no-wrap
-msgid "Load this file in a REPL session and try the following:\n"
-msgstr "在 REPL 会话中加载此文件并尝试以下操作：\n"
+msgid "Load this file in a REPL session and try the following:"
+msgstr "在 REPL 会话中加载此文件并尝试以下操作："
 
 #. type: Fenced code block (repl)
 #: ../src/Tutorial/Functions1.md:204
@@ -798,12 +514,12 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Tutorial/Functions1.md:236
-#, no-wrap
 msgid ""
-"We already used partial function application in our `twice`\n"
-"examples above to get some impressive results with very\n"
-"little code.\n"
-msgstr "我们已经在上面的 `twice` 示例中使用了偏应用函数的应用程序，只需很少的代码即可获得一些令人印象深刻的结果。\n"
+"We already used partial function application in our `twice` examples above "
+"to get some impressive results with very little code."
+msgstr ""
+"我们已经在上面的 `twice` 示例中使用了偏应用函数的应用程序，只需很少的代码即可"
+"获得一些令人印象深刻的结果。"
 
 #. type: Title ##
 #: ../src/Tutorial/Functions1.md:237
@@ -813,15 +529,16 @@ msgstr "匿名函数"
 
 #. type: Plain text
 #: ../src/Tutorial/Functions1.md:245
-#, no-wrap
 msgid ""
-"Sometimes we'd like to pass a small custom function to\n"
-"a higher-order function without bothering to write a\n"
-"top level definition. For instance, in the following example,\n"
-"function `someTest` is very specific and probably not\n"
-"very useful in general, but we'd still like to pass it\n"
-"to higher-order function `testSquare`:\n"
-msgstr "有时我们想将一个小的自定义函数传递给一个高阶函数，而无需编写顶层定义。例如，在下面的示例中，函数 `someTest` 非常具体，一般来说可能不是很有用，但我们仍然希望将它传递给高阶函数 `testSquare`：\n"
+"Sometimes we'd like to pass a small custom function to a higher-order "
+"function without bothering to write a top level definition. For instance, in "
+"the following example, function `someTest` is very specific and probably not "
+"very useful in general, but we'd still like to pass it to higher-order "
+"function `testSquare`:"
+msgstr ""
+"有时我们想将一个小的自定义函数传递给一个高阶函数，而无需编写顶层定义。例如，"
+"在下面的示例中，函数 `someTest` 非常具体，一般来说可能不是很有用，但我们仍然"
+"希望将它传递给高阶函数 `testSquare`："
 
 #. type: Fenced code block (idris)
 #: ../src/Tutorial/Functions1.md:246
@@ -835,9 +552,8 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Tutorial/Functions1.md:252
-#, no-wrap
-msgid "Here's, how to pass it to `testSquare`:\n"
-msgstr "下面将展示如何将其传递给 `testSquare`：\n"
+msgid "Here's, how to pass it to `testSquare`:"
+msgstr "下面将展示如何将其传递给 `testSquare`："
 
 #. type: Fenced code block (repl)
 #: ../src/Tutorial/Functions1.md:253
@@ -851,11 +567,9 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Tutorial/Functions1.md:260
-#, no-wrap
 msgid ""
-"Instead of defining and using `someTest`, we can use an\n"
-"anonymous function:\n"
-msgstr "我们也可以使用匿名函数，而不用定义和使用 `someTest`：\n"
+"Instead of defining and using `someTest`, we can use an anonymous function:"
+msgstr "我们也可以使用匿名函数，而不用定义和使用 `someTest`："
 
 #. type: Fenced code block (repl)
 #: ../src/Tutorial/Functions1.md:261
@@ -886,11 +600,12 @@ msgstr "匿名函数有时也称为 *lambdas*（来自[λ演算](https://en.wiki
 
 #. type: Plain text
 #: ../src/Tutorial/Functions1.md:280
-#, no-wrap
 msgid ""
-"Note that, in a lambda, arguments are not annotated with types,\n"
-"so Idris has to be able to infer them from the current context.\n"
-msgstr "请注意，在 lambda 中，参数不使用类型进行注释，因此 Idris 必须能够从当前上下文中推断出它们。\n"
+"Note that, in a lambda, arguments are not annotated with types, so Idris has "
+"to be able to infer them from the current context."
+msgstr ""
+"请注意，在 lambda 中，参数不使用类型进行注释，因此 Idris 必须能够从当前上下文"
+"中推断出它们。"
 
 #. type: Title ##
 #: ../src/Tutorial/Functions1.md:281
@@ -900,14 +615,15 @@ msgstr "运算符"
 
 #. type: Plain text
 #: ../src/Tutorial/Functions1.md:288
-#, no-wrap
 msgid ""
-"In Idris, infix operators like `.`, `*` or `+` are not built into\n"
-"the language, but are just regular Idris function with\n"
-"some special support for using them in infix notation.\n"
-"When we don't use operators in infix notation, we have\n"
-"to wrap them in parentheses.\n"
-msgstr "在 Idris 中，`.`、`*` 或 `+` 等中缀运算符并未内置于语言中，而只是常规的 Idris 函数对应的中缀符号。当我们使用非中缀表示法的运算符时，我们必须将它们包裹在括号中。\n"
+"In Idris, infix operators like `.`, `*` or `+` are not built into the "
+"language, but are just regular Idris function with some special support for "
+"using them in infix notation.  When we don't use operators in infix "
+"notation, we have to wrap them in parentheses."
+msgstr ""
+"在 Idris 中，`.`、`*` 或 `+` 等中缀运算符并未内置于语言中，而只是常规的 "
+"Idris 函数对应的中缀符号。当我们使用非中缀表示法的运算符时，我们必须将它们包"
+"裹在括号中。"
 
 #. type: Plain text
 #: ../src/Tutorial/Functions1.md:291
@@ -973,14 +689,15 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Tutorial/Functions1.md:325
-#, no-wrap
 msgid ""
-"When you mix infix operators in an expression, those with\n"
-"a higher priority bind more tightly. For instance, `(+)`\n"
-"is left associated with a priority of 8, while `(*)`\n"
-"is left associated with a priority of 9. Hence,\n"
-"`a * b + c` is the same as `(a * b) + c` instead of `a * (b + c)`.\n"
-msgstr "当您在表达式中混合使用中缀运算符时，具有较高优先级的运算符绑定得更紧密。例如，`(+)` 的优先级为 8，而 `(*)` 的优先级为 9。因此，`a * b + c ` 与 `(a * b) + c` 相同，而不是 `a * (b + c)`。\n"
+"When you mix infix operators in an expression, those with a higher priority "
+"bind more tightly. For instance, `(+)` is left associated with a priority of "
+"8, while `(*)` is left associated with a priority of 9. Hence, `a * b + c` "
+"is the same as `(a * b) + c` instead of `a * (b + c)`."
+msgstr ""
+"当您在表达式中混合使用中缀运算符时，具有较高优先级的运算符绑定得更紧密。例"
+"如，`(+)` 的优先级为 8，而 `(*)` 的优先级为 9。因此，`a * b + c ` 与 `(a * "
+"b) + c` 相同，而不是 `a * (b + c)`。"
 
 #. type: Title ###
 #: ../src/Tutorial/Functions1.md:326
@@ -990,13 +707,13 @@ msgstr "运算符块"
 
 #. type: Plain text
 #: ../src/Tutorial/Functions1.md:332
-#, no-wrap
 msgid ""
-"Operators can be partially applied just like regular\n"
-"functions. In this case, the whole expression has to\n"
-"be wrapped in parentheses and is called an *operator\n"
-"section*. Here are two examples:\n"
-msgstr "运算符可以像常规函数一样被部分应用。在这种情况下，整个表达式必须用括号括起来，称为 *运算符块*。这里有两个例子：\n"
+"Operators can be partially applied just like regular functions. In this "
+"case, the whole expression has to be wrapped in parentheses and is called an "
+"*operator section*. Here are two examples:"
+msgstr ""
+"运算符可以像常规函数一样被部分应用。在这种情况下，整个表达式必须用括号括起"
+"来，称为 *运算符块*。这里有两个例子："
 
 #. type: Fenced code block (repl)
 #: ../src/Tutorial/Functions1.md:333
@@ -1024,12 +741,12 @@ msgstr "如您所见，`(< 10)`和 `(10 <)`。第一个测试，它的参数为�
 
 #. type: Plain text
 #: ../src/Tutorial/Functions1.md:348
-#, no-wrap
 msgid ""
-"One exception where operator sections will not work is\n"
-"with the *minus* operator `(-)`. Here is an example to\n"
-"demonstrate this:\n"
-msgstr "运算符部分不起作用的一个例外是使用 *减法* 运算符 `(-)`。下面是一个例子来证明这一点：\n"
+"One exception where operator sections will not work is with the *minus* "
+"operator `(-)`. Here is an example to demonstrate this:"
+msgstr ""
+"运算符部分不起作用的一个例外是使用 *减法* 运算符 `(-)`。下面是一个例子来证明"
+"这一点："
 
 #. type: Fenced code block (idris)
 #: ../src/Tutorial/Functions1.md:349
@@ -1043,12 +760,11 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Tutorial/Functions1.md:357
-#, no-wrap
 msgid ""
-"This is just a higher-order function applying the number ten\n"
-"to its function argument. This works very well in the following\n"
-"example:\n"
-msgstr "这只是一个将数字 10 应用于其函数参数的高阶函数。这在以下示例中非常有效：\n"
+"This is just a higher-order function applying the number ten to its function "
+"argument. This works very well in the following example:"
+msgstr ""
+"这只是一个将数字 10 应用于其函数参数的高阶函数。这在以下示例中非常有效："
 
 #. type: Fenced code block (repl)
 #: ../src/Tutorial/Functions1.md:358
@@ -1062,11 +778,8 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Tutorial/Functions1.md:365
-#, no-wrap
-msgid ""
-"However, if we want to subtract five from ten, the following\n"
-"will fail:\n"
-msgstr "但是，如果我们想从 10 中减去 5，以下将失败：\n"
+msgid "However, if we want to subtract five from ten, the following will fail:"
+msgstr "但是，如果我们想从 10 中减去 5，以下将失败："
 
 #. type: Fenced code block (repl)
 #: ../src/Tutorial/Functions1.md:366
@@ -1086,12 +799,13 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Tutorial/Functions1.md:377
-#, no-wrap
 msgid ""
-"The problem here is, that Idris treats `- 5` as an integer literal\n"
-"instead of an operator section. In this special case, we therefore\n"
-"have to use an anonymous function instead:\n"
-msgstr "这里的问题是，Idris 将 `- 5` 视为整数字面量而不是运算符块。在这种特殊情况下，我们因此必须使用匿名函数：\n"
+"The problem here is, that Idris treats `- 5` as an integer literal instead "
+"of an operator section. In this special case, we therefore have to use an "
+"anonymous function instead:"
+msgstr ""
+"这里的问题是，Idris 将 `- 5` 视为整数字面量而不是运算符块。在这种特殊情况下，"
+"我们因此必须使用匿名函数："
 
 #. type: Fenced code block (repl)
 #: ../src/Tutorial/Functions1.md:378
@@ -1111,14 +825,14 @@ msgstr "非运算符的中缀表示法"
 
 #. type: Plain text
 #: ../src/Tutorial/Functions1.md:390
-#, no-wrap
 msgid ""
-"In Idris, it is possible to use infix notation for\n"
-"regular binary functions, by wrapping them in backticks.\n"
-"It is even possible to define a precedence (fixity) for\n"
-"these and use them in operator sections, just like regular\n"
-"operators:\n"
-msgstr "在 Idris 中，可以对常规双参函数使用中缀表示法，方法是将它们包装在反引号中。甚至可以为这些定义优先级（结合性）并在运算符块中使用它们，就像常规运算符一样：\n"
+"In Idris, it is possible to use infix notation for regular binary functions, "
+"by wrapping them in backticks.  It is even possible to define a precedence "
+"(fixity) for these and use them in operator sections, just like regular "
+"operators:"
+msgstr ""
+"在 Idris 中，可以对常规双参函数使用中缀表示法，方法是将它们包装在反引号中。甚"
+"至可以为这些定义优先级（结合性）并在运算符块中使用它们，就像常规运算符一样："
 
 #. type: Fenced code block (idris)
 #: ../src/Tutorial/Functions1.md:391
@@ -1164,87 +878,80 @@ msgstr "*Prelude* 导出的运算符"
 
 #. type: Plain text
 #: ../src/Tutorial/Functions1.md:419
-#, no-wrap
 msgid ""
-"Here is a list of important operators exported by the *Prelude*.\n"
-"Most of these are *constrained*, that is they work only\n"
-"for types implementing a certain *interface*. Don't worry\n"
-"about this right now. We will learn about interfaces in due\n"
-"time, and the operators behave as they intuitively should.\n"
-"For instance, addition and multiplication work for all\n"
-"numeric types, comparison operators work for almost all\n"
-"types in the *Prelude* with the exception of functions.\n"
-msgstr "以下是 *Prelude* 导出的重要运算符列表。其中大多数具有 *约束 *，也就是说它们仅适用于实现了某个 *接口* 的类型。现在不要担心这个。我们将在适当的时候了解接口，运算符会按照直觉行事。例如，加法和乘法适用于所有数字类型，比较运算符适用于 *Prelude* 中的几乎所有类型，但函数除外。\n"
+"Here is a list of important operators exported by the *Prelude*.  Most of "
+"these are *constrained*, that is they work only for types implementing a "
+"certain *interface*. Don't worry about this right now. We will learn about "
+"interfaces in due time, and the operators behave as they intuitively "
+"should.  For instance, addition and multiplication work for all numeric "
+"types, comparison operators work for almost all types in the *Prelude* with "
+"the exception of functions."
+msgstr ""
+"以下是 *Prelude* 导出的重要运算符列表。其中大多数具有 *约束 *，也就是说它们仅"
+"适用于实现了某个 *接口* 的类型。现在不要担心这个。我们将在适当的时候了解接"
+"口，运算符会按照直觉行事。例如，加法和乘法适用于所有数字类型，比较运算符适用"
+"于 *Prelude* 中的几乎所有类型，但函数除外。"
 
 #. type: Bullet: '* '
 #: ../src/Tutorial/Functions1.md:429
-#, no-wrap
-msgid "`(.)`: Function composition\n"
-msgstr "`(.)`：函数组合\n"
+msgid "`(.)`: Function composition"
+msgstr "`(.)`：函数组合"
 
 #. type: Bullet: '* '
 #: ../src/Tutorial/Functions1.md:429
-#, no-wrap
-msgid "`(+)`: Addition\n"
-msgstr "`(+)`：加法\n"
+msgid "`(+)`: Addition"
+msgstr "`(+)`：加法"
 
 #. type: Bullet: '* '
 #: ../src/Tutorial/Functions1.md:429
-#, no-wrap
-msgid "`(*)`: Multiplication\n"
-msgstr "`(*)`：乘法\n"
+msgid "`(*)`: Multiplication"
+msgstr "`(*)`：乘法"
 
 #. type: Bullet: '* '
 #: ../src/Tutorial/Functions1.md:429
-#, no-wrap
-msgid "`(-)`: Subtraction\n"
-msgstr "`(-)`：减法\n"
+msgid "`(-)`: Subtraction"
+msgstr "`(-)`：减法"
 
 #. type: Bullet: '* '
 #: ../src/Tutorial/Functions1.md:429
-#, no-wrap
-msgid "`(/)`: Division\n"
-msgstr "`(/)`：除法\n"
+msgid "`(/)`: Division"
+msgstr "`(/)`：除法"
 
 #. type: Bullet: '* '
 #: ../src/Tutorial/Functions1.md:429
-#, no-wrap
-msgid "`(==)` : True, if two values are equal\n"
-msgstr "`(==)` ：判断两个值是否相等\n"
+msgid "`(==)` : True, if two values are equal"
+msgstr "`(==)` ：判断两个值是否相等"
 
 #. type: Bullet: '* '
 #: ../src/Tutorial/Functions1.md:429
-#, no-wrap
-msgid "`(/=)` : True, if two values are not equal\n"
-msgstr "`(/=)` ：判断两个值是否不相等\n"
+msgid "`(/=)` : True, if two values are not equal"
+msgstr "`(/=)` ：判断两个值是否不相等"
 
 #. type: Bullet: '* '
 #: ../src/Tutorial/Functions1.md:429
-#, no-wrap
-msgid "`(<=)`, `(>=)`, `(<)`, and `(>)` : Comparison operators\n"
-msgstr "`(<=)`、`(>=)`、`(<)` 和 `(>)` ：比较运算符\n"
+msgid "`(<=)`, `(>=)`, `(<)`, and `(>)` : Comparison operators"
+msgstr "`(<=)`、`(>=)`、`(<)` 和 `(>)` ：比较运算符"
 
 #. type: Bullet: '* '
 #: ../src/Tutorial/Functions1.md:429
-#, no-wrap
-msgid "`($)`: Function application\n"
-msgstr "`($)`：函数应用\n"
+msgid "`($)`: Function application"
+msgstr "`($)`：函数应用"
 
 #. type: Plain text
 #: ../src/Tutorial/Functions1.md:440
-#, no-wrap
 msgid ""
-"The most special of the above is the last one. It has a\n"
-"priority of 0, so all other operators bind more tightly.\n"
-"In addition, function application binds more tightly, so\n"
-"this can be used to reduce the number of parentheses\n"
-"required. For instance, instead of writing\n"
-"`isTriple 3 4 (2 + 3 * 1)` we can write\n"
-"`isTriple 3 4 $ 2 + 3 * 1`,\n"
-"which is exactly the same. Sometimes, this helps readability,\n"
-"sometimes, it doesn't. The important thing to remember is\n"
-"that `fun $ x y` is just the same as `fun (x y)`.\n"
-msgstr "上面最特别的是最后一个。它的优先级为 0，所有其他运算符都比他绑定得更紧密。因此可以使用它来减少所需的括号数量。例如，不写 `isTriple 3 4 (2 + 3 * 1)` 我们可以写成 `isTriple 3 4 $ 2 + 3 * 1`，这完全一样。有时，这有助于提高可读性，虽然有时并不会。要记住的重要一点是 `fun $ x y` 与 `fun (x y)` 相同。\n"
+"The most special of the above is the last one. It has a priority of 0, so "
+"all other operators bind more tightly.  In addition, function application "
+"binds more tightly, so this can be used to reduce the number of parentheses "
+"required. For instance, instead of writing `isTriple 3 4 (2 + 3 * 1)` we can "
+"write `isTriple 3 4 $ 2 + 3 * 1`, which is exactly the same. Sometimes, this "
+"helps readability, sometimes, it doesn't. The important thing to remember is "
+"that `fun $ x y` is just the same as `fun (x y)`."
+msgstr ""
+"上面最特别的是最后一个。它的优先级为 0，所有其他运算符都比他绑定得更紧密。因"
+"此可以使用它来减少所需的括号数量。例如，不写 `isTriple 3 4 (2 + 3 * 1)` 我们"
+"可以写成 `isTriple 3 4 $ 2 + 3 * 1`，这完全一样。有时，这有助于提高可读性，虽"
+"然有时并不会。要记住的重要一点是 `fun $ x y` 与 `fun (x y)` 相同。"
 
 #. type: Title ###
 #: ../src/Tutorial/Functions1.md:441 ../src/Tutorial/Functions2.md:339
@@ -1254,62 +961,69 @@ msgstr "练习"
 
 #. type: Bullet: '1. '
 #: ../src/Tutorial/Functions1.md:450
-#, no-wrap
 msgid ""
-"Reimplement functions `testSquare` and `twice` by using the dot\n"
-"operator and dropping the second arguments (have a look at the\n"
-"implementation of `squareTimes2` to get an idea where this should\n"
-"lead you). This highly concise\n"
-"way of writing function implementations is sometimes called\n"
-"*point-free style* and is often the preferred way of writing\n"
-"small utility functions.\n"
-msgstr "通过使用点运算符并删除第二个参数重新实现函数 `testSquare` 和 `twice`（查看 `squareTimes2` 的实现应该可以让你更加了解）。这种编写函数实现的高度简洁的方式有时被称为 *无值风格*，并且通常是编写小型实用函数的首选方式。\n"
+"Reimplement functions `testSquare` and `twice` by using the dot operator and "
+"dropping the second arguments (have a look at the implementation of "
+"`squareTimes2` to get an idea where this should lead you). This highly "
+"concise way of writing function implementations is sometimes called *point-"
+"free style* and is often the preferred way of writing small utility "
+"functions."
+msgstr ""
+"通过使用点运算符并删除第二个参数重新实现函数 `testSquare` 和 `twice`（查看 "
+"`squareTimes2` 的实现应该可以让你更加了解）。这种编写函数实现的高度简洁的方式"
+"有时被称为 *无值风格*，并且通常是编写小型实用函数的首选方式。"
 
 #. type: Bullet: '2. '
 #: ../src/Tutorial/Functions1.md:453
-#, no-wrap
 msgid ""
-"Declare and implement function `isOdd` by combining functions `isEven`\n"
-"from above and `not` (from the Idris *Prelude*). Use point-free style.\n"
-msgstr "通过组合上面的函数 `isEven` 和 `not`（来自 Idris *Prelude*）来声明和实现函数 `isOdd`。使用无值风格。\n"
+"Declare and implement function `isOdd` by combining functions `isEven` from "
+"above and `not` (from the Idris *Prelude*). Use point-free style."
+msgstr ""
+"通过组合上面的函数 `isEven` 和 `not`（来自 Idris *Prelude*）来声明和实现函数 "
+"`isOdd`。使用无值风格。"
 
 #. type: Bullet: '3. '
 #: ../src/Tutorial/Functions1.md:456
-#, no-wrap
 msgid ""
-"Declare and implement function `isSquareOf`, which checks whether\n"
-"its first `Integer` argument is the square of the second argument.\n"
-msgstr "声明并实现函数 `isSquareOf`，检查它的第一个 `Integer` 参数是否是第二个参数的平方。\n"
+"Declare and implement function `isSquareOf`, which checks whether its first "
+"`Integer` argument is the square of the second argument."
+msgstr ""
+"声明并实现函数 `isSquareOf`，检查它的第一个 `Integer` 参数是否是第二个参数的"
+"平方。"
 
 #. type: Bullet: '4. '
 #: ../src/Tutorial/Functions1.md:460
-#, no-wrap
 msgid ""
-"Declare and implement function `isSmall`, which checks whether\n"
-"its `Integer` argument is less than or equal to 100. Use one of the\n"
-"comparison operators `<=` or `>=` in your implementation.\n"
-msgstr "声明并实现函数 `isSmall`，检查其 `Integer` 参数是否小于或等于 100。在你的实现中使用比较运算符 `<=` 或 `>=` 之一。\n"
+"Declare and implement function `isSmall`, which checks whether its `Integer` "
+"argument is less than or equal to 100. Use one of the comparison operators "
+"`<=` or `>=` in your implementation."
+msgstr ""
+"声明并实现函数 `isSmall`，检查其 `Integer` 参数是否小于或等于 100。在你的实现"
+"中使用比较运算符 `<=` 或 `>=` 之一。"
 
 #. type: Bullet: '5. '
 #: ../src/Tutorial/Functions1.md:465
-#, no-wrap
 msgid ""
-"Declare and implement function `absIsSmall`, which checks whether\n"
-"the absolute value of its `Integer` argument is less than or equal to 100.\n"
-"Use functions `isSmall` and `abs` (from the Idris *Prelude*) in your implementation,\n"
-"which should be in point-free style.\n"
-msgstr "声明并实现函数 `absIsSmall`，检查其 `Integer` 参数的绝对值是否小于等于100。在你的实现中使用函数 `isSmall` 和 `abs `（来自 Idris *Prelude*），最好是无值风格的。\n"
+"Declare and implement function `absIsSmall`, which checks whether the "
+"absolute value of its `Integer` argument is less than or equal to 100.  Use "
+"functions `isSmall` and `abs` (from the Idris *Prelude*) in your "
+"implementation, which should be in point-free style."
+msgstr ""
+"声明并实现函数 `absIsSmall`，检查其 `Integer` 参数的绝对值是否小于等于100。在"
+"你的实现中使用函数 `isSmall` 和 `abs `（来自 Idris *Prelude*），最好是无值风"
+"格的。"
 
 #. type: Bullet: '6. '
 #: ../src/Tutorial/Functions1.md:471
-#, no-wrap
 msgid ""
-"In this slightly extended exercise we are going to implement\n"
-"some utilities for working with `Integer` predicates (functions\n"
-"from `Integer` to `Bool`). Implement the following higher-order\n"
-"functions (use boolean operators `&&`, `||`, and function `not` in\n"
-"your implementations):\n"
-msgstr "在这个稍微扩展的练习中，我们将实现一些实用程序来处理 `Integer` 谓词（从 `Integer` 到 `Bool` 的函数）。实现以下高阶函数（在您的实现中使用布尔运算符 `&&`、`||` 和函数 `not`）：\n"
+"In this slightly extended exercise we are going to implement some utilities "
+"for working with `Integer` predicates (functions from `Integer` to `Bool`). "
+"Implement the following higher-order functions (use boolean operators `&&`, "
+"`||`, and function `not` in your implementations):"
+msgstr ""
+"在这个稍微扩展的练习中，我们将实现一些实用程序来处理 `Integer` 谓词（从 "
+"`Integer` 到 `Bool` 的函数）。实现以下高阶函数（在您的实现中使用布尔运算符 "
+"`&&`、`||` 和函数 `not`）："
 
 #. type: Fenced code block (idris)
 #: ../src/Tutorial/Functions1.md:472
@@ -1355,16 +1069,16 @@ msgstr ""
 
 #. type: Bullet: '7. '
 #: ../src/Tutorial/Functions1.md:500
-#, no-wrap
 msgid ""
-"As explained above, Idris allows us to define our own infix operators.\n"
-"Even better, Idris supports *overloading* of function names,\n"
-"that is, two functions or operators can have the same\n"
-"name, but different types and implementations.\n"
-"Idris will make use of the\n"
-"types to distinguish between equally named operators and\n"
-"functions.\n"
-msgstr "如上所述，Idris 允许我们定义自己的中缀运算符。更好的是，Idris 支持函数名的 *重载*，即两个函数或运算符可以有相同的名称，但类型和实现不同。 Idris 将使用类型来区分同名的运算符和函数。\n"
+"As explained above, Idris allows us to define our own infix operators.  Even "
+"better, Idris supports *overloading* of function names, that is, two "
+"functions or operators can have the same name, but different types and "
+"implementations.  Idris will make use of the types to distinguish between "
+"equally named operators and functions."
+msgstr ""
+"如上所述，Idris 允许我们定义自己的中缀运算符。更好的是，Idris 支持函数名的 *"
+"重载*，即两个函数或运算符可以有相同的名称，但类型和实现不同。 Idris 将使用类"
+"型来区分同名的运算符和函数。"
 
 #. type: Plain text
 #: ../src/Tutorial/Functions1.md:504
@@ -1417,9 +1131,8 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Tutorial/Functions1.md:527
-#, no-wrap
-msgid "What we learned in this chapter:\n"
-msgstr "我们在本章中学到了什么：\n"
+msgid "What we learned in this chapter:"
+msgstr "我们在本章中学到了什么："
 
 #. type: Plain text
 #: ../src/Tutorial/Functions1.md:530
@@ -1496,15 +1209,16 @@ msgstr "* Idris 支持名称重载：函数可以具有相同的名称，但拥�
 
 #. type: Plain text
 #: ../src/Tutorial/Functions1.md:567
-#, no-wrap
 msgid ""
-"Please note, that function and operator names in a module\n"
-"must be unique. In order to define two functions with the same\n"
-"name, they have to be declared in distinct modules. If Idris\n"
-"is not able to decide, which of the two functions to use, we\n"
-"can help name resolution by prefixing a function with\n"
-"(a part of) its *namespace*:\n"
-msgstr "请注意，模块中的函数和运算符名称必须是唯一的。为了定义两个具有相同名称的函数，它们必须在不同的模块中声明。如果 Idris 无法决定使用这两个函数中的哪一个，我们可以通过在函数前面加上其 *命名空间* 的（部分）前缀来帮助名称解析：\n"
+"Please note, that function and operator names in a module must be unique. In "
+"order to define two functions with the same name, they have to be declared "
+"in distinct modules. If Idris is not able to decide, which of the two "
+"functions to use, we can help name resolution by prefixing a function with "
+"(a part of) its *namespace*:"
+msgstr ""
+"请注意，模块中的函数和运算符名称必须是唯一的。为了定义两个具有相同名称的函"
+"数，它们必须在不同的模块中声明。如果 Idris 无法决定使用这两个函数中的哪一个，"
+"我们可以通过在函数前面加上其 *命名空间* 的（部分）前缀来帮助名称解析："
 
 #. type: Fenced code block (repl)
 #: ../src/Tutorial/Functions1.md:568
@@ -1522,10 +1236,10 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Tutorial/Functions1.md:581
-#, no-wrap
 msgid ""
-"In the [next section](DataTypes.md), we will learn how to define\n"
-"our own data types and how to construct and deconstruct\n"
-"values of these new types. We will also learn about\n"
-"generic types and functions.\n"
-msgstr "在 [下一节](DataTypes.md) 中，我们将学习如何定义我们自己的数据类型以及如何构造和解构这些新类型的值。我们还将学习泛型类型和函数。\n"
+"In the [next section](DataTypes.md), we will learn how to define our own "
+"data types and how to construct and deconstruct values of these new types. "
+"We will also learn about generic types and functions."
+msgstr ""
+"在 [下一节](DataTypes.md) 中，我们将学习如何定义我们自己的数据类型以及如何构"
+"造和解构这些新类型的值。我们还将学习泛型类型和函数。"

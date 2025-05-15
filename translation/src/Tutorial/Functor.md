@@ -2,7 +2,8 @@
 
 编程，就像数学一样，是关于抽象的。我们尝试对现实世界的某些部分进行建模，通过对它们进行抽象来重用重复出现的模式。
 
-在本章中，我们将学习几个相关的接口，它们都是关于抽象的，因此一开始可能很难理解。尤其是弄清楚 *为什么* 有用以及 *何时* 使用它们需要时间和经验。因此，本章包含大量练习，其中大部分练习只需几行代码即可解决。不要跳过它们。回到他们身边几次，直到这些事情开始对你来说很自然。然后你会意识到它们最初的复杂性已经消失了。
+在本章中，我们将学习几个相关的接口，它们都是关于抽象的，因此一开始可能很难理解。尤其是弄清楚 *为什么* 有用以及 *何时*
+使用它们需要时间和经验。因此，本章包含大量练习，其中大部分练习只需几行代码即可解决。不要跳过它们。回到他们身边几次，直到这些事情开始对你来说很自然。然后你会意识到它们最初的复杂性已经消失了。
 
 ```idris
 module Tutorial.Functor
@@ -18,7 +19,8 @@ import Data.Vect
 
 `List`、`List1`、`Maybe` 或 `IO` 等类型构造函数有什么共同点？首先，它们都是类型 `Type -> Type`。其次，它们都将给定类型的值放在某个 *上下文* 中。对于 `List`，*上下文* 是 *不确定性*：我们知道有零个或多个值，但在开始之前我们不知道确切的数字通过对其进行模式匹配将列表分开。对于 `List1` 也是如此，尽管我们确定至少有一个值。对于 `Maybe`，我们仍然不确定有多少个值，但可能性要小得多：零或一。使用 `IO`，上下文是不同的：任意副作用。
 
-尽管上面讨论的类型构造函数在它们的行为方式和何时有用方面有很大不同，但在使用它们时会不断出现某些操作。第一个这样的操作是 *在数据类型上映射一个纯函数，而不影响其底层结构*。
+尽管上面讨论的类型构造函数在它们的行为方式和何时有用方面有很大不同，但在使用它们时会不断出现某些操作。第一个这样的操作是
+*在数据类型上映射一个纯函数，而不影响其底层结构*。
 
 例如，给定一个数字列表，我们希望将每个数字乘以 2，而不更改它们的顺序或删除任何值：
 
@@ -65,7 +67,8 @@ toLengthList' : List String -> List Nat
 toLengthList' = mapList length
 ```
 
-但我们肯定想对 `List1` 和 `Maybe` 做同样的事情！毕竟，它们只是像 `List` 这样的容器类型，唯一的区别是关于它们可以或不可以保存的值的数量的一些细节：
+但我们肯定想对 `List1` 和 `Maybe` 做同样的事情！毕竟，它们只是像 `List`
+这样的容器类型，唯一的区别是关于它们可以或不可以保存的值的数量的一些细节：
 
 ```idris
 mapMaybe : (a -> b) -> Maybe a -> Maybe b
@@ -73,7 +76,10 @@ mapMaybe f Nothing  = Nothing
 mapMaybe f (Just v) = Just (f v)
 ```
 
-即使使用 `IO`，我们也希望能够将纯函数映射到副作用的计算上。由于数据构造函数的嵌套层，实现有点复杂，但如果有疑问，类型肯定会指导我们。但是请注意，`IO` 不是公开导出的，因此我们无法使用它的数据构造函数。我们可以使用函数 `toPrim` 和 `fromPrim`，但是，将 `IO` 与 `PrimIO` 相互转换，我们可以自由剖析：
+即使使用
+`IO`，我们也希望能够将纯函数映射到副作用的计算上。由于数据构造函数的嵌套层，实现有点复杂，但如果有疑问，类型肯定会指导我们。但是请注意，`IO`
+不是公开导出的，因此我们无法使用它的数据构造函数。我们可以使用函数 `toPrim` 和 `fromPrim`，但是，将 `IO` 与 `PrimIO`
+相互转换，我们可以自由剖析：
 
 ```idris
 mapIO : (a -> b) -> IO a -> IO b
@@ -94,7 +100,8 @@ forgetIO : IO a -> IO ()
 forgetIO = mapConstIO ()
 ```
 
-当然，我们也想为 `List`、`List1` 和 `Maybe` 实现 `mapConst` 和 `forget` ]（以及其他几十个具有某种映射函数的类型构造函数），它们看起来都一样并且同样无聊。
+当然，我们也想为 `List`、`List1` 和 `Maybe` 实现 `mapConst` 和 `forget`
+]（以及其他几十个具有某种映射函数的类型构造函数），它们看起来都一样并且同样无聊。
 
 当我们遇到具有几个有用的派生函数的重复函数类时，我们应该考虑定义一个接口。但是我们应该怎么做呢？当您查看 `mapList`、`mapMaybe` 和 `mapIO` 的类型时，您会发现它是 `List`、`我们需要去掉 List1` 和 `IO` 类型。这些不是 `Type` 类型，而是 `Type -> Type` 类型。幸运的是，除了 `Type` 之外，没有什么能阻止我们对接口进行参数化。
 
@@ -111,7 +118,8 @@ implementation Functor' Maybe where
 
 请注意，我们必须明确给出参数 `f` 的类型，在这种情况下，如果您希望它在运行时被擦除（您几乎总是想要），则需要用定量零进行注释。
 
-现在，读取仅包含类型参数（如 `map'` 中的某个）的类型签名可能需要一些时间来适应，尤其是当某些类型参数应用于其他参数时，例如 `f a` .检查这些签名以及 REPL 中的所有隐式参数会非常有帮助（我对输出进行了格式化以使其更具可读性）：
+现在，读取仅包含类型参数（如 `map'` 中的某个）的类型签名可能需要一些时间来适应，尤其是当某些类型参数应用于其他参数时，例如 `f a`
+.检查这些签名以及 REPL 中的所有隐式参数会非常有帮助（我对输出进行了格式化以使其更具可读性）：
 
 ```repl
 Tutorial.Functor> :ti map'
@@ -233,16 +241,19 @@ compExample = unComp . map show . MkComp {f = List, g = Either e}
 
 #### 命名实现
 
-有时，有更多方法可以为给定类型实现接口。例如，对于数字类型，我们可以有一个 `Monoid` 代表加法和一个代表乘法。同样，对于嵌套函子，`map` 可以解释为仅对第一层值的映射，或对若干层值的映射。
+有时，有更多方法可以为给定类型实现接口。例如，对于数字类型，我们可以有一个 `Monoid` 代表加法和一个代表乘法。同样，对于嵌套函子，`map`
+可以解释为仅对第一层值的映射，或对若干层值的映射。
 
-解决此问题的一种方法是定义单字段包装器，如上面的数据类型 `Comp` 所示。然而，Idris 也允许我们定义额外的接口实现，然后必须给它一个名字。例如：
+解决此问题的一种方法是定义单字段包装器，如上面的数据类型 `Comp` 所示。然而，Idris
+也允许我们定义额外的接口实现，然后必须给它一个名字。例如：
 
 ```idris
 [Compose'] Functor f => Functor g => Functor (f . g) where
   map f = (map . map) f
 ```
 
-请注意，这定义了 `Functor` 的新实现，在隐式解析期间将 *不* 细化以避免歧义。但是，可以通过将其作为显式参数传递给 `map` 来显式选择使用此实现，并以 `@` 为前缀：
+请注意，这定义了 `Functor` 的新实现，在隐式解析期间将 *不* 细化以避免歧义。但是，可以通过将其作为显式参数传递给 `map`
+来显式选择使用此实现，并以 `@` 为前缀：
 
 ```idris
 compExample2 :  Show a => List (Either e a) -> List (Either e String)
@@ -253,7 +264,8 @@ compExample2 = map @{Compose} show
 
 ### 函子定律
 
-`Functor` 的实现应该遵守某些规律，就像 `Eq` 或 `Ord` 的实现一样。同样，这些法律并未得到 Idris 的验证，尽管这样做是可能的（而且通常很麻烦）。
+`Functor` 的实现应该遵守某些规律，就像 `Eq` 或 `Ord` 的实现一样。同样，这些法律并未得到 Idris
+的验证，尽管这样做是可能的（而且通常很麻烦）。
 
 1. `map id = id`：将恒等函数映射到函子上
     不得有任何可见的副作用，例如更改容器的
@@ -262,19 +274,18 @@ compExample2 = map @{Compose} show
 
 2. `map (f . g) = map f . map g`: 两个映射的顺序必须与使用两个函数组合后的单个映射相同。
 
-
-这两条定律都要求 `map` 保留值的 *结构*。使用 `List`、`Maybe` 或 `Either e` 等容器类型更容易理解，其中 `map` 不允许添加或删除任何包装的值，也不 - 在 `List` 的情况下 - 更改它们的顺序。对于使用 `IO`，最好地描述为 `map` 没有执行额外的副作用。
+这两条定律都要求 `map` 保留值的 *结构*。使用 `List`、`Maybe` 或 `Either e` 等容器类型更容易理解，其中 `map`
+不允许添加或删除任何包装的值，也不 - 在 `List` 的情况下 - 更改它们的顺序。对于使用 `IO`，最好地描述为 `map`
+没有执行额外的副作用。
 
 ### 练习第 1 部分
 
-1. 为 `Maybe`、`List`、`List1`、`Vect n`、`Either e` 和 `Pair a` 编写自己的 `Functor'` 实现。
-
+1. 为 `Maybe`、`List`、`List1`、`Vect n`、`Either e` 和 `Pair a` 编写自己的 `Functor'`
+   实现。
 
 2. 为 pairs 函数编写 `Functor` 的命名实现（类似于为 `Product` 实现的实现）。
 
-
 3. 为数据类型 `Identity` 实现 `Functor`（可从 *base* 中的 `Control.Monad.Identity` 获得）：
-
 
    ```idris
    record Identity a where
@@ -282,8 +293,10 @@ compExample2 = map @{Compose} show
      value : a
    ```
 
-4. 这是一个奇怪的问题：为 `Const e` 实现 `Functor`（也可以从 *base* 中的 `Control.Applicative.Const` 获得）。您可能会对第二个类型参数在运行时绝对没有相关性这一事实感到困惑，因为没有该类型的值。这种类型有时被称为 *幻像类型*。它们对于使用附加类型信息标记值非常有用。
-
+4. 这是一个奇怪的问题：为 `Const e` 实现 `Functor`（也可以从 *base* 中的
+   `Control.Applicative.Const`
+   获得）。您可能会对第二个类型参数在运行时绝对没有相关性这一事实感到困惑，因为没有该类型的值。这种类型有时被称为
+   *幻像类型*。它们对于使用附加类型信息标记值非常有用。
 
    不要让上述内容使您感到困惑：只有一种可能的实现。
    像往常一样，使用孔，如果你迷路了，让编译器指导你。
@@ -295,7 +308,6 @@ compExample2 = map @{Compose} show
    ```
 
 5. 这是用于描述数据存储中的 CRUD 操作（创建、读取、更新和删除）的和类型：
-
 
    ```idris
    data Crud : (i : Type) -> (a : Type) -> Type where
@@ -309,7 +321,6 @@ compExample2 = map @{Compose} show
 
 6. 以下是用于描述来自数据服务器的响应的和类型：
 
-
    ```idris
    data Response : (e, i, a : Type) -> Type where
      Created : (id : i) -> (value : a) -> Response e i a
@@ -322,7 +333,6 @@ compExample2 = map @{Compose} show
    为 `Repsonse e i` 实现 `Functor`。
 
 7. 为 `Validated e` 实现 `Functor`：
-
 
    ```idris
    data Validated : (e,a : Type) -> Type where
@@ -410,7 +420,8 @@ liftA3 fun fa fb fc = pure fun <*> fa <*> fb <*> fc
 
 了解这里发生的事情对您来说非常重要，所以让我们分解这些内容。如果我们将 `liftA2` 中的 `f` 用于 `Maybe`，则 `pure fun` 的类型为 `Maybe (a -> b -> c)`。同样，`pure fun <*> fa` 是 ` 类型为 `Maybe (b -> c)`，因为 `(<*>)` 将应用存储在 `f a` 到存储在 `pure fun` 中的函数（柯里化！）。
 
-你会经常看到 *apply* 这样的应用链，*applies* 的数量对应于我们提升的函数的数量。您有时还会看到以下内容，这使我们可以放弃对 `pure` 的初始调用，并改用 `map` 的运算符版本：
+你会经常看到 *apply* 这样的应用链，*applies* 的数量对应于我们提升的函数的数量。您有时还会看到以下内容，这使我们可以放弃对
+`pure` 的初始调用，并改用 `map` 的运算符版本：
 
 ```idris
 liftA2' : Applicative f => (a -> b -> c) -> f a -> f b -> f c
@@ -420,11 +431,13 @@ liftA3' : Applicative f => (a -> b -> c -> d) -> f a -> f b -> f c -> f d
 liftA3' fun fa fb fc = fun <$> fa <*> fb <*> fc
 ```
 
-因此，接口 `Applicative` 允许我们将值（和函数！）提升到计算上下文中，并将它们应用于相同上下文中的值。在我们将看到一个扩展示例为什么这很有用之前，我将快速介绍一些用于使用应用函子的语法糖。
+因此，接口 `Applicative`
+允许我们将值（和函数！）提升到计算上下文中，并将它们应用于相同上下文中的值。在我们将看到一个扩展示例为什么这很有用之前，我将快速介绍一些用于使用应用函子的语法糖。
 
 ### 习语括号
 
-用于实现 `liftA2'` 和 `liftA3'` 的编程风格也称为 *应用函子风格*，在 Haskell 中被大量用于将单一的纯函数应用于几个副作用计算。
+用于实现 `liftA2'` 和 `liftA3'` 的编程风格也称为 *应用函子风格*，在 Haskell
+中被大量用于将单一的纯函数应用于几个副作用计算。
 
 在 Idris 中，有一个替代使用这种运算符应用程序链的方法：习语括号。这是 `liftA2` 和 `liftA3` 的另一个重新实现：
 
@@ -440,7 +453,9 @@ liftA3'' fun fa fb fc = [| fun fa fb fc |]
 
 ### 用例：CSV 阅读器
 
-为了理解应用函子的强大功能和多功能性，我们将看一个稍微扩展的示例。我们将编写一些实用程序来解析和解码 CSV 文件中的内容。这些文件的每一行都包含一个由逗号（或其他分隔符）分隔的值列表。通常，它们用于存储表格数据，例如来自电子表格应用程序的数据。我们想要做的是转换 CSV 文件中的行并将结果存储在自定义记录中，其中每个记录字段对应于表中的一列。
+为了理解应用函子的强大功能和多功能性，我们将看一个稍微扩展的示例。我们将编写一些实用程序来解析和解码 CSV
+文件中的内容。这些文件的每一行都包含一个由逗号（或其他分隔符）分隔的值列表。通常，它们用于存储表格数据，例如来自电子表格应用程序的数据。我们想要做的是转换
+CSV 文件中的行并将结果存储在自定义记录中，其中每个记录字段对应于表中的一列。
 
 例如，这是一个简单的示例文件，其中包含来自网络商店的表格用户信息：名字、姓氏、年龄（可选）、电子邮件地址、性别和密码。
 
@@ -450,7 +465,8 @@ Jane,Doe,,jane@doe.ch,f,aa433sd112
 Stefan,Hoeck,,nope@goaway.ch,m,password123
 ```
 
-以下是在运行时保存此信息所必需的 Idris 数据类型。我们再次使用自定义字符串包装器来提高类型安全性，因为它允许我们为每种数据类型定义我们认为是有效输入的内容：
+以下是在运行时保存此信息所必需的 Idris
+数据类型。我们再次使用自定义字符串包装器来提高类型安全性，因为它允许我们为每种数据类型定义我们认为是有效输入的内容：
 
 ```idris
 data Gender = Male | Female | Other
@@ -549,9 +565,6 @@ CSVField Email where
 
 isPasswordChar : Char -> Bool
 isPasswordChar ' ' = True
--- please note that isSpace holds as well for other characaters than ' '
--- e.g. for non-breaking space: isSpace '\160' = True
--- but only ' ' shall be llowed in passwords
 isPasswordChar c   = not (isControl c) && not (isSpace c)
 
 isValidPassword : String -> Bool
@@ -582,7 +595,8 @@ readField line col str =
   maybe (Left $ FieldError line col str) Right (read str)
 ```
 
-如果我们事先知道需要读取的字段数量，我们可以尝试将字符串列表转换为给定长度的 `Vect`。这有助于读取已知数量字段的记录值，因为我们在向量上进行模式匹配时得到正确数量的字符串变量：
+如果我们事先知道需要读取的字段数量，我们可以尝试将字符串列表转换为给定长度的
+`Vect`。这有助于读取已知数量字段的记录值，因为我们在向量上进行模式匹配时得到正确数量的字符串变量：
 
 ```idris
 toVect : (n : Nat) -> (line, col : Nat) -> List a -> Either CSVError (Vect n a)
@@ -619,7 +633,8 @@ Tutorial.Functor> readUser 7 "Joe,Foo,46,j@f.ch,m,shortPW"
 Left (FieldError 7 6 "shortPW")
 ```
 
-请注意，在 `readUser'` 的实现中，我们如何使用习语括号将六个参数 (`MkUser`) 的函数映射到 `Either CSVError` 类型的六个值上。当且仅当所有解析都成功时，这将自动成功。众所周知，使用连续六个嵌套模式匹配来实现 `readUser'` 的代码的可读性会大大降低。
+请注意，在 `readUser'` 的实现中，我们如何使用习语括号将六个参数 (`MkUser`) 的函数映射到 `Either CSVError`
+类型的六个值上。当且仅当所有解析都成功时，这将自动成功。众所周知，使用连续六个嵌套模式匹配来实现 `readUser'` 的代码的可读性会大大降低。
 
 但是，上面的习语括号看起来仍然非常重复。当然，我们可以做得更好吗？
 
@@ -635,14 +650,16 @@ namespace HList
     (::) : (v : t) -> (vs : HList ts) -> HList (t :: ts)
 ```
 
-异构列表是在 *类型列表* 上索引的列表类型。这允许我们在每个位置将类型的值存储在列表索引中的相同位置。例如，这里有一个变体，它存储了 `Bool`、`Nat` 和 `Maybe String` 类型的三个值（按此顺序）：
+异构列表是在 *类型列表* 上索引的列表类型。这允许我们在每个位置将类型的值存储在列表索引中的相同位置。例如，这里有一个变体，它存储了
+`Bool`、`Nat` 和 `Maybe String` 类型的三个值（按此顺序）：
 
 ```idris
 hlist1 : HList [Bool, Nat, Maybe String]
 hlist1 = [True, 12, Nothing]
 ```
 
-您可能会争辩说，异构列表只是存储给定类型值的元组。没错，当然，但是，因为您将在练习中学习困难的方法，我们可以使用列表索引对 `HList` 执行编译时计算，例如连接两个这样的列表以保持同时跟踪结果中存储的类型。
+您可能会争辩说，异构列表只是存储给定类型值的元组。没错，当然，但是，因为您将在练习中学习困难的方法，我们可以使用列表索引对 `HList`
+执行编译时计算，例如连接两个这样的列表以保持同时跟踪结果中存储的类型。
 
 但首先，我们将使用 `HList` 作为简洁解析 CSV 行的方法。为此，我们需要为对应于 CSV 文件中整行的类型引入一个新接口：
 
@@ -651,7 +668,8 @@ interface CSVLine a where
   decodeAt : (line, col : Nat) -> List String -> Either CSVError a
 ```
 
-现在，我们将为 `HList` 编写 `CSVLine` 的两个实现：一个针对 `Nil` 的情况，当且仅当当前字符串列表为空时才会成功.另一个用于 *cons* 的情况，它将尝试从列表的头部读取单个字段，并从其尾部读取剩余部分。我们再次使用惯用括号来连接结果：
+现在，我们将为 `HList` 编写 `CSVLine` 的两个实现：一个针对 `Nil` 的情况，当且仅当当前字符串列表为空时才会成功.另一个用于
+*cons* 的情况，它将尝试从列表的头部读取单个字段，并从其尾部读取剩余部分。我们再次使用惯用括号来连接结果：
 
 ```idris
 CSVLine (HList []) where
@@ -663,7 +681,8 @@ CSVField t => CSVLine (HList ts) => CSVLine (HList (t :: ts)) where
   decodeAt l c (s :: ss) = [| readField l c s :: decodeAt l (S c) ss |]
 ```
 
-就是这样！我们需要添加的是两个实用函数，用于在将整行拆分为标记之前对其进行解码，其中一个专用于 `HList` 并将已擦除的类型列表作为参数，以使其更方便使用在 REPL：
+就是这样！我们需要添加的是两个实用函数，用于在将整行拆分为标记之前对其进行解码，其中一个专用于 `HList`
+并将已擦除的类型列表作为参数，以使其更方便使用在 REPL：
 
 ```idris
 decode : CSVLine a => (line : Nat) -> String -> Either CSVError a
@@ -692,9 +711,7 @@ Left (FieldError 3 2 "")
 
 * `pure id <*> fa = fa`：提升和应用恒等函数没有可见作用。
 
-
 * `[| f . g |] <*> v = f <*> (g <*> v)`：不管是先组合函数然后应用它们，还是先应用函数然后组合它们，结果应该相同。
-
 
   上面的可能很难理解，所以这里
   它们再次具有显式类型和实现：
@@ -712,9 +729,7 @@ Left (FieldError 3 2 "")
 
 * `pure f <*> pure x = pure (f x)`。这也称为 *同态* 定律。这应该是不言自明的。
 
-
 * `f <*> pure v = pure ($ v) <*> f`。这称为*交换*律。
-
 
   这应该再次用一个具体的例子来解释：
 
@@ -736,9 +751,8 @@ Left (FieldError 3 2 "")
 
 1. 为 `Either e` 和 `Identity` 实现 `Applicative'`。
 
-
-2. 为 `Vect n` 实现 `Applicative'`。注意：为了实现 `pure`，必须在运行时知道长度。这可以通过将其作为未擦除的隐式传递给接口实现来完成：
-
+2. 为 `Vect n` 实现 `Applicative'`。注意：为了实现
+   `pure`，必须在运行时知道长度。这可以通过将其作为未擦除的隐式传递给接口实现来完成：
 
    ```idris
    implementation {n : _} -> Applicative' (Vect n) where
@@ -746,18 +760,15 @@ Left (FieldError 3 2 "")
 
 3. 为 `Pair e` 实现 `Applicative'`，其中 `e` 具有 `Monoid` 约束。
 
-
 4. 为 `Const e` 实现 `Applicative`，其中 `e` 具有 `Monoid` 约束。
 
+5. 为 `Validated e` 实现 `Applicative`，其中 `e` 具有 `Semigroup` 约束。这将允许我们在 *apply*
+   的实现中使用 `(<+>)` 来累积两个 `Invalid` 值的错误。
 
-5. 为 `Validated e` 实现 `Applicative`，其中 `e` 具有 `Semigroup` 约束。这将允许我们在 *apply* 的实现中使用 `(<+>)` 来累积两个 `Invalid` 值的错误。
-
-
-6. 添加一个 `CSVError -> CSVError -> CSVError` 到 `CSVError` 类型的附加数据构造函数，并使用它为 `CSVError` 实现 `Semigroup`。
-
+6. 添加一个 `CSVError -> CSVError -> CSVError` 到 `CSVError` 类型的附加数据构造函数，并使用它为
+   `CSVError` 实现 `Semigroup`。
 
 7. 重构我们的 CSV 解析器和所有相关函数，使它们返回 `Validated` 而不是 `Either`。这只有在你解决了练习 6 的情况下才有效。
-
 
    需要注意的两件事：您将不得不调整很少的
    现有代码，因为我们仍然可以通过使用 `Validated`使用应用语法
@@ -780,7 +791,6 @@ Left (FieldError 3 2 "")
 
 8. 由于我们在本章中介绍了异构列表，很遗憾没有对它们进行一些实验。
 
-
    这个练习旨在提高你的类型技巧的技能。
    因此，它带有很少的提示。您期望从给定函数中获得什么行为试着自己做决定
    ，这在类型中如何表达，以及之后如何实现它。
@@ -791,24 +801,20 @@ Left (FieldError 3 2 "")
 
    1. 为 `HList` 实现 `head`。
 
-
    2. 为 `HList` 实现 `tail`。
-
 
    3. 为 `HList` 实现 `(++)`。
 
+   4. 为 `HList` 实现 `index`。这可能比其他三个更难。回过头来看看我们如何在 [前面的练习](Dependent.md) 中实现
+      `indexList` 并从那里开始。
 
-   4. 为 `HList` 实现 `index`。这可能比其他三个更难。回过头来看看我们如何在 [前面的练习](Dependent.md) 中实现 `indexList` 并从那里开始。
-
-
-   5. *contrib* 包是 Idris 项目的一部分，它提供了 `Data.HVect.HVect`，一种异构向量的数据类型。与我们自己的 `HList` 的唯一区别是，`HVect` 是通过类型向量而不是类型列表来索引的。这使得在类型级别表达某些操作变得更容易。
-
+   5. *contrib* 包是 Idris 项目的一部分，它提供了 `Data.HVect.HVect`，一种异构向量的数据类型。与我们自己的
+      `HList` 的唯一区别是，`HVect` 是通过类型向量而不是类型列表来索引的。这使得在类型级别表达某些操作变得更容易。
 
       编写您自己的 `HVect` 实现以及函数
       `head`、`tail`、`(++)` 和 `index`。
 
    6. 对于真正的挑战，尝试实现一个函数来转置 `Vect m (HVect ts)`。您首先必须对如何在类型中表达这一点有创意。
-
 
       注意：为了实现这一点，您需要在至少一个案例中的一个被抹去的参数上进行模式匹配，以帮助 Idris 进行类型推断。禁止对已擦除参数进行模式匹配
       （它们毕竟被删除了，所以我们不能在运行时检查它们），
@@ -820,9 +826,7 @@ Left (FieldError 3 2 "")
 
 9. 通过为 `Comp f g` 实现 `Applicative` 来证明两个应用函子的组合再次是一个应用函子。
 
-
 10. 通过为 `Prod f g` 实现 `Applicative` 证明两个应用函子的乘积再次是一个应用函子。
-
 
 ## 单子
 
@@ -836,7 +840,9 @@ interface Applicative' m => Monad' m where
 
 `Monad` 的实现者可以自由选择实现 `(>>=)` 或 `join` 或两者。您将在练习中展示如何根据 *bind* 来实现 `join`，反之亦然。
 
-`Monad` 和 `Applicative` 之间的最大区别在于，前者允许计算依赖于早期计算的结果。例如，我们可以根据从标准输入中读取的字符串来决定是删除文件还是播放歌曲。第一个 `IO` 动作（读取一些用户输入）的结果将影响下一个要运行的 `IO` 动作。这对于 *apply* 运算符是不可能的：
+`Monad` 和 `Applicative`
+之间的最大区别在于，前者允许计算依赖于早期计算的结果。例如，我们可以根据从标准输入中读取的字符串来决定是删除文件还是播放歌曲。第一个 `IO`
+动作（读取一些用户输入）的结果将影响下一个要运行的 `IO` 动作。这对于 *apply* 运算符是不可能的：
 
 ```repl
 (<*>) : IO (a -> b) -> IO a -> IO b
@@ -844,7 +850,8 @@ interface Applicative' m => Monad' m where
 
 两个 `IO` 动作在作为参数传递给 `(<*>)` 时已经确定。在一般情况下，第一个结果不能影响在第二个中运行哪个计算。 （实际上，使用 `IO` 理论上可以通过副作用实现：第一个操作可以将某些命令写入文件或覆盖某些可变状态，而第二个操作可以从该文件或状态读取，从而决定接下来要做的事情。但这是 `IO` 的特长，而不是一般的应用函子。如果有问题的函子是 `Maybe`，`List`，或 `Vector`，这是不可能的。）
 
-让我们用一个例子来演示一下区别。假设我们想增强我们的 CSV 阅读器，使其能够将一行标记解码为和型。例如，我们想从 CSV 文件的行中解码 CRUD 请求：
+让我们用一个例子来演示一下区别。假设我们想增强我们的 CSV 阅读器，使其能够将一行标记解码为和型。例如，我们想从 CSV 文件的行中解码 CRUD
+请求：
 
 ```idris
 data Crud : (i : Type) -> (a : Type) -> Type where
@@ -893,16 +900,18 @@ Tutorial.Functor> decodeCRUD {i = Nat} {a = Email} 1 "Delete,jon@doe.ch"
 Left (FieldError 1 2 "jon@doe.ch")
 ```
 
-总而言之，`Monad` 与 `Applicative` 不同，它允许我们按顺序链接计算，其中中间结果会影响后续计算的行为。因此，如果您有 n 个不相关的有效计算并希望将它们组合在一个纯 n 元函数下，`Applicative` 就足够了。但是，如果您想根据有效计算的结果来决定接下来要运行什么计算，则需要 `Monad`。
+总而言之，`Monad` 与 `Applicative` 不同，它允许我们按顺序链接计算，其中中间结果会影响后续计算的行为。因此，如果您有 n
+个不相关的有效计算并希望将它们组合在一个纯 n 元函数下，`Applicative`
+就足够了。但是，如果您想根据有效计算的结果来决定接下来要运行什么计算，则需要 `Monad`。
 
-但是请注意，与 `Applicative` 相比，`Monad` 有一个重要的缺点：通常，monad 不能组合。例如， `Either e . IO` 没有 `Monad` 实例。稍后我们将了解可以与其他 monad 组合的 monad 转换器。
+但是请注意，与 `Applicative` 相比，`Monad` 有一个重要的缺点：通常，monad 不能组合。例如， `Either e . IO`
+没有 `Monad` 实例。稍后我们将了解可以与其他 monad 组合的 monad 转换器。
 
 ### 单子定律
 
 事不宜迟，以下是 `Monad` 的定律：
 
 * `ma >>= pure = ma` 和 `pure v >>= f = f v`。这些是 monad 的恒等律。下面是具体的例子：
-
 
   ```idris
   id1L : Maybe a -> Maybe a
@@ -917,8 +926,8 @@ Left (FieldError 1 2 "jon@doe.ch")
 
   这两条定律规定 `pure` 在 *bind* 中应该表现为中立。
 
-* `(m >>= f) >>= g = m >>= (f >=> g)` 是 monad 的结合律。您可能没有见过第二个运算符 `(>=>)`。它可用于对副作用计算进行排序，并具有以下类型：
-
+* `(m >>= f) >>= g = m >>= (f >=> g)` 是 monad 的结合律。您可能没有见过第二个运算符
+  `(>=>)`。它可用于对副作用计算进行排序，并具有以下类型：
 
   ```repl
   Tutorial.Functor> :t (>=>)
@@ -929,26 +938,22 @@ Left (FieldError 1 2 "jon@doe.ch")
 
 * `mf <*> ma = mf >>= (\fun => map (fun $) ma)`.
 
-
 ### 练习第 3 部分
 
-1. `Applicative` 扩展了 `Functor`，因为每个 `Applicative` 也是一个 `Functor`。通过根据 `pure` 和 `(<*>)` 实现 `map` 来证明这一点。
+1. `Applicative` 扩展了 `Functor`，因为每个 `Applicative` 也是一个 `Functor`。通过根据 `pure`
+   和 `(<*>)` 实现 `map` 来证明这一点。
 
-
-2. `Monad` 扩展了 `Applicative`，因为每个 `Monad` 也是一个 `Applicative`。通过根据 `(>>=)` 和 `pure` 实现 `(<*>)` 来证明这一点。
-
+2. `Monad` 扩展了 `Applicative`，因为每个 `Monad` 也是一个 `Applicative`。通过根据 `(>>=)` 和
+   `pure` 实现 `(<*>)` 来证明这一点。
 
 3. 根据 `join` 和 `Monad` 层次结构中的其他函数实现 `(>>=)`。
 
-
 4. 根据 `(>>=)` 和 `Monad` 层次结构中的其他函数实现 `join`。
-
 
 5. `Validated e` 没有合法的 `Monad` 实现。为什么？
 
-
-6. 在这个稍微扩展的练习中，我们将在数据存储上模拟 CRUD 操作。我们将使用一个可变引用（从 *base* 库中的 `Data.IORef` 导入），其中包含一个 `User` 列表和一个类型为 `Nat` 的唯一 ID 作为我们的用户数据库：
-
+6. 在这个稍微扩展的练习中，我们将在数据存储上模拟 CRUD 操作。我们将使用一个可变引用（从 *base* 库中的 `Data.IORef`
+   导入），其中包含一个 `User` 列表和一个类型为 `Nat` 的唯一 ID 作为我们的用户数据库：
 
    ```idris
    DB : Type
@@ -990,12 +995,9 @@ Left (FieldError 1 2 "jon@doe.ch")
 
    * 数据库中的电子邮件地址必须是唯一的。 （考虑实现 `Eq Email` 来验证这一点）。
 
-
    * 不得超过 1000 个条目的大小限制。
 
-
    * 如果在 DB 中找不到条目，则尝试通过 ID 查找用户的操作必须失败并显示 `UserNotFound`。
-
 
    工作时需要 `Data.IORef` 中的以下功能
    具有可变引用：`newIORef`、`readIORef` 和 `writeIORef`。
@@ -1004,12 +1006,9 @@ Left (FieldError 1 2 "jon@doe.ch")
 
    1. 为 `Prog` 实现接口 `Functor`、`Applicative` 和 `Monad`。
 
-
    2. 为 `Prog` 实现接口 `HasIO`。
 
-
    3. 实现以下实用函数：
-
 
       ```idris
       throw : DBError -> Prog a
@@ -1025,20 +1024,19 @@ Left (FieldError 1 2 "jon@doe.ch")
 
    4. 实现函数`lookupUser`。如果找不到具有给定 ID 的用户，这应该会失败并出现适当的错误。
 
-
       ```idris
       lookupUser : (id : Nat) -> Prog User
       ```
 
-   5. 实现函数 `deleteUser`。如果找不到具有给定 ID 的用户，这应该会失败并出现适当的错误。在您的实现中使用 `lookupUser`。
-
+   5. 实现函数 `deleteUser`。如果找不到具有给定 ID 的用户，这应该会失败并出现适当的错误。在您的实现中使用
+      `lookupUser`。
 
       ```idris
       deleteUser : (id : Nat) -> Prog ()
       ```
 
-   6. 实现函数 `addUser`。如果具有给定 `Email` 的用户已经存在，或者超过了 1000 个条目的数据库大小限制，这应该会失败。此外，这应该为新用户条目创建并返回一个唯一 ID。
-
+   6. 实现函数 `addUser`。如果具有给定 `Email` 的用户已经存在，或者超过了 1000
+      个条目的数据库大小限制，这应该会失败。此外，这应该为新用户条目创建并返回一个唯一 ID。
 
       ```idris
       addUser : (new : User) -> Prog Nat
@@ -1046,13 +1044,11 @@ Left (FieldError 1 2 "jon@doe.ch")
 
    7. 实现函数 `updateUser`。如果找不到相关用户或更新用户的 `Email` 的用户已经存在，这应该会失败。返回的值应该是更新的用户。
 
-
       ```idris
       updateUser : (id : Nat) -> (mod : User -> User) -> Prog User
       ```
 
    8. 数据类型 `Prog` 实际上太具体了。我们也可以抽象出错误类型和 `DB` 环境：
-
 
       ```idris
       record Prog' env err a where
@@ -1068,35 +1064,33 @@ Left (FieldError 1 2 "jon@doe.ch")
 
 ## 背景和延伸阅读
 
-*functor* 和 *monad* 等概念起源于数学分支 *范畴论*。这也是他们的定律的来源。范畴理论被发现在程序设计语言理论，特别是函数式程序设计中有应用。这是一个高度抽象的主题，但有一个非常容易理解的程序员介绍，由 [Bartosz Milewski](https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/) 编写。
+*functor* 和 *monad* 等概念起源于数学分支
+*范畴论*。这也是他们的定律的来源。范畴理论被发现在程序设计语言理论，特别是函数式程序设计中有应用。这是一个高度抽象的主题，但有一个非常容易理解的程序员介绍，由
+[Bartosz
+Milewski](https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/)
+编写。
 
-The usefulness of applicative functors as a middle ground between
-functor and monad was discovered several years after monads had
-already been in use in Haskell. They were introduced in the
-article [*Applicative Programming with Effects*](https://www.staff.city.ac.uk/~ross/papers/Applicative.html),
-which is freely available online and a highly recommended read.
+应用函子作为函子和单子之间的中间地带的有用性是在单子已经在 Haskell 中使用几年之后才发现的。它们在文章 [*Applicative
+Programming with
+Effects*](https://www.staff.city.ac.uk/~ross/papers/Applicative.html)
+中进行了介绍，该文章可在线免费获得，并且强烈推荐阅读。
 
 ## 结论
 
-* 接口 `Functor`、`Applicative` 和 `Monad` 抽象了使用 `Type -> Type` 类型的类型构造函数时出现的编程模式。此类数据类型也称为上下文中的 *值*，或 *副作用计算*。
-
+* 接口 `Functor`、`Applicative` 和 `Monad` 抽象了使用 `Type -> Type`
+  类型的类型构造函数时出现的编程模式。此类数据类型也称为上下文中的 *值*，或 *副作用计算*。
 
 * `Functor` 允许我们在上下文中的值上*映射*而不影响上下文的底层结构。
 
-
 * `Applicative` 允许我们将 n 元函数应用于 n 个有效计算，并将纯值提升到上下文中。
-
 
 * `Monad` 允许我们链接有效的计算，其中中间结果可能会影响，哪些计算在链中运行得更远。
 
-
 * 与 `Monad` 不同，`Functor` 和 `Applicative` 组合：两个函子或应用程序的乘积和组合再次分别是函子或应用程序。
-
 
 * Idris 为使用此处介绍的一些接口提供了语法糖：`Applicative` 的习语括号、*do 块* 和 `Monad` 的感叹号运算符。
 
-
-### 下一步是什么？
+### 接下来做什么？
 
 在[下一章](Folds.md) 中，我们将了解更多关于递归、完全性检查和折叠容器类型的接口：`Foldable`。
 

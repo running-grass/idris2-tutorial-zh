@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: po 4a\n"
-"POT-Creation-Date: 2025-05-15 03:33+0000\n"
+"POT-Creation-Date: 2025-05-15 07:57+0000\n"
 "PO-Revision-Date: 2025-05-15 03:06+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -23,75 +23,49 @@ msgstr "Idris 2 中的函数式编程"
 
 #. type: Plain text
 #: ../README.md:5
-#, fuzzy, no-wrap
 msgid ""
-"[中文翻译](https://github.com/running-grass/idris2-tutorial-zh/blob/main/translation/README.md),\n"
-"[日本語訳](https://github.com/gemmaro/idris2-tutorial/blob/ja/translation/ja/README.md)\n"
+"[中文翻译](https://github.com/running-grass/idris2-tutorial-zh/blob/main/"
+"translation/README.md), [日本語訳](https://github.com/gemmaro/idris2-"
+"tutorial/blob/ja/translation/ja/README.md)"
 msgstr ""
-"#-#-#-#-#  README.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Neovim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"[中文翻译](https://github.com/running-grass/idris2-tutorial-zh/blob/main/translation/README.md)\n"
-"#-#-#-#-#  DPair.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"[中文翻译](https://github.com/running-grass/idris2-tutorial-zh/blob/main/translation/README.md)\n"
-"#-#-#-#-#  DataTypes.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"[中文翻译](https://github.com/running-grass/idris2-tutorial-zh/blob/main/translation/README.md)\n"
-"#-#-#-#-#  Dependent.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"[中文翻译](https://github.com/running-grass/idris2-tutorial-zh/blob/main/translation/README.md)\n"
-"#-#-#-#-#  Eq.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"[中文翻译](https://github.com/running-grass/idris2-tutorial-zh/blob/main/translation/README.md)\n"
-"#-#-#-#-#  Folds.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"[中文翻译](https://github.com/running-grass/idris2-tutorial-zh/blob/main/translation/README.md)\n"
-"#-#-#-#-#  Functions1.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"[中文翻译](https://github.com/running-grass/idris2-tutorial-zh/blob/main/translation/README.md)\n"
-"#-#-#-#-#  Functions2.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"[中文翻译](https://github.com/running-grass/idris2-tutorial-zh/blob/main/translation/README.md)\n"
-"#-#-#-#-#  Functor.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"[中文翻译](https://github.com/running-grass/idris2-tutorial-zh/blob/main/translation/README.md)\n"
-"#-#-#-#-#  IO.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"[中文翻译](https://github.com/running-grass/idris2-tutorial-zh/blob/main/translation/README.md)\n"
-"#-#-#-#-#  Interfaces.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"[中文翻译](https://github.com/running-grass/idris2-tutorial-zh/blob/main/translation/README.md)\n"
-"#-#-#-#-#  Intro.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"[中文翻译](https://github.com/running-grass/idris2-tutorial-zh/blob/main/translation/README.md)\n"
-"#-#-#-#-#  Predicates.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"[中文翻译](https://github.com/running-grass/idris2-tutorial-zh/blob/main/translation/README.md)\n"
-"#-#-#-#-#  Prim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"[中文翻译](https://github.com/running-grass/idris2-tutorial-zh/blob/main/translation/README.md)\n"
-"#-#-#-#-#  Traverse.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"[中文翻译](https://github.com/running-grass/idris2-tutorial-zh/blob/main/translation/README.md)\n"
+"[中文翻译](https://github.com/running-grass/idris2-tutorial-zh/blob/main/"
+"translation/README.md),\n"
+"[日本語訳](https://github.com/gemmaro/idris2-tutorial/blob/ja/translation/ja/"
+"README.md)"
 
 #. type: Plain text
 #: ../README.md:10
-#, no-wrap
 msgid ""
-"The goal of this project is quickly explained: To become a more\n"
-"or less comprehensive guide to the Idris programming language,\n"
-"with a lot of introductory material targeted at newcomers to\n"
-"functional programming.\n"
-msgstr "这个项目的目标是：要成为 Idris 编程语言的全面指南，其中包含大量针对函数式编程新手的介绍性材料。\n"
+"The goal of this project is quickly explained: To become a more or less "
+"comprehensive guide to the Idris programming language, with a lot of "
+"introductory material targeted at newcomers to functional programming."
+msgstr ""
+"本项目旨在成为 Idris 编程语言的较为全面的指南，并为函数式编程新手提供丰富的入"
+"门材料。"
 
 #. type: Plain text
 #: ../README.md:18
-#, no-wrap
 msgid ""
-"The content will be organized in several parts, with the part\n"
-"about the core language features being the main guide to\n"
-"functional programming in Idris. Every part consists of several\n"
-"chapters, each trying to cover in depth a certain aspect\n"
-"of the Idris programming language and its core libraries. Most\n"
-"chapters come with (sometimes lots of) exercises, with\n"
-"solutions available in directory `src/Solutions`.\n"
-msgstr "内容将分为几个部分，其中关于核心语言特性的部分是 Idris 函数式编程主要指南。每个部分都由几个章节组成，每个章节都试图深入介绍 Idris 编程语言及其核心库的某个方面。大多数章节都附带（有时很多）练习，在目录 `src/Solutions` 中提供了解决方案。\n"
+"The content will be organized in several parts, with the part about the core "
+"language features being the main guide to functional programming in Idris. "
+"Every part consists of several chapters, each trying to cover in depth a "
+"certain aspect of the Idris programming language and its core libraries. "
+"Most chapters come with (sometimes lots of) exercises, with solutions "
+"available in directory `src/Solutions`."
+msgstr ""
+"内容分为若干部分，其中核心语言特性部分是 Idris 函数式编程的主要指南。每部分包"
+"含多个章节，深入讲解 Idris 编程语言及其核心库的某一方面。大多数章节配有练习，"
+"解答见目录 `src/Solutions`。"
 
 #. type: Plain text
 #: ../README.md:23
-#, no-wrap
 msgid ""
-"Right now, even the part about core language features is not\n"
-"yet finished, but is being actively developed and tried on\n"
-"several of my own students, some of which are completely\n"
-"new to functional programming.\n"
-msgstr "目前，虽然关于核心语言特性的部分还没有完成，但正在积极开发中，并在我自己的几个学生身上进行尝试，其中一些甚至是函数式编程的萌新。\n"
+"Right now, even the part about core language features is not yet finished, "
+"but is being actively developed and tried on several of my own students, "
+"some of which are completely new to functional programming."
+msgstr ""
+"目前，核心语言特性部分尚未完成，仍在积极开发中，并已在我的部分学生中试用，其"
+"中一些学生完全没有函数式编程经验。"
 
 #. type: Title ##
 #: ../README.md:24
@@ -107,462 +81,403 @@ msgstr "第 1 部分：核心语言特性"
 
 #. type: Plain text
 #: ../README.md:32
-#, no-wrap
 msgid ""
-"This part tries to give a solid introduction to the\n"
-"Idris programming language. If you are new to functional programming,\n"
-"make sure to follow these chapters in order and *solve all the\n"
-"exercises*.\n"
-msgstr "这部分试图对 Idris 编程语言进行深入的介绍。如果您是函数式编程的新手，请确保按顺序阅读这些章节并*解决所有练习*。\n"
+"This part tries to give a solid introduction to the Idris programming "
+"language. If you are new to functional programming, make sure to follow "
+"these chapters in order and *solve all the exercises*."
+msgstr ""
+"本部分旨在系统介绍 Idris 编程语言。如果您是函数式编程新手，请按顺序学习这些章"
+"节并*完成所有练习*。"
 
 #. type: Plain text
 #: ../README.md:37
-#, no-wrap
 msgid ""
-"If you already used other pure functional programming languages like\n"
-"Haskell, you might go through the introductory material (Functions Part 1,\n"
-"Algebraic Data Types, and Interfaces) pretty quickly, as most of this\n"
-"stuff will already be familiar to you.\n"
-msgstr "如果您已经使用过其他纯函数式编程语言，例如 Haskell，那么您可能会很快完成介绍性材料（函数第 1 部分，代数数据类型和接口），因为这些内容中的大部分内容您已经很熟悉了。\n"
+"If you already used other pure functional programming languages like "
+"Haskell, you might go through the introductory material (Functions Part 1, "
+"Algebraic Data Types, and Interfaces) pretty quickly, as most of this stuff "
+"will already be familiar to you."
+msgstr ""
+"如果您已使用过其他纯函数式编程语言（如 Haskell），则可快速浏览入门内容（函数"
+"第 1 部分、代数数据类型和接口），因为大部分内容您已熟悉。"
 
 #. type: Bullet: '1. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Introduction](src/Tutorial/Intro.md)\n"
-msgstr "[介绍](src/Tutorial/Intro.md)\n"
+msgid "[Introduction](src/Tutorial/Intro.md)"
+msgstr "[介绍](src/Tutorial/Intro.md)"
 
 #. type: Bullet: '   1. '
 #: ../README.md:106
-#, no-wrap
-msgid "[About the Idris Programming Language](src/Tutorial/Intro.md#about-the-idris-programming-language)\n"
-msgstr "[关于 Idris 编程语言](src/Tutorial/Intro.md#关于-Idris-编程语言)\n"
+msgid ""
+"[About the Idris Programming Language](src/Tutorial/Intro.md#about-the-idris-"
+"programming-language)"
+msgstr "[关于 Idris 编程语言](src/Tutorial/Intro.md#关于-Idris-编程语言)"
 
 #. type: Bullet: '   2. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Using the REPL](src/Tutorial/Intro.md#using-the-repl)\n"
-msgstr "[使用 REPL](src/Tutorial/Intro.md#使用-REPL)\n"
+msgid "[Using the REPL](src/Tutorial/Intro.md#using-the-repl)"
+msgstr "[使用 REPL](src/Tutorial/Intro.md#使用-REPL)"
 
 #. type: Bullet: '   3. '
 #: ../README.md:106
-#, no-wrap
-msgid "[A First Idris Program](src/Tutorial/Intro.md#a-first-idris-program)\n"
-msgstr "[第一个 Idris 程序](src/Tutorial/Intro.md#第一个-Idris-程序)\n"
+msgid "[A First Idris Program](src/Tutorial/Intro.md#a-first-idris-program)"
+msgstr "[第一个 Idris 程序](src/Tutorial/Intro.md#第一个-Idris-程序)"
 
 #. type: Bullet: '   4. '
 #: ../README.md:106
-#, no-wrap
-msgid "[The Shape of an Idris Definition](src/Tutorial/Intro.md#the-shape-of-an-idris-definition)\n"
-msgstr "[如何声明一个 Idris 定义](src/Tutorial/Intro.md#如何声明一个-Idris-定义)\n"
+msgid ""
+"[The Shape of an Idris Definition](src/Tutorial/Intro.md#the-shape-of-an-"
+"idris-definition)"
+msgstr "[Idris 定义的结构](src/Tutorial/Intro.md#Idris-定义的结构)"
 
 #. type: Bullet: '   5. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Where to get Help](src/Tutorial/Intro.md#where-to-get-help)\n"
-msgstr "[在哪里可以获得帮助](src/Tutorial/Intro.md#在哪里可以获得帮助)\n"
+msgid "[Where to get Help](src/Tutorial/Intro.md#where-to-get-help)"
+msgstr "[如何获取帮助](src/Tutorial/Intro.md#如何获取帮助)"
 
 #. type: Bullet: '2. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Functions Part 1](src/Tutorial/Functions1.md)\n"
-msgstr "[函数第 1 部分](src/Tutorial/Functions1.md)\n"
+msgid "[Functions Part 1](src/Tutorial/Functions1.md)"
+msgstr "[函数第 1 部分](src/Tutorial/Functions1.md)"
 
 #. type: Bullet: '   1. '
 #: ../README.md:106
-#, fuzzy, no-wrap
-msgid "[Functions with more than one Argument](src/Tutorial/Functions1.md#functions-with-more-that-one-argument)\n"
-msgstr ""
-"#-#-#-#-#  README.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"#-#-#-#-#  Neovim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"[多参函数](src/Tutorial/Functions1.md#多参函数)\n"
-"#-#-#-#-#  DPair.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"[多参函数](src/Tutorial/Functions1.md#多参函数)\n"
-"#-#-#-#-#  DataTypes.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"[多参函数](src/Tutorial/Functions1.md#多参函数)\n"
-"#-#-#-#-#  Dependent.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"[多参函数](src/Tutorial/Functions1.md#多参函数)\n"
-"#-#-#-#-#  Eq.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"[多参函数](src/Tutorial/Functions1.md#多参函数)\n"
-"#-#-#-#-#  Folds.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"[多参函数](src/Tutorial/Functions1.md#多参函数)\n"
-"#-#-#-#-#  Functions1.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"[多参函数](src/Tutorial/Functions1.md#多参函数)\n"
-"#-#-#-#-#  Functions2.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"[多参函数](src/Tutorial/Functions1.md#多参函数)\n"
-"#-#-#-#-#  Functor.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"[多参函数](src/Tutorial/Functions1.md#多参函数)\n"
-"#-#-#-#-#  IO.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"[多参函数](src/Tutorial/Functions1.md#多参函数)\n"
-"#-#-#-#-#  Interfaces.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"[多参函数](src/Tutorial/Functions1.md#多参函数)\n"
-"#-#-#-#-#  Intro.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"[多参函数](src/Tutorial/Functions1.md#多参函数)\n"
-"#-#-#-#-#  Predicates.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"[多参函数](src/Tutorial/Functions1.md#多参函数)\n"
-"#-#-#-#-#  Prim.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"[多参函数](src/Tutorial/Functions1.md#多参函数)\n"
-"#-#-#-#-#  Traverse.md.zh_Hans.po (po 4a)  #-#-#-#-#\n"
-"[多参函数](src/Tutorial/Functions1.md#多参函数)\n"
+msgid ""
+"[Functions with more than one Argument](src/Tutorial/Functions1.md#functions-"
+"with-more-that-one-argument)"
+msgstr "[多参数函数](src/Tutorial/Functions1.md#多参数函数)"
 
 #. type: Bullet: '   2. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Function Composition](src/Tutorial/Functions1.md#function-composition)\n"
-msgstr "[函数组合](src/Tutorial/Functions1.md#函数组合])\n"
+msgid "[Function Composition](src/Tutorial/Functions1.md#function-composition)"
+msgstr "[函数组合](src/Tutorial/Functions1.md#函数组合)"
 
 #. type: Bullet: '   3. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Higher-order Functions](src/Tutorial/Functions1.md#higher-order-functions)\n"
-msgstr "[高阶函数](src/Tutorial/Functions1.md#高阶函数)\n"
+msgid ""
+"[Higher-order Functions](src/Tutorial/Functions1.md#higher-order-functions)"
+msgstr "[高阶函数](src/Tutorial/Functions1.md#高阶函数)"
 
 #. type: Bullet: '   4. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Currying](src/Tutorial/Functions1.md#currying)\n"
-msgstr "[柯里化](src/Tutorial/Functions1.md#柯里化)\n"
+msgid "[Currying](src/Tutorial/Functions1.md#currying)"
+msgstr "[柯里化](src/Tutorial/Functions1.md#柯里化)"
 
 #. type: Bullet: '   5. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Anonymous Functions](src/Tutorial/Functions1.md#anonymous-functions)\n"
-msgstr "[匿名函数](src/Tutorial/Functions1.md#匿名函数)\n"
+msgid "[Anonymous Functions](src/Tutorial/Functions1.md#anonymous-functions)"
+msgstr "[匿名函数](src/Tutorial/Functions1.md#匿名函数)"
 
 #. type: Bullet: '   6. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Operators](src/Tutorial/Functions1.md#operators)\n"
-msgstr "[运算符](src/Tutorial/Functions1.md#运算符)\n"
+msgid "[Operators](src/Tutorial/Functions1.md#operators)"
+msgstr "[运算符](src/Tutorial/Functions1.md#运算符)"
 
 #. type: Bullet: '3. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Algebraic Data Types](src/Tutorial/DataTypes.md)\n"
-msgstr "[代数数据类型](src/Tutorial/DataTypes.md)\n"
+msgid "[Algebraic Data Types](src/Tutorial/DataTypes.md)"
+msgstr "[代数数据类型](src/Tutorial/DataTypes.md)"
 
 #. type: Bullet: '   1. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Enumerations](src/Tutorial/DataTypes.md#enumerations)\n"
-msgstr "[枚举](src/Tutorial/DataTypes.md#枚举)\n"
+msgid "[Enumerations](src/Tutorial/DataTypes.md#enumerations)"
+msgstr "[枚举](src/Tutorial/DataTypes.md#枚举)"
 
 #. type: Bullet: '   2. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Sum Types](src/Tutorial/DataTypes.md#sum-types)\n"
-msgstr "[和类型](src/Tutorial/DataTypes.md#和类型)\n"
+msgid "[Sum Types](src/Tutorial/DataTypes.md#sum-types)"
+msgstr "[和类型](src/Tutorial/DataTypes.md#和类型)"
 
 #. type: Bullet: '   3. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Records](src/Tutorial/DataTypes.md#records)\n"
-msgstr "[记录](src/Tutorial/DataTypes.md#记录)\n"
+msgid "[Records](src/Tutorial/DataTypes.md#records)"
+msgstr "[记录](src/Tutorial/DataTypes.md#记录)"
 
 #. type: Bullet: '   4. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Generic Data Types](src/Tutorial/DataTypes.md#generic-data-types)\n"
-msgstr "[泛型数据类型](src/Tutorial/DataTypes.md#泛型数据类型)\n"
+msgid "[Generic Data Types](src/Tutorial/DataTypes.md#generic-data-types)"
+msgstr "[泛型数据类型](src/Tutorial/DataTypes.md#泛型数据类型)"
 
 #. type: Bullet: '   5. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Alternative Syntax for Data Definitions](src/Tutorial/DataTypes.md#alternative-syntax-for-data-definitions)\n"
-msgstr "[数据定义的替代语法](src/Tutorial/DataTypes.md#数据定义的替代语法)\n"
+msgid ""
+"[Alternative Syntax for Data Definitions](src/Tutorial/"
+"DataTypes.md#alternative-syntax-for-data-definitions)"
+msgstr "[数据定义的替代语法](src/Tutorial/DataTypes.md#数据定义的替代语法)"
 
 #. type: Bullet: '4. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Interfaces](src/Tutorial/Interfaces.md)\n"
-msgstr "[接口](src/Tutorial/Interfaces.md)\n"
+msgid "[Interfaces](src/Tutorial/Interfaces.md)"
+msgstr "[接口](src/Tutorial/Interfaces.md)"
 
 #. type: Bullet: '   1. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Interface Basics](src/Tutorial/Interfaces.md#interface-basics)\n"
-msgstr "[接口基础](src/Tutorial/Interfaces.md#接口基础)\n"
+msgid "[Interface Basics](src/Tutorial/Interfaces.md#interface-basics)"
+msgstr "[接口基础](src/Tutorial/Interfaces.md#接口基础)"
 
 #. type: Bullet: '   2. '
 #: ../README.md:106
-#, no-wrap
-msgid "[More about Interfaces](src/Tutorial/Interfaces.md#more-about-interfaces)\n"
-msgstr "[接口的更多内容](src/Tutorial/Interfaces.md#接口的更多内容)\n"
+msgid ""
+"[More about Interfaces](src/Tutorial/Interfaces.md#more-about-interfaces)"
+msgstr "[接口进阶](src/Tutorial/Interfaces.md#接口进阶)"
 
 #. type: Bullet: '   3. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Interfaces in the Prelude](src/Tutorial/Interfaces.md#interfaces-in-the-prelude)\n"
-msgstr "[Prelude 中的接口](src/Tutorial/Interfaces.md#Prelude-中的接口)\n"
+msgid ""
+"[Interfaces in the Prelude](src/Tutorial/Interfaces.md#interfaces-in-the-"
+"prelude)"
+msgstr "[Prelude 中的接口](src/Tutorial/Interfaces.md#Prelude-中的接口)"
 
 #. type: Bullet: '5. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Functions Part 2](src/Tutorial/Functions2.md)\n"
-msgstr "[函数第 2 部分](src/Tutorial/Functions2.md)\n"
+msgid "[Functions Part 2](src/Tutorial/Functions2.md)"
+msgstr "[函数第 2 部分](src/Tutorial/Functions2.md)"
 
 #. type: Bullet: '   1. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Let Bindings and Local Definitions](src/Tutorial/Functions2.md#let-bindings-and-local-definitions)\n"
-msgstr "[绑定和局部定义](src/Tutorial/Functions2.md#绑定和局部定义)\n"
+msgid ""
+"[Let Bindings and Local Definitions](src/Tutorial/Functions2.md#let-bindings-"
+"and-local-definitions)"
+msgstr "[let 绑定与局部定义](src/Tutorial/Functions2.md#let-绑定与局部定义)"
 
 #. type: Bullet: '   2. '
 #: ../README.md:106
-#, no-wrap
-msgid "[The Truth about Function Arguments](src/Tutorial/Functions2.md#the-truth-about-function-arguments)\n"
-msgstr "[函数参数的真相](src/Tutorial/Functions2.md#函数参数的真相)\n"
+msgid ""
+"[The Truth about Function Arguments](src/Tutorial/Functions2.md#the-truth-"
+"about-function-arguments)"
+msgstr "[函数参数详解](src/Tutorial/Functions2.md#函数参数详解)"
 
 #. type: Bullet: '   3. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Programming with Holes](src/Tutorial/Functions2.md#programming-with-holes)\n"
-msgstr "[使用孔编程](src/Tutorial/Functions2.md#使用孔编程)\n"
+msgid ""
+"[Programming with Holes](src/Tutorial/Functions2.md#programming-with-holes)"
+msgstr "[孔编程](src/Tutorial/Functions2.md#孔编程)"
 
 #. type: Bullet: '6. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Dependent Types](src/Tutorial/Dependent.md)\n"
-msgstr "[依赖类型](src/Tutorial/Dependent.md)\n"
+msgid "[Dependent Types](src/Tutorial/Dependent.md)"
+msgstr "[依值类型](src/Tutorial/Dependent.md)"
 
 #. type: Bullet: '   1. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Length-Indexed Lists](src/Tutorial/Dependent.md#length-indexed-lists)\n"
-msgstr "[长度索引列表](src/Tutorial/Dependent.md#长度索引列表)\n"
+msgid "[Length-Indexed Lists](src/Tutorial/Dependent.md#length-indexed-lists)"
+msgstr "[长度索引列表](src/Tutorial/Dependent.md#长度索引列表)"
 
 #. type: Bullet: '   2. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Fin: Safe Indexing into Vectors](src/Tutorial/Dependent.md#fin-safe-indexing-into-vectors)\n"
-msgstr "[Fin: 向量的安全索引](src/Tutorial/Dependent.md#Fin:-向量的安全索引)\n"
+msgid ""
+"[Fin: Safe Indexing into Vectors](src/Tutorial/Dependent.md#fin-safe-"
+"indexing-into-vectors)"
+msgstr "[Fin：向量安全索引](src/Tutorial/Dependent.md#Fin-向量安全索引)"
 
 #. type: Bullet: '   3. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Compile-Time Computations](src/Tutorial/Dependent.md#compile-time-computations)\n"
-msgstr "[编译期计算](src/Tutorial/Dependent.md#编译期计算)\n"
+msgid ""
+"[Compile-Time Computations](src/Tutorial/Dependent.md#compile-time-"
+"computations)"
+msgstr "[编译期计算](src/Tutorial/Dependent.md#编译期计算)"
 
 #. type: Bullet: '7. '
 #: ../README.md:106
-#, no-wrap
-msgid "[IO: Programming with Side Effects](src/Tutorial/IO.md)\n"
-msgstr "[IO：带有副作用的编程](src/Tutorial/IO.md)\n"
+msgid "[IO: Programming with Side Effects](src/Tutorial/IO.md)"
+msgstr "[IO：副作用编程](src/Tutorial/IO.md)"
 
 #. type: Bullet: '   1. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Pure Side Effects?](src/Tutorial/IO.md#pure-side-effects)\n"
-msgstr "[纯的副作用？](src/Tutorial/IO.md#纯的副作用？)\n"
+msgid "[Pure Side Effects?](src/Tutorial/IO.md#pure-side-effects)"
+msgstr "[纯副作用？](src/Tutorial/IO.md#纯副作用)"
 
 #. type: Bullet: '   2. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Do Blocks, Desugared](src/Tutorial/IO.md#do-blocks-desugared)\n"
-msgstr "[Do 块，脱糖](src/Tutorial/IO.md#Do-块，脱糖)\n"
+msgid "[Do Blocks, Desugared](src/Tutorial/IO.md#do-blocks-desugared)"
+msgstr "[Do 块脱糖](src/Tutorial/IO.md#Do-块脱糖)"
 
 #. type: Bullet: '   3. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Working with Files](src/Tutorial/IO.md#working-with-files)\n"
-msgstr "[使用文件](src/Tutorial/IO.md#使用文件)\n"
+msgid "[Working with Files](src/Tutorial/IO.md#working-with-files)"
+msgstr "[文件操作](src/Tutorial/IO.md#文件操作)"
 
 #. type: Bullet: '   4. '
 #: ../README.md:106
-#, no-wrap
-msgid "[How IO is Implemented](src/Tutorial/IO.md#how-io-is-implemented)\n"
-msgstr "[IO 是如何实现的](src/Tutorial/IO.md#IO-是如何实现的)\n"
+msgid "[How IO is Implemented](src/Tutorial/IO.md#how-io-is-implemented)"
+msgstr "[IO 实现原理](src/Tutorial/IO.md#IO-实现原理)"
 
 #. type: Bullet: '8. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Functor and Friends](src/Tutorial/Functor.md)\n"
-msgstr "[函子和它的伙伴们](src/Tutorial/Functor.md)\n"
+msgid "[Functor and Friends](src/Tutorial/Functor.md)"
+msgstr "[函子及其相关](src/Tutorial/Functor.md)"
 
 #. type: Bullet: '   1. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Functor](src/Tutorial/Functor.md#functor)\n"
-msgstr "[函子](src/Tutorial/Functor.md#函子)\n"
+msgid "[Functor](src/Tutorial/Functor.md#functor)"
+msgstr "[函子](src/Tutorial/Functor.md#函子)"
 
 #. type: Bullet: '   2. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Applicative](src/Tutorial/Functor.md#applicative)\n"
-msgstr "[应用函子](src/Tutorial/Functor.md#应用函子)\n"
+msgid "[Applicative](src/Tutorial/Functor.md#applicative)"
+msgstr "[应用函子](src/Tutorial/Functor.md#应用函子)"
 
 #. type: Bullet: '   3. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Monad](src/Tutorial/Functor.md#monad)\n"
-msgstr "[单子](src/Tutorial/Functor.md#单子)\n"
+msgid "[Monad](src/Tutorial/Functor.md#monad)"
+msgstr "[单子](src/Tutorial/Functor.md#单子)"
 
 #. type: Bullet: '   4. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Background and further Reading](src/Tutorial/Functor.md#background-and-further-reading)\n"
-msgstr "[背景与延伸阅读](src/Tutorial/Functor.md#背景与延伸阅读)\n"
+msgid ""
+"[Background and further Reading](src/Tutorial/Functor.md#background-and-"
+"further-reading)"
+msgstr "[背景与延伸阅读](src/Tutorial/Functor.md#背景与延伸阅读)"
 
 #. type: Bullet: '9. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Recursion and Folds](src/Tutorial/Folds.md)\n"
-msgstr "[递归与折叠](src/Tutorial/Folds.md)\n"
+msgid "[Recursion and Folds](src/Tutorial/Folds.md)"
+msgstr "[递归与折叠](src/Tutorial/Folds.md)"
 
 #. type: Bullet: '   1. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Recursion](src/Tutorial/Folds.md#recursion)\n"
-msgstr "[递归](src/Tutorial/Folds.md#递归)\n"
+msgid "[Recursion](src/Tutorial/Folds.md#recursion)"
+msgstr "[递归](src/Tutorial/Folds.md#递归)"
 
 #. type: Bullet: '   2. '
 #: ../README.md:106
-#, no-wrap
-msgid "[A few Notes on Totality Checking](src/Tutorial/Folds.md#a-few-notes-on-totality-checking)\n"
-msgstr "[关于完全性检查的一些注意事项](src/Tutorial/Folds.md#关于完全性检查的一些注意事项)\n"
+msgid ""
+"[A few Notes on Totality Checking](src/Tutorial/Folds.md#a-few-notes-on-"
+"totality-checking)"
+msgstr "[关于完全性检查的说明](src/Tutorial/Folds.md#关于完全性检查的说明)"
 
 #. type: Bullet: '   3. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Interface Foldable](src/Tutorial/Folds.md#interface-foldable)\n"
-msgstr "[Foldable 接口](src/Tutorial/Folds.md#Foldable-接口)\n"
+msgid "[Interface Foldable](src/Tutorial/Folds.md#interface-foldable)"
+msgstr "[可折叠（Foldable）接口](src/Tutorial/Folds.md#Foldable-接口)"
 
 #. type: Bullet: '10. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Effectful Traversals](src/Tutorial/Traverse.md)\n"
-msgstr "[带副作用的遍历](src/Tutorial/Traverse.md)\n"
+msgid "[Effectful Traversals](src/Tutorial/Traverse.md)"
+msgstr "[带副作用的遍历](src/Tutorial/Traverse.md)"
 
 #. type: Bullet: '    1. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Reading CSV Tables](src/Tutorial/Traverse.md#reading-csv-tables)\n"
-msgstr "[阅读 CSV 表格](src/Tutorial/Traverse.md#阅读-CSV-表格)\n"
+msgid "[Reading CSV Tables](src/Tutorial/Traverse.md#reading-csv-tables)"
+msgstr "[阅读 CSV 表格](src/Tutorial/Traverse.md#阅读-CSV-表格)"
 
 #. type: Bullet: '    2. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Programming with State](src/Tutorial/Traverse.md#programming-with-state)\n"
-msgstr "[使用状态编程](src/Tutorial/Traverse.md#使用状态编程)\n"
+msgid ""
+"[Programming with State](src/Tutorial/Traverse.md#programming-with-state)"
+msgstr "[使用状态编程](src/Tutorial/Traverse.md#使用状态编程)"
 
 #. type: Bullet: '    3. '
 #: ../README.md:106
-#, no-wrap
-msgid "[The Power of Composition](src/Tutorial/Traverse.md#the-power-of-composition)\n"
-msgstr "[组合的力量](src/Tutorial/Traverse.md#组合的力量)\n"
+msgid ""
+"[The Power of Composition](src/Tutorial/Traverse.md#the-power-of-composition)"
+msgstr "[组合的力量](src/Tutorial/Traverse.md#组合的力量)"
 
 #. type: Bullet: '11. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Sigma Types](src/Tutorial/DPair.md)\n"
-msgstr "[Sigma 类型](src/Tutorial/DPair.md)\n"
+msgid "[Sigma Types](src/Tutorial/DPair.md)"
+msgstr "[Sigma 类型](src/Tutorial/DPair.md)"
 
 #. type: Bullet: '    1. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Dependent Pairs](src/Tutorial/DPair.md#dependent-pairs)\n"
-msgstr "[依赖对](src/Tutorial/DPair.md#依赖对)\n"
+msgid "[Dependent Pairs](src/Tutorial/DPair.md#dependent-pairs)"
+msgstr "[依值对](src/Tutorial/DPair.md#依赖对)"
 
 #. type: Bullet: '    2. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Use Case: Nucleic Acids](src/Tutorial/DPair.md#use-case-nucleic-acids)\n"
-msgstr "[用例：核酸](src/Tutorial/DPair.md#用例：核酸)\n"
+msgid "[Use Case: Nucleic Acids](src/Tutorial/DPair.md#use-case-nucleic-acids)"
+msgstr "[用例：核酸](src/Tutorial/DPair.md#用例：核酸)"
 
 #. type: Bullet: '    3. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Use Case: CSV Files with a Schema](src/Tutorial/DPair.md#use-case-csv-files-with-a-schema)\n"
-msgstr "[用例：带有模式的 CSV 文件](src/Tutorial/DPair.md#用例：带有模式的-CSV-文件)\n"
+msgid ""
+"[Use Case: CSV Files with a Schema](src/Tutorial/DPair.md#use-case-csv-files-"
+"with-a-schema)"
+msgstr ""
+"[用例：带有模式的 CSV 文件](src/Tutorial/DPair.md#用例：带有模式的-CSV-文件)"
 
 #. type: Bullet: '12. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Propositional Equality](src/Tutorial/Eq.md)\n"
-msgstr "[命题等式 Equality](src/Tutorial/Eq.md)\n"
+msgid "[Propositional Equality](src/Tutorial/Eq.md)"
+msgstr "[命题等式 Equality](src/Tutorial/Eq.md)"
 
 #. type: Bullet: '    1. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Equality as a Type](src/Tutorial/Eq.md#equality-as-a-type)\n"
-msgstr "[相等作为类型](src/Tutorial/Eq.md#相等作为类型)\n"
+msgid "[Equality as a Type](src/Tutorial/Eq.md#equality-as-a-type)"
+msgstr "[相等作为类型](src/Tutorial/Eq.md#相等作为类型)"
 
 #. type: Bullet: '    2. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Programs as Proofs](src/Tutorial/Eq.md#programs-as-proofs)\n"
-msgstr "[程序作为证明](src/Tutorial/Eq.md#程序作为证明)\n"
+msgid "[Programs as Proofs](src/Tutorial/Eq.md#programs-as-proofs)"
+msgstr "[程序作为证明](src/Tutorial/Eq.md#程序作为证明)"
 
 #. type: Bullet: '    3. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Into the Void](src/Tutorial/Eq.md#into-the-void)\n"
-msgstr "[遁入虚无](src/Tutorial/Eq.md#遁入虚无)\n"
+msgid "[Into the Void](src/Tutorial/Eq.md#into-the-void)"
+msgstr "[遁入虚无](src/Tutorial/Eq.md#遁入虚无)"
 
 #. type: Bullet: '    4. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Rewrite Rules](src/Tutorial/Eq.md#rewrite-rules)\n"
-msgstr "[重写规则](src/Tutorial/Eq.md#重写规则)\n"
+msgid "[Rewrite Rules](src/Tutorial/Eq.md#rewrite-rules)"
+msgstr "[重写规则](src/Tutorial/Eq.md#重写规则)"
 
 #. type: Bullet: '13. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Predicates and Proof Search](src/Tutorial/Predicates.md)\n"
-msgstr "[谓词和证明搜索](src/Tutorial/Predicates.md)\n"
+msgid "[Predicates and Proof Search](src/Tutorial/Predicates.md)"
+msgstr "[谓词和证明搜索](src/Tutorial/Predicates.md)"
 
 #. type: Bullet: '    1. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Preconditions](src/Tutorial/Predicates.md#preconditions)\n"
-msgstr "[前置条件](src/Tutorial/Predicates.md#前置条件)\n"
+msgid "[Preconditions](src/Tutorial/Predicates.md#preconditions)"
+msgstr "[前置条件](src/Tutorial/Predicates.md#前置条件)"
 
 #. type: Bullet: '    2. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Contracts between Values](src/Tutorial/Predicates.md#contracts-between-values)\n"
-msgstr "[值之间的契约](src/Tutorial/Predicates.md#值之间的契约)\n"
+msgid ""
+"[Contracts between Values](src/Tutorial/Predicates.md#contracts-between-"
+"values)"
+msgstr "[值之间的契约](src/Tutorial/Predicates.md#值之间的契约)"
 
 #. type: Bullet: '    3. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Use Case: Flexible Error Handling](src/Tutorial/Predicates.md#use-case-flexible-error-handling)\n"
-msgstr "[用例：灵活的错误处理](src/Tutorial/Predicates.md#用例：灵活的错误处理)\n"
+msgid ""
+"[Use Case: Flexible Error Handling](src/Tutorial/Predicates.md#use-case-"
+"flexible-error-handling)"
+msgstr ""
+"[用例：灵活的错误处理](src/Tutorial/Predicates.md#用例：灵活的错误处理)"
 
 #. type: Bullet: '    4. '
 #: ../README.md:106
-#, no-wrap
-msgid "[The Truth about Interfaces](src/Tutorial/Predicates.md#the-truth-about-interfaces)\n"
-msgstr "[接口的真相](src/Tutorial/Predicates.md#接口的真相)\n"
+msgid ""
+"[The Truth about Interfaces](src/Tutorial/Predicates.md#the-truth-about-"
+"interfaces)"
+msgstr "[接口的真相](src/Tutorial/Predicates.md#接口的真相)"
 
 #. type: Bullet: '14. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Primitives](src/Tutorial/Prim.md)\n"
-msgstr "[原语](src/Tutorial/Prim.md)\n"
+msgid "[Primitives](src/Tutorial/Prim.md)"
+msgstr "[原语](src/Tutorial/Prim.md)"
 
 #. type: Bullet: '    1. '
 #: ../README.md:106
-#, no-wrap
-msgid "[How Primitives are Implemented](src/Tutorial/Prim.md#how-primitives-are-implemented)\n"
-msgstr "[原语的实现](src/Tutorial/Prim.md#原语的实现)\n"
+msgid ""
+"[How Primitives are Implemented](src/Tutorial/Prim.md#how-primitives-are-"
+"implemented)"
+msgstr "[原语的实现](src/Tutorial/Prim.md#原语的实现)"
 
 #. type: Bullet: '    2. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Working with Strings](src/Tutorial/Prim.md#working-with-strings)\n"
-msgstr "[使用字符串](src/Tutorial/Prim.md#使用字符串)\n"
+msgid "[Working with Strings](src/Tutorial/Prim.md#working-with-strings)"
+msgstr "[使用字符串](src/Tutorial/Prim.md#使用字符串)"
 
 #. type: Bullet: '    3. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Integers](src/Tutorial/Prim.md#integers)\n"
-msgstr "[整数](src/Tutorial/Prim.md#整数)\n"
+msgid "[Integers](src/Tutorial/Prim.md#integers)"
+msgstr "[整数](src/Tutorial/Prim.md#整数)"
 
 #. type: Bullet: '    4. '
 #: ../README.md:106
-#, no-wrap
-msgid "[Refined Primitives](src/Tutorial/Prim.md#refined-primitives)\n"
-msgstr "[细化原语](src/Tutorial/Prim.md#细化原语)\n"
+msgid "[Refined Primitives](src/Tutorial/Prim.md#refined-primitives)"
+msgstr "[细化原语](src/Tutorial/Prim.md#细化原语)"
 
 #. type: Title ###
 #: ../README.md:107
@@ -572,37 +487,33 @@ msgstr "第 2 部分：附录"
 
 #. type: Plain text
 #: ../README.md:113
-#, no-wrap
 msgid ""
-"The appendices can be used as references for the topics at\n"
-"hand. I plan to eventually have a concise reference on Idris\n"
-"syntax, typical error messages, the module system, interactive\n"
-"editing and possibly others.\n"
-msgstr "附录可用作手头主题的参考。我计划最终对 Idris 语法、典型错误消息、模块系统、交互式编辑以及可能的其他内容有一个简明的参考。\n"
+"The appendices can be used as references for the topics at hand. I plan to "
+"eventually have a concise reference on Idris syntax, typical error messages, "
+"the module system, interactive editing and possibly others."
+msgstr ""
+"附录可用作手头主题的参考。我计划最终对 Idris 语法、典型错误消息、模块系统、交"
+"互式编辑以及可能的其他内容有一个简明的参考。"
 
 #. type: Bullet: '1. '
 #: ../README.md:118
-#, no-wrap
-msgid "[Getting Started with pack and Idris2](src/Appendices/Install.md)\n"
-msgstr "[pack 和 Idris2 入门](src/Appendices/Install.md)\n"
+msgid "[Getting Started with pack and Idris2](src/Appendices/Install.md)"
+msgstr "[pack 和 Idris2 入门](src/Appendices/Install.md)"
 
 #. type: Bullet: '2. '
 #: ../README.md:118
-#, no-wrap
-msgid "[Interactive Editing in Neovim](src/Appendices/Neovim.md)\n"
-msgstr "[Neovim 中的交互式编辑](src/Appendices/Neovim.md)\n"
+msgid "[Interactive Editing in Neovim](src/Appendices/Neovim.md)"
+msgstr "[Neovim 中的交互式编辑](src/Appendices/Neovim.md)"
 
 #. type: Bullet: '3. '
 #: ../README.md:118
-#, no-wrap
-msgid "[Structuring Idris Projects](src/Appendices/Projects.md)\n"
-msgstr "[构造 Idris 项目](src/Appendices/Projects.md)\n"
+msgid "[Structuring Idris Projects](src/Appendices/Projects.md)"
+msgstr "[构造 Idris 项目](src/Appendices/Projects.md)"
 
 #. type: Bullet: '4. '
 #: ../README.md:118
-#, no-wrap
-msgid "[A Deep Dive into Quantitative Type Theory](src/Appendices/QTT.md)\n"
-msgstr ""
+msgid "[A Deep Dive into Quantitative Type Theory](src/Appendices/QTT.md)"
+msgstr "[深入量化类型理论](src/Appendices/QTT.md)"
 
 #. type: Title ##
 #: ../README.md:119
@@ -612,18 +523,22 @@ msgstr "前置条件"
 
 #. type: Plain text
 #: ../README.md:125
-#, no-wrap
 msgid ""
-"At the moment, this project is being actively developed and\n"
-"evolved against the main branch of the Idris 2 repository.\n"
-"It is being tested nightly on GitHub and built against\n"
-"the latest version of [pack's package collection](https://github.com/stefan-hoeck/idris2-pack-db).\n"
-msgstr "目前，该项目正在针对 Idris 2 存储库的主要分支进行积极开发和演进。它每晚在 GitHub 上进行测试，并针对 [pack包集合](https://github.com/stefan-hoeck/idris2-pack-db) 中的最新版本进行构建。\n"
+"At the moment, this project is being actively developed and evolved against "
+"the main branch of the Idris 2 repository.  It is being tested nightly on "
+"GitHub and built against the latest version of [pack's package collection]"
+"(https://github.com/stefan-hoeck/idris2-pack-db)."
+msgstr ""
+"目前，该项目正在针对 Idris 2 存储库的主要分支进行积极开发和演进。它每晚在 "
+"GitHub 上进行测试，并针对 [pack包集合](https://github.com/stefan-hoeck/"
+"idris2-pack-db) 中的最新版本进行构建。"
 
 #. type: Plain text
 #: ../README.md:127
-#, no-wrap
 msgid ""
-"In order to follow along with this tutorial, it is strongly suggested to install\n"
-"Idris via the pack package manager as described [here](src/Appendices/Install.md).\n"
+"In order to follow along with this tutorial, it is strongly suggested to "
+"install Idris via the pack package manager as described [here](src/"
+"Appendices/Install.md)."
 msgstr ""
+"为了更好地跟随本教程，强烈建议按照[这里](src/Appendices/Install.md)的说明，通"
+"过 pack 包管理器安装 Idris。"

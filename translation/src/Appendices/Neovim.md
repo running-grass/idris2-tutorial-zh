@@ -6,10 +6,12 @@ Idris 提供了广泛的交互功能
 编辑功能可通过不同编辑器中的插件获得。
 由于我是 Neovim 用户，我会详细解释一下我自己的设置中 Idris 的相关部分。
 
-Neovim 中运行所有这些功能所需的主要组件是由 [idris2-lsp](https://github.com/idris-community/idris2-lsp) 项目提供的可执行文件。
+Neovim 中运行所有这些功能所需的主要组件是由
+[idris2-lsp](https://github.com/idris-community/idris2-lsp) 项目提供的可执行文件。
 此可执行文件内部使用 Idris 编译器 API（应用程序编程接口），可以检查语法和
 我们正在处理的源代码的类型。它与
-Neovim 通过语言服务器协议 (LSP)。这种沟通由 [idris2-nvim](https://github.com/ShinKage/idris2-nvim) 
+Neovim 通过语言服务器协议 (LSP)。这种沟通由
+[idris2-nvim](https://github.com/ShinKage/idris2-nvim)
 插件来完成 。
 
 正如我们将在本教程中看到的，`idris2-lsp` 可执行文件不仅
@@ -36,19 +38,12 @@ import Data.Vect
 Neovim，至少需要安装以下工具：
 
 * Neovim 的最新版本（0.5 版或更高版本）。
-
 * Idris 编译器的最新版本（至少版本 0.5.1）。
-
 * Idris 编译器 API。
-
 * [idris2-lsp](https://github.com/idris-community/idris2-lsp) 包。
-
 * 以下 Neovim 插件：
-
   * [idris2-nvim](https://github.com/ShinKage/idris2-nvim)
-
   * [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
-
 
 `idris2-lsp` 项目提供了有关如何使用的详细说明
 安装 Idris 2 及其标准库和编译器
@@ -79,7 +74,10 @@ API。确保遵循这些说明，以便您的编译器和 `idris2-lsp` 可执行
 negate1 : Bool -> Bool
 ```
 
-通常，在编写 Idris 代码时，我们遵循“类型优先”准则。虽然您可能已经知道如何实现某一功能，但在开始编写实现之前，仍然需要提供准确的类型。这意味着，在 Idris 中编程时，我们需要在脑海中跟踪算法的实现以及同时涉及的类型，两者都有可能会变得异常复杂。我们还可以吗？请记住，请记住，Idris 至少和我们一样了解当前函数实现上下文中可用的变量及其类型，因此我们可能应该向Idris寻求指导，而不是尝试自己做所有事情。
+通常，在编写 Idris
+代码时，我们遵循“类型优先”准则。虽然您可能已经知道如何实现某一功能，但在开始编写实现之前，仍然需要提供准确的类型。这意味着，在 Idris
+中编程时，我们需要在脑海中跟踪算法的实现以及同时涉及的类型，两者都有可能会变得异常复杂。我们还可以吗？请记住，请记住，Idris
+至少和我们一样了解当前函数实现上下文中可用的变量及其类型，因此我们可能应该向Idris寻求指导，而不是尝试自己做所有事情。
 
 所以，为了继续，我们向 Idris 请求一个骨架函数体：在普通编辑器模式下，将光标移动到 `negate1` 声明并快速输入 `<LocalLeader>a`。 `<LocalLeader>` 是可以在 `init.vim` 文件中指定的特殊键。如果你使用 `resources` 文件夹中的 `init.vim`，它被设置为
 逗号字符 (`,`)，在这种情况下，上面的命令由一个逗号后跟小写字母“a”组成。
@@ -221,20 +219,24 @@ traverseEither2 f (x :: xs) = whatNow2 (f x) (traverseEither f xs)
 这里有一个其他功能的非全面列表。
 我建议你从这个源文件中取出它们中的每一个去试试。
 
-* 在正常模式下的标识符或运算符上键入 `K` 会显示其类型和命名空间（如果有）。在元变量的情况下，当前上下文中的变量也会连同它们的类型和定量一起显示（定量将在 [Functions Part 2](../Tutorial/Functions2.md) 中解释）。如果您不喜欢弹出窗口，请输入 `<LocalLeader>so` 以打开一个新窗口，该窗口将显示此信息并在语义上突出显示。
-
-* 在正常模式下在函数、运算符、数据构造函数或类型构造函数上输入 `gd` 会跳转到项目的定义。对于外部模块，仅当相关模块与其源代码一起安装时才有效（通过使用 `idris2 --install-with-src` 命令）。
-
-* 输入 `<LocalLeader>mm` 打开一个弹出窗口，列出当前模块中的所有元变量。您可以将光标放在一个条目上，然后按 `<Enter>` 跳转到它的位置。
-
+* 在正常模式下的标识符或运算符上键入 `K`
+  会显示其类型和命名空间（如果有）。在元变量的情况下，当前上下文中的变量也会连同它们的类型和定量一起显示（定量将在 [Functions Part
+  2](../Tutorial/Functions2.md) 中解释）。如果您不喜欢弹出窗口，请输入 `<LocalLeader>so`
+  以打开一个新窗口，该窗口将显示此信息并在语义上突出显示。
+* 在正常模式下在函数、运算符、数据构造函数或类型构造函数上输入 `gd`
+  会跳转到项目的定义。对于外部模块，仅当相关模块与其源代码一起安装时才有效（通过使用 `idris2 --install-with-src` 命令）。
+* 输入 `<LocalLeader>mm` 打开一个弹出窗口，列出当前模块中的所有元变量。您可以将光标放在一个条目上，然后按 `<Enter>`
+  跳转到它的位置。
 * 输入 `<LocalLeader>mn`（或 `<LocalLeader>mp`）跳转到当前模块中的下一个（或上一个）元变量。
-
-* 键入 `<LocalLeader>br` 会打开一个弹出窗口，您可以在其中输入名称空间。然后 Idris 将在弹出窗口中显示从该命名空间导出的所有函数（以及它们的类型），您可以通过在其中一个条目上按 enter 来跳转到函数的定义。注意：有问题的模块必须在当前源文件中导入。
-
-* 输入 `<LocalLeader>x` 会打开一个弹出窗口，您可以在其中输入 REPL 命令或 Idris 表达式，插件将回复来自 REPL 的响应。每当本指南的主要部分显示 REPL 示例时，如果您愿意，可以使用此快捷方式在 Neovim 中尝试它们。
-
-* 键入 `<LocalLeader><LocalLeader>e` 将在弹出窗口中显示当前行的错误消息。如果错误消息太长而无法放在一行中，这将非常有用。同样， `<LocalLeader><LocalLeader>el` 将在新窗口中列出当前缓冲区中的所有错误消息。然后，您可以通过按 `<Enter>` 选择错误消息并跳转到其原点。
-
+* 键入 `<LocalLeader>br` 会打开一个弹出窗口，您可以在其中输入名称空间。然后 Idris
+  将在弹出窗口中显示从该命名空间导出的所有函数（以及它们的类型），您可以通过在其中一个条目上按 enter
+  来跳转到函数的定义。注意：有问题的模块必须在当前源文件中导入。
+* 输入 `<LocalLeader>x` 会打开一个弹出窗口，您可以在其中输入 REPL 命令或 Idris 表达式，插件将回复来自 REPL
+  的响应。每当本指南的主要部分显示 REPL 示例时，如果您愿意，可以使用此快捷方式在 Neovim 中尝试它们。
+* 键入 `<LocalLeader><LocalLeader>e`
+  将在弹出窗口中显示当前行的错误消息。如果错误消息太长而无法放在一行中，这将非常有用。同样，
+  `<LocalLeader><LocalLeader>el` 将在新窗口中列出当前缓冲区中的所有错误消息。然后，您可以通过按 `<Enter>`
+  选择错误消息并跳转到其原点。
 
 `idris2-nvim` 插件其他用例和示例在 GitHub 页面上进行了描述，这些描述也包含在内。
 

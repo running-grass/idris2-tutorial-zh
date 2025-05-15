@@ -3,7 +3,8 @@
 在[上一章](Functions1.md)中，我们学会了如何编写自己的函数并组合他们来创建更复杂的函数。同等重要的是定义我们自己的数据类型并使用它们作为参数和函数结果。
 
 这是一个冗长的章节，信息密集。
-如果您不熟悉 Idris 和函数式编程，请一定要慢慢来，用例子做实验，并可能想出你自己的示例。确保尝试并解决*所有*练习。练习题的答案可以在 [这里](../Solutions/DataTypes.idr) 找到。
+如果您不熟悉 Idris 和函数式编程，请一定要慢慢来，用例子做实验，并可能想出你自己的示例。确保尝试并解决*所有*练习。练习题的答案可以在
+[这里](../Solutions/DataTypes.idr) 找到。
 
 ```idris
 module Tutorial.DataTypes
@@ -23,7 +24,8 @@ data Weekday = Monday
              | Sunday
 ```
 
-上面的声明定义了一个新的*类型*(`Weekday`)和该类型给定的几个*值*(`Monday` 到 `Sunday`)。接下来在 REPL 上验证这一点：
+上面的声明定义了一个新的*类型*(`Weekday`)和该类型给定的几个*值*(`Monday` 到 `Sunday`)。接下来在 REPL
+上验证这一点：
 
 ```repl
 Tutorial.DataTypes> :t Monday
@@ -34,16 +36,11 @@ Tutorial.DataTypes.Weekday : Type
 
 所以，`Monday` 是 `Weekday` 类型，而 `Weekday` 本身是 `Type` 类型。
 
-It is important to note that a value of type `Weekday` can only
-ever be one of the values listed above. It is a *type error* to
-use anything else where a `Weekday` is expected.
+需要注意的是，`Weekday` 类型的值只能是上面列出的值之一。在需要 `Weekday` 的地方使用其他任何值都会产生一个*类型错误*。
 
 ### 模式匹配
 
-In order to use our new data type as a function argument, we
-need to learn about an important concept in functional programming
-languages: Pattern matching. Let's implement a function which calculates
-the successor of a weekday:
+为了使用我们的新数据类型作为函数参数，我们需要了解函数式编程语言中的一个重要概念：模式匹配。让我们实现一个函数，它计算一个星期几的后继：
 
 ```idris
 total
@@ -57,25 +54,18 @@ next Saturday  = Sunday
 next Sunday    = Monday
 ```
 
-为了检查 `Weekday` 参数，我们匹配不同的可能值并为每个值返回一个结果。这是一个非常强大的概念，因为它允许我们匹配并从深度嵌套的数据结构中提取值。从上到下检查模式匹配中的不同情况，每个都与当前函数参数进行比较。一旦找到匹配的模式，该模式右侧的计算是会求值。后面的模式将被忽略。
+为了检查 `Weekday`
+参数，我们匹配不同的可能值并为每个值返回一个结果。这是一个非常强大的概念，因为它允许我们匹配并从深度嵌套的数据结构中提取值。从上到下检查模式匹配中的不同情况，每个都与当前函数参数进行比较。一旦找到匹配的模式，该模式右侧的计算是会求值。后面的模式将被忽略。
 
-例如，如果我们使用参数 `Thursday` 调用 `next`，前三个模式（`Monday`、`Tuesday` 和 `Wednesday`）将根据参数进行检查，但它们不匹配。第四个模式是匹配的，结果 `Friday` 被返回。然后忽略后面的模式，即使它们还会匹配输入（这与全捕获模式有关，我们稍后会谈到）。
+例如，如果我们使用参数 `Thursday` 调用 `next`，前三个模式（`Monday`、`Tuesday` 和
+`Wednesday`）将根据参数进行检查，但它们不匹配。第四个模式是匹配的，结果 `Friday`
+被返回。然后忽略后面的模式，即使它们还会匹配输入（这与全捕获模式有关，我们稍后会谈到）。
 
-The function above is provably total. Idris knows about the
-possible values of type `Weekday`, and can therefore figure
-out that our pattern match covers all possible cases. We can
-therefore annotate the function with the `total` keyword, and
-Idris will answer with a type error if it can't verify the
-function's totality. (Go ahead, and try removing one of
-the clauses in `next` to get an idea about how an error
-message from the coverage checker looks like.)
+上面的函数可以证明是完全的。Idris 知道`Weekday` 类型的可能值，因此可以计算我们的模式匹配涵盖了所有可能的情况。我们可以使用
+`total` 关键字注释函数，如果 Idris 无法验证函数的完全性，会得到一个类型错误。 （继续，并尝试删除其中一个 `next`
+中的子句来了解错误是如何产生的，并且可以看看来自覆盖性检查器的错误消息长什么样。）
 
-Please remember that these are very strong guarantees from
-the type checker: Given enough resources,
-a provably total function will *always* return
-a result of the given type in a finite amount of time
-(*resources* here meaning computational resources like
-memory or, in case of recursive functions, stack space).
+请记住，这些来自类型检查器：给定足够的资源，一个可证明的全函数在有限时间内将*总是*返回给定类型的结果（*资源*的意思是计算资源，比如内存，或者，在递归函数情况下的堆栈空间）。
 
 ### 全捕获模式
 
@@ -89,11 +79,8 @@ isWeekend Sunday   = True
 isWeekend _        = False
 ```
 
-The final line with the catch-all pattern is only invoked
-if the argument is not equal to `Saturday` or `Sunday`.
-Remember: Patterns in a pattern match are matched against
-the input from top to bottom, and the first match decides
-which path on the right hand side will be taken.
+如果参数不等于 `Saturday` 或 `Sunday`，仅调用具有全捕获模式的最后一行。记住：模式匹配中的模式匹配
+从上到下的输入和第一个匹配决定将采用右侧的哪条路径。
 
 我们可以使用全捕获模式来实现等式测试`Weekday`（我们还不会为此使用 `==` 运算符；这将必须等到我们了解*接口*以后）：
 
@@ -112,12 +99,8 @@ eqWeekday _ _                  = False
 
 ### Prelude 中的枚举类型
 
-Data types like `Weekday` consisting of a finite set
-of values are sometimes called *enumerations*. The Idris
-*Prelude* defines some common enumerations for us: for
-instance, `Bool` and `Ordering`. As with `Weekday`,
-we can use pattern matching when implementing functions
-on these types:
+`Weekday` 等数据类型由有限集组成的值有时称为*枚举*。Idris 的 *Prelude* 为我们定义了一些常见的枚举，例如 `Bool` 和
+`Ordering`。与 `Weekday` 一样，我们可以在实现函数时使用模式匹配在这些类型上：
 
 ```idris
 -- 这个是 *Prelude* 中的 `not` 函数的实现
@@ -153,11 +136,11 @@ maxBits8 x y =
     _  => x
 ```
 
-case 表达式的第一行(`case compare x y of`)将使用参数 `x` 和 `y` 调用函数`compare`。后面的（缩进）行，我们对结果进行模式匹配。compare的返回类型为 `Ordering`，所以我们期望结果是三个构造函数 `LT`、`EQ` 或 `GT` 之一。在第一行，我们明确地处理 `LT` 的情况，而其他两种情况下划线作为全捕获模式处理。
+case 表达式的第一行(`case compare x y of`)将使用参数 `x` 和 `y`
+调用函数`compare`。后面的（缩进）行，我们对结果进行模式匹配。compare的返回类型为 `Ordering`，所以我们期望结果是三个构造函数
+`LT`、`EQ` 或 `GT` 之一。在第一行，我们明确地处理 `LT` 的情况，而其他两种情况下划线作为全捕获模式处理。
 
-Note that indentation matters here: The case block as a whole
-must be indented (if it starts on a new line), and the different
-cases must also be indented by the same amount of whitespace.
+请注意，缩进在这里很重要：整个 Case 块必须缩进（如果它从新行开始），并且不同的 Case 也必须缩进相同数量的空格。
 
 函数 `compare` 对许多数据类型进行了重载。当我们谈论接口时，我们将了解它是如何工作的。
 
@@ -171,14 +154,13 @@ maxBits8' : Bits8 -> Bits8 -> Bits8
 maxBits8' x y = if compare x y == LT then y else x
 ```
 
-Note that the `if then else` expression always returns a value
-and, therefore, the `else` branch cannot be dropped. This is different
-from the behavior in typical imperative languages, where `if` is
-a statement with possible side effects.
+请注意，`if then else` 表达式总是返回一个值。因此，不能删除 `else` 分支。这是和典型的命令式语言中的行为所不同的，其中 `if`
+是可能产生副作用的声明。
 
 ### 命名约定：标识符
 
-虽然我们可以自由使用小写和大写函数名标识符，但是类型和数据构造函数必须为大写标识符，以免对 Idris 产生混淆（运算符也可以）。例如，以下数据定义无效，并且 Idris会抱怨它需要大写的标识符：
+虽然我们可以自由使用小写和大写函数名标识符，但是类型和数据构造函数必须为大写标识符，以免对 Idris
+产生混淆（运算符也可以）。例如，以下数据定义无效，并且 Idris会抱怨它需要大写的标识符：
 
 ```repl
 data foo = bar | baz
@@ -192,7 +174,8 @@ record Foo where
   constructor mkfoo
 ```
 
-另一方面，我们通常使用小写的函数标识符名称，除非我们计划主要在类型检查期间使用它们（之后会有更多关于这个的讨论）。然而，这不是 Idris 强制执行的，所以如果你在首选大写标识符的地方，请随意使用他们：
+另一方面，我们通常使用小写的函数标识符名称，除非我们计划主要在类型检查期间使用它们（之后会有更多关于这个的讨论）。然而，这不是 Idris
+强制执行的，所以如果你在首选大写标识符的地方，请随意使用他们：
 
 ```idris
 foo : Bits32 -> Bits32
@@ -206,11 +189,9 @@ Bar = foo
 
 1. 使用模式匹配来实现您自己版本的布尔运算符 `(&&)` 和 `(||)` ，分别称为 `and` 和 `or`。
 
-
    注意：解决此问题的一种方法是枚举两个布尔值的所有四种可能组合值并给出每个结果。然而，有一种更短、更聪明的方式，两个函数每个只需要两个模式匹配。
 
 2. 定义您自己的数据类型来表示不同的时间单位（秒、分钟、小时、天、周），并实现以下函数以使用不同的单位在时间跨度之间进行转换。提示：当从秒到一些更大的单位（如小时）时，使用整数除法（`div`）。
-
 
    ```idris
    data UnitOfTime = Second -- 添加剩余的值
@@ -230,7 +211,6 @@ Bar = foo
 
 3. 定义用于表示化学元素子集的数据类型：氢 (H)、碳 (C)、氮 (N)、氧 (O) 和氟 (F)。
 
-
    声明并实现函数 `atomicMass`，它对每个元素返回以道尔顿为单位的原子质量：
 
    ```repl
@@ -243,7 +223,8 @@ Bar = foo
 
 ## 和类型
 
-假设我们想写一些 web 表单，我们的 Web 应用程序用户可以决定他们喜欢如何处理。我们让他们在两个常见的预定义之间进行选择地址形式（先生和夫人），但也允许他们决定一个定制的表格。可能的
+假设我们想写一些 web 表单，我们的 Web
+应用程序用户可以决定他们喜欢如何处理。我们让他们在两个常见的预定义之间进行选择地址形式（先生和夫人），但也允许他们决定一个定制的表格。可能的
 选择可以封装在 Idris 数据类型中：
 
 ```idris
@@ -263,7 +244,8 @@ Tutorial.DataTypes> :t Other
 Tutorial.DataTypes.Other : String -> Title
 ```
 
-所以，`Other` 是从 `String` 到 `Title` 的*函数*。这意味着，我们可以传递给 `Other` 一个 `String` 参数并得到结果 `Title`：
+所以，`Other` 是从 `String` 到 `Title` 的*函数*。这意味着，我们可以传递给 `Other` 一个 `String`
+参数并得到结果 `Title`：
 
 ```idris
 total
@@ -283,7 +265,8 @@ showTitle Mrs       = "Mrs."
 showTitle (Other x) = x
 ```
 
-注意，在最后一个模式匹配中，存储在 `Other` 数据构造函数中字符串值被 *绑定* 到局部变量 `x`。此外，`Other x` 模式必须用括号括起来，否则 Idris 会认为 `Other` 和 `x` 是不同的函数参数。
+注意，在最后一个模式匹配中，存储在 `Other` 数据构造函数中字符串值被 *绑定* 到局部变量 `x`。此外，`Other x`
+模式必须用括号括起来，否则 Idris 会认为 `Other` 和 `x` 是不同的函数参数。
 
 这是从数据构造函数中提取值的通用方式。我们可以使用 `showTitle` 来实现创建礼貌问候的函数：
 
@@ -304,7 +287,8 @@ Tutorial.DataTypes> greet Mrs "Smith"
 "Hello, Mrs. Smith!"
 ```
 
-像 `Title` 这样的数据类型被称为*和类型* 因为它们由不同部分的和组成：`Title` 类型的值是 `Mr`、`Mrs` 或包裹在 `Other` 中的 `String`。
+像 `Title` 这样的数据类型被称为*和类型* 因为它们由不同部分的和组成：`Title` 类型的值是 `Mr`、`Mrs` 或包裹在
+`Other` 中的 `String`。
 
 这是 sum 类型的另一个（大大简化的）示例。
 假设我们在 Web 应用程序中允许两种形式的身份验证：
@@ -341,14 +325,12 @@ Tutorial.DataTypes> login (Key "Y" "foo")
 
 1. 为 `Title` 实现相等测试（您可以使用相等运算符 `(==)` 比较两个 `String`）：
 
-
    ```idris
    total
    eqTitle : Title -> Title -> Bool
    ```
 
 2. 对于 `Title`，实现一个简单的测试来检查是否正在使用自定义标题：
-
 
    ```idris
    total
@@ -357,18 +339,13 @@ Tutorial.DataTypes> login (Key "Y" "foo")
 
 3. 鉴于我们简单的 `Credentials` 类型，身份验证失败的三种方式：
 
-
    * 使用了未知的用户名。
-
    * 给定的密码与与用户名关联的密码不匹配。
-
    * 使用了无效的密钥。
-
 
    将这三种可能性封装在叫做 `LoginError` 的和类型中，但请确保不要泄露任何机密信息：无效的用户名应存储相应的错误值，但不应该存储无效的密码或密钥。
 
 4. 实现函数 `showError : LoginError -> String`，可用于向尝试登录我们的 Web 应用程序失败的用户显示错误消息。
-
 
 ## 记录
 
@@ -419,7 +396,10 @@ greetUser (MkUser n t _) = greet t n
 然后可以在 `greetUser` 的右侧实现使用。对于 `age` 字段，在右侧未使用，我们可以使用下划线作为全捕获模式。
 
 请注意，如果我们混淆了参数的顺序，Idris 将会阻止我们这个常见的错误：
-实现将不能通过行类型检查。我们可以验证这一点，通过将错误代码放入 `failing` 块中：这是缩进的代码块，在细化过程中（类型检查）会导致错误。我们可以给一部分预期的错误消息作为 failing 块的可选字符串参数。如果这不能匹配部分错误消息（或在类型检查中不会失败的整个代码块类）`failing` 块本身无法通过类型检查。下面是对类型安全有帮助的两个方向：通过 Idris 细化，我们可以证明有效代码类型检查，但拒绝无效代码：
+实现将不能通过行类型检查。我们可以验证这一点，通过将错误代码放入 `failing`
+块中：这是缩进的代码块，在细化过程中（类型检查）会导致错误。我们可以给一部分预期的错误消息作为 failing
+块的可选字符串参数。如果这不能匹配部分错误消息（或在类型检查中不会失败的整个代码块类）`failing`
+块本身无法通过类型检查。下面是对类型安全有帮助的两个方向：通过 Idris 细化，我们可以证明有效代码类型检查，但拒绝无效代码：
 
 ```idris
 failing "Mismatch between: String and Title"
@@ -467,7 +447,8 @@ incAge2 u = { age := u.age + 1 } u
 赋值运算符 `:=` 为 在 `u` 中的 `age` 字段分配一个新值。请记住，这将创建一个新的 `User` 值。原本的值 `u` 不受此影响。
 
 我们可以通过使用字段名称来访问记录字段，
-作为投影函数 (`age u`; 在 REPL 中看看 `:t age`），或使用点语法：`u.age`。这个特殊语法与函数组合的点运算符（`(.)`）*不*相关。
+作为投影函数 (`age u`; 在 REPL 中看看 `:t
+age`），或使用点语法：`u.age`。这个特殊语法与函数组合的点运算符（`(.)`）*不*相关。
 
 修改记录字段的用例如此普遍，
 Idris 也为此提供了特殊的语法：
@@ -536,7 +517,9 @@ weekdayAndBool : Weekday -> Bool -> Pair Weekday Bool
 weekdayAndBool wd b = MkPair wd b
 ```
 
-因为通过包裹在 `Pair` 或更大的元组中，从一个函数返回多个值是很常见的，Idris 提供了一些与这些一起工作的语法糖。我们可以只写 `(Weekday, Bool)` 来代替 `Pair Weekday Bool`。同样我们可以只写 `(wd, b)` （空格是可选的）来代替 `MkPair wd b`：
+因为通过包裹在 `Pair` 或更大的元组中，从一个函数返回多个值是很常见的，Idris 提供了一些与这些一起工作的语法糖。我们可以只写
+`(Weekday, Bool)` 来代替 `Pair Weekday Bool`。同样我们可以只写 `(wd, b)` （空格是可选的）来代替
+`MkPair wd b`：
 
 ```idris
 total
@@ -579,7 +562,8 @@ baz t@(_,_,s) = (length s, t)
 ```
 
 在 `baz` 中，变量 `t` 会 *绑定* 到整个三元组，然后被重用以构造生成的四元组。记住，
-`(Nat,Bool,Weekday,String)` 只是 `Pair Nat (Bool,Weekday,String)` 的糖，而 `(length s, t)` 只是
+`(Nat,Bool,Weekday,String)` 只是 `Pair Nat (Bool,Weekday,String)` 的糖，而
+`(length s, t)` 只是
 `MkPair（length s）t` 的糖。因此，上面的实现是正确的，由类型检查器确认。
 
 ### 练习第 3 部分
@@ -605,14 +589,16 @@ baz t@(_,_,s) = (length s, t)
 字符串输入是 `"Saturday"`，一个函数的确应该返回 `Saturday`，但如果
 输入是 `"sdfkl332"` 呢？我们在这里有几个选择。
 例如，我们可以只返回一个默认结果
-（也许是 `Sunday` ？）。但这是程序员在使用我们的库时期望行为吗？也许不吧。默默地面对无效的用户输入，继续使用默认值不是最好的选择，可能会导致很多混乱。
+（也许是 `Sunday`
+？）。但这是程序员在使用我们的库时期望行为吗？也许不吧。默默地面对无效的用户输入，继续使用默认值不是最好的选择，可能会导致很多混乱。
 
 在命令式语言中，我们的函数可能会
 抛出异常。我们可以在 Idris 中这样做（*Prelude* 中有功能 `idris_crash`
 这），好吧，但这样做，我们会放弃完全性！为解析错误等常见问题付出过高的代价。
 
 在像 Java 这样的语言中，我们的函数也可能返回一种 `null` 值（如果
-未在客户端代码中正确处理，会导致可怕的 `NullPointerException` ）。我们的解决方案将很相似，但不是默默地返回 `null`，我们将在类型中显示失败的可能性！
+未在客户端代码中正确处理，会导致可怕的 `NullPointerException` ）。我们的解决方案将很相似，但不是默默地返回
+`null`，我们将在类型中显示失败的可能性！
 我们定义了一个自定义的数据类型，它封装了可能的失败。在 Idris 中定义新的数据类型非常廉价（就所需的代码量而言），因此这通常是为了增加类型安全性。
 这是一个如何执行此操作的示例：
 
@@ -631,7 +617,8 @@ readWeekday "Sunday"    = WD Sunday
 readWeekday _           = NoWeekday
 ```
 
-但假设现在，我们还想从用户输入读取 `Bool` 值。我们现在必须编写一个自定义数据类型 `MaybeBool` ，还有其他任何我们想从 `String` 中读取的类型，并且转换可能会失败。
+但假设现在，我们还想从用户输入读取 `Bool` 值。我们现在必须编写一个自定义数据类型 `MaybeBool` ，还有其他任何我们想从
+`String` 中读取的类型，并且转换可能会失败。
 
 与许多其他编程语言一样，Idris 允许我们
 通过使用*泛型数据类型*来概括此行为。这是一个例子：
@@ -673,10 +660,12 @@ safeDiv n 0 = None
 safeDiv n k = Some (n `div` k)
 ```
 
-面对无效输入返回某种 *null* 值的可能性是如此普遍，以至于有一种类似 `Option` 的数据类型已经在 *Prelude* 中了: `Maybe`，它的数据构造函数是 `Just` 和 `Nothing`。
+面对无效输入返回某种 *null* 值的可能性是如此普遍，以至于有一种类似 `Option` 的数据类型已经在 *Prelude* 中了:
+`Maybe`，它的数据构造函数是 `Just` 和 `Nothing`。
 
 了解在一个函数中返回 `Maybe Integer` 之间的区别很重要，它可能会失败，并返回 Java 等语言中的 `null`：在前一种情况下，
-失败的可能性在类型中是可见的。类型检查器将迫使我们不同于 `Integer` 对待 `Maybe Integer` ：Idris 将 *不会* 让我们忘记最终处理失败的情况。
+失败的可能性在类型中是可见的。类型检查器将迫使我们不同于 `Integer` 对待 `Maybe Integer` ：Idris 将 *不会*
+让我们忘记最终处理失败的情况。
 如果不这样， `null` 被静默返回而不调整
 类型。程序员可能（并且经常 *会*）忘记处理 `null` 的情况，导致意外，有时
 难以调试运行时异常。
@@ -712,9 +701,11 @@ readWeekdayV s           = Invalid ("Not a weekday: " ++ s)
 同样，这是一个通用的概念，类似于 `Validated` 的数据类型已经存在于
 *Prelude*：`Either` 和数据构造函数 `Left` 和 `Right`。
 对可能导致失败的函数封装是很常见的，
-通过返回 `Either err val` 类型，其中 `err` 是错误类型，`val` 是所需的返回类型。这个是命令式语言中抛出异常的替代品，（并且完全）类型安全。
+通过返回 `Either err val` 类型，其中 `err` 是错误类型，`val`
+是所需的返回类型。这个是命令式语言中抛出异常的替代品，（并且完全）类型安全。
 
-但是请注意，`Either` 的语义并不总是“`Left` 错误和 `Right` 成功”。返回 `Either` 的函数只是意味着它可以有不同类型的结果，是 * 被标记* 相应的数据构造函数之一。
+但是请注意，`Either` 的语义并不总是“`Left` 错误和 `Right` 成功”。返回 `Either`
+的函数只是意味着它可以有不同类型的结果，是 * 被标记* 相应的数据构造函数之一。
 
 ### 列表
 
@@ -727,7 +718,8 @@ data Seq a = Nil | (::) a (Seq a)
 ```
 
 这需要一些解释。 `Seq` 由两个 *数据构造函数* 组成：
-`Nil` （表示一个空的值序列）和 `(::)` （也称为 *cons 运算符*)，它将 `a` 类型的新值添加到已经存在的相同类型的值列表。如你看到的，
+`Nil` （表示一个空的值序列）和 `(::)` （也称为 *cons 运算符*)，它将 `a`
+类型的新值添加到已经存在的相同类型的值列表。如你看到的，
 我们也可以使用运算符作为数据构造函数，但请不要过度使用。为您的函数和数据构造函数使用清晰的名称，并且仅当它真正有助于可读性时，再引入新的运算符！
 
 下面是如何使用 `List` 构造函数的示例
@@ -755,7 +747,9 @@ ints3 = []
 请注意，该列表语法也可用于模式匹配。
 
 `Seq`和`List` 之间还有一些特别的：分别用自身来定义（cons 运算符接受一个值
-和另一个 `Seq` 作为参数）。我们称这样的数据类型为 *递归* 数据类型，它们的递归性质意味着，为了分解或消耗它们，我们通常需要递归函数。在命令式语言中，我们可能会使用 for 循环或类似的结构来迭代 `List` 或 `Seq` 的值，
+和另一个 `Seq` 作为参数）。我们称这样的数据类型为 *递归*
+数据类型，它们的递归性质意味着，为了分解或消耗它们，我们通常需要递归函数。在命令式语言中，我们可能会使用 for 循环或类似的结构来迭代 `List`
+或 `Seq` 的值，
 但是这些东西不存在于不可变数据的语言中。以下是对整数列表求和的方法：
 
 ```idris
@@ -771,12 +765,11 @@ intSum (n :: ns) = n + intSum ns
 
 1. 第二个模式被匹配并将列表分成两部分：它的头部（`7`）绑定到变量 `n` 和它的尾部（`[5,9]`）绑定到 `ns`：
 
-
    ```repl
    7 + intSum [5,9]
    ```
-2. 在第二次调用中，`intSum` 被一个新列表调用：`[5,9]`。第二个模式被匹配并且 `n` 绑定到 `5` 并且 `ns` 绑定到 `[9]`：
-
+2. 在第二次调用中，`intSum` 被一个新列表调用：`[5,9]`。第二个模式被匹配并且 `n` 绑定到 `5` 并且 `ns` 绑定到
+   `[9]`：
 
    ```repl
    7 + (5 + intSum [9])
@@ -784,13 +777,11 @@ intSum (n :: ns) = n + intSum ns
 
 3. 在第三次调用中，`intSum` 用列表 `[9]` 调用。第二个模式被匹配并且 `n` 绑定到 `9` 并且 `ns` 绑定到 `[]`：
 
-
    ```repl
    7 + (5 + (9 + intSum [])
    ```
 
 4. 在第四次调用中，使用列表 `[]` 调用 `intSum` 并立即返回 `0`：
-
 
    ```repl
    7 + (5 + (9 + 0)
@@ -798,20 +789,17 @@ intSum (n :: ns) = n + intSum ns
 
 5. 在第三次调用中，累加 `9` 和 `0` 并返回 `9`：
 
-
    ```repl
    7 + (5 + 9)
    ```
 
 6. 在第二次调用中，累加 `5` 和 `9` 并返回 `14`：
 
-
    ```repl
    7 + 14
    ```
 
 7. 最后，我们对 `intSum` 的初始调用累加 `7` 和 `14` 并返回 `21`。
-
 
 因此，`intSum` 的递归实现导致了一个嵌套调用 `intSum` 的序列，一旦参数是
 空列表也会终止嵌套。
@@ -821,7 +809,8 @@ intSum (n :: ns) = n + intSum ns
 为了充分体会泛型数据类型所带来的多功能性，我们还需要谈谈泛型函数。
 与泛型类型一样，它们通过一个或多个参数化类型参数来实现。
 
-考虑展开`Option` 数据类型的情况。如果是 `Some`，我们希望返回存储的值，而对于 `None` 的情况，我们提供默认值。这里展示如何做到这一点，专门用于
+考虑展开`Option` 数据类型的情况。如果是 `Some`，我们希望返回存储的值，而对于 `None`
+的情况，我们提供默认值。这里展示如何做到这一点，专门用于
 `Integer` 的函数：
 
 ```idris
@@ -843,11 +832,14 @@ fromOption _ (Some y) = y
 fromOption x None     = x
 ```
 
-小写的 `a` 又是一个 * 类型化参数 *。你可以这样读他的类型签名：“对于任何类型 `a`，给定一个 `a` 类型的 * 值 * 和 `Option a`，我们可以返回一个类型 `a` 的值。”请注意，`fromOption` 对 `a` 一无所知，除了它是一个类型。因此不可能凭空变出一个 `a` 类型的值。我们*必须*有可用于处理 `None` 情况的值。
+小写的 `a` 又是一个 * 类型化参数 *。你可以这样读他的类型签名：“对于任何类型 `a`，给定一个 `a` 类型的 * 值 * 和 `Option
+a`，我们可以返回一个类型 `a` 的值。”请注意，`fromOption` 对 `a` 一无所知，除了它是一个类型。因此不可能凭空变出一个 `a`
+类型的值。我们*必须*有可用于处理 `None` 情况的值。
 
 `Maybe` 的 `fromOption` 挂件称为 `fromMaybe`，并且可从 *base* 库中的模块 `Data.Maybe` 获得。
 
-有时，`fromOption` 不够通用。假设我们想打印新解析的 `Bool` 的值，给出一些通用的 `None` 的情况下的错误消息。我们不能使用 `fromOption`，为此，我们有一个 `Option Bool` 并且我们想返回一个 `String`。以下是如何执行此操作：
+有时，`fromOption` 不够通用。假设我们想打印新解析的 `Bool` 的值，给出一些通用的 `None` 的情况下的错误消息。我们不能使用
+`fromOption`，为此，我们有一个 `Option Bool` 并且我们想返回一个 `String`。以下是如何执行此操作：
 
 ```idris
 total
@@ -879,7 +871,6 @@ handleBool = option "Not a boolean value." show
 签名被视为类型参数。
 
 1. 为 `Maybe` 实现以下通用函数：
-
 
    ```idris
    -- make sure to map a `Just` to a `Just`.
@@ -916,7 +907,6 @@ handleBool = option "Not a boolean value." show
 
 2. 为 `Either` 实现以下通用函数：
 
-
    ```idris
    total
    mapEither : (a -> b) -> Either e a -> Either e b
@@ -946,7 +936,6 @@ handleBool = option "Not a boolean value." show
    ```
 
 3. 为 `List` 实现以下通用函数：
-
 
    ```idris
    total
@@ -985,7 +974,6 @@ handleBool = option "Not a boolean value." show
 
 4. 假设我们将 Web 应用程序的用户数据存储在以下记录中：
 
-
    ```idris
    record Client where
      constructor MkClient
@@ -999,7 +987,6 @@ handleBool = option "Not a boolean value." show
    ，或者第一个凭据匹配的 `Client` 对象。
 
 5. 使用前面练习中化学元素的数据类型，实现一个计算分子式摩尔质量的函数。
-
 
    使用一个元素列表，每个元素都与其计数（自然数）对「pair」用于表示公式。例如：
 

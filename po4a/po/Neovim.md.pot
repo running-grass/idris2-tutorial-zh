@@ -1,13 +1,13 @@
 # SOME DESCRIPTIVE TITLE
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR Stefan HÃ¶ck
+# This file is distributed under the same license as the Functional Programming in Idris 2 package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-05-15 03:33+0000\n"
+"Project-Id-Version: Functional Programming in Idris 2 1.0\n"
+"POT-Creation-Date: 2025-05-15 07:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,7 +23,8 @@ msgstr ""
 #: ../src/Tutorial/Functions2.md:924 ../src/Tutorial/Functor.md:1398
 #: ../src/Tutorial/Interfaces.md:792 ../src/Tutorial/IO.md:1095
 #: ../src/Tutorial/Predicates.md:1358 ../src/Tutorial/Traverse.md:1109
-#: ../src/Appendices/Neovim.md:364
+#: ../src/Appendices/Install.md:102 ../src/Appendices/Neovim.md:364
+#: ../src/Appendices/Projects.md:878 ../src/Appendices/QTT.md:442
 #, no-wrap
 msgid "Conclusion"
 msgstr ""
@@ -36,7 +37,7 @@ msgstr ""
 #: ../src/Tutorial/Interfaces.md:821 ../src/Tutorial/Intro.md:453
 #: ../src/Tutorial/IO.md:1125 ../src/Tutorial/Predicates.md:1371
 #: ../src/Tutorial/Prim.md:1410 ../src/Tutorial/Traverse.md:1148
-#: ../src/Appendices/Neovim.md:374
+#: ../src/Appendices/Neovim.md:374 ../src/Appendices/Projects.md:890
 #, no-wrap
 msgid ""
 "<!-- vi: filetype=idris2:syntax=markdown\n"
@@ -51,46 +52,40 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/Neovim.md:10
-#, no-wrap
 msgid ""
-"Idris provides extensive capabilities to interactively\n"
-"analyze the types of values and expressions in our programs\n"
-"and fill out skeleton implementations and sometimes even whole\n"
-"programs for us based on the types provided. These interactive\n"
-"editing features are available via plugins in different editors.\n"
-"Since I am a Neovim user, I explain the Idris related parts of\n"
-"my own setup in detail here.\n"
+"Idris provides extensive capabilities to interactively analyze the types of "
+"values and expressions in our programs and fill out skeleton implementations "
+"and sometimes even whole programs for us based on the types provided. These "
+"interactive editing features are available via plugins in different "
+"editors.  Since I am a Neovim user, I explain the Idris related parts of my "
+"own setup in detail here."
 msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/Neovim.md:20
-#, no-wrap
 msgid ""
-"The main component required to get all these features to run\n"
-"in Neovim is an executable provided by the\n"
-"[idris2-lsp](https://github.com/idris-community/idris2-lsp) project.\n"
-"This executable makes use of the Idris compiler API (application\n"
-"programming interface) internally and can check the syntax and\n"
-"types of the source code we are working on. It communicates with\n"
-"Neovim via the language server protocol (LSP). This communication\n"
-"is setup through the [idris2-nvim](https://github.com/ShinKage/idris2-nvim)\n"
-"plugin.\n"
+"The main component required to get all these features to run in Neovim is an "
+"executable provided by the [idris2-lsp](https://github.com/idris-community/"
+"idris2-lsp) project.  This executable makes use of the Idris compiler API "
+"(application programming interface) internally and can check the syntax and "
+"types of the source code we are working on. It communicates with Neovim via "
+"the language server protocol (LSP). This communication is setup through the "
+"[idris2-nvim](https://github.com/ShinKage/idris2-nvim)  plugin."
 msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/Neovim.md:31
-#, no-wrap
 msgid ""
-"As we will see in this tutorial, the `idris2-lsp` executable not only\n"
-"supports syntax and type checking, but comes also with additional\n"
-"interactive editing features. Finally, the Idris compiler API supports\n"
-"semantic highlighting of Idris source code: Identifiers and keywords\n"
-"are highlighted not only based on the language's syntax (that would\n"
-"be *syntax highlighting*, a feature expected from all modern\n"
-"programming environments and editors), but also based on their\n"
-"*semantics*. For instance, a local variable in a function implementation\n"
-"gets highlighted differently than the name of a top level function,\n"
-"although syntactically these are both just identifiers.\n"
+"As we will see in this tutorial, the `idris2-lsp` executable not only "
+"supports syntax and type checking, but comes also with additional "
+"interactive editing features. Finally, the Idris compiler API supports "
+"semantic highlighting of Idris source code: Identifiers and keywords are "
+"highlighted not only based on the language's syntax (that would be *syntax "
+"highlighting*, a feature expected from all modern programming environments "
+"and editors), but also based on their *semantics*. For instance, a local "
+"variable in a function implementation gets highlighted differently than the "
+"name of a top level function, although syntactically these are both just "
+"identifiers."
 msgstr ""
 
 #. type: Fenced code block (idris)
@@ -112,77 +107,67 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/Neovim.md:44
-#, no-wrap
 msgid ""
-"In order to make full use of interactive Idris editing in\n"
-"Neovim, at least the following tools need to be installed:\n"
+"In order to make full use of interactive Idris editing in Neovim, at least "
+"the following tools need to be installed:"
 msgstr ""
 
 #. type: Bullet: '* '
 #: ../src/Appendices/Neovim.md:52
-#, no-wrap
-msgid "A recent version of Neovim (version 0.5 or later).\n"
+msgid "A recent version of Neovim (version 0.5 or later)."
 msgstr ""
 
 #. type: Bullet: '* '
 #: ../src/Appendices/Neovim.md:52
-#, no-wrap
-msgid "A recent version of the Idris compiler (at least version 0.5.1).\n"
+msgid "A recent version of the Idris compiler (at least version 0.5.1)."
 msgstr ""
 
 #. type: Bullet: '* '
 #: ../src/Appendices/Neovim.md:52
-#, no-wrap
-msgid "The Idris compiler API.\n"
+msgid "The Idris compiler API."
 msgstr ""
 
 #. type: Bullet: '* '
 #: ../src/Appendices/Neovim.md:52
-#, no-wrap
-msgid "The [idris2-lsp](https://github.com/idris-community/idris2-lsp) package.\n"
+msgid ""
+"The [idris2-lsp](https://github.com/idris-community/idris2-lsp) package."
 msgstr ""
 
 #. type: Bullet: '* '
 #: ../src/Appendices/Neovim.md:52
-#, no-wrap
-msgid "The following Neovim plugins:\n"
+msgid "The following Neovim plugins:"
 msgstr ""
 
 #. type: Bullet: '  * '
 #: ../src/Appendices/Neovim.md:52
-#, no-wrap
-msgid "[idris2-nvim](https://github.com/ShinKage/idris2-nvim)\n"
+msgid "[idris2-nvim](https://github.com/ShinKage/idris2-nvim)"
 msgstr ""
 
 #. type: Bullet: '  * '
 #: ../src/Appendices/Neovim.md:52
-#, no-wrap
-msgid "[nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)\n"
+msgid "[nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)"
 msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/Neovim.md:57
-#, no-wrap
 msgid ""
-"The `idris2-lsp` project gives detailed instructions about how\n"
-"to install Idris 2 together with its standard libraries and compiler\n"
-"API. Make sure to follow these instructions so that your compiler\n"
-"and `idris2-lsp` executable are in sync.\n"
+"The `idris2-lsp` project gives detailed instructions about how to install "
+"Idris 2 together with its standard libraries and compiler API. Make sure to "
+"follow these instructions so that your compiler and `idris2-lsp` executable "
+"are in sync."
 msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/Neovim.md:67
-#, no-wrap
 msgid ""
-"If you are new to Neovim, you might want to use the `init.vim`\n"
-"file provided in the `resources` folder. In that case, the\n"
-"necessary Neovim plugins are already included, but you need to install\n"
-"[vim-plug](https://github.com/junegunn/vim-plug), a plugin manager.\n"
-"Afterwards, copy all or parts of `resources/init.vim` to your own `init.vim`\n"
-"file. (Use `:help init.vim` from within Neovim in order to find\n"
-"out where to look for this file.). After setting up your `init.vim`\n"
-"file, restart Neovim and run `:PlugUpdate` to install the\n"
-"necessary plugins.\n"
+"If you are new to Neovim, you might want to use the `init.vim` file provided "
+"in the `resources` folder. In that case, the necessary Neovim plugins are "
+"already included, but you need to install [vim-plug](https://github.com/"
+"junegunn/vim-plug), a plugin manager.  Afterwards, copy all or parts of "
+"`resources/init.vim` to your own `init.vim` file. (Use `:help init.vim` from "
+"within Neovim in order to find out where to look for this file.). After "
+"setting up your `init.vim` file, restart Neovim and run `:PlugUpdate` to "
+"install the necessary plugins."
 msgstr ""
 
 #. type: Title ##
@@ -193,32 +178,28 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/Neovim.md:77
-#, no-wrap
 msgid ""
-"In order to checkout the interactive editing features\n"
-"available to us, we will reimplement some small utilities\n"
-"from the *Prelude*. To follow along, you should have\n"
-"already worked through the [Introduction](../Tutorial/Intro.md),\n"
-"[Functions Part 1](../Tutorial/Functions1.md), and at least\n"
-"parts of [Algebraic Data Types](../Tutorial/DataTypes.md), otherwise\n"
-"it will be hard to understand what's going on here.\n"
+"In order to checkout the interactive editing features available to us, we "
+"will reimplement some small utilities from the *Prelude*. To follow along, "
+"you should have already worked through the [Introduction](../Tutorial/"
+"Intro.md), [Functions Part 1](../Tutorial/Functions1.md), and at least parts "
+"of [Algebraic Data Types](../Tutorial/DataTypes.md), otherwise it will be "
+"hard to understand what's going on here."
 msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/Neovim.md:83
-#, no-wrap
 msgid ""
-"Before we begin, note that the commands and actions shown in this\n"
-"tutorial might not work correctly after you edited a source file\n"
-"but did not write your changes to disk. Therefore, the first thing\n"
-"you should try if the things described here do not work, is to\n"
-"quickly save the current file (`:w`).\n"
+"Before we begin, note that the commands and actions shown in this tutorial "
+"might not work correctly after you edited a source file but did not write "
+"your changes to disk. Therefore, the first thing you should try if the "
+"things described here do not work, is to quickly save the current file "
+"(`:w`)."
 msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/Neovim.md:85
-#, no-wrap
-msgid "Let's start with negation of a boolean value:\n"
+msgid "Let's start with negation of a boolean value:"
 msgstr ""
 
 #. type: Fenced code block (idris)
@@ -229,20 +210,17 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/Neovim.md:102
-#, no-wrap
 msgid ""
-"Typically, when writing Idris code we follow the mantra\n"
-"\"types first\". Although you might already have an idea about\n"
-"how to implement a certain piece of functionality, you still\n"
-"need to provide an accurate type before you can start writing\n"
-"your implementation. This means, when programming in Idris, we have\n"
-"to mentally keep track of the implementation of an algorithm\n"
-"and the types involved at the same time, both of which can\n"
-"become arbitrarily complex. Or do we? Remember that Idris knows\n"
-"at least as much about the variables and their types available\n"
-"in the current context of a function implementation as we do,\n"
-"so we probably should ask it for guidance instead of trying\n"
-"to do everything on our own.\n"
+"Typically, when writing Idris code we follow the mantra \"types first\". "
+"Although you might already have an idea about how to implement a certain "
+"piece of functionality, you still need to provide an accurate type before "
+"you can start writing your implementation. This means, when programming in "
+"Idris, we have to mentally keep track of the implementation of an algorithm "
+"and the types involved at the same time, both of which can become "
+"arbitrarily complex. Or do we? Remember that Idris knows at least as much "
+"about the variables and their types available in the current context of a "
+"function implementation as we do, so we probably should ask it for guidance "
+"instead of trying to do everything on our own."
 msgstr ""
 
 #. type: Plain text
@@ -262,10 +240,7 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/Neovim.md:115
-#, no-wrap
-msgid ""
-"Idris will generate a skeleton implementation similar to the\n"
-"following:\n"
+msgid "Idris will generate a skeleton implementation similar to the following:"
 msgstr ""
 
 #. type: Fenced code block (idris)
@@ -325,22 +300,19 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/Neovim.md:158
-#, no-wrap
 msgid ""
-"As you can see, Idris inserted a hole for each of the cases on the\n"
-"right hand side. We can again inspect their types or\n"
-"replace them with a proper implementation directly.\n"
+"As you can see, Idris inserted a hole for each of the cases on the right "
+"hand side. We can again inspect their types or replace them with a proper "
+"implementation directly."
 msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/Neovim.md:164
-#, no-wrap
 msgid ""
-"This concludes the introduction of the (in my opinion) core\n"
-"features of interactive editing: Hovering on metavariables,\n"
-"adding skeleton function implementations, and case splitting\n"
-"(which also works in case blocks and for nested pattern\n"
-"matches). You should start using these all the time *now*!\n"
+"This concludes the introduction of the (in my opinion) core features of "
+"interactive editing: Hovering on metavariables, adding skeleton function "
+"implementations, and case splitting (which also works in case blocks and for "
+"nested pattern matches). You should start using these all the time *now*!"
 msgstr ""
 
 #. type: Title ##
@@ -351,14 +323,12 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/Neovim.md:173
-#, no-wrap
 msgid ""
-"Sometimes, Idris knows enough about the types involved to\n"
-"come up with a function implementation on its own. For instance,\n"
-"let us implement function `either` from the *Prelude*.\n"
-"After giving its type, creating a skeleton implementation,\n"
-"and case splitting on the `Either` argument, we arrive at\n"
-"something similar to the following:\n"
+"Sometimes, Idris knows enough about the types involved to come up with a "
+"function implementation on its own. For instance, let us implement function "
+"`either` from the *Prelude*.  After giving its type, creating a skeleton "
+"implementation, and case splitting on the `Either` argument, we arrive at "
+"something similar to the following:"
 msgstr ""
 
 #. type: Fenced code block (idris)
@@ -384,11 +354,10 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/Neovim.md:190
-#, no-wrap
 msgid ""
-"Here is another example: A reimplementation of function `maybe`.\n"
-"If you run an expression search on `?maybe2_rhs1`, you will\n"
-"get a larger list of choices.\n"
+"Here is another example: A reimplementation of function `maybe`.  If you run "
+"an expression search on `?maybe2_rhs1`, you will get a larger list of "
+"choices."
 msgstr ""
 
 #. type: Fenced code block (idris)
@@ -442,10 +411,9 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/Neovim.md:223
-#, no-wrap
 msgid ""
-"There are other shortcuts available for generating part of your code,\n"
-"two of which I'll explain here.\n"
+"There are other shortcuts available for generating part of your code, two of "
+"which I'll explain here."
 msgstr ""
 
 #. type: Plain text
@@ -523,14 +491,12 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/Neovim.md:279
-#, no-wrap
 msgid ""
-"Idris will create a new function declaration with the\n"
-"type and name of `?whatNow`, which takes as arguments\n"
-"all variables currently in scope. It also replaces the hole in\n"
-"`traverseEither` with a call to this new function. Typically,\n"
-"you will have to manually remove unneeded arguments\n"
-"afterwards. This led me to the following version:\n"
+"Idris will create a new function declaration with the type and name of `?"
+"whatNow`, which takes as arguments all variables currently in scope. It also "
+"replaces the hole in `traverseEither` with a call to this new function. "
+"Typically, you will have to manually remove unneeded arguments afterwards. "
+"This led me to the following version:"
 msgstr ""
 
 #. type: Fenced code block (idris)
@@ -552,96 +518,84 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/Neovim.md:294
-#, no-wrap
 msgid ""
-"The `idris2-lsp` executable and through it, the `idris2-nvim` plugin,\n"
-"not only supports the code actions described above. Here is a\n"
-"non-comprehensive list of other capabilities. I suggest you try\n"
-"out each of them from within this source file.\n"
+"The `idris2-lsp` executable and through it, the `idris2-nvim` plugin, not "
+"only supports the code actions described above. Here is a non-comprehensive "
+"list of other capabilities. I suggest you try out each of them from within "
+"this source file."
 msgstr ""
 
 #. type: Bullet: '* '
 #: ../src/Appendices/Neovim.md:329
-#, no-wrap
 msgid ""
-"Typing `K` when on an identifier or operator in normal mode shows its type\n"
-"and namespace (if any). In case of a metavariable, variables\n"
-"in the current context are displayed as well together with their\n"
-"types and quantities (quantities will be explained in\n"
-"[Functions Part 2](../Tutorial/Functions2.md)).\n"
-"If you don't like popups, enter `<LocalLeader>so` to open a new window where\n"
-"this information is displayed and semantically highlighted instead.\n"
+"Typing `K` when on an identifier or operator in normal mode shows its type "
+"and namespace (if any). In case of a metavariable, variables in the current "
+"context are displayed as well together with their types and quantities "
+"(quantities will be explained in [Functions Part 2](../Tutorial/"
+"Functions2.md)).  If you don't like popups, enter `<LocalLeader>so` to open "
+"a new window where this information is displayed and semantically "
+"highlighted instead."
 msgstr ""
 
 #. type: Bullet: '* '
 #: ../src/Appendices/Neovim.md:329
-#, no-wrap
 msgid ""
-"Typing `gd` on a function, operator, data constructor or type\n"
-"constructor in normal mode jumps to the item's definition.\n"
-"For external modules, this works only if the\n"
-"module in question has been installed together with its source code\n"
-"(by using the `idris2 --install-with-src` command).\n"
+"Typing `gd` on a function, operator, data constructor or type constructor in "
+"normal mode jumps to the item's definition.  For external modules, this "
+"works only if the module in question has been installed together with its "
+"source code (by using the `idris2 --install-with-src` command)."
 msgstr ""
 
 #. type: Bullet: '* '
 #: ../src/Appendices/Neovim.md:329
-#, no-wrap
 msgid ""
-"Typing `<LocalLeader>mm` opens a popup window listing all metavariables\n"
-"in the current module. You can place the cursor on an entry and\n"
-"jump to its location by pressing `<Enter>`.\n"
+"Typing `<LocalLeader>mm` opens a popup window listing all metavariables in "
+"the current module. You can place the cursor on an entry and jump to its "
+"location by pressing `<Enter>`."
 msgstr ""
 
 #. type: Bullet: '* '
 #: ../src/Appendices/Neovim.md:329
-#, no-wrap
 msgid ""
-"Typing `<LocalLeader>mn` (or `<LocalLeader>mp`) jumps to the next\n"
-"(or previous) metavariable in the current module.\n"
+"Typing `<LocalLeader>mn` (or `<LocalLeader>mp`) jumps to the next (or "
+"previous) metavariable in the current module."
 msgstr ""
 
 #. type: Bullet: '* '
 #: ../src/Appendices/Neovim.md:329
-#, no-wrap
 msgid ""
-"Typing `<LocalLeader>br` opens a popup where you can enter a\n"
-"namespace. Idris will then show all functions (plus their types)\n"
-"exported from that namespace in a popup window, and you can\n"
-"jump to a function's definition by pressing enter on one of the\n"
-"entries. Note: The module in question must be imported in the\n"
-"current source file.\n"
+"Typing `<LocalLeader>br` opens a popup where you can enter a namespace. "
+"Idris will then show all functions (plus their types)  exported from that "
+"namespace in a popup window, and you can jump to a function's definition by "
+"pressing enter on one of the entries. Note: The module in question must be "
+"imported in the current source file."
 msgstr ""
 
 #. type: Bullet: '* '
 #: ../src/Appendices/Neovim.md:329
-#, no-wrap
 msgid ""
-"Typing `<LocalLeader>x` opens a popup where you can enter\n"
-"a REPL command or Idris expression, and the plugin will reply\n"
-"with a response from the REPL. Whenever REPL examples are shown\n"
-"in the main part of this guide, you can try them from within\n"
-"Neovim with this shortcut if you like.\n"
+"Typing `<LocalLeader>x` opens a popup where you can enter a REPL command or "
+"Idris expression, and the plugin will reply with a response from the REPL. "
+"Whenever REPL examples are shown in the main part of this guide, you can try "
+"them from within Neovim with this shortcut if you like."
 msgstr ""
 
 #. type: Bullet: '* '
 #: ../src/Appendices/Neovim.md:329
-#, no-wrap
 msgid ""
-"Typing `<LocalLeader><LocalLeader>e` will display the error message\n"
-"from the current line in a popup window. This can be highly useful,\n"
-"if error messages are too long to fit on a single line. Likewise,\n"
-"`<LocalLeader><LocalLeader>el` will list all error messages from the current\n"
-"buffer in a new window. You can then select an error message and\n"
-"jump to its origin by pressing `<Enter>`.\n"
+"Typing `<LocalLeader><LocalLeader>e` will display the error message from the "
+"current line in a popup window. This can be highly useful, if error messages "
+"are too long to fit on a single line. Likewise, "
+"`<LocalLeader><LocalLeader>el` will list all error messages from the current "
+"buffer in a new window. You can then select an error message and jump to its "
+"origin by pressing `<Enter>`."
 msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/Neovim.md:332
-#, no-wrap
 msgid ""
-"Other use cases and examples are described on the GitHub page\n"
-"of the `idris2-nvim` plugin and can be included as described there.\n"
+"Other use cases and examples are described on the GitHub page of the `idris2-"
+"nvim` plugin and can be included as described there."
 msgstr ""
 
 #. type: Title ##
@@ -668,8 +622,7 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/Neovim.md:347
-#, no-wrap
-msgid "For instance:\n"
+msgid "For instance:"
 msgstr ""
 
 #. type: Fenced code block (idris)
@@ -683,12 +636,11 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/Neovim.md:358
-#, no-wrap
 msgid ""
-"Idris will then use these names (followed by these names postfixed\n"
-"with increasing integers), when it has to come up with variable names of this\n"
-"type on its own. For instance, here is a test function and the\n"
-"result of adding a skeleton definition to it:\n"
+"Idris will then use these names (followed by these names postfixed with "
+"increasing integers), when it has to come up with variable names of this "
+"type on its own. For instance, here is a test function and the result of "
+"adding a skeleton definition to it:"
 msgstr ""
 
 #. type: Fenced code block (idris)
@@ -701,12 +653,10 @@ msgstr ""
 
 #. type: Plain text
 #: ../src/Appendices/Neovim.md:372
-#, no-wrap
 msgid ""
-"Neovim, together with the `idris2-lsp` executable and the\n"
-"`idris2-nvim` editor plugin, provides extensive utilities for\n"
-"interactive editing when programming in Idris. Similar functionality\n"
-"is available for some other editors, so feel free to ask what's\n"
-"available for your editor of choice, for instance on the\n"
-"[Idris 2 Discord channel](https://discord.gg/UX68fDs2jc).\n"
+"Neovim, together with the `idris2-lsp` executable and the `idris2-nvim` "
+"editor plugin, provides extensive utilities for interactive editing when "
+"programming in Idris. Similar functionality is available for some other "
+"editors, so feel free to ask what's available for your editor of choice, for "
+"instance on the [Idris 2 Discord channel](https://discord.gg/UX68fDs2jc)."
 msgstr ""

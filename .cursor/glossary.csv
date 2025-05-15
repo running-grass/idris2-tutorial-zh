@@ -1,0 +1,80 @@
+英文,中文
+Appendices,附录
+Anonymous Functions,匿名函数
+Applicative,应用函子
+argument,参数
+Algebraic Data Types,代数数据类型
+compile time,编译时
+constant,常量
+Currying,柯里化
+dependent type,依值类型
+Dependent Pairs,依值对
+Enumerations,枚举
+executable,可执行文件
+floating point number,浮点数
+Foldable,可折叠（Foldable）
+function composition,函数组合
+function declaration,函数声明
+function definition,函数定义
+Functor,函子
+GHC,GHC
+Generic Data Types,泛型数据类型
+Idris,Idris
+Idris 2,Idris 2
+implementation,实现
+import,导入
+Introduction,引言
+integer literal,整数字面量
+Interfaces,接口
+module,模块
+Monad,单子
+nullary function,零元函数
+package manager,包管理器
+Preconditions,前置条件
+primitive types,原语类型
+Primitives,原语
+product Types,积类型
+pure function,纯函数
+Quantitative Type Theory,量化类型理论
+Recursion,递归
+referential transparency,引用透明
+Records,记录
+REPL,REPL
+REPL session,REPL 会话
+runtime,运行时
+Sigma Types,Sigma 类型
+signed integer,有符号整数
+source file,源文件
+statically type,静态类型
+string,字符串
+Sum Types,和类型
+total function,全函数
+type annotation,类型注解
+type checker,类型检查器
+type class,类型类
+type error,类型错误
+type signature,类型签名
+type-driven development,类型驱动开发
+unsigned integer,无符号整数
+Unicode character,Unicode 字符
+pack,pack
+Idris compiler,Idris 编译器
+Unix-like operating system,类 Unix 操作系统
+Linux,Linux
+macOS,macOS
+Windows,Windows
+WSL,WSL
+terminal session,终端会话
+command-line,命令行
+$PATH variable,$PATH 变量
+environment variable,环境变量
+pack.toml,pack.toml
+$HOME,$HOME
+$PACK_DIR,$PACK_DIR
+rlwrap,rlwrap
+test suite,测试套件
+.ipkg file,.ipkg 文件
+.idr file,.idr 文件
+source code,源代码
+package collection,包集合
+root directory,根目录
