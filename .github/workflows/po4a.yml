@@ -6,6 +6,7 @@ on:
   push:
     branches:
       - 'main'
+      - 'translate'
 jobs:
   build:
     runs-on: ubuntu-latest
