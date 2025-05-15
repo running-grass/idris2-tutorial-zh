@@ -1,0 +1,904 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2025-05-15 03:33+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Plain text
+#: ../src/Tutorial/DataTypes.md:1368 ../src/Tutorial/Dependent.md:910
+#: ../src/Tutorial/DPair.md:1206 ../src/Tutorial/Eq.md:1100
+#: ../src/Tutorial/Folds.md:1064 ../src/Tutorial/Functions1.md:583
+#: ../src/Tutorial/Functions2.md:964 ../src/Tutorial/Functor.md:1430
+#: ../src/Tutorial/Interfaces.md:821 ../src/Tutorial/Intro.md:453
+#: ../src/Tutorial/IO.md:1125 ../src/Tutorial/Predicates.md:1371
+#: ../src/Tutorial/Prim.md:1410 ../src/Tutorial/Traverse.md:1148
+#: ../src/Appendices/Neovim.md:374
+#, no-wrap
+msgid ""
+"<!-- vi: filetype=idris2:syntax=markdown\n"
+"-->\n"
+msgstr ""
+
+#. type: Title ###
+#: ../src/Tutorial/Dependent.md:1 ../src/Tutorial/Intro.md:90
+#, no-wrap
+msgid "Dependent Types"
+msgstr ""
+
+#. type: Title ###
+#: ../src/Tutorial/Functor.md:1423 ../src/Tutorial/Intro.md:444
+#, no-wrap
+msgid "What's next?"
+msgstr ""
+
+#. type: Title #
+#: ../src/Tutorial/Intro.md:1
+#, no-wrap
+msgid "Introduction"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Intro.md:15
+#, no-wrap
+msgid ""
+"Welcome to my Idris 2 tutorial. I'll try and treat as many aspects\n"
+"of the Idris 2 programming language as possible here.\n"
+"All `.md` files in here are literate Idris files: They consist of\n"
+"Markdown (hence the `.md` ending), which is being pretty printed\n"
+"by GitHub together with Idris code blocks, which can be\n"
+"type checked and built by the Idris compiler (more on this later).\n"
+"Note, however, that regular Idris source files use an `.idr` ending,\n"
+"and that you go with that file type unless you end up writing\n"
+"much more prose than code as I do at the moment. Later in this\n"
+"tutorial, you'll have to solve some exercises, the solutions of\n"
+"which can be found in the `src/Solutions` subfolder. There, I\n"
+"use regular `.idr` files.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Intro.md:23
+#, no-wrap
+msgid ""
+"Before we begin, make sure to install the Idris compiler on your system.\n"
+"Throughout this tutorial, I assume you installed the *pack* package\n"
+"manager and setup a skeleton package as described\n"
+"[here](../Appendices/Install.md). It is\n"
+"certainly possible to follow along with just the Idris compiler installed\n"
+"by other means, but some adjustments will be necessary\n"
+"when starting REPL sessions or building executables.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Intro.md:27
+#, no-wrap
+msgid ""
+"Every Idris source file should typically start with a module\n"
+"name plus some necessary imports, and this document is no\n"
+"exception:\n"
+msgstr ""
+
+#. type: Fenced code block (idris)
+#: ../src/Tutorial/Intro.md:28
+#, no-wrap
+msgid "module Tutorial.Intro\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Intro.md:35
+#, no-wrap
+msgid ""
+"A module name consists of a list of identifiers separated\n"
+"by dots and must reflect the folder structure plus the module\n"
+"file's name.\n"
+msgstr ""
+
+#. type: Title ##
+#: ../src/Tutorial/Intro.md:36
+#, no-wrap
+msgid "About the Idris Programming Language"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Intro.md:41
+#, no-wrap
+msgid ""
+"Idris is a *pure*, *dependently typed*, *total* *functional*\n"
+"programming language. I'll quickly explain each of these adjectives\n"
+"in this section.\n"
+msgstr ""
+
+#. type: Title ###
+#: ../src/Tutorial/Intro.md:42
+#, no-wrap
+msgid "Functional Programming"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Intro.md:56
+#, no-wrap
+msgid ""
+"In functional programming languages, functions are first-class\n"
+"constructs, meaning that they can be assigned to variables,\n"
+"passed as arguments to other functions, and returned as results\n"
+"from functions. Unlike for instance in\n"
+"object-oriented programming languages, in functional programming,\n"
+"functions are the main form of abstraction. This means that whenever\n"
+"we find a common pattern or (almost) identical code in several\n"
+"parts of a project, we try to abstract over this in order to\n"
+"have to write the corresponding code only once.\n"
+"We do this by introducing one or more new functions\n"
+"implementing this behavior. Doing so, we often try to be as general\n"
+"as possible to make our functions as versatile to use as possible.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Intro.md:60
+#, no-wrap
+msgid ""
+"Functional programming languages are concerned with the evaluation\n"
+"of functions, unlike classical imperative languages, which are\n"
+"concerned with the execution of statements.\n"
+msgstr ""
+
+#. type: Title ###
+#: ../src/Tutorial/Intro.md:61
+#, no-wrap
+msgid "Pure Functional Programming"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Intro.md:71
+#, no-wrap
+msgid ""
+"Pure functional programming languages come with an additional\n"
+"important guarantee: Functions don't have side effects like\n"
+"writing to a file or mutating global state. They can only\n"
+"compute a result from their arguments possibly by invoking other\n"
+"pure functions, *and nothing else*. As a consequence, given\n"
+"the same input, they will *always* generate the same output.\n"
+"This property is known as\n"
+"[referential transparency](https://en.wikipedia.org/wiki/Referential_transparency).\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Intro.md:73
+#, no-wrap
+msgid "Pure functions have several advantages:\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: ../src/Tutorial/Intro.md:76
+#, no-wrap
+msgid ""
+"They can easily be tested by specifying (possibly randomly generated)\n"
+"sets of input arguments together with the expected results.\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: ../src/Tutorial/Intro.md:80
+#, no-wrap
+msgid ""
+"They are thread-safe, since they don't mutate global state, and\n"
+"as such can be freely used in several computations running\n"
+"in parallel.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Intro.md:82
+#, no-wrap
+msgid "There are, of course, also some disadvantages:\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: ../src/Tutorial/Intro.md:85
+#, no-wrap
+msgid ""
+"Some algorithms are hard to implement efficiently using\n"
+"only pure functions.\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: ../src/Tutorial/Intro.md:89
+#, no-wrap
+msgid ""
+"Writing programs that actually *do* something\n"
+"(have some observable effect) is a bit trickier but certainly\n"
+"possible.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Intro.md:97
+#, no-wrap
+msgid ""
+"Idris is a strongly, statically typed programming language. This\n"
+"means that every Idris expression is given a *type* (for instance:\n"
+"integer, list of strings, boolean, function from integer to boolean, etc.)\n"
+"and types are verified at compile time to rule out certain\n"
+"common programming errors.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Intro.md:103
+#, no-wrap
+msgid ""
+"For instance, if a function expects an argument of type `String`\n"
+"(a sequence of unicode characters, such as `\"Hello123\"`), it\n"
+"is a *type error* to invoke this function with an argument of\n"
+"type `Integer`, and the Idris compiler will refuse to\n"
+"generate an executable from such an ill-typed program.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Intro.md:111
+#, no-wrap
+msgid ""
+"Being *statically typed* means that the Idris compiler will catch\n"
+"type errors at *compile time*, that is, before it generates an executable\n"
+"program that can be run. The opposite to this are *dynamically typed*\n"
+"languages such as Python, which check for type errors at *runtime*, that is,\n"
+"when a program is being executed. It is the philosophy of statically typed\n"
+"languages to catch as many type errors as possible before there even is\n"
+"a program that can be run.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Intro.md:119
+#, no-wrap
+msgid ""
+"Even more, Idris is *dependently typed*, which is one of its most\n"
+"characteristic properties in the landscape of programming\n"
+"languages. In Idris, types are *first class*: Types can be passed\n"
+"as arguments to functions, and functions can return types as\n"
+"their results. Even more, types can *depend* on other *values*.\n"
+"What this means, and why this is incredibly useful, we'll explore\n"
+"in due time.\n"
+msgstr ""
+
+#. type: Title ###
+#: ../src/Tutorial/Intro.md:120
+#, no-wrap
+msgid "Total Functions"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Intro.md:127
+#, no-wrap
+msgid ""
+"A *total* function is a pure function, that is guaranteed to return\n"
+"a value of the expected return type for every possible input in\n"
+"a finite number of computational steps. A total function will never fail with an\n"
+"exception or loop infinitely, although it can still take arbitrarily\n"
+"long to compute its result\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Intro.md:136
+#, no-wrap
+msgid ""
+"Idris comes with a totality checker built-in, which enables us to\n"
+"verify the functions we write to be provably total. Totality\n"
+"in Idris is opt-in, as in general, checking the totality of\n"
+"an arbitrary computer program is undecidable\n"
+"(see also the [halting problem](https://en.wikipedia.org/wiki/Halting_problem)).\n"
+"However, if we annotate a function with the `total` keyword,\n"
+"Idris will fail with a type error, if its totality checker\n"
+"cannot verify that the function in question is indeed total.\n"
+msgstr ""
+
+#. type: Title ##
+#: ../src/Tutorial/Intro.md:137
+#, no-wrap
+msgid "Using the REPL"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Intro.md:144
+#, no-wrap
+msgid ""
+"Idris comes with a useful REPL (an acronym for *Read Evaluate\n"
+"Print Loop*), which we will use for tinkering with small\n"
+"ideas, and for quickly experimenting with the code we just wrote.\n"
+"In order to start a REPL session, run the following command\n"
+"in a terminal:\n"
+msgstr ""
+
+#. type: Fenced code block (repl)
+#: ../src/Tutorial/Intro.md:145
+#, no-wrap
+msgid "pack repl\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Intro.md:150
+#, no-wrap
+msgid "Idris should now be ready to accept you commands:\n"
+msgstr ""
+
+#. type: Fenced code block (repl)
+#: ../src/Tutorial/Intro.md:151
+#, no-wrap
+msgid ""
+"     ____    __     _         ___\n"
+"    /  _/___/ /____(_)____   |__ \\\n"
+"    / // __  / ___/ / ___/   __/ /     Version 0.5.1-3c532ea35\n"
+"  _/ // /_/ / /  / (__  )   / __/      https://www.idris-lang.org\n"
+" /___/\\__,_/_/  /_/____/   /____/      Type :? for help\n"
+"\n"
+"Welcome to Idris 2.  Enjoy yourself!\n"
+"Main>\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Intro.md:164
+#, no-wrap
+msgid ""
+"We can go ahead and enter some simple arithmetic expressions. Idris\n"
+"will *evaluate* these and print the result:\n"
+msgstr ""
+
+#. type: Fenced code block (repl)
+#: ../src/Tutorial/Intro.md:165
+#, no-wrap
+msgid ""
+"Main> 2 * 4\n"
+"8\n"
+"Main> 3 * (7 + 100)\n"
+"321\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Intro.md:174
+#, no-wrap
+msgid ""
+"Since every expression in Idris has an associated *type*,\n"
+"we might want to inspect these as well:\n"
+msgstr ""
+
+#. type: Fenced code block (repl)
+#: ../src/Tutorial/Intro.md:175
+#, no-wrap
+msgid ""
+"Main> :t 2\n"
+"2 : Integer\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Intro.md:183
+#, no-wrap
+msgid ""
+"Here `:t` is a command of the Idris REPL (it is not part of the\n"
+"Idris programming language), and it is used to inspect the type\n"
+"of an expression.\n"
+msgstr ""
+
+#. type: Fenced code block (repl)
+#: ../src/Tutorial/Intro.md:184
+#, no-wrap
+msgid ""
+"Main> :t 2 * 4\n"
+"2 * 4 : Integer\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Intro.md:199
+#, no-wrap
+msgid ""
+"Whenever we perform calculations with integer literals without\n"
+"being explicit about the types we want to use, Idris will\n"
+"use `Integer` as a default. `Integer` is an arbitrary precision\n"
+"signed integer type. It is one of the *primitive types* built\n"
+"into the language. Other primitives include fixed precision\n"
+"signed and unsigned integral types (`Bits8`, `Bits16`, `Bits32`\n"
+"`Bits64`, `Int8`, `Int16`, `Int32`, and `Int64`), double\n"
+"precision (64 bit) floating point numbers (`Double`), unicode\n"
+"characters (`Char`) and strings of unicode characters (`String`).\n"
+"We will use many of these in due time.\n"
+msgstr ""
+
+#. type: Title ##
+#: ../src/Tutorial/Intro.md:200
+#, no-wrap
+msgid "A First Idris Program"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Intro.md:207
+#, no-wrap
+msgid ""
+"We will often start up a REPL for tinkering with small parts\n"
+"of the Idris language, for reading some documentation, or\n"
+"for inspecting the content of an Idris module, but now we will\n"
+"write a minimal Idris program to get started with\n"
+"the language. Here comes the mandatory *Hello World*:\n"
+msgstr ""
+
+#. type: Fenced code block (idris)
+#: ../src/Tutorial/Intro.md:208
+#, no-wrap
+msgid ""
+"main : IO ()\n"
+"main = putStrLn \"Hello World!\"\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Intro.md:216
+#, no-wrap
+msgid ""
+"We will inspect the code above in some detail in a moment,\n"
+"but first we'd like to compile and run it. From this project's\n"
+"root directory, run the following:\n"
+msgstr ""
+
+#. type: Fenced code block (sh)
+#: ../src/Tutorial/Intro.md:216
+#, no-wrap
+msgid "pack -o hello exec src/Tutorial/Intro.md\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Intro.md:224
+#, no-wrap
+msgid ""
+"This will create executable `hello` in directory `build/exec`,\n"
+"which can be invoked from the command-line like so (without the\n"
+"dollar prefix; this is used here to distinguish the terminal command\n"
+"from its output):\n"
+msgstr ""
+
+#. type: Fenced code block (sh)
+#: ../src/Tutorial/Intro.md:225
+#, no-wrap
+msgid ""
+"$ build/exec/hello\n"
+"Hello World!\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Intro.md:238
+#, no-wrap
+msgid ""
+"The pack program requires an `.ipkg` to be in scope (in the current\n"
+"directory or one of its parent directories) from which\n"
+"it will get other settings like the source directory to use\n"
+"(`src` in our case). The optional `-o` option gives the name of the\n"
+"executable to be generated. Pack comes up with a name of its own\n"
+"it this is missing. Type `pack help` for a list\n"
+"of available command-line options and commands, and `pack help <cmd>`\n"
+"for getting help for a specific command.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Intro.md:241
+#, no-wrap
+msgid ""
+"As an alternative, you can also load this source file in a REPL\n"
+"session and invoke function `main` from there:\n"
+msgstr ""
+
+#. type: Fenced code block (sh)
+#: ../src/Tutorial/Intro.md:242
+#, no-wrap
+msgid "pack repl src/Tutorial/Intro.md\n"
+msgstr ""
+
+#. type: Fenced code block (repl)
+#: ../src/Tutorial/Intro.md:246
+#, no-wrap
+msgid ""
+"Tutorial.Intro> :exec main\n"
+"Hello World!\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Intro.md:253
+#, no-wrap
+msgid ""
+"Go ahead and try both ways of building and running function `main`\n"
+"on your system!\n"
+msgstr ""
+
+#. type: Title ##
+#: ../src/Tutorial/Intro.md:254
+#, no-wrap
+msgid "The Shape of an Idris Definition"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Intro.md:258
+#, no-wrap
+msgid ""
+"Now that we executed our first Idris program, we will talk\n"
+"a bit more about the code we had to write to define it.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Intro.md:265
+#, no-wrap
+msgid ""
+"A typical top level function in Idris consists of three things:\n"
+"The function's name (`main` in our case), its type (`IO ()`)\n"
+"plus its implementation (`putStrLn \"Hello World\"`). It is easier\n"
+"to explain these things with a couple of simple examples. Below,\n"
+"we define a top level constant for the largest unsigned eight bit\n"
+"integer:\n"
+msgstr ""
+
+#. type: Fenced code block (idris)
+#: ../src/Tutorial/Intro.md:266
+#, no-wrap
+msgid ""
+"maxBits8 : Bits8\n"
+"maxBits8 = 255\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Intro.md:280
+#, no-wrap
+msgid ""
+"The first line can be read as: \"We'd like to declare  (nullary)\n"
+"function `maxBits8`. It is of type `Bits8`\". This is\n"
+"called the *function declaration*: we declare that there\n"
+"shall be a function of the given name and type. The second line\n"
+"reads: \"The result of invoking `maxBits8` should be `255`.\"\n"
+"(As you can see, we can use integer literals for other integral\n"
+"types than just `Integer`.) This is called the *function definition*:\n"
+"Function `maxBits8` should behave as described here when being\n"
+"evaluated.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Intro.md:283
+#, no-wrap
+msgid ""
+"We can inspect this at the REPL. Load this source file into\n"
+"an Idris REPL (as described above), and run the following tests.\n"
+msgstr ""
+
+#. type: Fenced code block (repl)
+#: ../src/Tutorial/Intro.md:284
+#, no-wrap
+msgid ""
+"Tutorial.Intro> maxBits8\n"
+"255\n"
+"Tutorial.Intro> :t maxBits8\n"
+"Tutorial.Intro.maxBits8 : Bits8\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Intro.md:292
+#, no-wrap
+msgid "We can also use `maxBits8` as part of another expression:\n"
+msgstr ""
+
+#. type: Fenced code block (repl)
+#: ../src/Tutorial/Intro.md:293
+#, no-wrap
+msgid ""
+"Tutorial.Intro> maxBits8 - 100\n"
+"155\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Intro.md:300
+#, no-wrap
+msgid ""
+"I called `maxBits8` a *nullary function*, which is just a fancy\n"
+"word for *constant*. Let's write and test our first *real* function:\n"
+msgstr ""
+
+#. type: Fenced code block (idris)
+#: ../src/Tutorial/Intro.md:301
+#, no-wrap
+msgid ""
+"distanceToMax : Bits8 -> Bits8\n"
+"distanceToMax n = maxBits8 - n\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Intro.md:313
+#, no-wrap
+msgid ""
+"This introduces some new syntax and a new kind of type: Function\n"
+"types. `distanceToMax : Bits8 -> Bits8` can be read as follows:\n"
+"\"`distanceToMax` is a function of one argument of type `Bits8`, which\n"
+"returns a result of type `Bits8`\". In the implementation, the argument\n"
+"is given a local identifier `n`, which is then used in the\n"
+"calculation on the right hand side. Again, go ahead and try this\n"
+"function at the REPL:\n"
+msgstr ""
+
+#. type: Fenced code block (repl)
+#: ../src/Tutorial/Intro.md:314
+#, no-wrap
+msgid ""
+"Tutorial.Intro> distanceToMax 12\n"
+"243\n"
+"Tutorial.Intro> :t distanceToMax\n"
+"Tutorial.Intro.distanceToMax : Bits8 -> Bits8\n"
+"Tutorial.Intro> :t distanceToMax 12\n"
+"distanceToMax 12 : Bits8\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Intro.md:325
+#, no-wrap
+msgid ""
+"As a final example, let's implement a function to calculate\n"
+"the square of an integer:\n"
+msgstr ""
+
+#. type: Fenced code block (idris)
+#: ../src/Tutorial/Intro.md:326
+#, no-wrap
+msgid ""
+"square : Integer -> Integer\n"
+"square n = n * n\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Intro.md:339
+#, no-wrap
+msgid ""
+"We now learn a very important aspect of programming\n"
+"in Idris: Idris is\n"
+"a *statically typed* programming language. We are not\n"
+"allowed to freely mix types as we please. Doing so\n"
+"will result in an error message from the type checker\n"
+"(which is part of the compilation process of Idris).\n"
+"For instance, if we try the following at the REPL,\n"
+"we will get a type error:\n"
+msgstr ""
+
+#. type: Fenced code block (repl)
+#: ../src/Tutorial/Intro.md:340
+#, no-wrap
+msgid ""
+"Tutorial.Intro> square maxBits8\n"
+"Error: ...\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Intro.md:350
+#, no-wrap
+msgid ""
+"The reason: `square` expects an argument of type `Integer`,\n"
+"but `maxBits8` is of type `Bits8`. Many primitive types\n"
+"are interconvertible (sometimes with the risk of loss\n"
+"of precision) using function `cast` (more on the details\n"
+"later):\n"
+msgstr ""
+
+#. type: Fenced code block (repl)
+#: ../src/Tutorial/Intro.md:351
+#, no-wrap
+msgid ""
+"Tutorial.Intro> square (cast maxBits8)\n"
+"65025\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Intro.md:362
+#, no-wrap
+msgid ""
+"Note, that in the example above the result is much larger\n"
+"that `maxBits8`. The reason is, that `maxBits8` is first\n"
+"converted to an `Integer` of the same value, which is\n"
+"then squared. If on the other hand we squared `maxBits8`\n"
+"directly, the result would be truncated to still fit the\n"
+"valid range of `Bits8`:\n"
+msgstr ""
+
+#. type: Fenced code block (repl)
+#: ../src/Tutorial/Intro.md:363
+#, no-wrap
+msgid ""
+"Tutorial.Intro> maxBits8 * maxBits8\n"
+"1\n"
+msgstr ""
+
+#. type: Title ##
+#: ../src/Tutorial/Intro.md:368
+#, no-wrap
+msgid "Where to get Help"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Intro.md:373
+#, no-wrap
+msgid ""
+"There are several resources available online and in print, where\n"
+"you can find help and documentation about the Idris programming\n"
+"language. Here is a non-comprehensive list of them:\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: ../src/Tutorial/Intro.md:375
+#, no-wrap
+msgid "[Type-Driven Development with Idris](https://www.manning.com/books/type-driven-development-with-idris)\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Intro.md:382
+#, no-wrap
+msgid ""
+"  *The* Idris book! This describes in great detail\n"
+"  the core concepts for using Idris and dependent types\n"
+"  to write robust and concise code. It uses Idris 1 in\n"
+"  its examples, so parts of it have to be slightly adjusted\n"
+"  when using Idris 2. There is also a\n"
+"  [list of required updates](https://idris2.readthedocs.io/en/latest/typedd/typedd.html).\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: ../src/Tutorial/Intro.md:384
+#, no-wrap
+msgid "[A Crash Course in Idris 2](https://idris2.readthedocs.io/en/latest/tutorial/index.html)\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Intro.md:389
+#, no-wrap
+msgid ""
+"  The official Idris 2 tutorial. A comprehensive but dense explanation of\n"
+"  all features of Idris 2. I find this to be useful as a reference, and as such\n"
+"  it is highly accessible. However, it is not an introduction to functional\n"
+"  programming or type-driven development in general.\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: ../src/Tutorial/Intro.md:391
+#, no-wrap
+msgid "[The Idris 2 GitHub Repository](https://github.com/idris-lang/Idris2)\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Intro.md:398
+#, no-wrap
+msgid ""
+"  Look here for detailed installation instructions and some\n"
+"  introductory material. There is also a [wiki](https://github.com/idris-lang/Idris2/wiki),\n"
+"  where you can find a [list of editor plugins](https://github.com/idris-lang/Idris2/wiki/The-Idris-editor-experience),\n"
+"  a [list of community libraries](https://github.com/idris-lang/Idris2/wiki/Libraries),\n"
+"  a [list of external backends](https://github.com/idris-lang/Idris2/wiki/External-backends),\n"
+"  and other useful information.\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: ../src/Tutorial/Intro.md:400
+#, no-wrap
+msgid "[The Idris 2 Discord Channel](https://discord.gg/UX68fDs2jc)\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Intro.md:406
+#, no-wrap
+msgid ""
+"  If you get stuck with a piece of code, want to ask about some\n"
+"  obscure language feature, want to promote your new library,\n"
+"  or want to just hang out with other Idris programmers, this\n"
+"  is the place to go. The discord channel is pretty active and\n"
+"  *very* friendly towards newcomers.\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: ../src/Tutorial/Intro.md:408
+#, no-wrap
+msgid "The Idris REPL\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Intro.md:414
+#, no-wrap
+msgid ""
+"  Finally, a lot of useful information can be provided by\n"
+"  Idris itself. I tend to have at least one REPL session open all the\n"
+"  time when programming in Idris. My editor (neovim) is set up\n"
+"  to use the [language server for Idris 2](https://github.com/idris-community/idris2-lsp),\n"
+"  which is incredibly useful. In the REPL,\n"
+msgstr ""
+
+#. type: Bullet: '  * '
+#: ../src/Tutorial/Intro.md:431
+#, no-wrap
+msgid ""
+"use `:t` to inspect the type of an expression\n"
+"or meta variable (hole): `:t foldl`,\n"
+msgstr ""
+
+#. type: Bullet: '  * '
+#: ../src/Tutorial/Intro.md:431
+#, no-wrap
+msgid ""
+"use `:ti` to inspect the type of a function\n"
+"including implicit arguments: `:ti foldl`,\n"
+msgstr ""
+
+#. type: Bullet: '  * '
+#: ../src/Tutorial/Intro.md:431
+#, no-wrap
+msgid "use `:m` to list all meta variables (holes) in scope,\n"
+msgstr ""
+
+#. type: Bullet: '  * '
+#: ../src/Tutorial/Intro.md:431
+#, no-wrap
+msgid ""
+"use `:doc` to access the documentation of a\n"
+"top level function (`:doc the`), a data type plus all its constructors\n"
+"and available hints (`:doc Bool`), a language feature (`:doc case`,\n"
+"`:doc let`, `:doc interface`, `:doc record`,\n"
+"or even `:doc ?`), or an interface (`:doc Uninhabited`),\n"
+msgstr ""
+
+#. type: Bullet: '  * '
+#: ../src/Tutorial/Intro.md:431
+#, no-wrap
+msgid ""
+"use `:module` to import a module from one of the available\n"
+"packages: `:module Data.Vect`,\n"
+msgstr ""
+
+#. type: Bullet: '  * '
+#: ../src/Tutorial/Intro.md:431
+#, no-wrap
+msgid ""
+"use `:browse` to list the names and types of all functions\n"
+"exported by a loaded module: `:browse Data.Vect`,\n"
+msgstr ""
+
+#. type: Bullet: '  * '
+#: ../src/Tutorial/Intro.md:431
+#, no-wrap
+msgid ""
+"use `:help` to get a list of other commands plus a short\n"
+"description for each.\n"
+msgstr ""
+
+#. type: Title ##
+#: ../src/Tutorial/Intro.md:432
+#, no-wrap
+msgid "Summary"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Intro.md:439
+#, no-wrap
+msgid ""
+"In this introduction we learned about the most basic\n"
+"features of the Idris programming language. We used\n"
+"the REPL to tinker with our ideas and inspect the\n"
+"types of things in our code, and we used the Idris\n"
+"compiler to compile an Idris source file to an executable.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Intro.md:443
+#, no-wrap
+msgid ""
+"We also learned about the basic shape of a top level\n"
+"definition in Idris, which always consists of an identifier\n"
+"(its name), a type, and an implementation.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Intro.md:451
+#, no-wrap
+msgid ""
+"In the [next chapter](Functions1.md), we start programming\n"
+"in Idris for real. We learn how to write our own pure\n"
+"functions, how functions compose, and how we can treat\n"
+"functions just like other values and pass them around\n"
+"as arguments to other functions.\n"
+msgstr ""

@@ -1,9 +1,6 @@
-name: 更新翻译进度
+name: 基于 po4a 更新翻译
 
 on:
-  # schedule:
-    # 定时构建
-    # - cron: '0 0 * * *'
   # 手动触发
   workflow_dispatch: {}
   push:
@@ -23,7 +20,7 @@ jobs:
           git config --global user.name "github-actions[bot]"
 
       - name: 更新翻译
-        run: make update
+        run: cd po4a && make update
 
       - name: 提交修改
         run: git add . && git commit -m "更新翻译进度" && git push

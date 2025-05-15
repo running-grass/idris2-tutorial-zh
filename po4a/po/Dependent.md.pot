@@ -1,0 +1,1717 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2025-05-15 03:33+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Title ###
+#: ../src/Tutorial/DataTypes.md:261 ../src/Tutorial/Dependent.md:444
+#: ../src/Tutorial/DPair.md:348 ../src/Tutorial/Eq.md:279
+#: ../src/Tutorial/Folds.md:373 ../src/Tutorial/Functor.md:381
+#: ../src/Tutorial/Interfaces.md:189 ../src/Tutorial/IO.md:317
+#: ../src/Tutorial/Predicates.md:305 ../src/Tutorial/Prim.md:448
+#: ../src/Tutorial/Traverse.md:247
+#, no-wrap
+msgid "Exercises part 1"
+msgstr ""
+
+#. type: Title ###
+#: ../src/Tutorial/DataTypes.md:436 ../src/Tutorial/Dependent.md:623
+#: ../src/Tutorial/DPair.md:653 ../src/Tutorial/Eq.md:555
+#: ../src/Tutorial/Folds.md:668 ../src/Tutorial/Functor.md:965
+#: ../src/Tutorial/Interfaces.md:352 ../src/Tutorial/IO.md:728
+#: ../src/Tutorial/Predicates.md:672 ../src/Tutorial/Prim.md:711
+#: ../src/Tutorial/Traverse.md:574
+#, no-wrap
+msgid "Exercises part 2"
+msgstr ""
+
+#. type: Title ###
+#: ../src/Tutorial/DataTypes.md:742 ../src/Tutorial/Dependent.md:843
+#: ../src/Tutorial/DPair.md:1128 ../src/Tutorial/Eq.md:826
+#: ../src/Tutorial/Folds.md:988 ../src/Tutorial/Functor.md:1235
+#: ../src/Tutorial/Interfaces.md:624 ../src/Tutorial/IO.md:949
+#: ../src/Tutorial/Predicates.md:1020 ../src/Tutorial/Prim.md:935
+#: ../src/Tutorial/Traverse.md:1016
+#, no-wrap
+msgid "Exercises part 3"
+msgstr ""
+
+#. type: Title ##
+#: ../src/Tutorial/DataTypes.md:1319 ../src/Tutorial/Dependent.md:872
+#: ../src/Tutorial/DPair.md:1191 ../src/Tutorial/Eq.md:1085
+#: ../src/Tutorial/Folds.md:1051 ../src/Tutorial/Functions1.md:524
+#: ../src/Tutorial/Functions2.md:924 ../src/Tutorial/Functor.md:1398
+#: ../src/Tutorial/Interfaces.md:792 ../src/Tutorial/IO.md:1095
+#: ../src/Tutorial/Predicates.md:1358 ../src/Tutorial/Traverse.md:1109
+#: ../src/Appendices/Neovim.md:364
+#, no-wrap
+msgid "Conclusion"
+msgstr ""
+
+#. type: Title ###
+#: ../src/Tutorial/DataTypes.md:1362 ../src/Tutorial/Dependent.md:904
+#: ../src/Tutorial/Functions1.md:575 ../src/Tutorial/Functions2.md:954
+#: ../src/Tutorial/Interfaces.md:813 ../src/Tutorial/IO.md:1118
+#, no-wrap
+msgid "What's next"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/DataTypes.md:1368 ../src/Tutorial/Dependent.md:910
+#: ../src/Tutorial/DPair.md:1206 ../src/Tutorial/Eq.md:1100
+#: ../src/Tutorial/Folds.md:1064 ../src/Tutorial/Functions1.md:583
+#: ../src/Tutorial/Functions2.md:964 ../src/Tutorial/Functor.md:1430
+#: ../src/Tutorial/Interfaces.md:821 ../src/Tutorial/Intro.md:453
+#: ../src/Tutorial/IO.md:1125 ../src/Tutorial/Predicates.md:1371
+#: ../src/Tutorial/Prim.md:1410 ../src/Tutorial/Traverse.md:1148
+#: ../src/Appendices/Neovim.md:374
+#, no-wrap
+msgid ""
+"<!-- vi: filetype=idris2:syntax=markdown\n"
+"-->\n"
+msgstr ""
+
+#. type: Title ###
+#: ../src/Tutorial/Dependent.md:1 ../src/Tutorial/Intro.md:90
+#, no-wrap
+msgid "Dependent Types"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:9
+#, no-wrap
+msgid ""
+"The ability to calculate types from values, pass them as arguments\n"
+"to functions, and return them as results from functions - in\n"
+"short, being a dependently typed language - is one of the\n"
+"most distinguishing features of Idris. Many of the more advanced\n"
+"type level extensions of languages like Haskell (and quite a\n"
+"bit more) can be treated in one fell swoop with dependent types.\n"
+msgstr ""
+
+#. type: Fenced code block (idris)
+#: ../src/Tutorial/Dependent.md:10
+#, no-wrap
+msgid ""
+"module Tutorial.Dependent\n"
+"\n"
+"%default total\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:17
+#, no-wrap
+msgid "Consider the following functions:\n"
+msgstr ""
+
+#. type: Fenced code block (idris)
+#: ../src/Tutorial/Dependent.md:18
+#, no-wrap
+msgid ""
+"bogusMapList : (a -> b) -> List a -> List b\n"
+"bogusMapList _ _ = []\n"
+"\n"
+"bogusZipList : (a -> b -> c) -> List a -> List b -> List c\n"
+"bogusZipList _ _ _ = []\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:35
+#, no-wrap
+msgid ""
+"The implementations type check, and still, they are obviously not\n"
+"what users of our library would expect. In the first example, we'd expect\n"
+"the implementation to apply the function argument to all values stored\n"
+"in the list, without dropping any of them or changing their order.\n"
+"The second is trickier: The two list arguments might be of different length.\n"
+"What are we supposed to do when that's the case? Return a list of the same\n"
+"length as the smaller of the two? Return an empty list? Or shouldn't\n"
+"we in most use cases expect the two lists to be of the same length?\n"
+"How could we even describe such a precondition?\n"
+msgstr ""
+
+#. type: Title ##
+#: ../src/Tutorial/Dependent.md:36
+#, no-wrap
+msgid "Length-Indexed Lists"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:41
+#, no-wrap
+msgid ""
+"The answer to the issues described above is of course: Dependent types.\n"
+"And the most common introductory example is the *vector*: A list indexed\n"
+"by its length:\n"
+msgstr ""
+
+#. type: Fenced code block (idris)
+#: ../src/Tutorial/Dependent.md:42
+#, no-wrap
+msgid ""
+"data Vect : (len : Nat) -> (a : Type) -> Type where\n"
+"  Nil  : Vect 0 a\n"
+"  (::) : (x : a) -> (xs : Vect n a) -> Vect (S n) a\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:58
+#, no-wrap
+msgid ""
+"Before we move on, please compare this with the implementation of `Seq` in\n"
+"the [section about algebraic data types](DataTypes.md). The constructors\n"
+"are exactly the same: `Nil` and `(::)`. But there is an important difference:\n"
+"`Vect`, unlike `Seq` or `List`, is not a function from `Type` to `Type`, it is\n"
+"a function from `Nat` to `Type` to `Type`. Go ahead! Open the REPL and\n"
+"verify this! The `Nat` argument (also called an *index*) represents\n"
+"the *length* of the vector here.\n"
+"`Nil` has type `Vect 0 a`: A vector of length\n"
+"zero. *Cons* has type `a -> Vect n a -> Vect (S n) a`: It is exactly one\n"
+"element longer (`S n`) than its second argument, which is of length `n`.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:61
+#, no-wrap
+msgid ""
+"Let's experiment with this idea to gain a better understanding.\n"
+"There is only one way to come up with a vector of length zero:\n"
+msgstr ""
+
+#. type: Fenced code block (idris)
+#: ../src/Tutorial/Dependent.md:62
+#, no-wrap
+msgid ""
+"ex1 : Vect 0 Integer\n"
+"ex1 = Nil\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:69
+#, no-wrap
+msgid ""
+"The following, on the other hand, leads to a type error (a pretty complicated\n"
+"one, actually):\n"
+msgstr ""
+
+#. type: Fenced code block (idris)
+#: ../src/Tutorial/Dependent.md:70
+#, no-wrap
+msgid ""
+"failing \"Mismatch between: S ?n and 0.\"\n"
+"  ex2 : Vect 0 Integer\n"
+"  ex2 = [12]\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:80
+#, no-wrap
+msgid ""
+"The problem: `[12]` gets desugared to `12 :: Nil`, but this has the wrong\n"
+"type! Since `Nil` has type `Vect 0 Integer` here, `12 :: Nil` has type\n"
+"`Vect (S 0) Integer`, which is identical to `Vect 1 Integer`. Idris verifies,\n"
+"at compile time, that our vector is of the correct length!\n"
+msgstr ""
+
+#. type: Fenced code block (idris)
+#: ../src/Tutorial/Dependent.md:81
+#, no-wrap
+msgid ""
+"ex3 : Vect 1 Integer\n"
+"ex3 = [12]\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:93
+#, no-wrap
+msgid ""
+"So, we found a way to encode the *length* of a list-like data structure in\n"
+"its *type*, and it is a *type error* if the number of elements in\n"
+"a vector does not agree with then length given in its type. We will\n"
+"shortly see several use cases, where this additional piece of information\n"
+"allows us to be more precise in the types and rule out additional\n"
+"programming mistakes. But first, we need to quickly clarify some\n"
+"terminology.\n"
+msgstr ""
+
+#. type: Title ###
+#: ../src/Tutorial/Dependent.md:94
+#, no-wrap
+msgid "Type Indices versus Type Parameters"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:101
+#, no-wrap
+msgid ""
+"`Vect` is not only a generic type, parameterized over the type\n"
+"of elements it holds, it is actually a *family of types*, each\n"
+"of them associated with a natural number representing it's\n"
+"length. We also say, the type family `Vect` is *indexed* by\n"
+"its length.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:108
+#, no-wrap
+msgid ""
+"The difference between a type parameter and an index is, that\n"
+"the latter can and does change across data constructors, while\n"
+"the former is the same for all data constructors. Or, put differently,\n"
+"we can learn about the *value* of an index by pattern matching\n"
+"on a *value* of the type family, while this is not possible\n"
+"with a type parameter.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:110
+#, no-wrap
+msgid "Let's demonstrate this with a contrived example:\n"
+msgstr ""
+
+#. type: Fenced code block (idris)
+#: ../src/Tutorial/Dependent.md:111
+#, no-wrap
+msgid ""
+"data Indexed : Nat -> Type where\n"
+"  I0 : Indexed 0\n"
+"  I3 : Indexed 3\n"
+"  I4 : String -> Indexed 4\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:124
+#, no-wrap
+msgid ""
+"Here, `Indexed` is indexed over its `Nat` argument, as\n"
+"values of the index changes across constructors (I chose some\n"
+"arbitrary value for each constructor), and we\n"
+"can learn about these values by pattern matching on `Indexed` values.\n"
+"We can use this, for instance, to create a `Vect` of the same length\n"
+"as the index of `Indexed`:\n"
+msgstr ""
+
+#. type: Fenced code block (idris)
+#: ../src/Tutorial/Dependent.md:125
+#, no-wrap
+msgid "fromIndexed : Indexed n -> a -> Vect n a\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:133
+#, no-wrap
+msgid ""
+"Go ahead, and try implementing this yourself! Work with\n"
+"holes, pattern match on the `Indexed` argument, and\n"
+"learn about the expected output type in each case by\n"
+"inspecting the holes and their context.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:135
+#, no-wrap
+msgid "Here is my implementation:\n"
+msgstr ""
+
+#. type: Fenced code block (idris)
+#: ../src/Tutorial/Dependent.md:136
+#, no-wrap
+msgid ""
+"fromIndexed I0     va = []\n"
+"fromIndexed I3     va = [va, va, va]\n"
+"fromIndexed (I4 _) va = [va, va, va, va]\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:146
+#, no-wrap
+msgid ""
+"As you can see, by pattern matching on the value of the\n"
+"`Indexed n` argument, we learned about the value of\n"
+"the `n` index itself, which was necessary to return a\n"
+"`Vect` of the correct length.\n"
+msgstr ""
+
+#. type: Title ###
+#: ../src/Tutorial/Dependent.md:147
+#, no-wrap
+msgid "Length-Preserving `map`"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:154
+#, no-wrap
+msgid ""
+"Function `bogusMapList` behaved unexpectedly, because it always\n"
+"returned the empty list. With `Vect`, we need to be true to the\n"
+"types here. If we map over a `Vect`, the argument *and* output type\n"
+"contain a length index, and these length indices will tell us\n"
+"*exactly*, if and how the lengths of our vectors are modified:\n"
+msgstr ""
+
+#. type: Fenced code block (idris)
+#: ../src/Tutorial/Dependent.md:155
+#, no-wrap
+msgid ""
+"map3_1 : (a -> b) -> Vect 3 a -> Vect 1 b\n"
+"map3_1 f [_,y,_] = [f y]\n"
+"\n"
+"map5_0 : (a -> b) -> Vect 5 a -> Vect 0 b\n"
+"map5_0 f _ = []\n"
+"\n"
+"map5_10 : (a -> b) -> Vect 5 a -> Vect 10 b\n"
+"map5_10 f [u,v,w,x,y] = [f u, f u, f v, f v, f w, f w, f x, f x, f y, f y]\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:173
+#, no-wrap
+msgid ""
+"While these examples are quite interesting,\n"
+"they are not really useful, are they? That's because they are too\n"
+"specialized. We'd like to have a *general* function for mapping\n"
+"vectors of any length.\n"
+"Instead of using concrete lengths in type signatures,\n"
+"we can also use *variables* as already seen in the definition of `Vect`.\n"
+"This allows us to declare the general case:\n"
+msgstr ""
+
+#. type: Fenced code block (idris)
+#: ../src/Tutorial/Dependent.md:174
+#, no-wrap
+msgid "mapVect' : (a -> b) -> Vect n a -> Vect n b\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:181
+#, no-wrap
+msgid ""
+"This type describes a length-preserving map. It is actually\n"
+"more instructive (but not necessary) to include the\n"
+"implicit arguments as well:\n"
+msgstr ""
+
+#. type: Fenced code block (idris)
+#: ../src/Tutorial/Dependent.md:182
+#, no-wrap
+msgid "mapVect : {0 a,b : _} -> {0 n : Nat} -> (a -> b) -> Vect n a -> Vect n b\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:196
+#, no-wrap
+msgid ""
+"We ignore the two type parameters `a`, and `b`, as these just\n"
+"describe a generic function (note, however, that we can group arguments\n"
+"of the same type and quantity in a single pair of curly braces; this\n"
+"is optional, but it sometimes helps making type signatures a bit\n"
+"shorter). The implicit argument of type `Nat`, however, tells us that the\n"
+"input and output `Vect` are of the same length. It is a type error\n"
+"to not uphold to this contract. When implementing `mapVect`, it\n"
+"is very instructive to follow along and use some holes. In order\n"
+"to get *any* information about the length of the `Vect` argument,\n"
+"we need to pattern match on it:\n"
+msgstr ""
+
+#. type: Fenced code block (repl)
+#: ../src/Tutorial/Dependent.md:197
+#, no-wrap
+msgid ""
+"mapVect _ Nil       = ?impl_0\n"
+"mapVect f (x :: xs) = ?impl_1\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:203
+#, no-wrap
+msgid "At the REPL, we learn the following:\n"
+msgstr ""
+
+#. type: Fenced code block (repl)
+#: ../src/Tutorial/Dependent.md:204
+#, no-wrap
+msgid ""
+"Tutorial.Dependent> :t impl_0\n"
+" 0 a : Type\n"
+" 0 b : Type\n"
+" 0 n : Nat\n"
+"------------------------------\n"
+"impl_0 : Vect 0 b\n"
+"\n"
+"\n"
+"Tutorial.Dependent> :t impl_1\n"
+" 0 a : Type\n"
+" 0 b : Type\n"
+"   x : a\n"
+"   xs : Vect n a\n"
+"   f : a -> b\n"
+" 0 n : Nat\n"
+"------------------------------\n"
+"impl_1 : Vect (S n) b\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:226
+#, no-wrap
+msgid ""
+"The first hole, `impl_0` is of type `Vect 0 b`. There is only one such\n"
+"value, as discussed above:\n"
+msgstr ""
+
+#. type: Fenced code block (idris)
+#: ../src/Tutorial/Dependent.md:227
+#, no-wrap
+msgid "mapVect _ Nil       = Nil\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:238
+#, no-wrap
+msgid ""
+"The second case is again more interesting. We note, that `xs` is\n"
+"of type `Vect n a`, for an arbitrary length `n` (given as an erased\n"
+"argument), while the result is of type `Vect (S n) b`. So, the\n"
+"result has to be one element longer than `xs`. Luckily, we already\n"
+"have a value of type `a` (bound to variable `x`) and a function\n"
+"from `a` to `b` (bound to variable `f`), so we can apply `f`\n"
+"to `x` and prepend the result to a yet unknown remainder:\n"
+msgstr ""
+
+#. type: Fenced code block (repl)
+#: ../src/Tutorial/Dependent.md:239
+#, no-wrap
+msgid "mapVect f (x :: xs) = f x :: ?rest\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:244
+#, no-wrap
+msgid "Let's inspect the new hole at the REPL:\n"
+msgstr ""
+
+#. type: Fenced code block (repl)
+#: ../src/Tutorial/Dependent.md:245
+#, no-wrap
+msgid ""
+"Tutorial.Dependent> :t rest\n"
+" 0 a : Type\n"
+" 0 b : Type\n"
+"   x : a\n"
+"   xs : Vect n a\n"
+"   f : a -> b\n"
+" 0 n : Nat\n"
+"------------------------------\n"
+"rest : Vect n b\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:265
+#, no-wrap
+msgid ""
+"Now, we have a `Vect n a` and need a `Vect n b`, without knowing anything\n"
+"else about `n`. We *could* learn more about `n` by pattern matching further\n"
+"on `xs`, but this would quickly lead us down a rabbit hole, since after\n"
+"such a pattern match, we'd end up with another `Nil` case and another\n"
+"*cons* case, with a new tail of unknown length. Instead, we can invoke\n"
+"`mapVect` recursively to convert the remainder (`xs`) to a `Vect n b`.\n"
+"The type checker guarantees, that the lengths of `xs` and `mapVect f xs`\n"
+"are the same, so the whole expression type checks and we are done:\n"
+msgstr ""
+
+#. type: Fenced code block (idris)
+#: ../src/Tutorial/Dependent.md:266
+#, no-wrap
+msgid "mapVect f (x :: xs) = f x :: mapVect f xs\n"
+msgstr ""
+
+#. type: Title ###
+#: ../src/Tutorial/Dependent.md:270
+#, no-wrap
+msgid "Zipping Vectors"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:277
+#, no-wrap
+msgid ""
+"Let us now have a look at `bogusZipList`: We'd like to pairwise merge\n"
+"two lists holding elements of (possibly) distinct types through a\n"
+"given binary function. As discussed above, the most reasonable thing\n"
+"to do is to expect the two lists as well as the result to be of equal length.\n"
+"With `Vect`, this can be expressed and implemented as follows:\n"
+msgstr ""
+
+#. type: Fenced code block (idris)
+#: ../src/Tutorial/Dependent.md:278
+#, no-wrap
+msgid ""
+"zipWith : (a -> b -> c) -> Vect n a -> Vect n b -> Vect n c\n"
+"zipWith f []        []         = Nil\n"
+"zipWith f (x :: xs) (y :: ys)  = f x y :: zipWith f xs ys\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:295
+#, no-wrap
+msgid ""
+"Now, here is an interesting thing: The totality checker (activated\n"
+"throughout this source file due to the initial `%default total` pragma)\n"
+"accepts the above implementation as being total, although it is\n"
+"missing two more cases. This works, because Idris\n"
+"can figure out on its own, that the other two cases are *impossible*.\n"
+"From the pattern match on the first `Vect` argument, Idris learns\n"
+"whether `n` is zero or the successor of another natural number. But\n"
+"from this it can derive, whether the second vector, being also\n"
+"of length `n`, is a `Nil` or a *cons*. Still, it can be informative to add the\n"
+"impossible cases explicitly. We can use keyword `impossible` to\n"
+"do so:\n"
+msgstr ""
+
+#. type: Fenced code block (idris)
+#: ../src/Tutorial/Dependent.md:296
+#, no-wrap
+msgid ""
+"zipWith _ [] (_ :: _) impossible\n"
+"zipWith _ (_ :: _) [] impossible\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:306
+#, no-wrap
+msgid ""
+"It is - of course - a type error to annotate a case in a pattern\n"
+"match with `impossible`, if Idris cannot verify that this case is\n"
+"indeed impossible. We will learn in a later section what to do,\n"
+"when we think we are right about an impossible case\n"
+"and Idris is not.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:308
+#, no-wrap
+msgid "Let's give `zipWith` a spin at the REPL:\n"
+msgstr ""
+
+#. type: Fenced code block (repl)
+#: ../src/Tutorial/Dependent.md:309
+#, no-wrap
+msgid ""
+"Tutorial.Dependent> zipWith (*) [1,2,3] [10,20,30]\n"
+"[10, 40, 90]\n"
+"Tutorial.Dependent> zipWith (\\x,y => x ++ \": \" ++ show y) [\"The answer\"] [42]\n"
+"[\"The answer: 42\"]\n"
+"Tutorial.Dependent> zipWith (*) [1,2,3] [10,20]\n"
+"... Nasty type error ...\n"
+msgstr ""
+
+#. type: Title ####
+#: ../src/Tutorial/Dependent.md:318
+#, no-wrap
+msgid "Simplifying Type Errors"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:329
+#, no-wrap
+msgid ""
+"It is amazing to experience the amount of work Idris can do\n"
+"for us and the amount of things it can infer on its own when\n"
+"things go well. When things don't go well, however, the\n"
+"error messages we get from Idris can\n"
+"be quite long and hard to understand, especially\n"
+"for programmers new to the language. For instance, the error\n"
+"message in the last REPL example above was pretty long, listing\n"
+"different things Idris tried to do together with the reason\n"
+"why each of them failed.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:341
+#, no-wrap
+msgid ""
+"If this happens, it often means that a combination of a type error\n"
+"and an ambiguity resulting from overloaded function names is\n"
+"at work. In the example above, the two vectors are of distinct\n"
+"length, which leads to a type error if we interpret the list\n"
+"literals as vectors. However, list literals are overloaded to work\n"
+"with all data types with constructors `Nil` and `(::)`, so Idris\n"
+"will now try other data constructors than those of `Vect` (the\n"
+"ones of `List` and `Stream` from the *Prelude* in this case),\n"
+"each of which will again fail with a type error since `zipWith`\n"
+"expects arguments of type `Vect`, and neither `List` nor `Stream`\n"
+"will work.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:345
+#, no-wrap
+msgid ""
+"If this happens, prefixing overloaded function names with\n"
+"their namespaces can often simplify things, as Idris no\n"
+"longer needs to disambiguate these functions:\n"
+msgstr ""
+
+#. type: Fenced code block (repl)
+#: ../src/Tutorial/Dependent.md:346
+#, no-wrap
+msgid ""
+"Tutorial.Dependent> zipWith (*) (Dependent.(::) 1 Dependent.Nil) Dependent.Nil\n"
+"Error: When unifying:\n"
+"    Vect 0 ?c\n"
+"and:\n"
+"    Vect 1 ?c\n"
+"Mismatch between: 0 and 1.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:360
+#, no-wrap
+msgid ""
+"Here, the message is much clearer: Idris can't *unify* the lengths of the\n"
+"two vectors. *Unification* means: Idris tries to at compile time convert\n"
+"two expressions to the same normal form. If this succeeds,\n"
+"the two expressions are considered to be equivalent,\n"
+"if it doesn't, Idris fails with a unification error.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:363
+#, no-wrap
+msgid ""
+"As an alternative to prefixing overloaded functions with their\n"
+"namespace, we can use `the` to help with type inference:\n"
+msgstr ""
+
+#. type: Fenced code block (repl)
+#: ../src/Tutorial/Dependent.md:364
+#, no-wrap
+msgid ""
+"Tutorial.Dependent> zipWith (*) (the (Vect 3 _) [1,2,3]) (the (Vect 2 _) [10,20])\n"
+"Error: When unifying:\n"
+"    Vect 2 ?c\n"
+"and:\n"
+"    Vect 3 ?c\n"
+"Mismatch between: 0 and 1.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:379
+#, no-wrap
+msgid ""
+"It is interesting to note, that the error above is not \"Mismatch between: 2 and 3\"\n"
+"but \"Mismatch between: 0 and 1\" instead. Here's what's going on: Idris tries to\n"
+"unify integer literals `2` and `3`, which are first converted to the\n"
+"corresponding `Nat` values `S (S Z)` and `S (S (S Z))`, respectively.\n"
+"The two patterns match until we arrive at `Z` vs `S Z`, corresponding\n"
+"to values `0` and `1`, which is the discrepancy reported in the error message.\n"
+msgstr ""
+
+#. type: Title ###
+#: ../src/Tutorial/Dependent.md:380
+#, no-wrap
+msgid "Creating Vectors"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:387
+#, no-wrap
+msgid ""
+"So far, we were able to learn something about the lengths\n"
+"of vectors by pattern matching on them. In the `Nil`\n"
+"case, it was clear that the length is 0, while in the *cons*\n"
+"case the length was the successor of another natural number.\n"
+"This is not possible when we want to create a new vector:\n"
+msgstr ""
+
+#. type: Fenced code block (idris)
+#: ../src/Tutorial/Dependent.md:388
+#, no-wrap
+msgid ""
+"failing \"Mismatch between: S ?n and n.\"\n"
+"  fill : a -> Vect n a\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:395
+#, no-wrap
+msgid ""
+"You will have a hard time implementing `fill`. The following,\n"
+"for instance, leads to a type error:\n"
+msgstr ""
+
+#. type: Fenced code block (idris)
+#: ../src/Tutorial/Dependent.md:396
+#, no-wrap
+msgid "  fill va = [va,va]\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:403
+#, no-wrap
+msgid ""
+"The problem is, that *the callers of our function decide about\n"
+"the length of the resulting vector*. The full type of `fill` is\n"
+"actually the following:\n"
+msgstr ""
+
+#. type: Fenced code block (idris)
+#: ../src/Tutorial/Dependent.md:404
+#, no-wrap
+msgid "fill' : {0 a : Type} -> {0 n : Nat} -> a -> Vect n a\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:415
+#, no-wrap
+msgid ""
+"You can read this type as follows: For every type `a` and for\n"
+"every natural number `n` (about which I know *nothing* at runtime,\n"
+"since it has quantity zero), given a value of type `a`, I'll give\n"
+"you a vector holding exactly `n` elements of type `a`. This is\n"
+"like saying: \"Think about a natural number `n`, and\n"
+"I'll give you `n` apples without you telling me the value of `n`\".\n"
+"Idris is powerful, but it is not a clairvoyant.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:420
+#, no-wrap
+msgid ""
+"In order to implement `fill`, we need to know what\n"
+"`n` actually is: We need to pass `n` as an explicit, unerased argument, which\n"
+"will allow us to pattern match on it and decide - based on this pattern\n"
+"match - which constructors of `Vect` to use:\n"
+msgstr ""
+
+#. type: Fenced code block (idris)
+#: ../src/Tutorial/Dependent.md:421
+#, no-wrap
+msgid "replicate : (n : Nat) -> a -> Vect n a\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:428
+#, no-wrap
+msgid ""
+"Now, `replicate` is a *dependent function type*: The output type\n"
+"*depends* on the value of one of the arguments. It is straight forward\n"
+"to implement `replicate` by pattern matching on `n`:\n"
+msgstr ""
+
+#. type: Fenced code block (idris)
+#: ../src/Tutorial/Dependent.md:429
+#, no-wrap
+msgid ""
+"replicate 0     _  = []\n"
+"replicate (S k) va = va :: replicate k va\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:443
+#, no-wrap
+msgid ""
+"This is a pattern that comes up often when working with\n"
+"indexed types: We can learn about the values of the indices\n"
+"by pattern matching on the values of the type family. However,\n"
+"in order to return a value of the type family from a function,\n"
+"we need to either know the values of the indices at compile\n"
+"time (see constants `ex1` or `ex3`, for instance), or we\n"
+"need to have access to the values of the indices at runtime, in\n"
+"which case we can pattern match on them and learn from\n"
+"this, which constructor(s) of the type family to use.\n"
+msgstr ""
+
+#. type: Bullet: '1. '
+#: ../src/Tutorial/Dependent.md:447
+#, no-wrap
+msgid "Implement function `head` for non-empty vectors:\n"
+msgstr ""
+
+#. type: Fenced code block (idris)
+#: ../src/Tutorial/Dependent.md:448
+#, no-wrap
+msgid "   head : Vect (S n) a -> a\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:457
+#, no-wrap
+msgid ""
+"   Note, how we can describe non-emptiness by using a *pattern*\n"
+"   in the length of `Vect`. This rules out the `Nil` case, and we can\n"
+"   return a value of type `a`, without having to wrap it in\n"
+"   a `Maybe`! Make sure to add an `impossible` clause for the `Nil`\n"
+"   case (although this is not strictly necessary here).\n"
+msgstr ""
+
+#. type: Bullet: '2. '
+#: ../src/Tutorial/Dependent.md:461
+#, no-wrap
+msgid ""
+"Using `head` as a reference, declare and implement function `tail`\n"
+"for non-empty vectors. The types should reflect that the output\n"
+"is exactly one element shorter than the input.\n"
+msgstr ""
+
+#. type: Bullet: '3. '
+#: ../src/Tutorial/Dependent.md:464
+#, no-wrap
+msgid ""
+"Implement `zipWith3`. If possible, try to doing so without looking at\n"
+"the implementation of `zipWith`:\n"
+msgstr ""
+
+#. type: Fenced code block (idris)
+#: ../src/Tutorial/Dependent.md:465
+#, no-wrap
+msgid "   zipWith3 : (a -> b -> c -> d) -> Vect n a -> Vect n b -> Vect n c -> Vect n d\n"
+msgstr ""
+
+#. type: Bullet: '4. '
+#: ../src/Tutorial/Dependent.md:474
+#, no-wrap
+msgid ""
+"Declare and implement a function `foldSemi`\n"
+"for accumulating the values stored\n"
+"in a `List` through `Semigroup`s append operator (`(<+>)`).\n"
+"(Make sure to only use a `Semigroup` constraint, as opposed to\n"
+"a `Monoid` constraint.)\n"
+msgstr ""
+
+#. type: Bullet: '5. '
+#: ../src/Tutorial/Dependent.md:477
+#, no-wrap
+msgid ""
+"Do the same as in Exercise 4, but for non-empty vectors. How\n"
+"does a vector's non-emptiness affect the output type?\n"
+msgstr ""
+
+#. type: Bullet: '6. '
+#: ../src/Tutorial/Dependent.md:482
+#, no-wrap
+msgid ""
+"Given an initial value of type `a` and a function `a -> a`,\n"
+"we'd like to generate `Vect`s of `a`s, the first value of\n"
+"which is `a`, the second value being `f a`, the third\n"
+"being `f (f a)` and so on.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:485
+#, no-wrap
+msgid ""
+"   For instance, if `a` is 1 and `f` is `(* 2)`, we'd like\n"
+"   to get results similar to the following: `[1,2,4,8,16,...]`.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:489
+#, no-wrap
+msgid ""
+"   Declare and implement function `iterate`, which should\n"
+"   encapsulate this behavior. Get some inspiration from `replicate`\n"
+"   if you don't know where to start.\n"
+msgstr ""
+
+#. type: Bullet: '7. '
+#: ../src/Tutorial/Dependent.md:495
+#, no-wrap
+msgid ""
+"Given an initial value of a state type `s` and\n"
+"a function `fun : s -> (s,a)`,\n"
+"we'd like to generate `Vect`s of `a`s. Declare and implement\n"
+"function `generate`, which should encapsulate this behavior. Make sure to use\n"
+"the updated state in every new invocation of `fun`.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:498
+#, no-wrap
+msgid ""
+"   Here's an example how this can be used to generate the first\n"
+"   `n` Fibonacci numbers:\n"
+msgstr ""
+
+#. type: Fenced code block (repl)
+#: ../src/Tutorial/Dependent.md:499
+#, no-wrap
+msgid ""
+"   generate 10 (\\(x,y) => let z = x + y in ((y,z),z)) (0,1)\n"
+"   [1, 2, 3, 5, 8, 13, 21, 34, 55, 89]\n"
+msgstr ""
+
+#. type: Bullet: '8. '
+#: ../src/Tutorial/Dependent.md:507
+#, no-wrap
+msgid ""
+"Implement function `fromList`, which converts a list of\n"
+"values to a `Vect` of the same length. Use holes if you\n"
+"get stuck:\n"
+msgstr ""
+
+#. type: Fenced code block (idris)
+#: ../src/Tutorial/Dependent.md:508
+#, no-wrap
+msgid "   fromList : (as : List a) -> Vect (length as) a\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:515
+#, no-wrap
+msgid ""
+"   Note how, in the type of `fromList`, we can *calculate* the\n"
+"   length of the resulting vector by passing the list argument\n"
+"   to function *length*.\n"
+msgstr ""
+
+#. type: Bullet: '9. '
+#: ../src/Tutorial/Dependent.md:517
+#, no-wrap
+msgid "Consider the following declarations:\n"
+msgstr ""
+
+#. type: Fenced code block (idris)
+#: ../src/Tutorial/Dependent.md:518
+#, no-wrap
+msgid ""
+"   maybeSize : Maybe a -> Nat\n"
+"\n"
+"   fromMaybe : (m : Maybe a) -> Vect (maybeSize m) a\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:526
+#, no-wrap
+msgid ""
+"   Choose a reasonable implementation for `maybeSize` and\n"
+"   implement `fromMaybe` afterwards.\n"
+msgstr ""
+
+#. type: Title ##
+#: ../src/Tutorial/Dependent.md:527
+#, no-wrap
+msgid "`Fin`: Safe Indexing into Vectors"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:531
+#, no-wrap
+msgid ""
+"Consider function `index`, which tries to extract a value from\n"
+"a `List` at the given position:\n"
+msgstr ""
+
+#. type: Fenced code block (idris)
+#: ../src/Tutorial/Dependent.md:532
+#, no-wrap
+msgid ""
+"indexList : (pos : Nat) -> List a -> Maybe a\n"
+"indexList _     []        = Nothing\n"
+"indexList 0     (x :: _)  = Just x\n"
+"indexList (S k) (_ :: xs) = indexList k xs\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:553
+#, no-wrap
+msgid ""
+"Now, here is a thing to consider when writing functions like `indexList`:\n"
+"Do we want to express the possibility of failure in the output type,\n"
+"or do we want to restrict the accepted arguments,\n"
+"so the function can no longer fail? These are important design decisions,\n"
+"especially in larger applications.\n"
+"Returning a `Maybe` or `Either` from a function forces client code to eventually\n"
+"deal with the `Nothing` or `Left` case, and until this happens, all intermediary\n"
+"results will carry the `Maybe` or `Either` stain, which will make it more\n"
+"cumbersome to run calculations with these intermediary results.\n"
+"On the other hand, restricting the\n"
+"values accepted as input will complicate the argument types\n"
+"and will put the burden of input validation on our functions' callers,\n"
+"(although, at compile time we can get help from Idris, as we will\n"
+"see when we talk about auto implicits) while keeping the output pure and clean.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:558
+#, no-wrap
+msgid ""
+"Languages without dependent types (like Haskell), can often only take\n"
+"the route described above: To wrap the result in a `Maybe` or `Either`.\n"
+"However, in Idris we can often *refine* the input types to restrict the\n"
+"set of accepted values, thus ruling out the possibility of failure.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:564
+#, no-wrap
+msgid ""
+"Assume, as an example, we'd like to extract a value from a `Vect n a`\n"
+"at (zero-based) index `k`. Surely, this can succeed if and only if\n"
+"`k` is a natural number strictly smaller than the length `n` of\n"
+"the vector. Luckily, we can express this precondition in an indexed\n"
+"type:\n"
+msgstr ""
+
+#. type: Fenced code block (idris)
+#: ../src/Tutorial/Dependent.md:565
+#, no-wrap
+msgid ""
+"data Fin : (n : Nat) -> Type where\n"
+"  FZ : {0 n : Nat} -> Fin (S n)\n"
+"  FS : (k : Fin n) -> Fin (S n)\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:577
+#, no-wrap
+msgid ""
+"`Fin n` is the type of natural numbers strictly smaller than `n`.\n"
+"It is defined inductively: `FZ` corresponds to natural number *zero*,\n"
+"which, as can be seen in its type, is strictly smaller than\n"
+"`S n` for any natural number `n`. `FS` is the inductive case:\n"
+"If `k` is strictly smaller than `n` (`k` being of type `Fin n`),\n"
+"then `FS k` is strictly smaller than `S n`.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:579
+#, no-wrap
+msgid "Let's come up with some values of type `Fin`:\n"
+msgstr ""
+
+#. type: Fenced code block (idris)
+#: ../src/Tutorial/Dependent.md:580
+#, no-wrap
+msgid ""
+"fin0_5 : Fin 5\n"
+"fin0_5 = FZ\n"
+"\n"
+"fin0_7 : Fin 7\n"
+"fin0_7 = FZ\n"
+"\n"
+"fin1_3 : Fin 3\n"
+"fin1_3 = FS FZ\n"
+"\n"
+"fin4_5 : Fin 5\n"
+"fin4_5 = FS (FS (FS (FS FZ)))\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:597
+#, no-wrap
+msgid ""
+"Note, that there is no value of type `Fin 0`. We will learn\n"
+"in a later session, how to express \"there is no value of type `x`\"\n"
+"in a type.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:600
+#, no-wrap
+msgid ""
+"Let us now check, whether we can use `Fin` to safely index\n"
+"into a `Vect`:\n"
+msgstr ""
+
+#. type: Fenced code block (idris)
+#: ../src/Tutorial/Dependent.md:601
+#, no-wrap
+msgid "index : Fin n -> Vect n a -> a\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:607
+#, no-wrap
+msgid ""
+"Before you continue, try to implement `index` yourself, making use\n"
+"of holes if you get stuck.\n"
+msgstr ""
+
+#. type: Fenced code block (idris)
+#: ../src/Tutorial/Dependent.md:608
+#, no-wrap
+msgid ""
+"index FZ     (x :: _) = x\n"
+"index (FS k) (_ :: xs) = index k xs\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:617
+#, no-wrap
+msgid ""
+"Note, how there is no `Nil` case and the totality checker is still\n"
+"happy. That's because `Nil` is of type `Vect 0 a`, but there is no\n"
+"value of type `Fin 0`! We can verify this by adding the missing\n"
+"impossible clauses:\n"
+msgstr ""
+
+#. type: Fenced code block (idris)
+#: ../src/Tutorial/Dependent.md:618
+#, no-wrap
+msgid ""
+"index FZ     Nil impossible\n"
+"index (FS _) Nil impossible\n"
+msgstr ""
+
+#. type: Bullet: '1. '
+#: ../src/Tutorial/Dependent.md:627
+#, no-wrap
+msgid ""
+"Implement function `update`, which, given a function of\n"
+"type `a -> a`, updates the value in a`Vect n a` at position `k < n`.\n"
+msgstr ""
+
+#. type: Bullet: '2. '
+#: ../src/Tutorial/Dependent.md:631
+#, no-wrap
+msgid ""
+"Implement function `insert`, which inserts a value of type `a`\n"
+"at position `k <= n` in a `Vect n a`. Note, that `k` is the\n"
+"index of the freshly inserted value, so that the following holds:\n"
+msgstr ""
+
+#. type: Fenced code block (repl)
+#: ../src/Tutorial/Dependent.md:632
+#, no-wrap
+msgid "   index k (insert k v vs) = v\n"
+msgstr ""
+
+#. type: Bullet: '3. '
+#: ../src/Tutorial/Dependent.md:638
+#, no-wrap
+msgid ""
+"Implement function `delete`, which deletes a value from a\n"
+"vector at the given index.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:641
+#, no-wrap
+msgid ""
+"   This is trickier than Exercises 1 and 2, as we have to properly\n"
+"   encode in the types that the vector is getting one element shorter.\n"
+msgstr ""
+
+#. type: Bullet: '4. '
+#: ../src/Tutorial/Dependent.md:644
+#, no-wrap
+msgid ""
+"We can use `Fin` to implement safe indexing into `List`s as well. Try to\n"
+"come up with a type and implementation for `safeIndexList`.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:648
+#, no-wrap
+msgid ""
+"   Note: If you don't know how to start, look at the type of `fromList`\n"
+"   for some inspiration. You might also need give the arguments in\n"
+"   a different order than for `index`.\n"
+msgstr ""
+
+#. type: Bullet: '5. '
+#: ../src/Tutorial/Dependent.md:653
+#, no-wrap
+msgid ""
+"Implement function `finToNat`, which converts a `Fin n` to the\n"
+"corresponding natural number, and use this to declare and\n"
+"implement function `take` for splitting of the first `k`\n"
+"elements of a `Vect n a` with `k <= n`.\n"
+msgstr ""
+
+#. type: Bullet: '6. '
+#: ../src/Tutorial/Dependent.md:656
+#, no-wrap
+msgid ""
+"Implement function `minus` for subtracting a value `k` from\n"
+"a natural number `n` with `k <= n`.\n"
+msgstr ""
+
+#. type: Bullet: '7. '
+#: ../src/Tutorial/Dependent.md:660
+#, no-wrap
+msgid ""
+"Use `minus` from Exercise 6 to declare and implement function\n"
+"`drop`, for dropping the first `k` values from a `Vect n a`,\n"
+"with `k <= n`.\n"
+msgstr ""
+
+#. type: Bullet: '8. '
+#: ../src/Tutorial/Dependent.md:664
+#, no-wrap
+msgid ""
+"Implement function `splitAt` for splitting a `Vect n a` at\n"
+"position `k <= n`, returning the prefix and suffix of the\n"
+"vector wrapped in a pair.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:666
+#, no-wrap
+msgid "   Hint: Use `take` and `drop` in your implementation.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:670
+#, no-wrap
+msgid ""
+"Hint: Since `Fin n` consists of the values strictly smaller\n"
+"than `n`, `Fin (S n)` consists of the values smaller than\n"
+"or equal to `n`.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:675
+#, no-wrap
+msgid ""
+"Note: Functions `take`, `drop`, and `splitAt`, while correct and\n"
+"provably total, are rather cumbersome to type.\n"
+"There is an alternative way to declare their types,\n"
+"as we will see in the next section.\n"
+msgstr ""
+
+#. type: Title ##
+#: ../src/Tutorial/Dependent.md:676
+#, no-wrap
+msgid "Compile-Time Computations"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:683
+#, no-wrap
+msgid ""
+"In the last section - especially in some of the exercises - we\n"
+"started more and more to use compile time computations to\n"
+"describe the types of our functions and values.\n"
+"This is a very powerful concept, as it allows us to\n"
+"compute output types from input types. Here's an example:\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:690
+#, no-wrap
+msgid ""
+"It is possible to concatenate two `List`s with the `(++)`\n"
+"operator. Surely, this should also be possible for\n"
+"`Vect`. But `Vect` is indexed by its length, so we have\n"
+"to reflect in the types exactly how the lengths of the\n"
+"inputs affect the lengths of the output. Here's how to\n"
+"do this:\n"
+msgstr ""
+
+#. type: Fenced code block (idris)
+#: ../src/Tutorial/Dependent.md:691
+#, no-wrap
+msgid ""
+"(++) : Vect m a -> Vect n a -> Vect (m + n) a\n"
+"(++) []        ys = ys\n"
+"(++) (x :: xs) ys = x :: (xs ++ ys)\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:700
+#, no-wrap
+msgid ""
+"Note, how we keep track of the lengths at the type-level, again\n"
+"ruling out certain common programming errors like inadvertently dropping\n"
+"some values.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:705
+#, no-wrap
+msgid ""
+"We can also use type-level computations as patterns\n"
+"on the input types. Here is an alternative type and implementation\n"
+"for `drop`, which you implemented in the exercises by\n"
+"using a `Fin n` argument:\n"
+msgstr ""
+
+#. type: Fenced code block (idris)
+#: ../src/Tutorial/Dependent.md:706
+#, no-wrap
+msgid ""
+"drop' : (m : Nat) -> Vect (m + n) a -> Vect n a\n"
+"drop' 0     xs        = xs\n"
+"drop' (S k) (_ :: xs) = drop' k xs\n"
+msgstr ""
+
+#. type: Title ###
+#: ../src/Tutorial/Dependent.md:712
+#, no-wrap
+msgid "Limitations"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:718
+#, no-wrap
+msgid ""
+"After all the examples and exercises in this section\n"
+"you might have come to the conclusion that we can\n"
+"use arbitrary expressions in the types and Idris\n"
+"will happily evaluate and unify all of them for us.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:724
+#, no-wrap
+msgid ""
+"I'm afraid that's not even close to the truth. The examples\n"
+"in this section were hand-picked because they are known\n"
+"to *just work*. The reason being, that there was always\n"
+"a direct link between our own pattern matches and the\n"
+"implementations of functions we used at compile time.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:727
+#, no-wrap
+msgid ""
+"For instance, here is the implementation of addition of\n"
+"natural numbers:\n"
+msgstr ""
+
+#. type: Fenced code block (idris)
+#: ../src/Tutorial/Dependent.md:728
+#, no-wrap
+msgid ""
+"add : Nat -> Nat -> Nat\n"
+"add Z     n = n\n"
+"add (S k) n = S $ add k n\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:745
+#, no-wrap
+msgid ""
+"As you can see, `add` is implemented via a pattern match\n"
+"on its *first* argument, while the second argument is never\n"
+"inspected. Note, how this is exactly how `(++)` for `Vect`\n"
+"is implemented: There, we also pattern match on the first\n"
+"argument, returning the second unmodified in the `Nil`\n"
+"case, and prepending the head to the result of appending\n"
+"the tail in the *cons* case. Since there is a direct\n"
+"correspondence between the two pattern matches, it\n"
+"is possible for Idris to unify `0 + n` with `n` in the\n"
+"`Nil` case, and `(S k) + n` with `S (k + n)` in the\n"
+"*cons* case.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:748
+#, no-wrap
+msgid ""
+"Here is a simple example, where Idris will not longer\n"
+"be convinced without some help from us:\n"
+msgstr ""
+
+#. type: Fenced code block (idris)
+#: ../src/Tutorial/Dependent.md:749
+#, no-wrap
+msgid ""
+"failing \"Can't solve constraint\"\n"
+"  reverse : Vect n a -> Vect n a\n"
+"  reverse []        = []\n"
+"  reverse (x :: xs) = reverse xs ++ [x]\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:768
+#, no-wrap
+msgid ""
+"When we type-check the above,\n"
+"Idris will fail with the following error message:\n"
+"\"Can't solve constraint between: plus n 1 and S n.\"\n"
+"Here's what's going on: From the pattern match on the\n"
+"left hand side, Idris knows that the length of the\n"
+"vector is `S n`, for some natural number `n`\n"
+"corresponding to the length of `xs`. The length\n"
+"of the vector on the right hand side is `n + 1`,\n"
+"according to the type of `(++)` and the lengths\n"
+"of `xs` and `[x]`. Overloaded operator `(+)`\n"
+"is implemented via function `Prelude.plus`, that's\n"
+"why Idris replaces `(+)` with `plus` in the error message.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:780
+#, no-wrap
+msgid ""
+"As you can see from the above, Idris can't verify on\n"
+"its own that `1 + n` is the same thing as `n + 1`.\n"
+"It can accept some help from us, though. If we come\n"
+"up with a *proof* that the above equality holds\n"
+"(or - more generally - that our implementation of\n"
+"addition for natural numbers is *commutative*),\n"
+"we can use this proof to *rewrite* the types on\n"
+"the right hand side of `reverse`. Writing proofs and\n"
+"using `rewrite` will require some in-depth explanations\n"
+"and examples. Therefore, these things will have to wait\n"
+"until another chapter.\n"
+msgstr ""
+
+#. type: Title ###
+#: ../src/Tutorial/Dependent.md:781
+#, no-wrap
+msgid "Unrestricted Implicits"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:789
+#, no-wrap
+msgid ""
+"In functions like `replicate`, we pass a natural number `n`\n"
+"as an explicit, unrestricted argument from which we infer\n"
+"the length of the vector to return.\n"
+"In some circumstances, `n` can be inferred from the context.\n"
+"For instance, in the following example it is tedious to\n"
+"pass `n` explicitly:\n"
+msgstr ""
+
+#. type: Fenced code block (idris)
+#: ../src/Tutorial/Dependent.md:790
+#, no-wrap
+msgid ""
+"ex4 : Vect 3 Integer\n"
+"ex4 = zipWith (*) (replicate 3 10) (replicate 3 11)\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:797
+#, no-wrap
+msgid ""
+"The value `n` is clearly derivable from the context, which\n"
+"can be confirmed by replacing it with underscores:\n"
+msgstr ""
+
+#. type: Fenced code block (idris)
+#: ../src/Tutorial/Dependent.md:798
+#, no-wrap
+msgid ""
+"ex5 : Vect 3 Integer\n"
+"ex5 = zipWith (*) (replicate _ 10) (replicate _ 11)\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:806
+#, no-wrap
+msgid ""
+"We therefore can implement an alternative version of `replicate`,\n"
+"where we pass `n` as an implicit argument of *unrestricted*\n"
+"quantity:\n"
+msgstr ""
+
+#. type: Fenced code block (idris)
+#: ../src/Tutorial/Dependent.md:807
+#, no-wrap
+msgid ""
+"replicate' : {n : _} -> a -> Vect n a\n"
+"replicate' = replicate n\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:814
+#, no-wrap
+msgid ""
+"Note how, in the implementation of `replicate'`, we can refer to `n`\n"
+"and pass it as an explicit argument to `replicate`.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:820
+#, no-wrap
+msgid ""
+"Deciding whether to pass potentially inferable arguments to a function implicitly\n"
+"or explicitly is a question of how often the arguments actually *are* inferable\n"
+"by Idris. Sometimes it might even be useful to have both versions\n"
+"of a function. Remember, however, that even in case of an implicit argument\n"
+"we can still pass the value explicitly:\n"
+msgstr ""
+
+#. type: Fenced code block (idris)
+#: ../src/Tutorial/Dependent.md:821
+#, no-wrap
+msgid ""
+"ex6 : Vect ? Bool\n"
+"ex6 = replicate' {n = 2} True\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:829
+#, no-wrap
+msgid ""
+"In the type signature above, the question mark (`?`) means, that Idris\n"
+"should try and figure out the value on its own by unification. This\n"
+"forces us to specify `n` explicitly on the right hand side of `ex6`.\n"
+msgstr ""
+
+#. type: Title ####
+#: ../src/Tutorial/Dependent.md:830
+#, no-wrap
+msgid "Pattern Matching on Implicits"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:836
+#, no-wrap
+msgid ""
+"The implementation of `replicate'` makes use of function `replicate`,\n"
+"where we could pattern match on the explicit argument `n`. However, it\n"
+"is also possible to pattern match on implicit, named arguments of\n"
+"non-zero quantity:\n"
+msgstr ""
+
+#. type: Fenced code block (idris)
+#: ../src/Tutorial/Dependent.md:837
+#, no-wrap
+msgid ""
+"replicate'' : {n : _} -> a -> Vect n a\n"
+"replicate'' {n = Z}   _ = Nil\n"
+"replicate'' {n = S _} v = v :: replicate'' v\n"
+msgstr ""
+
+#. type: Bullet: '1. '
+#: ../src/Tutorial/Dependent.md:846
+#, no-wrap
+msgid "Here is a function declaration for flattening a `List` of `List`s:\n"
+msgstr ""
+
+#. type: Fenced code block (idris)
+#: ../src/Tutorial/Dependent.md:847
+#, no-wrap
+msgid "   flattenList : List (List a) -> List a\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:853
+#, no-wrap
+msgid ""
+"   Implement `flattenList` and declare and implement a similar\n"
+"   function `flattenVect` for flattening vectors of vectors.\n"
+msgstr ""
+
+#. type: Bullet: '2. '
+#: ../src/Tutorial/Dependent.md:857
+#, no-wrap
+msgid ""
+"Implement functions `take'` and `splitAt'` like in\n"
+"the exercises of the previous section but using the\n"
+"technique shown for `drop'`.\n"
+msgstr ""
+
+#. type: Bullet: '3. '
+#: ../src/Tutorial/Dependent.md:861
+#, no-wrap
+msgid ""
+"Implement function `transpose` for converting an\n"
+"`m x n`-matrix (represented as a `Vect m (Vect n a)`)\n"
+"to an `n x m`-matrix.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:864
+#, no-wrap
+msgid ""
+"   Note: This might be a challenging exercise, but make sure\n"
+"   to give it a try. As usual, make use of holes if you get stuck!\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:866
+#, no-wrap
+msgid "   Here is an example how this should work in action:\n"
+msgstr ""
+
+#. type: Fenced code block (repl)
+#: ../src/Tutorial/Dependent.md:867
+#, no-wrap
+msgid ""
+"   Solutions.Dependent> transpose [[1,2,3],[4,5,6]]\n"
+"   [[1, 4], [2, 5], [3, 6]]\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: ../src/Tutorial/Dependent.md:878
+#, no-wrap
+msgid ""
+"Dependent types allow us to calculate types from values.\n"
+"This makes it possible to encode properties of values\n"
+"at the type-level and verify these properties at compile\n"
+"time.\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: ../src/Tutorial/Dependent.md:882
+#, no-wrap
+msgid ""
+"Length-indexed lists (vectors) let us rule out certain implementation\n"
+"errors, by forcing us to be precise about the lengths of input\n"
+"and output vectors.\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: ../src/Tutorial/Dependent.md:886
+#, no-wrap
+msgid ""
+"We can use patterns in type signatures, for instance to\n"
+"express that the length of a vector is non-zero and therefore,\n"
+"the vector is non-empty.\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: ../src/Tutorial/Dependent.md:891
+#, no-wrap
+msgid ""
+"When creating values of a type family, the values of the indices\n"
+"need to be known at compile time, or they need to be passed as\n"
+"arguments to the function creating the values, where we can\n"
+"pattern match on them to figure out, which constructors to use.\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: ../src/Tutorial/Dependent.md:894
+#, no-wrap
+msgid ""
+"We can use `Fin n`, the type of natural numbers strictly smaller\n"
+"than `n`, to safely index into a vector of length `n`.\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: ../src/Tutorial/Dependent.md:899
+#, no-wrap
+msgid ""
+"Sometimes, it is convenient to pass inferable arguments as\n"
+"non-erased implicits, in which case we can still inspect them\n"
+"by pattern matching or pass them to other functions, while Idris\n"
+"will try and fill in the values for us.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:903
+#, no-wrap
+msgid ""
+"Note, that data type `Vect` together with many of the functions we\n"
+"implemented here is available from module `Data.Vect` from the *base*\n"
+"library. Likewise, `Fin` is available from `Data.Fin` from *base*.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Tutorial/Dependent.md:908
+#, no-wrap
+msgid ""
+"In the [next section](IO.md), it is time to learn how to write effectful programs\n"
+"and how to do this while still staying *pure*.\n"
+msgstr ""

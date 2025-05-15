@@ -1,0 +1,247 @@
+# Chinese translations for po package
+# Copyright (C) 2025 Free Software Foundation, Inc.
+# This file is distributed under the same license as the po package.
+# Automatically generated, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: po 4a\n"
+"POT-Creation-Date: 2025-05-15 04:14+0000\n"
+"PO-Revision-Date: 2025-05-15 04:14+0000\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: zh_Hans\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Title ##
+#: ../src/Tutorial/DataTypes.md:1319 ../src/Tutorial/Dependent.md:872
+#: ../src/Tutorial/DPair.md:1191 ../src/Tutorial/Eq.md:1085
+#: ../src/Tutorial/Folds.md:1051 ../src/Tutorial/Functions1.md:524
+#: ../src/Tutorial/Functions2.md:924 ../src/Tutorial/Functor.md:1398
+#: ../src/Tutorial/Interfaces.md:792 ../src/Tutorial/IO.md:1095
+#: ../src/Tutorial/Predicates.md:1358 ../src/Tutorial/Traverse.md:1109
+#: ../src/Appendices/Install.md:102 ../src/Appendices/Neovim.md:364
+#: ../src/Appendices/Projects.md:878 ../src/Appendices/QTT.md:442
+#, no-wrap
+msgid "Conclusion"
+msgstr "结论"
+
+#. type: Title #
+#: ../src/Appendices/Install.md:1
+#, fuzzy, no-wrap
+#| msgid "[Getting Started with pack and Idris2](src/Appendices/Install.md)\n"
+msgid "Getting Started with pack and Idris2"
+msgstr "[pack 和 Idris2 入门](src/Appendices/Install.md)\n"
+
+#. type: Plain text
+#: ../src/Appendices/Install.md:16
+#, no-wrap
+msgid ""
+"Here I describe what I find to be the most convenient way to get\n"
+"up and running with Idris2. We are going to install the\n"
+"[pack](https://github.com/stefan-hoeck/idris2-pack) package manager, which\n"
+"will install a recent version of the Idris compiler along the way.\n"
+"However, this means that you need access to a Unix-like operating system\n"
+"such as Linux or macOS. Windows users can make use of\n"
+"[WSL](https://learn.microsoft.com/en-us/windows/wsl/about) to get access to\n"
+"a Linux environment on their system. As a prerequisite, it is assumed that\n"
+"readers know how to start a terminal session on their system, and how\n"
+"to run commands from the terminal's command-line. In addition, readers\n"
+"need to know how to add directories to the\n"
+"[`$PATH` variable](https://en.wikipedia.org/wiki/PATH_(variable))\n"
+"on their system.\n"
+msgstr ""
+
+#. type: Title ##
+#: ../src/Appendices/Install.md:17
+#, no-wrap
+msgid "Installing pack"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Appendices/Install.md:22
+#, no-wrap
+msgid ""
+"In order to install the *pack* package manager together with a recent version\n"
+"of the Idris2 compiler, follow the instructions on\n"
+"[pack's GitHub page](https://github.com/stefan-hoeck/idris2-pack/blob/main/INSTALL.md).\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Appendices/Install.md:28
+#, no-wrap
+msgid ""
+"If all goes well, I suggest you take a moment to inspect the default settings\n"
+"available in your global `pack.toml` file, which can be found at `$HOME/.pack/user/pack.toml`\n"
+"(unless you explicitly set the `$PACK_DIR` environment variable to a different\n"
+"directory). If possible, I suggest you install the *rlwrap* tool and change the\n"
+"following setting in your global `pack.toml` file to `true`:\n"
+msgstr ""
+
+#. type: Fenced code block (toml)
+#: ../src/Appendices/Install.md:29
+#, no-wrap
+msgid "repl.rlwrap = true\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Appendices/Install.md:37
+#, no-wrap
+msgid ""
+"This will lead to a nicer experience when running REPL sessions.\n"
+"You might also want to set up your editor to make use of the interactive\n"
+"editing features provided by Idris. Instruction to do this for Neovim\n"
+"can be found [here](Neovim.md).\n"
+msgstr ""
+
+#. type: Title ###
+#: ../src/Appendices/Install.md:38
+#, no-wrap
+msgid "Updating pack and Idris"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Appendices/Install.md:43
+#, no-wrap
+msgid ""
+"Both projects, pack and the Idris compiler, are still being actively developed.\n"
+"It is therefore a good idea to update them at regular occasions. To update\n"
+"pack itself, just run the following command:\n"
+msgstr ""
+
+#. type: Fenced code block (sh)
+#: ../src/Appendices/Install.md:44
+#, fuzzy, no-wrap
+#| msgid "pack repl\n"
+msgid "pack update\n"
+msgstr "pack repl\n"
+
+#. type: Plain text
+#: ../src/Appendices/Install.md:50
+#, no-wrap
+msgid ""
+"To build and install the latest commit of the Idris compiler and use the\n"
+"latest package collection, run\n"
+msgstr ""
+
+#. type: Fenced code block (sh)
+#: ../src/Appendices/Install.md:51
+#, no-wrap
+msgid "pack switch latest\n"
+msgstr ""
+
+#. type: Title ##
+#: ../src/Appendices/Install.md:55
+#, no-wrap
+msgid "Setting up your Playground"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Appendices/Install.md:60
+#, no-wrap
+msgid ""
+"If you are going to solve the exercises in this tutorial (you should!), you'll have\n"
+"to write a lot of code. It is best to setup a small playground project for\n"
+"tinkering with Idris. In a directory of your choice, run the following command:\n"
+msgstr ""
+
+#. type: Fenced code block (sh)
+#: ../src/Appendices/Install.md:61
+#, no-wrap
+msgid "pack new lib tut\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Appendices/Install.md:68
+#, no-wrap
+msgid ""
+"This will setup a minimal Idris package in directory `tut` together with an\n"
+"`.ipkg` file called `tut.ipkg`, a directory to put your Idris sources called\n"
+"`src`, and a minimal Idris module at `src/Tut.idr`.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Appendices/Install.md:78
+#, no-wrap
+msgid ""
+"In addition, it sets up a minimal test suite in directory `test`. All of this is\n"
+"put together and made accessible to pack in a `pack.toml` file in the project's\n"
+"root directory. Take your time and quickly inspect the content of every file\n"
+"created by pack: The `.idr` files contain Idris source code. The `.ipkg` files\n"
+"contain detailed descriptions of packages for the Idris compiler\n"
+"including where the sources are located,\n"
+"the modules a package makes available to other projects, and a list of packages\n"
+"the project itself depends on. Finally, the `pack.toml` file informs pack about\n"
+"the local packages in the current project.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Appendices/Install.md:83
+#, no-wrap
+msgid ""
+"With this, here is a bunch of things you can do, but first,\n"
+"make sure you are in the project's root directory\n"
+"(called `tut` if you followed my suggestion)\n"
+"or one of its child folders when running these commands.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Appendices/Install.md:85
+#, no-wrap
+msgid "To typecheck the library sources, run\n"
+msgstr ""
+
+#. type: Fenced code block (sh)
+#: ../src/Appendices/Install.md:86
+#, no-wrap
+msgid "pack typecheck tut\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Appendices/Install.md:91
+#, no-wrap
+msgid "To build and execute the test suite, run\n"
+msgstr ""
+
+#. type: Fenced code block (sh)
+#: ../src/Appendices/Install.md:92
+#, no-wrap
+msgid "pack test tut\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Appendices/Install.md:97
+#, no-wrap
+msgid "To start a REPL session with `src/Tut.idr` loaded, run\n"
+msgstr ""
+
+#. type: Fenced code block (sh)
+#: ../src/Appendices/Install.md:98
+#, fuzzy, no-wrap
+#| msgid "pack repl src/Tutorial/Intro.md\n"
+msgid "pack repl src/Tut.idr\n"
+msgstr "pack repl src/Tutorial/Intro.md\n"
+
+#. type: Plain text
+#: ../src/Appendices/Install.md:110
+#, no-wrap
+msgid ""
+"In this very short tutorial you set up an environment for working on\n"
+"Idris projects and following along with the main part of the tutorial.\n"
+"You are now ready\n"
+"to start with the [first chapter](../Tutorial/Intro.md), or - if you\n"
+"already wrote some Idris code - to learn about the details of the\n"
+"[Idris module system](Modules.md).\n"
+msgstr ""
+
+#. type: Plain text
+#: ../src/Appendices/Install.md:114
+#, no-wrap
+msgid ""
+"Please note that this tutorial itself is setup as a pack project:\n"
+"It contains a `pack.toml` and `tutorial.ipkg` file in its root\n"
+"directory (have a look at them to get a feel for how such projects are\n"
+"setup) and a lot of Idris sources in the subfolders of directory `src`.\n"
+msgstr ""

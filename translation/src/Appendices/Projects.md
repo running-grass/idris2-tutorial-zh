@@ -875,7 +875,7 @@ custom libraries to pack. You can now list these libraries as dependencies
 in your own project's `.ipkg` file and pack will automatically install them
 for you.
 
-## Conclusion
+## 结论
 
 This concludes our section about structuring Idris projects. We have learned
 about several types of code blocks - `failing` blocks for showing that a

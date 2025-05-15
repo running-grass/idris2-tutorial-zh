@@ -1,0 +1,568 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2025-05-15 03:33+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Title #
+#: ../README.md:1
+#, no-wrap
+msgid "Functional Programming in Idris 2"
+msgstr ""
+
+#. type: Plain text
+#: ../README.md:5
+#, no-wrap
+msgid ""
+"[中文翻译](https://github.com/running-grass/idris2-tutorial-zh/blob/main/translation/README.md),\n"
+"[日本語訳](https://github.com/gemmaro/idris2-tutorial/blob/ja/translation/ja/README.md)\n"
+msgstr ""
+
+#. type: Plain text
+#: ../README.md:10
+#, no-wrap
+msgid ""
+"The goal of this project is quickly explained: To become a more\n"
+"or less comprehensive guide to the Idris programming language,\n"
+"with a lot of introductory material targeted at newcomers to\n"
+"functional programming.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../README.md:18
+#, no-wrap
+msgid ""
+"The content will be organized in several parts, with the part\n"
+"about the core language features being the main guide to\n"
+"functional programming in Idris. Every part consists of several\n"
+"chapters, each trying to cover in depth a certain aspect\n"
+"of the Idris programming language and its core libraries. Most\n"
+"chapters come with (sometimes lots of) exercises, with\n"
+"solutions available in directory `src/Solutions`.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../README.md:23
+#, no-wrap
+msgid ""
+"Right now, even the part about core language features is not\n"
+"yet finished, but is being actively developed and tried on\n"
+"several of my own students, some of which are completely\n"
+"new to functional programming.\n"
+msgstr ""
+
+#. type: Title ##
+#: ../README.md:24
+#, no-wrap
+msgid "Table of Contents"
+msgstr ""
+
+#. type: Title ###
+#: ../README.md:26
+#, no-wrap
+msgid "Part 1: Core Language Features"
+msgstr ""
+
+#. type: Plain text
+#: ../README.md:32
+#, no-wrap
+msgid ""
+"This part tries to give a solid introduction to the\n"
+"Idris programming language. If you are new to functional programming,\n"
+"make sure to follow these chapters in order and *solve all the\n"
+"exercises*.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../README.md:37
+#, no-wrap
+msgid ""
+"If you already used other pure functional programming languages like\n"
+"Haskell, you might go through the introductory material (Functions Part 1,\n"
+"Algebraic Data Types, and Interfaces) pretty quickly, as most of this\n"
+"stuff will already be familiar to you.\n"
+msgstr ""
+
+#. type: Bullet: '1. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Introduction](src/Tutorial/Intro.md)\n"
+msgstr ""
+
+#. type: Bullet: '   1. '
+#: ../README.md:106
+#, no-wrap
+msgid "[About the Idris Programming Language](src/Tutorial/Intro.md#about-the-idris-programming-language)\n"
+msgstr ""
+
+#. type: Bullet: '   2. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Using the REPL](src/Tutorial/Intro.md#using-the-repl)\n"
+msgstr ""
+
+#. type: Bullet: '   3. '
+#: ../README.md:106
+#, no-wrap
+msgid "[A First Idris Program](src/Tutorial/Intro.md#a-first-idris-program)\n"
+msgstr ""
+
+#. type: Bullet: '   4. '
+#: ../README.md:106
+#, no-wrap
+msgid "[The Shape of an Idris Definition](src/Tutorial/Intro.md#the-shape-of-an-idris-definition)\n"
+msgstr ""
+
+#. type: Bullet: '   5. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Where to get Help](src/Tutorial/Intro.md#where-to-get-help)\n"
+msgstr ""
+
+#. type: Bullet: '2. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Functions Part 1](src/Tutorial/Functions1.md)\n"
+msgstr ""
+
+#. type: Bullet: '   1. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Functions with more than one Argument](src/Tutorial/Functions1.md#functions-with-more-that-one-argument)\n"
+msgstr ""
+
+#. type: Bullet: '   2. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Function Composition](src/Tutorial/Functions1.md#function-composition)\n"
+msgstr ""
+
+#. type: Bullet: '   3. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Higher-order Functions](src/Tutorial/Functions1.md#higher-order-functions)\n"
+msgstr ""
+
+#. type: Bullet: '   4. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Currying](src/Tutorial/Functions1.md#currying)\n"
+msgstr ""
+
+#. type: Bullet: '   5. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Anonymous Functions](src/Tutorial/Functions1.md#anonymous-functions)\n"
+msgstr ""
+
+#. type: Bullet: '   6. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Operators](src/Tutorial/Functions1.md#operators)\n"
+msgstr ""
+
+#. type: Bullet: '3. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Algebraic Data Types](src/Tutorial/DataTypes.md)\n"
+msgstr ""
+
+#. type: Bullet: '   1. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Enumerations](src/Tutorial/DataTypes.md#enumerations)\n"
+msgstr ""
+
+#. type: Bullet: '   2. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Sum Types](src/Tutorial/DataTypes.md#sum-types)\n"
+msgstr ""
+
+#. type: Bullet: '   3. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Records](src/Tutorial/DataTypes.md#records)\n"
+msgstr ""
+
+#. type: Bullet: '   4. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Generic Data Types](src/Tutorial/DataTypes.md#generic-data-types)\n"
+msgstr ""
+
+#. type: Bullet: '   5. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Alternative Syntax for Data Definitions](src/Tutorial/DataTypes.md#alternative-syntax-for-data-definitions)\n"
+msgstr ""
+
+#. type: Bullet: '4. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Interfaces](src/Tutorial/Interfaces.md)\n"
+msgstr ""
+
+#. type: Bullet: '   1. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Interface Basics](src/Tutorial/Interfaces.md#interface-basics)\n"
+msgstr ""
+
+#. type: Bullet: '   2. '
+#: ../README.md:106
+#, no-wrap
+msgid "[More about Interfaces](src/Tutorial/Interfaces.md#more-about-interfaces)\n"
+msgstr ""
+
+#. type: Bullet: '   3. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Interfaces in the Prelude](src/Tutorial/Interfaces.md#interfaces-in-the-prelude)\n"
+msgstr ""
+
+#. type: Bullet: '5. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Functions Part 2](src/Tutorial/Functions2.md)\n"
+msgstr ""
+
+#. type: Bullet: '   1. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Let Bindings and Local Definitions](src/Tutorial/Functions2.md#let-bindings-and-local-definitions)\n"
+msgstr ""
+
+#. type: Bullet: '   2. '
+#: ../README.md:106
+#, no-wrap
+msgid "[The Truth about Function Arguments](src/Tutorial/Functions2.md#the-truth-about-function-arguments)\n"
+msgstr ""
+
+#. type: Bullet: '   3. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Programming with Holes](src/Tutorial/Functions2.md#programming-with-holes)\n"
+msgstr ""
+
+#. type: Bullet: '6. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Dependent Types](src/Tutorial/Dependent.md)\n"
+msgstr ""
+
+#. type: Bullet: '   1. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Length-Indexed Lists](src/Tutorial/Dependent.md#length-indexed-lists)\n"
+msgstr ""
+
+#. type: Bullet: '   2. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Fin: Safe Indexing into Vectors](src/Tutorial/Dependent.md#fin-safe-indexing-into-vectors)\n"
+msgstr ""
+
+#. type: Bullet: '   3. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Compile-Time Computations](src/Tutorial/Dependent.md#compile-time-computations)\n"
+msgstr ""
+
+#. type: Bullet: '7. '
+#: ../README.md:106
+#, no-wrap
+msgid "[IO: Programming with Side Effects](src/Tutorial/IO.md)\n"
+msgstr ""
+
+#. type: Bullet: '   1. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Pure Side Effects?](src/Tutorial/IO.md#pure-side-effects)\n"
+msgstr ""
+
+#. type: Bullet: '   2. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Do Blocks, Desugared](src/Tutorial/IO.md#do-blocks-desugared)\n"
+msgstr ""
+
+#. type: Bullet: '   3. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Working with Files](src/Tutorial/IO.md#working-with-files)\n"
+msgstr ""
+
+#. type: Bullet: '   4. '
+#: ../README.md:106
+#, no-wrap
+msgid "[How IO is Implemented](src/Tutorial/IO.md#how-io-is-implemented)\n"
+msgstr ""
+
+#. type: Bullet: '8. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Functor and Friends](src/Tutorial/Functor.md)\n"
+msgstr ""
+
+#. type: Bullet: '   1. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Functor](src/Tutorial/Functor.md#functor)\n"
+msgstr ""
+
+#. type: Bullet: '   2. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Applicative](src/Tutorial/Functor.md#applicative)\n"
+msgstr ""
+
+#. type: Bullet: '   3. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Monad](src/Tutorial/Functor.md#monad)\n"
+msgstr ""
+
+#. type: Bullet: '   4. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Background and further Reading](src/Tutorial/Functor.md#background-and-further-reading)\n"
+msgstr ""
+
+#. type: Bullet: '9. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Recursion and Folds](src/Tutorial/Folds.md)\n"
+msgstr ""
+
+#. type: Bullet: '   1. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Recursion](src/Tutorial/Folds.md#recursion)\n"
+msgstr ""
+
+#. type: Bullet: '   2. '
+#: ../README.md:106
+#, no-wrap
+msgid "[A few Notes on Totality Checking](src/Tutorial/Folds.md#a-few-notes-on-totality-checking)\n"
+msgstr ""
+
+#. type: Bullet: '   3. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Interface Foldable](src/Tutorial/Folds.md#interface-foldable)\n"
+msgstr ""
+
+#. type: Bullet: '10. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Effectful Traversals](src/Tutorial/Traverse.md)\n"
+msgstr ""
+
+#. type: Bullet: '    1. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Reading CSV Tables](src/Tutorial/Traverse.md#reading-csv-tables)\n"
+msgstr ""
+
+#. type: Bullet: '    2. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Programming with State](src/Tutorial/Traverse.md#programming-with-state)\n"
+msgstr ""
+
+#. type: Bullet: '    3. '
+#: ../README.md:106
+#, no-wrap
+msgid "[The Power of Composition](src/Tutorial/Traverse.md#the-power-of-composition)\n"
+msgstr ""
+
+#. type: Bullet: '11. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Sigma Types](src/Tutorial/DPair.md)\n"
+msgstr ""
+
+#. type: Bullet: '    1. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Dependent Pairs](src/Tutorial/DPair.md#dependent-pairs)\n"
+msgstr ""
+
+#. type: Bullet: '    2. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Use Case: Nucleic Acids](src/Tutorial/DPair.md#use-case-nucleic-acids)\n"
+msgstr ""
+
+#. type: Bullet: '    3. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Use Case: CSV Files with a Schema](src/Tutorial/DPair.md#use-case-csv-files-with-a-schema)\n"
+msgstr ""
+
+#. type: Bullet: '12. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Propositional Equality](src/Tutorial/Eq.md)\n"
+msgstr ""
+
+#. type: Bullet: '    1. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Equality as a Type](src/Tutorial/Eq.md#equality-as-a-type)\n"
+msgstr ""
+
+#. type: Bullet: '    2. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Programs as Proofs](src/Tutorial/Eq.md#programs-as-proofs)\n"
+msgstr ""
+
+#. type: Bullet: '    3. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Into the Void](src/Tutorial/Eq.md#into-the-void)\n"
+msgstr ""
+
+#. type: Bullet: '    4. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Rewrite Rules](src/Tutorial/Eq.md#rewrite-rules)\n"
+msgstr ""
+
+#. type: Bullet: '13. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Predicates and Proof Search](src/Tutorial/Predicates.md)\n"
+msgstr ""
+
+#. type: Bullet: '    1. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Preconditions](src/Tutorial/Predicates.md#preconditions)\n"
+msgstr ""
+
+#. type: Bullet: '    2. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Contracts between Values](src/Tutorial/Predicates.md#contracts-between-values)\n"
+msgstr ""
+
+#. type: Bullet: '    3. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Use Case: Flexible Error Handling](src/Tutorial/Predicates.md#use-case-flexible-error-handling)\n"
+msgstr ""
+
+#. type: Bullet: '    4. '
+#: ../README.md:106
+#, no-wrap
+msgid "[The Truth about Interfaces](src/Tutorial/Predicates.md#the-truth-about-interfaces)\n"
+msgstr ""
+
+#. type: Bullet: '14. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Primitives](src/Tutorial/Prim.md)\n"
+msgstr ""
+
+#. type: Bullet: '    1. '
+#: ../README.md:106
+#, no-wrap
+msgid "[How Primitives are Implemented](src/Tutorial/Prim.md#how-primitives-are-implemented)\n"
+msgstr ""
+
+#. type: Bullet: '    2. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Working with Strings](src/Tutorial/Prim.md#working-with-strings)\n"
+msgstr ""
+
+#. type: Bullet: '    3. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Integers](src/Tutorial/Prim.md#integers)\n"
+msgstr ""
+
+#. type: Bullet: '    4. '
+#: ../README.md:106
+#, no-wrap
+msgid "[Refined Primitives](src/Tutorial/Prim.md#refined-primitives)\n"
+msgstr ""
+
+#. type: Title ###
+#: ../README.md:107
+#, no-wrap
+msgid "Part 2: Appendices"
+msgstr ""
+
+#. type: Plain text
+#: ../README.md:113
+#, no-wrap
+msgid ""
+"The appendices can be used as references for the topics at\n"
+"hand. I plan to eventually have a concise reference on Idris\n"
+"syntax, typical error messages, the module system, interactive\n"
+"editing and possibly others.\n"
+msgstr ""
+
+#. type: Bullet: '1. '
+#: ../README.md:118
+#, no-wrap
+msgid "[Getting Started with pack and Idris2](src/Appendices/Install.md)\n"
+msgstr ""
+
+#. type: Bullet: '2. '
+#: ../README.md:118
+#, no-wrap
+msgid "[Interactive Editing in Neovim](src/Appendices/Neovim.md)\n"
+msgstr ""
+
+#. type: Bullet: '3. '
+#: ../README.md:118
+#, no-wrap
+msgid "[Structuring Idris Projects](src/Appendices/Projects.md)\n"
+msgstr ""
+
+#. type: Bullet: '4. '
+#: ../README.md:118
+#, no-wrap
+msgid "[A Deep Dive into Quantitative Type Theory](src/Appendices/QTT.md)\n"
+msgstr ""
+
+#. type: Title ##
+#: ../README.md:119
+#, no-wrap
+msgid "Prerequisites"
+msgstr ""
+
+#. type: Plain text
+#: ../README.md:125
+#, no-wrap
+msgid ""
+"At the moment, this project is being actively developed and\n"
+"evolved against the main branch of the Idris 2 repository.\n"
+"It is being tested nightly on GitHub and built against\n"
+"the latest version of [pack's package collection](https://github.com/stefan-hoeck/idris2-pack-db).\n"
+msgstr ""
+
+#. type: Plain text
+#: ../README.md:127
+#, no-wrap
+msgid ""
+"In order to follow along with this tutorial, it is strongly suggested to install\n"
+"Idris via the pack package manager as described [here](src/Appendices/Install.md).\n"
+msgstr ""

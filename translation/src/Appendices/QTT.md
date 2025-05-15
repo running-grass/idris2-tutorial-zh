@@ -91,14 +91,20 @@ Since the context is what stores quantities, only names that appear in
 the context can have a quantity, including:
 
 - Function/lambda parameters
+
 - Pattern matching bindings
+
 - `let` bindings
+
 
 These do not appear in the context, and thus do NOT have quantities:
 
 - Top-level definitions
+
 - `where` definitions
+
 - All non-variable expressions
+
 
 ### A Change in Perspective
 
@@ -315,7 +321,7 @@ expression, so Idris will try to infer the quantity, then check to see
 if it's valid. In this case, Idris will infer that `x` is
 unrestricted.
 
-#### Pattern Matching
+#### 模式匹配
 
 All of the binding constructs that this rule applies to support
 pattern matching, so we need to determine how quantities interact with
@@ -412,7 +418,9 @@ runtime. In terms of the type theory, what this means is that an
 erased function can only ever be used in these two places:
 
 1. Inside of another erased-fragment function or expression;
+
 2. Inside of a function argument that's erased:
+
 
 ```idris
 constInt : (0 _ : a) -> Int
@@ -439,7 +447,7 @@ For this reason, erased functions are sometimes thought of as
 "exclusively type-level functions", though as we've seen, that's not
 entirely accurate.
 
-## Conclusion
+## 结论
 
 This concludes our thorough discussion of Quantitative Type Theory. In
 this section, we learned about the various operations on quantities:
@@ -471,10 +479,12 @@ except for these differences:
 
 1. Atkey's theory does not have subusaging, and so the quantity
    semiring in Atkey's paper is not ordered.
+
 2. In Atkey's theory, types can only be constructed in the erased
    fragment, which means it is impossible to construct a type at
    runtime. Idris 2 allows constructing types at runtime, but still
    uses the erased fragment when inside of type signatures.
+
 
 To resolve these differences, I directly observed how Idris 2's type
 system behaved in practice in order to determine where to deviate from

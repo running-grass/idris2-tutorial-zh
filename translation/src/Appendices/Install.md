@@ -99,7 +99,7 @@ To start a REPL session with `src/Tut.idr` loaded, run
 pack repl src/Tut.idr
 ```
 
-## Conclusion
+## 结论
 
 In this very short tutorial you set up an environment for working on
 Idris projects and following along with the main part of the tutorial.
