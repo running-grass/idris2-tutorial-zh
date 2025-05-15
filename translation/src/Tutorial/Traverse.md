@@ -588,7 +588,7 @@ Monad (State st) where
        ```
 
    11. 我们不应该忘记我们在 Idris 的类型中编码有趣事物的能力，因此，为了挑战，事不宜迟，实现 `hlist`（注意 `HListF` 和
-       `HList`）。如果您对依赖类型比较陌生，这可能需要一点时间来消化，所以不要忘记使用孔。
+       `HList`）。如果您对依值类型比较陌生，这可能需要一点时间来消化，所以不要忘记使用孔。
 
        ```idris
        data HListF : (f : Type -> Type) -> (ts : List Type) -> Type where

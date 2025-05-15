@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: po 4a\n"
-"POT-Creation-Date: 2025-05-15 07:57+0000\n"
+"POT-Creation-Date: 2025-05-15 20:00+0800\n"
 "PO-Revision-Date: 2025-05-15 03:06+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -227,7 +227,7 @@ msgstr ""
 "为止，我们在本指南的几个示例和练习中看到了这种方法。这也是向量采用的方法，我"
 "们使用精确的长度作为索引，这样更有表现力。虽然这允许我们在类型级别以更高的精"
 "度实现许多函数，但它也带来了跟踪类型变化的负担，产生更复杂的函数类型并迫使我"
-"们有时返回存在量化的包装器（例如，依赖对），因为直到运行时才知道计算的结果。"
+"们有时返回存在量化的包装器（例如，依值对），因为直到运行时才知道计算的结果。"
 
 #. type: Bullet: '* '
 #: ../src/Tutorial/Predicates.md:87
@@ -734,12 +734,12 @@ msgstr ""
 #: ../src/Tutorial/Predicates.md:339
 msgid ""
 "The predicates you implemented in these exercises are already available in "
-"the *base* library: `Data.List.NonEmpty`, `Data.Maybe.IsJust`, "
-"`Data.Either.IsLeft`, `Data.Either.IsRight`, and `Data.Nat.IsSucc`."
+"the *base* library: `Data.List.NonEmpty`, `Data.Maybe.IsJust`, `Data.Either."
+"IsLeft`, `Data.Either.IsRight`, and `Data.Nat.IsSucc`."
 msgstr ""
-"您在这些练习中实现的谓词已经在 *base* 库中可用：`Data.List.NonEmpty`、"
-"`Data.Maybe.IsJust`、`Data。 Either.IsLeft`、`Data.Either.IsRight` 和 "
-"`Data.Nat.IsSucc`。"
+"您在这些练习中实现的谓词已经在 *base* 库中可用：`Data.List.NonEmpty`、`Data."
+"Maybe.IsJust`、`Data。 Either.IsLeft`、`Data.Either.IsRight` 和 `Data.Nat."
+"IsSucc`。"
 
 #. type: Title ##
 #: ../src/Tutorial/Predicates.md:340
@@ -1357,7 +1357,7 @@ msgstr ""
 "为了在运行时指定列名，我们需要一种通过将列名与相关架构进行比较来计算 "
 "`InSchema` 类型值的方法。因为我们必须比较两个字符串值是否在命题上相等，所以我"
 "们在这里为 `String` 使用 `DecEq` 实现（Idris 为所有原语提供 `DecEq` 实现）。"
-"我们同时提取列类型并将其（作为依赖对）与 `InSchema` 证明配对："
+"我们同时提取列类型并将其（作为依值对）与 `InSchema` 证明配对："
 
 #. type: Fenced code block (idris)
 #: ../src/Tutorial/Predicates.md:658

@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE
-# Copyright (C) YEAR Stefan HÃ¶ck
+# Copyright (C) YEAR Stefan Höck
 # This file is distributed under the same license as the Functional Programming in Idris 2 package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Functional Programming in Idris 2 1.0\n"
-"POT-Creation-Date: 2025-05-15 07:57+0000\n"
+"POT-Creation-Date: 2025-05-15 20:00+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -310,8 +310,8 @@ msgid ""
 "It can be instructive to learn, where in the compiler's source code the "
 "primitive types and functions are defined. This source code can be found in "
 "folder `src` of the [Idris project](https://github.com/idris-lang/Idris2)  "
-"and the primitive types are the constant constructors of data type "
-"`Core.TT.Constant`."
+"and the primitive types are the constant constructors of data type `Core.TT."
+"Constant`."
 msgstr ""
 
 #. type: Title ###
@@ -1125,9 +1125,9 @@ msgid ""
 "arithmetics. Note, that this is much easier to grasp for unsigned integer "
 "types than for the signed versions.  Those have to include information about "
 "the *sign* of numbers in their bit pattern, and it is assumed that signed "
-"integers in Idris use a [two's complement representation](https://"
-"en.wikipedia.org/wiki/Two%27s_complement), about which I will not go into "
-"the details here."
+"integers in Idris use a [two's complement representation](https://en."
+"wikipedia.org/wiki/Two%27s_complement), about which I will not go into the "
+"details here."
 msgstr ""
 
 #. type: Plain text
@@ -1626,11 +1626,11 @@ msgid ""
 "Well, it could have been (much) worse. Still, unless we take measures to "
 "prevent this from happening, this might embed a JavaScript program in our "
 "web page we never intended to have there! What I described here, is a well "
-"known security vulnerability called [cross-site scripting](https://"
-"en.wikipedia.org/wiki/Cross-site_scripting).  It allows users of web pages "
-"to enter malicious JavaScript code in text fields, which will then be "
-"included in the page's HTML structure and executed when it is being "
-"displayed to other users."
+"known security vulnerability called [cross-site scripting](https://en."
+"wikipedia.org/wiki/Cross-site_scripting).  It allows users of web pages to "
+"enter malicious JavaScript code in text fields, which will then be included "
+"in the page's HTML structure and executed when it is being displayed to "
+"other users."
 msgstr ""
 
 #. type: Plain text

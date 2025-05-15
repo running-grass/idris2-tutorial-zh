@@ -95,7 +95,7 @@ msgstr "module Tutorial.Functions1\n"
 #: ../src/Tutorial/Functions1.md:21
 #, no-wrap
 msgid "Functions with more than one Argument"
-msgstr "具有多个参数的函数"
+msgstr "多参函数"
 
 #. type: Plain text
 #: ../src/Tutorial/Functions1.md:28

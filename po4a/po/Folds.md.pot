@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE
-# Copyright (C) YEAR Stefan HÃ¶ck
+# Copyright (C) YEAR Stefan Höck
 # This file is distributed under the same license as the Functional Programming in Idris 2 package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Functional Programming in Idris 2 1.0\n"
-"POT-Creation-Date: 2025-05-15 07:57+0000\n"
+"POT-Creation-Date: 2025-05-15 20:00+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1612,8 +1612,8 @@ msgid ""
 "are so many of these functions, we'd better look out for an essential set of "
 "them in terms of which we can implement all the others, and wrap up the "
 "whole bunch in an interface. This interface is called `Foldable`, and is "
-"available from the `Prelude`. When you look at its definition in the REPL "
-"(`:doc Foldable`), you'll see that it consists of six essential functions:"
+"available from the `Prelude`. When you look at its definition in the REPL (`:"
+"doc Foldable`), you'll see that it consists of six essential functions:"
 msgstr ""
 
 #. type: Bullet: '* '

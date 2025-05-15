@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE
-# Copyright (C) YEAR Stefan HÃ¶ck
+# Copyright (C) YEAR Stefan Höck
 # This file is distributed under the same license as the Functional Programming in Idris 2 package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Functional Programming in Idris 2 1.0\n"
-"POT-Creation-Date: 2025-05-15 07:57+0000\n"
+"POT-Creation-Date: 2025-05-15 20:00+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1204,11 +1204,10 @@ msgstr ""
 #: ../src/Tutorial/DataTypes.md:741
 msgid ""
 "In `baz`, variable `t` is *bound* to the triple as a whole, which is then "
-"reused to construct the resulting quadruple. Remember, that "
-"`(Nat,Bool,Weekday,String)` is just sugar for `Pair Nat "
-"(Bool,Weekday,String)`, and `(length s, t)` is just sugar for `MkPair "
-"(length s) t`. Hence, the implementation above is correct as is confirmed by "
-"the type checker."
+"reused to construct the resulting quadruple. Remember, that `(Nat,Bool,"
+"Weekday,String)` is just sugar for `Pair Nat (Bool,Weekday,String)`, and "
+"`(length s, t)` is just sugar for `MkPair (length s) t`. Hence, the "
+"implementation above is correct as is confirmed by the type checker."
 msgstr ""
 
 #. type: Title ###

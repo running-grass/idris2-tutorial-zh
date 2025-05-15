@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE
-# Copyright (C) YEAR Stefan HÃ¶ck
+# Copyright (C) YEAR Stefan Höck
 # This file is distributed under the same license as the Functional Programming in Idris 2 package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Functional Programming in Idris 2 1.0\n"
-"POT-Creation-Date: 2025-05-15 07:57+0000\n"
+"POT-Creation-Date: 2025-05-15 20:00+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -619,8 +619,8 @@ msgstr ""
 #. type: Bullet: '1. '
 #: ../src/Tutorial/DPair.md:352
 msgid ""
-"Declare and implement a function for filtering a vector similar to "
-"`Data.List.filter`."
+"Declare and implement a function for filtering a vector similar to `Data."
+"List.filter`."
 msgstr ""
 
 #. type: Bullet: '2. '
@@ -1392,10 +1392,10 @@ msgid ""
 "order to figure out what can possibly go wrong, we first need to decide on "
 "how the commands should be entered.  Here, we use a single keyword for each "
 "command, together with an optional number of arguments separated from the "
-"keyword by a single space character. For instance: `\"new "
-"i64,boolean,str,str\"`, for initializing an empty table with a new schema. "
-"With this settled, here is a list of things that can go wrong, and the "
-"messages we'd like to print:"
+"keyword by a single space character. For instance: `\"new i64,boolean,str,"
+"str\"`, for initializing an empty table with a new schema. With this "
+"settled, here is a list of things that can go wrong, and the messages we'd "
+"like to print:"
 msgstr ""
 
 #. type: Bullet: '* '
@@ -1463,8 +1463,8 @@ msgid ""
 "In order to conveniently construct our error messages, it is best to use "
 "Idris' string interpolation facilities: We can enclose arbitrary string "
 "expressions in a string literal by enclosing them in curly braces, the first "
-"of which must be escaped with a backslash. Like so: `\"foo \\{myExpr a b c}"
-"\"`.  We can pair this with multiline string literals to get nicely "
+"of which must be escaped with a backslash. Like so: `\"foo \\{myExpr a b "
+"c}\"`.  We can pair this with multiline string literals to get nicely "
 "formatted error messages."
 msgstr ""
 
@@ -1640,9 +1640,9 @@ msgstr ""
 #. type: Plain text
 #: ../src/Tutorial/DPair.md:1067
 msgid ""
-"We are finally able to implement a parser for user commands.  Function "
-"`Data.String.words` is used for splitting a string at space characters. In "
-"most cases, we expect the name of the command plus a single argument without "
+"We are finally able to implement a parser for user commands.  Function `Data."
+"String.words` is used for splitting a string at space characters. In most "
+"cases, we expect the name of the command plus a single argument without "
 "additional spaces.  CSV rows can have additional space characters, however, "
 "so we use `Data.String.unwords` on the split string."
 msgstr ""

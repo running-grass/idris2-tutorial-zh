@@ -6,9 +6,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: po 4a\n"
-"POT-Creation-Date: 2025-05-15 07:57+0000\n"
+"POT-Creation-Date: 2025-05-15 20:00+0800\n"
 "PO-Revision-Date: 2025-05-15 03:06+0000\n"
-"Last-Translator: Automatically generated\n"
+"Last-Translator: running-grass <grass@grass.show>\n"
 "Language-Team: none\n"
 "Language: zh_Hans\n"
 "MIME-Version: 1.0\n"
@@ -36,7 +36,7 @@ msgstr ""
 #: ../src/Tutorial/Dependent.md:1 ../src/Tutorial/Intro.md:90
 #, no-wrap
 msgid "Dependent Types"
-msgstr "依赖类型"
+msgstr "依值类型"
 
 #. type: Title ###
 #: ../src/Tutorial/Functor.md:1423 ../src/Tutorial/Intro.md:444
@@ -67,10 +67,10 @@ msgstr ""
 "欢迎来到我的 Idris 2 教程。我会尽量全面地介绍 Idris 2 编程语言的各个方面。这"
 "里的所有 `.md` 文件都是文学化 Idris 文件：它们由 Markdown 组成（因此以 `.md` "
 "结尾），GitHub 会将其与 Idris 代码块一起美观地渲染，这些代码块可以被 Idris 编"
-"译器类型检查和构建（稍后会详细介绍）。需要注意的是，常规 Idris 源文件使用 "
-"`.idr` 作为后缀，除非你像我现在这样写了大量说明性文字，否则建议使用 `.idr` 文"
-"件类型。在本教程后续，你需要完成一些练习，答案可以在 `src/Solutions` 子目录中"
-"找到，那里我使用的是常规的 `.idr` 文件。"
+"译器类型检查和构建（稍后会详细介绍）。需要注意的是，常规 Idris 源文件使用 `."
+"idr` 作为后缀，除非你像我现在这样写了大量说明性文字，否则建议使用 `.idr` 文件"
+"类型。在本教程后续，你需要完成一些练习，答案可以在 `src/Solutions` 子目录中找"
+"到，那里我使用的是常规的 `.idr` 文件。"
 
 #. type: Plain text
 #: ../src/Tutorial/Intro.md:23
@@ -120,8 +120,8 @@ msgid ""
 "Idris is a *pure*, *dependently typed*, *total* *functional* programming "
 "language. I'll quickly explain each of these adjectives in this section."
 msgstr ""
-"Idris 是一种*纯*、*依值类型*、*完全*的*函数式*编程语言。本节将简要解释这些术"
-"语的含义。"
+"Idris 是一种*纯粹*、*依值类型*、*全定义*的*函数式*编程语言。本节将简要解释这"
+"些术语的含义。"
 
 #. type: Title ###
 #: ../src/Tutorial/Intro.md:42
@@ -171,8 +171,8 @@ msgid ""
 "mutating global state. They can only compute a result from their arguments "
 "possibly by invoking other pure functions, *and nothing else*. As a "
 "consequence, given the same input, they will *always* generate the same "
-"output.  This property is known as [referential transparency](https://"
-"en.wikipedia.org/wiki/Referential_transparency)."
+"output.  This property is known as [referential transparency](https://en."
+"wikipedia.org/wiki/Referential_transparency)."
 msgstr ""
 "纯函数式编程语言还提供了一个重要保证：函数不会产生诸如写文件或修改全局状态等"
 "副作用。它们只能通过参数（以及可能调用其他纯函数）来计算结果，*除此之外别无他"
@@ -671,7 +671,7 @@ msgid ""
 "is given a local identifier `n`, which is then used in the\n"
 "calculation on the right hand side. Again, go ahead and try this\n"
 "function at the REPL:\n"
-msgstr "这引入了一些新语法和一种新类型：函数类型。 `distanceToMax : Bits8 -> Bits8` 可以这样读：\"`distanceToMax` 是具有一个 `Bits8` 类型参数的函数，它返回 `Bits8` 类型的结果\"。在实现中，参数给定一个本地标识符 `n`，然后在右侧计算。再次在 REPL 中尝试函数：\n"
+msgstr "这引入了一些新语法和一种新类型：函数类型。 `distanceToMax : Bits8 -> Bits8` 可以这样读：\"`distanceToMax` 是具有一个 `Bits8` 类型参数的函数，它返回 `Bits8` 类型的结果\"。在实现中，参数给定一个局部标识符 `n`，然后在右侧计算。再次在 REPL 中尝试函数：\n"
 
 #. type: Fenced code block (repl)
 #: ../src/Tutorial/Intro.md:314
@@ -811,7 +811,7 @@ msgid ""
 "  its examples, so parts of it have to be slightly adjusted\n"
 "  when using Idris 2. There is also a\n"
 "  [list of required updates](https://idris2.readthedocs.io/en/latest/typedd/typedd.html).\n"
-msgstr "*专门*讲 Idris 的书！这描述得很详细。使用 Idris 和依赖类型的核心概念编写健壮和简洁的代码。它使用 Idris 1 实现书中的例子，所以使用 Idris 2 时它的一部分必须稍微调整，有一个[所需更新列表](https://idris2.readthedocs.io/en/latest/typedd/typedd.html)。\n"
+msgstr "*专门*讲 Idris 的书！这描述得很详细。使用 Idris 和依值类型的核心概念编写健壮和简洁的代码。它使用 Idris 1 实现书中的例子，所以使用 Idris 2 时它的一部分必须稍微调整，有一个[所需更新列表](https://idris2.readthedocs.io/en/latest/typedd/typedd.html)。\n"
 
 #. type: Bullet: '* '
 #: ../src/Tutorial/Intro.md:384
@@ -819,8 +819,8 @@ msgid ""
 "[A Crash Course in Idris 2](https://idris2.readthedocs.io/en/latest/tutorial/"
 "index.html)"
 msgstr ""
-"[Idris 2 速成课程](https://idris2.readthedocs.io/en/latest/tutorial/"
-"index.html)"
+"[Idris 2 速成课程](https://idris2.readthedocs.io/en/latest/tutorial/index."
+"html)"
 
 #. type: Plain text
 #: ../src/Tutorial/Intro.md:389
@@ -896,8 +896,8 @@ msgstr "使用 `:t` 检查表达式或元变量（孔）的类型：`:t foldl`,"
 #. type: Bullet: '  * '
 #: ../src/Tutorial/Intro.md:431
 msgid ""
-"use `:ti` to inspect the type of a function including implicit arguments: "
-"`:ti foldl`,"
+"use `:ti` to inspect the type of a function including implicit arguments: `:"
+"ti foldl`,"
 msgstr "使用 `:ti` 检查包含隐式参数的函数类型：`:ti foldl`,"
 
 #. type: Bullet: '  * '
@@ -921,8 +921,8 @@ msgstr ""
 #. type: Bullet: '  * '
 #: ../src/Tutorial/Intro.md:431
 msgid ""
-"use `:module` to import a module from one of the available packages: "
-"`:module Data.Vect`,"
+"use `:module` to import a module from one of the available packages: `:"
+"module Data.Vect`,"
 msgstr "使用 `:module` 从可用包之一导入模块：`:module Data.Vect`,"
 
 #. type: Bullet: '  * '

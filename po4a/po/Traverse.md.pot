@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE
-# Copyright (C) YEAR Stefan HÃ¶ck
+# Copyright (C) YEAR Stefan Höck
 # This file is distributed under the same license as the Functional Programming in Idris 2 package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Functional Programming in Idris 2 1.0\n"
-"POT-Creation-Date: 2025-05-15 07:57+0000\n"
+"POT-Creation-Date: 2025-05-15 20:00+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1467,14 +1467,13 @@ msgid ""
 "Now, as we learned before, applicative functors are closed under "
 "composition, and the result of `tagAndDecode` is a nesting of two "
 "applicatives: `State Nat` and `Validated CSVError`.  The *Prelude* exports a "
-"corresponding named interface implementation "
-"(`Prelude.Applicative.Compose`), which we can use for traversing a list of "
-"strings with `tagAndDecode`.  Remember, that we have to provide named "
-"implementations explicitly.  Since `traverse` has the applicative functor as "
-"its second constraint, we also need to provide the first constraint "
-"(`Traversable`) explicitly. But this is going to be the unnamed default "
-"implementation! To get our hands on such a value, we can use the `%search` "
-"pragma:"
+"corresponding named interface implementation (`Prelude.Applicative."
+"Compose`), which we can use for traversing a list of strings with "
+"`tagAndDecode`.  Remember, that we have to provide named implementations "
+"explicitly.  Since `traverse` has the applicative functor as its second "
+"constraint, we also need to provide the first constraint (`Traversable`) "
+"explicitly. But this is going to be the unnamed default implementation! To "
+"get our hands on such a value, we can use the `%search` pragma:"
 msgstr ""
 
 #. type: Fenced code block (idris)

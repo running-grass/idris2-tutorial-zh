@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE
-# Copyright (C) YEAR Stefan HÃ¶ck
+# Copyright (C) YEAR Stefan Höck
 # This file is distributed under the same license as the Functional Programming in Idris 2 package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Functional Programming in Idris 2 1.0\n"
-"POT-Creation-Date: 2025-05-15 07:57+0000\n"
+"POT-Creation-Date: 2025-05-15 20:00+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1718,11 +1718,11 @@ msgstr ""
 #. type: Bullet: '   5. '
 #: ../src/Tutorial/Functor.md:1046
 msgid ""
-"Package *contrib*, which is part of the Idris project, provides "
-"`Data.HVect.HVect`, a data type for heterogeneous vectors. The only "
-"difference to our own `HList` is, that `HVect` is indexed over a vector of "
-"types instead of a list of types. This makes it easier to express certain "
-"operations at the type level."
+"Package *contrib*, which is part of the Idris project, provides `Data.HVect."
+"HVect`, a data type for heterogeneous vectors. The only difference to our "
+"own `HList` is, that `HVect` is indexed over a vector of types instead of a "
+"list of types. This makes it easier to express certain operations at the "
+"type level."
 msgstr ""
 
 #. type: Plain text

@@ -688,7 +688,7 @@ to setup a new application. In addition to creating a new directory plus a
 suitable `.ipkg` file, these commands will also add a `pack.toml` file,
 which we will discuss further below.
 
-### 依赖对
+### 依值对
 
 One of the most important aspects of an `.ipkg` file is listing the packages
 the library depends on in the `depends` field. Here is an example from the
@@ -722,7 +722,7 @@ your own project, you will need to install the packages it depends on before
 installing *hedgehog* itself. Since this can be tedious to do manually, it
 is best let a package manager like pack handle this task for you.
 
-#### 依赖对
+#### 依值对
 
 You might want to specify a certain version (or a range)  Idris should use
 for your dependencies. This might be useful if you have several versions of

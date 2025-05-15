@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE
-# Copyright (C) YEAR Stefan HÃ¶ck
+# Copyright (C) YEAR Stefan Höck
 # This file is distributed under the same license as the Functional Programming in Idris 2 package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Functional Programming in Idris 2 1.0\n"
-"POT-Creation-Date: 2025-05-15 07:57+0000\n"
+"POT-Creation-Date: 2025-05-15 20:00+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -111,8 +111,8 @@ msgstr ""
 msgid ""
 "A module's name consists of several upper case identifiers separated by "
 "dots, which must reflect the path of the `.idr` file where the module is "
-"stored. For instance, this module is stored in file `Appendices/"
-"Projects.md`, so the module's name is `Appendices.Projects`."
+"stored. For instance, this module is stored in file `Appendices/Projects."
+"md`, so the module's name is `Appendices.Projects`."
 msgstr ""
 
 #. type: Plain text
@@ -277,9 +277,9 @@ msgstr ""
 #: ../src/Appendices/Projects.md:143
 msgid ""
 "Finally, on the fifth line we publicly import a module and give it a new "
-"name. This name will then be the one seen when we transitively import "
-"`Data.List1` via `Appendices.Projects`. To see this, start a REPL session "
-"(after type checking the tutorial)  without loading a source file from this "
+"name. This name will then be the one seen when we transitively import `Data."
+"List1` via `Appendices.Projects`. To see this, start a REPL session (after "
+"type checking the tutorial)  without loading a source file from this "
 "project's root folder:"
 msgstr ""
 
@@ -382,10 +382,10 @@ msgstr ""
 #. type: Plain text
 #: ../src/Appendices/Projects.md:222
 msgid ""
-"Function names `HVect.head` and `HVect.tail` as well as constructors "
-"`HVect.Nil` and `HVect.(::)` would clash with functions and constructors of "
-"the same names from the outer namespace (`Appendices.Projects`), so we had "
-"to put them in their own namespace. In order to be able to use them from "
+"Function names `HVect.head` and `HVect.tail` as well as constructors `HVect."
+"Nil` and `HVect.(::)` would clash with functions and constructors of the "
+"same names from the outer namespace (`Appendices.Projects`), so we had to "
+"put them in their own namespace. In order to be able to use them from "
 "outside their namespace, they need to be exported (see the section on "
 "visibility below). In case we need to disambiguate between these names, we "
 "can prefix them with part of their namespace. For instance, the following "

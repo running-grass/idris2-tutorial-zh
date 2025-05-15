@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE
-# Copyright (C) YEAR Stefan HÃ¶ck
+# Copyright (C) YEAR Stefan Höck
 # This file is distributed under the same license as the Functional Programming in Idris 2 package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Functional Programming in Idris 2 1.0\n"
-"POT-Creation-Date: 2025-05-15 07:57+0000\n"
+"POT-Creation-Date: 2025-05-15 20:00+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -181,10 +181,10 @@ msgstr ""
 msgid ""
 "In order to checkout the interactive editing features available to us, we "
 "will reimplement some small utilities from the *Prelude*. To follow along, "
-"you should have already worked through the [Introduction](../Tutorial/"
-"Intro.md), [Functions Part 1](../Tutorial/Functions1.md), and at least parts "
-"of [Algebraic Data Types](../Tutorial/DataTypes.md), otherwise it will be "
-"hard to understand what's going on here."
+"you should have already worked through the [Introduction](../Tutorial/Intro."
+"md), [Functions Part 1](../Tutorial/Functions1.md), and at least parts of "
+"[Algebraic Data Types](../Tutorial/DataTypes.md), otherwise it will be hard "
+"to understand what's going on here."
 msgstr ""
 
 #. type: Plain text
@@ -193,8 +193,8 @@ msgid ""
 "Before we begin, note that the commands and actions shown in this tutorial "
 "might not work correctly after you edited a source file but did not write "
 "your changes to disk. Therefore, the first thing you should try if the "
-"things described here do not work, is to quickly save the current file "
-"(`:w`)."
+"things described here do not work, is to quickly save the current file (`:"
+"w`)."
 msgstr ""
 
 #. type: Plain text
@@ -531,10 +531,10 @@ msgid ""
 "Typing `K` when on an identifier or operator in normal mode shows its type "
 "and namespace (if any). In case of a metavariable, variables in the current "
 "context are displayed as well together with their types and quantities "
-"(quantities will be explained in [Functions Part 2](../Tutorial/"
-"Functions2.md)).  If you don't like popups, enter `<LocalLeader>so` to open "
-"a new window where this information is displayed and semantically "
-"highlighted instead."
+"(quantities will be explained in [Functions Part 2](../Tutorial/Functions2."
+"md)).  If you don't like popups, enter `<LocalLeader>so` to open a new "
+"window where this information is displayed and semantically highlighted "
+"instead."
 msgstr ""
 
 #. type: Bullet: '* '

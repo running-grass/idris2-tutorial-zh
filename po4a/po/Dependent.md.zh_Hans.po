@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: po 4a\n"
-"POT-Creation-Date: 2025-05-15 07:57+0000\n"
+"POT-Creation-Date: 2025-05-15 20:00+0800\n"
 "PO-Revision-Date: 2025-05-15 03:06+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -90,7 +90,7 @@ msgstr ""
 #: ../src/Tutorial/Dependent.md:1 ../src/Tutorial/Intro.md:90
 #, no-wrap
 msgid "Dependent Types"
-msgstr "依赖类型"
+msgstr "依值类型"
 
 #. type: Plain text
 #: ../src/Tutorial/Dependent.md:9
@@ -103,8 +103,8 @@ msgid ""
 "dependent types."
 msgstr ""
 "从值计算类型、将它们作为参数传递给函数并将它们作为函数结果返回的能力——简而言"
-"之，作为一种依赖类型的语言——是 Idris 最显着的特征之一。许多更高级的语言的类型"
-"级别扩展，如 Haskell（以及更多）都可以使用依赖类型来处理。"
+"之，作为一种依值类型的语言——是 Idris 最显着的特征之一。许多更高级的语言的类型"
+"级别扩展，如 Haskell（以及更多）都可以使用依值类型来处理。"
 
 #. type: Fenced code block (idris)
 #: ../src/Tutorial/Dependent.md:10
@@ -171,7 +171,7 @@ msgid ""
 "the most common introductory example is the *vector*: A list indexed by its "
 "length:"
 msgstr ""
-"上述问题的答案当然是：依赖类型。最常见的介绍性示例是 *向量*：按长度索引的列"
+"上述问题的答案当然是：依值类型。最常见的介绍性示例是 *向量*：按长度索引的列"
 "表："
 
 #. type: Fenced code block (idris)
@@ -1068,10 +1068,10 @@ msgstr "   声明并实现函数 `iterate`，它应该封装这种行为。如�
 #. type: Bullet: '7. '
 #: ../src/Tutorial/Dependent.md:495
 msgid ""
-"Given an initial value of a state type `s` and a function `fun : s -> "
-"(s,a)`, we'd like to generate `Vect`s of `a`s. Declare and implement "
-"function `generate`, which should encapsulate this behavior. Make sure to "
-"use the updated state in every new invocation of `fun`."
+"Given an initial value of a state type `s` and a function `fun : s -> (s,"
+"a)`, we'd like to generate `Vect`s of `a`s. Declare and implement function "
+"`generate`, which should encapsulate this behavior. Make sure to use the "
+"updated state in every new invocation of `fun`."
 msgstr ""
 "给定状态类型 `s` 的初始值和函数 `fun : s -> (s,a)`，我们希望生成 `a` 的 "
 "`Vect`。声明并实现函数 `generate`，它应该封装这个行为。确保在每次新调用 "
@@ -1206,7 +1206,7 @@ msgid ""
 "However, in Idris we can often *refine* the input types to restrict the set "
 "of accepted values, thus ruling out the possibility of failure."
 msgstr ""
-"没有依赖类型的语言（如 Haskell）通常只能采用上述路线：将结果包装在 `Maybe` "
+"没有依值类型的语言（如 Haskell）通常只能采用上述路线：将结果包装在 `Maybe` "
 "或 `Either` 中。但是，在 Idris 中，我们通常可以 *细化* 输入类型以限制接受值的"
 "集合，从而排除失败的可能性。"
 
@@ -1854,7 +1854,7 @@ msgid ""
 "possible to encode properties of values at the type-level and verify these "
 "properties at compile time."
 msgstr ""
-"依赖类型允许我们根据值计算类型。这使得在类型级别对值的属性进行编码并在编译时"
+"依值类型允许我们根据值计算类型。这使得在类型级别对值的属性进行编码并在编译时"
 "验证这些属性成为可能。"
 
 #. type: Bullet: '* '

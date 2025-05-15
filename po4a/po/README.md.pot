@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE
-# Copyright (C) YEAR Stefan HÃ¶ck
+# Copyright (C) YEAR Stefan Höck
 # This file is distributed under the same license as the Functional Programming in Idris 2 package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Functional Programming in Idris 2 1.0\n"
-"POT-Creation-Date: 2025-05-15 07:57+0000\n"
+"POT-Creation-Date: 2025-05-15 20:00+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -186,8 +186,8 @@ msgstr ""
 #. type: Bullet: '   5. '
 #: ../README.md:106
 msgid ""
-"[Alternative Syntax for Data Definitions](src/Tutorial/"
-"DataTypes.md#alternative-syntax-for-data-definitions)"
+"[Alternative Syntax for Data Definitions](src/Tutorial/DataTypes."
+"md#alternative-syntax-for-data-definitions)"
 msgstr ""
 
 #. type: Bullet: '4. '

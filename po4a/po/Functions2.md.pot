@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE
-# Copyright (C) YEAR Stefan HÃ¶ck
+# Copyright (C) YEAR Stefan Höck
 # This file is distributed under the same license as the Functional Programming in Idris 2 package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Functional Programming in Idris 2 1.0\n"
-"POT-Creation-Date: 2025-05-15 07:57+0000\n"
+"POT-Creation-Date: 2025-05-15 20:00+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -556,9 +556,9 @@ msgstr ""
 #. type: Bullet: '2. '
 #: ../src/Tutorial/Functions2.md:365
 msgid ""
-"Define an enumeration type listing the four [nucleobases](https://"
-"en.wikipedia.org/wiki/Nucleobase)  occurring in DNA strands. Define also a "
-"type alias `DNA` for lists of nucleobases.  Declare and implement function "
+"Define an enumeration type listing the four [nucleobases](https://en."
+"wikipedia.org/wiki/Nucleobase)  occurring in DNA strands. Define also a type "
+"alias `DNA` for lists of nucleobases.  Declare and implement function "
 "`readBase` for converting a single character (type `Char`) to a nucleobase.  "
 "You can use character literals in your implementation like so: `'A'`, `'a'`. "
 "Note, that this function might fail, so adjust the result type accordingly."

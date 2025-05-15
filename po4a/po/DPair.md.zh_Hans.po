@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: po 4a\n"
-"POT-Creation-Date: 2025-05-15 07:57+0000\n"
+"POT-Creation-Date: 2025-05-15 20:00+0800\n"
 "PO-Revision-Date: 2025-05-15 03:06+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -101,14 +101,14 @@ msgid ""
 "wiki/Dependent_type#%CE%A3_type): Dependent pairs and their generalization, "
 "dependent records."
 msgstr ""
-"到目前为止，在我们的依赖类型编程示例中，类型索引（例如向量的长度）在编译时是"
+"到目前为止，在我们的依值类型编程示例中，类型索引（例如向量的长度）在编译时是"
 "已知的，或者可以从编译时已知的值中计算出来。然而，在实际应用中，此类信息通常"
 "在运行时才可用，其中值取决于用户做出的决定或周围世界的状态。例如，如果我们将"
 "文件的内容存储为文本行向量，则该向量的长度通常在文件加载到内存之前是未知的。"
 "因此，我们使用的值的类型依赖于仅在运行时才知道的其他值，并且我们通常只能通过"
 "对它们所依赖的值进行模式匹配来找出这些类型。为了表达这些依赖关系，我们需要所"
 "谓的 [*sigma types*](https://en.wikipedia.org/wiki/"
-"Dependent_type#%CE%A3_type)：依赖对及其泛化，依赖记录。"
+"Dependent_type#%CE%A3_type)：依值对及其泛化，依值记录。"
 
 #. type: Fenced code block (idris)
 #: ../src/Tutorial/DPair.md:19
@@ -152,7 +152,7 @@ msgstr ""
 #: ../src/Tutorial/DPair.md:38
 #, no-wrap
 msgid "Dependent Pairs"
-msgstr "依赖对"
+msgstr "依值对"
 
 #. type: Plain text
 #: ../src/Tutorial/DPair.md:46
@@ -300,7 +300,7 @@ msgid ""
 msgstr ""
 "幸运的是，Idris 不允许这样做：我们将无法在不作弊的情况下实现 `takeWhile'`（例"
 "如，通过关闭完全性检查并永远循环）。所以，问题仍然存在，如何在一个类型中表达 "
-"`takeWhile'` 的结果。对此的答案是：“使用 *依赖对*”，一个向量与与其长度对应的"
+"`takeWhile'` 的结果。对此的答案是：“使用 *依值对*”，一个向量与与其长度对应的"
 "值配对。"
 
 #. type: Fenced code block (idris)
@@ -392,7 +392,7 @@ msgid ""
 "returned as part of a function's result."
 msgstr ""
 "总结：泛型函数类型中的参数是通用量化的，它们的值可以在此类函数的调用处确定。"
-"依赖记录类型允许我们描述存在量化的值。调用者不能自由选择这些值：它们作为函数"
+"依值记录类型允许我们描述存在量化的值。调用者不能自由选择这些值：它们作为函数"
 "结果的一部分返回。"
 
 #. type: Plain text
@@ -451,14 +451,14 @@ msgstr ""
 "在 Idris 中，我们可以自由选择是否要明确全称量化。有时它可以帮助理解在类型级别"
 "上发生了什么。其他语言 - 例如 [PureScript](https://www.purescript.org/) - 对"
 "此更为严格：在那里，对普遍量化参数的显式注释是 [强制性](https://github.com/"
-"purescript/documentation/blob/master/language/Differences-from-"
-"Haskell.md#explicit-forall)的。"
+"purescript/documentation/blob/master/language/Differences-from-Haskell."
+"md#explicit-forall)的。"
 
 #. type: Title ###
 #: ../src/Tutorial/DPair.md:190
 #, no-wrap
 msgid "The Essence of Dependent Pairs"
-msgstr "依赖对的本质"
+msgstr "依值对的本质"
 
 #. type: Plain text
 #: ../src/Tutorial/DPair.md:202
@@ -474,10 +474,10 @@ msgid ""
 "implementation (primed for disambiguation):"
 msgstr ""
 "了解这里发生的事情可能需要一些时间和经验。至少在我的情况下，在 Idris 中进行了"
-"许多会话编程，然后我才弄清楚依赖对的含义：它们将某种类型的 *value* 与从第一个"
+"许多会话编程，然后我才弄清楚依值对的含义：它们将某种类型的 *value* 与从第一个"
 "值计算的类型的第二个值配对。例如，自然数 `n`（值）与长度为 `n` 的向量对（第二"
-"个值，其类型 *取决于* 第一个值）。这是使用依赖类型进行编程的基本概念，"
-"*Prelude* 提供了一个通用的依赖对类型。这是它的实现（准备消除歧义）："
+"个值，其类型 *取决于* 第一个值）。这是使用依值类型进行编程的基本概念，"
+"*Prelude* 提供了一个通用的依值对类型。这是它的实现（准备消除歧义）："
 
 #. type: Fenced code block (idris)
 #: ../src/Tutorial/DPair.md:203
@@ -524,7 +524,7 @@ msgid ""
 "Idris provides special syntax for describing dependent pairs, as\n"
 "they are important building blocks for programming in languages\n"
 "with first class types:\n"
-msgstr "请注意，`\\n => Vect n a` 如何是从 `Nat` 到 `Type` 的函数。 Idris 提供了用于描述依赖对的特殊语法，因为它们是使用一流类型的语言进行编程的重要构建块：\n"
+msgstr "请注意，`\\n => Vect n a` 如何是从 `Nat` 到 `Type` 的函数。 Idris 提供了用于描述依值对的特殊语法，因为它们是使用一流类型的语言进行编程的重要构建块：\n"
 
 #. type: Fenced code block (idris)
 #: ../src/Tutorial/DPair.md:226
@@ -583,7 +583,7 @@ msgid ""
 msgstr ""
 "这允许我们将自然数 `n` 与长度为 `n` 的向量配对，这正是我们对 `AnyVect` 所做"
 "的。因此，我们可以重写 `takeWhile` 以返回 `DPair` 而不是我们的自定义类型 "
-"`AnyVect`。请注意，与常规对一样，我们可以使用相同的语法 `(x ** y)` 在依赖对上"
+"`AnyVect`。请注意，与常规对一样，我们可以使用相同的语法 `(x ** y)` 在依值对上"
 "创建和模式匹配："
 
 #. type: Fenced code block (idris)
@@ -607,7 +607,7 @@ msgstr ""
 msgid ""
 "Just like with regular pairs, we can use the dependent pair syntax to define "
 "dependent triples and larger tuples:"
-msgstr "就像常规对一样，我们可以使用依赖对语法来定义依赖三元组和更大的元组："
+msgstr "就像常规对一样，我们可以使用依值对语法来定义依赖三元组和更大的元组："
 
 #. type: Fenced code block (idris)
 #: ../src/Tutorial/DPair.md:266
@@ -638,7 +638,7 @@ msgid ""
 msgstr ""
 "有时，可以通过对索引类型的值进行模式匹配来确定索引的值。例如，通过对向量进行"
 "模式匹配，我们可以了解它的长度索引。在这些情况下，不一定要在运行时携带索引，"
-"我们可以编写一个特殊版本的依赖对，其中第一个参数的数量为零。 *base* 中的模块 "
+"我们可以编写一个特殊版本的依值对，其中第一个参数的数量为零。 *base* 中的模块 "
 "`Data.DPair` 为此用例导出数据类型 `Exists`。"
 
 #. type: Plain text
@@ -760,7 +760,7 @@ msgid ""
 "convert an erased existential to a proper dependent pair:"
 msgstr ""
 "在 `vectLength` 的帮助下（但不是 `Data.Vect.length`），我们可以将已擦除的存在"
-"转换为正确的依赖对："
+"转换为正确的依值对："
 
 #. type: Fenced code block (idris)
 #: ../src/Tutorial/DPair.md:339
@@ -785,8 +785,8 @@ msgstr ""
 #. type: Bullet: '1. '
 #: ../src/Tutorial/DPair.md:352
 msgid ""
-"Declare and implement a function for filtering a vector similar to "
-"`Data.List.filter`."
+"Declare and implement a function for filtering a vector similar to `Data."
+"List.filter`."
 msgstr "声明并实现一个过滤向量的函数，类似于 `Data.List.filter`。"
 
 #. type: Bullet: '2. '
@@ -804,15 +804,15 @@ msgid ""
 "Declare and implement a function similar to `Data.List.dropWhile` for "
 "vectors. Use `Data.DPair.Exists` as your return type."
 msgstr ""
-"为向量声明并实现类似于 `Data.List.dropWhile` 的函数。使用 "
-"`Data.DPair.Exists` 作为您的返回类型。"
+"为向量声明并实现类似于 `Data.List.dropWhile` 的函数。使用 `Data.DPair."
+"Exists` 作为您的返回类型。"
 
 #. type: Bullet: '4. '
 #: ../src/Tutorial/DPair.md:363
 msgid ""
 "Repeat exercise 3 but return a proper dependent pair. Use the function from "
 "exercise 3 in your implementation."
-msgstr "重复练习 3，但返回正确的依赖对。在您的实现中使用练习 3 中的函数。"
+msgstr "重复练习 3，但返回正确的依值对。在您的实现中使用练习 3 中的函数。"
 
 #. type: Title ##
 #: ../src/Tutorial/DPair.md:364
@@ -1202,7 +1202,7 @@ msgstr ""
 #. type: Plain text
 #: ../src/Tutorial/DPair.md:554
 msgid "Here is how we can encode this with a dependent pair:"
-msgstr "以下是我们如何使用依赖对对其进行编码："
+msgstr "以下是我们如何使用依值对对其进行编码："
 
 #. type: Fenced code block (idris)
 #: ../src/Tutorial/DPair.md:555
@@ -1316,7 +1316,7 @@ msgid ""
 "case, we had to transcribe the sequence first, in the second case, we could "
 "invoke `printRNA` directly."
 msgstr ""
-"通过对依赖对的第一个值的模式匹配，我们可以确定第二个值是 RNA 还是 DNA 序列。"
+"通过对依值对的第一个值的模式匹配，我们可以确定第二个值是 RNA 还是 DNA 序列。"
 "在第一种情况下，我们必须先转录序列，在第二种情况下，我们可以直接调用 "
 "`printRNA`。"
 
@@ -1340,7 +1340,7 @@ msgstr ""
 #: ../src/Tutorial/DPair.md:621
 #, no-wrap
 msgid "Dependent Records vs Sum Types"
-msgstr "依赖记录与和类型"
+msgstr "依值记录与和类型"
 
 #. type: Plain text
 #: ../src/Tutorial/DPair.md:630
@@ -1352,7 +1352,7 @@ msgid ""
 "`DPair`, a custom dependent record, or even a sum type. In fact, the three "
 "encodings are equally expressive:"
 msgstr ""
-"`AnyVect a` 所示的依赖记录是依赖对的概括：我们可以有任意数量的字段并使用其中"
+"`AnyVect a` 所示的依值记录是依值对的概括：我们可以有任意数量的字段并使用其中"
 "存储的值来计算其他值的类型。对于非常简单的情况，例如带有核碱基的示例，无论我"
 "们使用 `DPair`、自定义相关记录还是和类型都没有太大关系。事实上，这三种编码同"
 "样具有表现力："
@@ -1396,9 +1396,9 @@ msgid ""
 "encoding as a dependent record."
 msgstr ""
 "在这些编码之间编写无损转换是微不足道的，并且对于每种编码，我们可以通过简单的"
-"模式匹配来决定我们当前是否具有 RNA 或 DNA 序列。然而，依赖类型可以依赖多个"
-"值，正如我们将在练习中看到的那样。在这种情况下，和类型和依赖对很快就会变得笨"
-"拙，您应该将编码作为依赖记录。"
+"模式匹配来决定我们当前是否具有 RNA 或 DNA 序列。然而，依值类型可以依赖多个"
+"值，正如我们将在练习中看到的那样。在这种情况下，和类型和依值对很快就会变得笨"
+"拙，您应该将编码作为依值记录。"
 
 #. type: Plain text
 #: ../src/Tutorial/DPair.md:661
@@ -1409,8 +1409,8 @@ msgid ""
 "on which you can pattern match, and what other utility functions might be "
 "necessary."
 msgstr ""
-"提高您使用依赖对和依赖记录的技能！在练习 2 到 7 中，你必须自己决定什么时候函"
-"数应该返回一个依赖对或记录，什么时候函数需要额外的参数，你可以在这些参数上进"
+"提高您使用依值对和依值记录的技能！在练习 2 到 7 中，你必须自己决定什么时候函"
+"数应该返回一个依值对或记录，什么时候函数需要额外的参数，你可以在这些参数上进"
 "行模式匹配，以及可能需要哪些其他实用函数。"
 
 #. type: Bullet: '1. '
@@ -1432,10 +1432,9 @@ msgid ""
 "and add this as an additional parameter to type `Nucleobase` and types `DNA` "
 "and `RNA`."
 msgstr ""
-"核碱基序列可以在以下两个方向之一编码：[*Sense* 和 *antisense*](https://"
-"en.wikipedia.org/wiki/Sense_(molecular_biology))。声明一个新的数据类型来描述"
-"核碱基序列的意义，并将其作为附加参数添加到类型 `Nucleobase` 、`DNA` 和 "
-"`RNA`。"
+"核碱基序列可以在以下两个方向之一编码：[*Sense* 和 *antisense*](https://en."
+"wikipedia.org/wiki/Sense_(molecular_biology))。声明一个新的数据类型来描述核碱"
+"基序列的意义，并将其作为附加参数添加到类型 `Nucleobase` 、`DNA` 和 `RNA`。"
 
 #. type: Bullet: '3. '
 #: ../src/Tutorial/DPair.md:677
@@ -1452,7 +1451,7 @@ msgstr ""
 msgid ""
 "Define a dependent record storing the base type and sense together with a "
 "sequence of nucleobases."
-msgstr "定义一个依赖记录，将碱基类型和 sense 与一系列核碱基一起存储。"
+msgstr "定义一个依值记录，将碱基类型和 sense 与一系列核碱基一起存储。"
 
 #. type: Bullet: '5. '
 #: ../src/Tutorial/DPair.md:685
@@ -1601,9 +1600,9 @@ msgid ""
 "[Type-Driven Development with Idris](https://www.manning.com/books/type-"
 "driven-development-with-idris)  book."
 msgstr ""
-"这个例子的灵感来自于 [Type-Driven Development with Idris](https://"
-"www.manning.com/books/type-driven-development-with-idris) 一书中用作示例的类"
-"似程序。"
+"这个例子的灵感来自于 [Type-Driven Development with Idris](https://www."
+"manning.com/books/type-driven-development-with-idris) 一书中用作示例的类似程"
+"序。"
 
 #. type: Plain text
 #: ../src/Tutorial/DPair.md:756
@@ -1649,7 +1648,7 @@ msgid ""
 msgstr ""
 "由于我们允许我们库的用户为他们使用的表指定模式（列的顺序和类型），因此直到运"
 "行时才知道此信息。表的当前大小也是如此。因此，我们会将这两个值作为字段存储在"
-"依赖记录中。"
+"依值记录中。"
 
 #. type: Title ###
 #: ../src/Tutorial/DPair.md:773
@@ -1723,7 +1722,7 @@ msgid ""
 "parse new rows to be added, the current schema and size of the table must be "
 "known at runtime:"
 msgstr ""
-"我们现在可以将表描述为将表内容存储为行向量的依赖记录。为了安全地索引表的行并"
+"我们现在可以将表描述为将表内容存储为行向量的依值记录。为了安全地索引表的行并"
 "解析要添加的新行，必须在运行时知道表的当前模式和大小："
 
 #. type: Fenced code block (idris)
@@ -1878,10 +1877,10 @@ msgid ""
 "order to figure out what can possibly go wrong, we first need to decide on "
 "how the commands should be entered.  Here, we use a single keyword for each "
 "command, together with an optional number of arguments separated from the "
-"keyword by a single space character. For instance: `\"new "
-"i64,boolean,str,str\"`, for initializing an empty table with a new schema. "
-"With this settled, here is a list of things that can go wrong, and the "
-"messages we'd like to print:"
+"keyword by a single space character. For instance: `\"new i64,boolean,str,"
+"str\"`, for initializing an empty table with a new schema. With this "
+"settled, here is a list of things that can go wrong, and the messages we'd "
+"like to print:"
 msgstr ""
 "因此，为了以应有的尊重对待这个重要的话题，我们首先要实现一个自定义错误类型。"
 "这对于小程序来说 *严格* 不是所必需的，但是一旦您的软件变得更加复杂，它对于跟"
@@ -1970,8 +1969,8 @@ msgid ""
 "In order to conveniently construct our error messages, it is best to use "
 "Idris' string interpolation facilities: We can enclose arbitrary string "
 "expressions in a string literal by enclosing them in curly braces, the first "
-"of which must be escaped with a backslash. Like so: `\"foo \\{myExpr a b c}"
-"\"`.  We can pair this with multiline string literals to get nicely "
+"of which must be escaped with a backslash. Like so: `\"foo \\{myExpr a b "
+"c}\"`.  We can pair this with multiline string literals to get nicely "
 "formatted error messages."
 msgstr ""
 "为了方便地构造我们的错误消息，最好使用 Idris 的字符串插值工具：我们可以通过将"
@@ -2252,16 +2251,16 @@ msgstr ""
 #. type: Plain text
 #: ../src/Tutorial/DPair.md:1067
 msgid ""
-"We are finally able to implement a parser for user commands.  Function "
-"`Data.String.words` is used for splitting a string at space characters. In "
-"most cases, we expect the name of the command plus a single argument without "
+"We are finally able to implement a parser for user commands.  Function `Data."
+"String.words` is used for splitting a string at space characters. In most "
+"cases, we expect the name of the command plus a single argument without "
 "additional spaces.  CSV rows can have additional space characters, however, "
 "so we use `Data.String.unwords` on the split string."
 msgstr ""
 "我们终于能够为用户命令实现解析器。函数 `Data.String.words` 用于在空格字符处分"
 "割字符串。在大多数情况下，我们期望命令的名称加上一个没有额外空格的参数。但"
-"是，CSV 行可以有额外的空格字符，因此我们在拆分字符串上使用 "
-"`Data.String.unwords`。"
+"是，CSV 行可以有额外的空格字符，因此我们在拆分字符串上使用 `Data.String."
+"unwords`。"
 
 #. type: Fenced code block (idris)
 #: ../src/Tutorial/DPair.md:1068
@@ -2395,7 +2394,7 @@ msgid ""
 "mandatory."
 msgstr ""
 "这里提出的挑战都涉及以几种有趣的方式增强我们的表格编辑器。其中一些更多的是风"
-"格问题，而不是学习编写依赖类型程序的问题，所以请随意解决这些问题。练习 1 到 "
+"格问题，而不是学习编写依值类型程序的问题，所以请随意解决这些问题。练习 1 到 "
 "3 应该被认为是强制性的。"
 
 #. type: Bullet: '1. '
@@ -2524,7 +2523,7 @@ msgid ""
 "learn about the types and possible shapes of other values, allowing us to "
 "reduce the number of potential bugs in our programs."
 msgstr ""
-"依赖对和记录对于在运行时检查定义我们使用的类型的值是必要的。通过对这些值进行"
+"依值对和记录对于在运行时检查定义我们使用的类型的值是必要的。通过对这些值进行"
 "模式匹配，我们可以了解其他值的类型和可能的形状，从而减少程序中潜在错误的数"
 "量。"
 

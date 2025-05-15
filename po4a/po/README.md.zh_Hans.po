@@ -6,9 +6,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: po 4a\n"
-"POT-Creation-Date: 2025-05-15 07:57+0000\n"
+"POT-Creation-Date: 2025-05-15 20:00+0800\n"
 "PO-Revision-Date: 2025-05-15 03:06+0000\n"
-"Last-Translator: Automatically generated\n"
+"Last-Translator: running-grass <grass@grass.show>\n"
 "Language-Team: none\n"
 "Language: zh_Hans\n"
 "MIME-Version: 1.0\n"
@@ -127,12 +127,13 @@ msgstr "[第一个 Idris 程序](src/Tutorial/Intro.md#第一个-Idris-程序)"
 msgid ""
 "[The Shape of an Idris Definition](src/Tutorial/Intro.md#the-shape-of-an-"
 "idris-definition)"
-msgstr "[Idris 定义的结构](src/Tutorial/Intro.md#Idris-定义的结构)"
+msgstr ""
+"[如何声明一个 Idris 定义](src/Tutorial/Intro.md#如何声明一个-Idris-定义)"
 
 #. type: Bullet: '   5. '
 #: ../README.md:106
 msgid "[Where to get Help](src/Tutorial/Intro.md#where-to-get-help)"
-msgstr "[如何获取帮助](src/Tutorial/Intro.md#如何获取帮助)"
+msgstr "[在哪里可以获得帮助](src/Tutorial/Intro.md#在哪里可以获得帮助)"
 
 #. type: Bullet: '2. '
 #: ../README.md:106
@@ -144,7 +145,7 @@ msgstr "[函数第 1 部分](src/Tutorial/Functions1.md)"
 msgid ""
 "[Functions with more than one Argument](src/Tutorial/Functions1.md#functions-"
 "with-more-that-one-argument)"
-msgstr "[多参数函数](src/Tutorial/Functions1.md#多参数函数)"
+msgstr "[多参函数](src/Tutorial/Functions1.md#多参函数)"
 
 #. type: Bullet: '   2. '
 #: ../README.md:106
@@ -200,8 +201,8 @@ msgstr "[泛型数据类型](src/Tutorial/DataTypes.md#泛型数据类型)"
 #. type: Bullet: '   5. '
 #: ../README.md:106
 msgid ""
-"[Alternative Syntax for Data Definitions](src/Tutorial/"
-"DataTypes.md#alternative-syntax-for-data-definitions)"
+"[Alternative Syntax for Data Definitions](src/Tutorial/DataTypes."
+"md#alternative-syntax-for-data-definitions)"
 msgstr "[数据定义的替代语法](src/Tutorial/DataTypes.md#数据定义的替代语法)"
 
 #. type: Bullet: '4. '
@@ -380,7 +381,7 @@ msgstr "[Sigma 类型](src/Tutorial/DPair.md)"
 #. type: Bullet: '    1. '
 #: ../README.md:106
 msgid "[Dependent Pairs](src/Tutorial/DPair.md#dependent-pairs)"
-msgstr "[依值对](src/Tutorial/DPair.md#依赖对)"
+msgstr "[依值对](src/Tutorial/DPair.md#依值对)"
 
 #. type: Bullet: '    2. '
 #: ../README.md:106

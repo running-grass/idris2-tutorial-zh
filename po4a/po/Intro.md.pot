@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE
-# Copyright (C) YEAR Stefan HÃ¶ck
+# Copyright (C) YEAR Stefan Höck
 # This file is distributed under the same license as the Functional Programming in Idris 2 package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Functional Programming in Idris 2 1.0\n"
-"POT-Creation-Date: 2025-05-15 07:57+0000\n"
+"POT-Creation-Date: 2025-05-15 20:00+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -151,8 +151,8 @@ msgid ""
 "mutating global state. They can only compute a result from their arguments "
 "possibly by invoking other pure functions, *and nothing else*. As a "
 "consequence, given the same input, they will *always* generate the same "
-"output.  This property is known as [referential transparency](https://"
-"en.wikipedia.org/wiki/Referential_transparency)."
+"output.  This property is known as [referential transparency](https://en."
+"wikipedia.org/wiki/Referential_transparency)."
 msgstr ""
 
 #. type: Plain text
@@ -748,8 +748,8 @@ msgstr ""
 #. type: Bullet: '  * '
 #: ../src/Tutorial/Intro.md:431
 msgid ""
-"use `:ti` to inspect the type of a function including implicit arguments: "
-"`:ti foldl`,"
+"use `:ti` to inspect the type of a function including implicit arguments: `:"
+"ti foldl`,"
 msgstr ""
 
 #. type: Bullet: '  * '
@@ -769,8 +769,8 @@ msgstr ""
 #. type: Bullet: '  * '
 #: ../src/Tutorial/Intro.md:431
 msgid ""
-"use `:module` to import a module from one of the available packages: "
-"`:module Data.Vect`,"
+"use `:module` to import a module from one of the available packages: `:"
+"module Data.Vect`,"
 msgstr ""
 
 #. type: Bullet: '  * '

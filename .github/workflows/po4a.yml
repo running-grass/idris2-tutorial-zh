@@ -3,9 +3,9 @@ name: 基于 po4a 更新翻译
 on:
   # 手动触发
   workflow_dispatch: {}
-  push:
-    branches:
-      - 'main'
+  # push:
+  #   branches:
+  #     - 'main'
 jobs:
   build:
     runs-on: ubuntu-latest

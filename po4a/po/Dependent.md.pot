@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE
-# Copyright (C) YEAR Stefan HÃ¶ck
+# Copyright (C) YEAR Stefan Höck
 # This file is distributed under the same license as the Functional Programming in Idris 2 package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Functional Programming in Idris 2 1.0\n"
-"POT-Creation-Date: 2025-05-15 07:57+0000\n"
+"POT-Creation-Date: 2025-05-15 20:00+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -860,10 +860,10 @@ msgstr ""
 #. type: Bullet: '7. '
 #: ../src/Tutorial/Dependent.md:495
 msgid ""
-"Given an initial value of a state type `s` and a function `fun : s -> "
-"(s,a)`, we'd like to generate `Vect`s of `a`s. Declare and implement "
-"function `generate`, which should encapsulate this behavior. Make sure to "
-"use the updated state in every new invocation of `fun`."
+"Given an initial value of a state type `s` and a function `fun : s -> (s,"
+"a)`, we'd like to generate `Vect`s of `a`s. Declare and implement function "
+"`generate`, which should encapsulate this behavior. Make sure to use the "
+"updated state in every new invocation of `fun`."
 msgstr ""
 
 #. type: Plain text

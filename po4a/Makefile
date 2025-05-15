@@ -1,12 +1,14 @@
 root :=$(dir $(shell pwd))
 
-.PHONY: build-docker
-build-docker:
-	docker build -t idris2-tutorial:dev .
 
 .PHONY: update
-update: build-docker
-	docker run --rm -v ${root}:/work idris2-tutorial:dev
+update: 
+	./po4a-update.sh
+
+.PHONY: build-docker
+build-docker:
+	docker build --pull=false -t idris2-tutorial:dev .
+
 
 .PHONY: debug
 debug: build-docker

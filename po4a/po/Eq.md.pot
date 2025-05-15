@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE
-# Copyright (C) YEAR Stefan HÃ¶ck
+# Copyright (C) YEAR Stefan Höck
 # This file is distributed under the same license as the Functional Programming in Idris 2 package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Functional Programming in Idris 2 1.0\n"
-"POT-Creation-Date: 2025-05-15 07:57+0000\n"
+"POT-Creation-Date: 2025-05-15 20:00+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1024,8 +1024,8 @@ msgstr ""
 #. type: Plain text
 #: ../src/Tutorial/Eq.md:596
 msgid ""
-"Note: Functions `replaceVect` and `insertVect` are available from "
-"`Data.Vect` as `replaceAt` and `insertAt`."
+"Note: Functions `replaceVect` and `insertVect` are available from `Data."
+"Vect` as `replaceAt` and `insertAt`."
 msgstr ""
 
 #. type: Title ##
@@ -1324,8 +1324,8 @@ msgid ""
 "distinct, then `y :: xs` and `y :: ys` must be distinct as well. This is the "
 "contraposition of the following statement: If `x :: xs` is the same as `y :: "
 "ys`, then `xs` and `ys` are the same as well. We must therefore implement a "
-"lemma, which proves that the *cons* constructor is [*injective*](https://"
-"en.wikipedia.org/wiki/Injective_function):"
+"lemma, which proves that the *cons* constructor is [*injective*](https://en."
+"wikipedia.org/wiki/Injective_function):"
 msgstr ""
 
 #. type: Fenced code block (idris)

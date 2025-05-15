@@ -20,7 +20,7 @@ module Tutorial.Intro
 
 ## 关于 Idris 编程语言
 
-Idris 是一种*纯*、*依值类型*、*完全*的*函数式*编程语言。本节将简要解释这些术语的含义。
+Idris 是一种*纯粹*、*依值类型*、*全定义*的*函数式*编程语言。本节将简要解释这些术语的含义。
 
 ### 函数式编程
 
@@ -44,7 +44,7 @@ Idris 是一种*纯*、*依值类型*、*完全*的*函数式*编程语言。本
 
 * 要编写真正*产生效果*（即有可观察副作用）的程序会更复杂一些，但绝对可行。
 
-### 依赖类型
+### 依值类型
 
 Idris 是一种强类型、静态类型的编程语言。这意味着每个 Idris
 表达式都有一个*类型*（如：整数、字符串列表、布尔值、从整数到布尔值的函数等），并且类型会在编译时被检查，以避免常见的编程错误。
@@ -193,7 +193,7 @@ distanceToMax : Bits8 -> Bits8
 distanceToMax n = maxBits8 - n
 ```
 
-这引入了一些新语法和一种新类型：函数类型。 `distanceToMax : Bits8 -> Bits8` 可以这样读："`distanceToMax` 是具有一个 `Bits8` 类型参数的函数，它返回 `Bits8` 类型的结果"。在实现中，参数给定一个本地标识符 `n`，然后在右侧计算。再次在 REPL 中尝试函数：
+这引入了一些新语法和一种新类型：函数类型。 `distanceToMax : Bits8 -> Bits8` 可以这样读："`distanceToMax` 是具有一个 `Bits8` 类型参数的函数，它返回 `Bits8` 类型的结果"。在实现中，参数给定一个局部标识符 `n`，然后在右侧计算。再次在 REPL 中尝试函数：
 
 ```repl
 Tutorial.Intro> distanceToMax 12
@@ -242,7 +242,7 @@ Tutorial.Intro> maxBits8 * maxBits8
 * [使用 Idris
   进行类型驱动开发](https://www.manning.com/books/type-driven-development-with-idris)
 
-*专门*讲 Idris 的书！这描述得很详细。使用 Idris 和依赖类型的核心概念编写健壮和简洁的代码。它使用 Idris 1 实现书中的例子，所以使用 Idris 2 时它的一部分必须稍微调整，有一个[所需更新列表](https://idris2.readthedocs.io/en/latest/typedd/typedd.html)。
+*专门*讲 Idris 的书！这描述得很详细。使用 Idris 和依值类型的核心概念编写健壮和简洁的代码。它使用 Idris 1 实现书中的例子，所以使用 Idris 2 时它的一部分必须稍微调整，有一个[所需更新列表](https://idris2.readthedocs.io/en/latest/typedd/typedd.html)。
 
 * [Idris 2
   速成课程](https://idris2.readthedocs.io/en/latest/tutorial/index.html)

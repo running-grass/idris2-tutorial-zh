@@ -78,3 +78,54 @@ test suite,测试套件
 source code,源代码
 package collection,包集合
 root directory,根目录
+literate program,文学化编程
+literate programming,文学化编程
+pure,纯粹
+total,全
+functional,函数式
+identifier,标识符
+local variable,局部变量
+local identifier,局部标识符
+first class,一等公民
+top level,顶层
+Pythagorean triple,勾股三元组
+equality operator,相等运算符
+input types,输入类型
+output type,输出类型
+imperative,命令式
+declarative,声明式
+primitive data type,原语数据类型
+custom data type,自定义数据类型
+dot operator,点运算符
+right to left,从右到左
+chain,链式调用
+show,转字符串（show）
+reverse,反转（reverse）
+Prelude,Prelude
+higher-order function,高阶函数
+mod,取模（mod）
+function from ... to ...,从...到...的函数
+partial application,偏应用
+currying,柯里化
+anonymous function,匿名函数
+lambda calculus,λ演算
+lambda,λ表达式
+backslash,反斜杠
+function arrow,函数箭头
+infix operator,中缀运算符
+fixity,结合性
+right associative,右结合
+left associative,左结合
+precedence,优先级
+operator section,运算符块
+minus operator,减号运算符
+operator overloading,运算符重载
+boolean algebra,布尔代数
+point-free style,无值风格
+predicate,谓词
+Boolean,布尔值
+function application,函数应用
+constrained,受限的
+interface,接口
+name overloading,名称重载
+namespace,命名空间
