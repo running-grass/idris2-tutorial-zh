@@ -19,6 +19,7 @@ function definition,函数定义
 Functor,函子
 GHC,GHC
 Generic Data Types,泛型数据类型
+generic function,泛型函数
 Idris,Idris
 Idris 2,Idris 2
 implementation,实现

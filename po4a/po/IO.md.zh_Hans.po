@@ -242,7 +242,7 @@ msgid ""
 "thus breaking referential transparency.\n"
 "(Actually, there *is* such a function called `unsafePerformIO`.\n"
 "Do not ever use it in your code unless you know what you are doing.)\n"
-msgstr "由于 `IO a` 类型的值仅仅是对有效计算的描述，因此返回此类值或将此类值作为参数的函数仍然是 *纯 * 并且因此是引用透明的。但是，不可能从 `IO a` 类型的值中提取 `a` 类型的值，也就是说，没有通用函数 `IO a -> a `，因为这样的函数在从其参数中提取结果时会无意中执行副作用，从而破坏引用透明度。 （实际上，确实 *有* 这样一个名为 `unsafePerformIO` 的函数。除非您知道自己在做什么，否则不要在代码中使用它。）\n"
+msgstr "由于 `IO a` 类型的值仅仅是对有效计算的描述，因此返回此类值或将此类值作为参数的函数仍然是 *纯 * 并且因此是引用透明的。但是，不可能从 `IO a` 类型的值中提取 `a` 类型的值，也就是说，没有泛型函数 `IO a -> a `，因为这样的函数在从其参数中提取结果时会无意中执行副作用，从而破坏引用透明度。 （实际上，确实 *有* 这样一个名为 `unsafePerformIO` 的函数。除非您知道自己在做什么，否则不要在代码中使用它。）\n"
 
 #. type: Title ###
 #: ../src/Tutorial/IO.md:73

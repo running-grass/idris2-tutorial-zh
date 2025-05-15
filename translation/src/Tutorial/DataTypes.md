@@ -1,6 +1,6 @@
 # 代数数据类型
 
-在[上一章](Functions1.md)中，我们学会了如何编写自己的函数并组合他们来创建更复杂的函数。同等重要的是定义我们自己的数据类型并使用它们作为参数和函数结果。
+在[上一章](Functions1.md)中，我们学会了如何编写自己的函数并组合他们来创建更复杂的函数。同样重要的是能够定义我们自己的数据类型，并在函数参数和返回值中使用它们。
 
 这是一个冗长的章节，信息密集。
 如果您不熟悉 Idris 和函数式编程，请一定要慢慢来，用例子做实验，并可能想出你自己的示例。确保尝试并解决*所有*练习。练习题的答案可以在
@@ -12,7 +12,7 @@ module Tutorial.DataTypes
 
 ## 枚举
 
-让我们从一个星期几的数据类型开始例子。
+让我们以一个表示星期几的数据类型为例开始讲解
 
 ```idris
 data Weekday = Monday
@@ -578,7 +578,7 @@ baz t@(_,_,s) = (length s, t)
 4. 实现两个时间跨度相加的功能。如果
 两个时间跨度使用不同的时间单位，使用较小的时间单位，以确保无损转换。
 
-## 通用数据类型
+## 泛型数据类型
 
 有时，我们会喜欢一个概念足够笼统，不仅适用于单一类型，而且适用于所有类型。例如，我们可能不想定义整数列表、字符串列表和布尔列表，因为这会导致大量代码重复。
 相反，我们希望有一个通用列表类型，根据它存储的值的类型*参数化*。本节说明如何定义和使用泛型类型。
@@ -804,7 +804,7 @@ intSum (n :: ns) = n + intSum ns
 因此，`intSum` 的递归实现导致了一个嵌套调用 `intSum` 的序列，一旦参数是
 空列表也会终止嵌套。
 
-### 通用函数
+### 泛型函数
 
 为了充分体会泛型数据类型所带来的多功能性，我们还需要谈谈泛型函数。
 与泛型类型一样，它们通过一个或多个参数化类型参数来实现。
@@ -823,7 +823,7 @@ integerFromOption x None     = x
 很明显，这又不够普遍。
 当然，我们也想展开 `Option Bool` 或
 `Option String` 以类似的方式。这正是
-通用函数 `fromOption` 做的事情：
+泛型函数 `fromOption` 做的事情：
 
 ```idris
 total
@@ -870,7 +870,7 @@ handleBool = option "Not a boolean value." show
 请记住，函数中的小写标识符
 签名被视为类型参数。
 
-1. 为 `Maybe` 实现以下通用函数：
+1. 为 `Maybe` 实现以下泛型函数：
 
    ```idris
    -- make sure to map a `Just` to a `Just`.
@@ -905,7 +905,7 @@ handleBool = option "Not a boolean value." show
    foldMaybe : (acc -> el -> acc) -> acc -> Maybe el -> acc
    ```
 
-2. 为 `Either` 实现以下通用函数：
+2. 为 `Either` 实现以下泛型函数：
 
    ```idris
    total
@@ -935,7 +935,7 @@ handleBool = option "Not a boolean value." show
    fromEither : (e -> c) -> (a -> c) -> Either e a -> c
    ```
 
-3. 为 `List` 实现以下通用函数：
+3. 为 `List` 实现以下泛型函数：
 
    ```idris
    total
@@ -1022,7 +1022,7 @@ namespace GADT
     (::) : a -> GADT.Seq a -> Seq a
 ```
 
-这里， `Option` 明确声明为类型构造函数（类型 `Type -> Type` 的函数），而 `Some` 是 `a > Option a` 类型的通用函数（其中 `a` 是 *类型参数*）， `None` 是 `Option a` 类型的空泛型函数
+这里， `Option` 明确声明为类型构造函数（类型 `Type -> Type` 的函数），而 `Some` 是 `a > Option a` 类型的泛型函数（其中 `a` 是 *类型参数*）， `None` 是 `Option a` 类型的空泛型函数
 （`a` 又是一个类型参数）。
 同样适用于 `Validated` 和 `Seq`。请注意，以防万一 `Seq` 我们必须区分不同的
 递归情况下的 `Seq` 定义。既然我们

@@ -30,7 +30,8 @@ msgid ""
 "arguments and results in functions."
 msgstr ""
 "在[上一章](Functions1.md)中，我们学会了如何编写自己的函数并组合他们来创建更复"
-"杂的函数。同等重要的是定义我们自己的数据类型并使用它们作为参数和函数结果。"
+"杂的函数。同样重要的是能够定义我们自己的数据类型，并在函数参数和返回值中使用"
+"它们。"
 
 #. type: Plain text
 #: ../src/Tutorial/DataTypes.md:15
@@ -61,7 +62,7 @@ msgstr "枚举"
 #. type: Plain text
 #: ../src/Tutorial/DataTypes.md:24
 msgid "Let's start with a data type for the days of the week as an example."
-msgstr "让我们从一个星期几的数据类型开始例子。"
+msgstr "让我们以一个表示星期几的数据类型为例开始讲解"
 
 #. type: Fenced code block (idris)
 #: ../src/Tutorial/DataTypes.md:25
@@ -1618,7 +1619,7 @@ msgstr ""
 #: ../src/Tutorial/DataTypes.md:762
 #, no-wrap
 msgid "Generic Data Types"
-msgstr "通用数据类型"
+msgstr "泛型数据类型"
 
 #. type: Plain text
 #: ../src/Tutorial/DataTypes.md:772
@@ -2200,7 +2201,7 @@ msgstr ""
 #: ../src/Tutorial/DataTypes.md:1056
 #, no-wrap
 msgid "Generic Functions"
-msgstr "通用函数"
+msgstr "泛型函数"
 
 #. type: Plain text
 #: ../src/Tutorial/DataTypes.md:1062
@@ -2248,7 +2249,7 @@ msgstr ""
 "很明显，这又不够普遍。\n"
 "当然，我们也想展开 `Option Bool` 或\n"
 "`Option String` 以类似的方式。这正是\n"
-"通用函数 `fromOption` 做的事情："
+"泛型函数 `fromOption` 做的事情："
 
 #. type: Fenced code block (idris)
 #: ../src/Tutorial/DataTypes.md:1081
@@ -2380,7 +2381,7 @@ msgstr ""
 #. type: Bullet: '1. '
 #: ../src/Tutorial/DataTypes.md:1142
 msgid "Implement the following generic functions for `Maybe`:"
-msgstr "为 `Maybe` 实现以下通用函数："
+msgstr "为 `Maybe` 实现以下泛型函数："
 
 #. type: Fenced code block (idris)
 #: ../src/Tutorial/DataTypes.md:1143
@@ -2451,7 +2452,7 @@ msgstr ""
 #. type: Bullet: '2. '
 #: ../src/Tutorial/DataTypes.md:1177
 msgid "Implement the following generic functions for `Either`:"
-msgstr "为 `Either` 实现以下通用函数："
+msgstr "为 `Either` 实现以下泛型函数："
 
 #. type: Fenced code block (idris)
 #: ../src/Tutorial/DataTypes.md:1178
@@ -2512,7 +2513,7 @@ msgstr ""
 #. type: Bullet: '3. '
 #: ../src/Tutorial/DataTypes.md:1207
 msgid "Implement the following generic functions for `List`:"
-msgstr "为 `List` 实现以下通用函数："
+msgstr "为 `List` 实现以下泛型函数："
 
 #. type: Fenced code block (idris)
 #: ../src/Tutorial/DataTypes.md:1208
@@ -2733,7 +2734,7 @@ msgid ""
 "usually not define several data types with the same name in\n"
 "a source file, this is not necessary most of the time.\n"
 msgstr ""
-"这里， `Option` 明确声明为类型构造函数（类型 `Type -> Type` 的函数），而 `Some` 是 `a > Option a` 类型的通用函数（其中 `a` 是 *类型参数*）， `None` 是 `Option a` 类型的空泛型函数\n"
+"这里， `Option` 明确声明为类型构造函数（类型 `Type -> Type` 的函数），而 `Some` 是 `a > Option a` 类型的泛型函数（其中 `a` 是 *类型参数*）， `None` 是 `Option a` 类型的空泛型函数\n"
 "（`a` 又是一个类型参数）。\n"
 "同样适用于 `Validated` 和 `Seq`。请注意，以防万一 `Seq` 我们必须区分不同的\n"
 "递归情况下的 `Seq` 定义。既然我们\n"
