@@ -1,34 +1,18 @@
-# A Deep Dive into Quantitative Type Theory
+# 深入理解量化类型理论
 
-*This section was guest-written by [Kiana Sheibani](https://github.com/kiana-S).*
+*本节由[Kiana Sheibani](https://github.com/kiana-S)客座撰写。*
 
-In the tutorial proper, when discussing functions, Idris 2's quantity system
-was introduced. The description was intentionally a bit simplified - the
-inner workings of quantities are complicated, and that complication would
-have only confused any newcomers to Idris 2.
+在正式教程讨论函数时，我们介绍了Idris 2的量化系统。当时的描述是有意简化的——量化系统的内部工作机制比较复杂，这些复杂性只会让Idris
+2的新手感到困惑。
 
-Here, I'll provide a more proper and thorough treatment of Quantitative Type
-Theory (QTT), including how quantity checking is performed and the theory
-behind it. Most of the information here will be unnecessary for
-understanding and writing Idris programs, and you are free to keep thinking
-about quantities like they were explained before. When working with
-quantities in their full complexity, however, a better understanding of how
-they work can be helpful to avoid misconceptions.
+在这里，我将更全面、更深入地探讨量化类型理论(QTT)，包括量化检查的执行方式和背后的理论基础。这里的大部分信息对于理解和编写Idris程序并不是必需的，你可以继续按照之前解释的方式理解量化。然而，当处理完整复杂度的量化时，更好地理解其工作原理有助于避免误解。
 
-## The Quantity Semiring
+## 量化半环
 
-Quantitative Type Theory, as you probably already know, uses a set of
-quantities. The core theory allows for any quantities to be used, but Idris
-2 in particular has three: erased, linear, and unrestricted.  These are
-usually written as `0`, `1`, and `ω` (the Greek lowercase omega)
-respectively.
+正如你可能已经知道的，量化类型理论使用一组量值。核心理论允许使用任何量值，但Idris
+2特别采用了三种：擦除型(erased)、线性型(linear)和无限制型(unrestricted)。它们通常分别写作`0`、`1`和`ω`（希腊小写字母omega）。
 
-As QTT requires, these three quantities are equipped with the structure of
-an *ordered semiring*. The exact mathematical details of what that means
-aren't important; what it means for us is that quantities can be added and
-multiplied together, and that there is an ordering relation on them. Here
-are the tables for each of these operations, where the first argument is on
-the left and the second is on the top:
+按照QTT的要求，这三种量值构成了一个*有序半环*结构。这个数学概念的具体细节并不重要；对我们来说，它意味着量值可以相加和相乘，且它们之间存在一个排序关系。以下是各操作的表格，其中第一个参数在左侧，第二个参数在顶部：
 
 `(+)`：加法
 
@@ -46,7 +30,7 @@ the left and the second is on the top:
 | **`1`** | `0` | `1` | `ω` |
 | **`ω`** | `0` | `ω` | `ω` |
 
-**Order**
+**排序**
 
 | `≤`     | `0`   | `1`   | `ω`  |
 |:-------:|:-----:|:-----:|:----:|
@@ -54,21 +38,15 @@ the left and the second is on the top:
 | **`1`** | false | true  | true |
 | **`ω`** | false | false | true |
 
-These operations behave mostly how you might expect, with `0` and `1` being
-the usual numbers and `ω` being a sort of "infinity" value. (We have `1 + 1
-= ω` instead of `2` because there isn't a `2` quantity in our system.)
+这些操作的行为基本符合预期，`0`和`1`是常规数字，而`ω`则是一种"无穷"值。（我们有`1 + 1 =
+ω`而不是`2`，因为我们的系统中没有`2`这个量值。）
 
-There is one big difference in our ordering, though: `0 ≤ 1` is false! We
-have that `0 ≤ ω` and `1 ≤ ω`, but not `0 ≤ 1`, or `1 ≤ 0` for that
-matter. In the language of mathematics, we say that `0` and `1` are
-*incomparable*. We'll get into why this is the case later, when we talk
-about what these operations mean and how they're used.
+不过，我们的排序关系有一个很大的不同：`0 ≤ 1`是假的！我们有`0 ≤ ω`和`1 ≤ ω`，但没有`0 ≤ 1`，同样也没有`1 ≤
+0`。用数学语言来说，我们称`0`和`1`是*不可比较的*。稍后在讨论这些操作的含义和使用方式时，我们将解释为什么会是这种情况。
 
-## 目录
+## 变量和上下文
 
-In QTT, each variable in each context has an associated quantity.  These
-quantities can be plainly seen when inspecting holes in the REPL. Here's an
-example from the tutorial:
+在QTT中，每个上下文中的每个变量都有一个关联的量值。在REPL中检查洞（holes）时可以清楚地看到这些量值。以下是教程中的一个例子：
 
 ```repl
  0 b : Type
@@ -81,43 +59,32 @@ example from the tutorial:
 mll1 : S (length xs) = S (length (map f xs))
 ```
 
-In this hole's context, The type variables `a` and `b` have `0` quantity,
-while the others have `ω` quantity.
+在这个洞的上下文中，类型变量`a`和`b`具有`0`量值，而其他变量则具有`ω`量值。
 
-Since the context is what stores quantities, only names that appear in the
-context can have a quantity, including:
+由于上下文是存储量值的地方，只有出现在上下文中的名称才能拥有量值，包括：
 
-- Function/lambda parameters
+- 函数/lambda参数
 - 模式匹配
-- `let` bindings
+- `let` 绑定
 
-These do not appear in the context, and thus do NOT have quantities:
+以下内容不会出现在上下文中，因此不具有量值：
 
-- Top-level definitions
-- `where` definitions
-- All non-variable expressions
+- 顶层定义
+- `where` 定义
+- 所有非变量表达式
 
-### A Change in Perspective
+### 视角的转变
 
-When writing Idris programs using holes, we tend to use a top-to-bottom
-approach: we start with looking at the context for the whole function, and
-then we look at smaller and smaller sub-expressions as we fill in the
-code. This means that quantities in the context tend to decrease over time -
-if the variable `x` has quantity `1` and you use it once, the quantity will
-decrease to `0`.
+在使用孔编写Idris程序时，我们倾向于采用自顶向下的方法：先查看整个函数的上下文，然后在填充代码时逐渐关注更小的子表达式。这意味着上下文中的量值往往会随着时间减少——如果变量`x`的量值为`1`，并且你使用了它一次，那么量值将减少到`0`。
 
-When looking at how typechecking works, however, it's more natural to look
-at contexts in the other direction, from smaller sub-expressions to larger
-ones. This means that the quantities we're looking at will tend to increase
-instead. As an example, let's look at this simple function:
+然而，当观察类型检查是如何工作的时候，从另一个方向查看上下文会更自然，即从较小的子表达式到较大的表达式。这意味着我们看到的量值将趋于增加而不是减少。作为例子，让我们看这个简单函数：
 
 ```idris
 square : Integer -> Integer
 square n = n * n
 ```
 
-Let's first look at the context for the smallest sub-expression of this
-function, just the variable `x`:
+首先，让我们看看这个函数最小子表达式的上下文，就是变量`x`：
 
 ```repl
  0 a : Type
@@ -126,7 +93,7 @@ function, just the variable `x`:
 x : a
 ```
 
-Now let's look at the context for the larger expression `x * x`:
+现在让我们看看更大表达式`x * x`的上下文：
 
 ```repl
  0 a : Type
@@ -135,22 +102,15 @@ Now let's look at the context for the larger expression `x * x`:
 (x * x) : a
 ```
 
-The quantity of the parameter `x` increased from `1` to `ω`, since we went
-from using it once to using it multiple times. When looking at expressions
-like this, we can think of the quantity `q` as saying that the variable is
-"used `q` times" in the expression.
+参数`x`的量值从`1`增加到了`ω`，因为我们从使用它一次变成了多次使用它。在观察这样的表达式时，我们可以将量值`q`理解为该变量在表达式中"被使用了`q`次"。
 
-## Quantity Checking
+## 量值检查
 
-With all of that background information established, we can finally see how
-quantity checking actually works. Let's follow what happens to a single
-variable `x` in our context as we perform different operations.
+在建立了所有这些背景信息之后，我们终于可以看到量值检查实际是如何工作的了。让我们跟踪在执行不同操作时，上下文中单个变量`x`发生了什么变化。
 
-To illustrate how quantities evolve, I will provide Idris-style context
-diagrams showing the various cases. In these, capital-letter names `T`, `E`,
-etc. stand for any expression, and `q`, `r`, etc.  stand for any quantity.
+为了说明量值如何演变，我将提供Idris风格的上下文图表来展示各种情况。在这些图表中，大写字母名称`T`、`E`等代表任意表达式，而`q`、`r`等代表任意量值。
 
-### 字面量重载
+### 变量和字面量
 
 ```repl
  1 x : T
@@ -158,10 +118,7 @@ etc. stand for any expression, and `q`, `r`, etc.  stand for any quantity.
 x : T
 ```
 
-In the simplest case, an expression is just a single variable. That variable
-will have quantity `1` in the context, while all others have quantity
-`0`. (Other variables may also be missing entirely, which for quantity
-checking is equivalent to them having `0` quantity.)
+在最简单的情况下，表达式就是一个单独的变量。该变量在上下文中将具有`1`量值，而所有其他变量都具有`0`量值。（其他变量也可能完全不存在，这对于量值检查来说等同于它们具有`0`量值。）
 
 ```repl
  0 x : T
@@ -169,11 +126,9 @@ checking is equivalent to them having `0` quantity.)
 True : Bool
 ```
 
-For literals such as `1`, or constructors such as `True`, all variables in
-the context have quantity 0, since all variables are used 0 times in a
-constructor.
+对于像`1`这样的字面量，或者像`True`这样的构造器，上下文中的所有变量都具有0量值，因为所有变量在构造器中都被使用了0次。
 
-### `($)`：函数应用
+### 函数应用
 
 ```repl
  qf x : T
@@ -189,15 +144,11 @@ E : A
 (F E) : B
 ```
 
-This is the most complicated of QTT's rules. We have a function `F` whose
-parameter has `r` quantity, and we're applying it to `E`. If our variable
-`x` is used `qf` times in `F` and `qe` times in `E`, then it is used `qf +
-r*qe` times in the full expression.
+这是QTT规则中最复杂的一条。我们有一个函数`F`，其参数具有`r`量值，我们将它应用于`E`。如果我们的变量`x`在`F`中被使用了`qf`次，在`E`中被使用了`qe`次，那么在完整表达式中它被使用了`qf
++ r*qe`次。
 
-To better understand this rule, let's look at some simpler cases.  First,
-let's assume that `x` is not used in the function `F`, so that `qf =
-0`. Then, `x`'s full quantity is `r * qe`. For example, let's look at these
-two functions:
+为了更好地理解这条规则，让我们看一些更简单的情况。首先，假设`x`在函数`F`中没有被使用，因此`qf = 0`。那么，`x`的完整量值是`r *
+qe`。例如，让我们看看这两个函数：
 
 ```idris
 f x = id x
@@ -205,31 +156,26 @@ f x = id x
 g x = id 1
 ```
 
-Here, `id` has type `a -> a`, where its input is unrestricted (`ω`).
-In the first function, we can see that `x` is used once in the input
-of `id`, so the quantity of `x` in the whole expression is `ω * 1 = ω`.
-In the second function, `x` is used zero times in the input of
-`id`, so its quantity in the whole expression is `ω * 0 = 0`. The
-function `g` will typecheck if you mark its input as erased, but not
-`f`.
+这里，`id`的类型是`a -> a`，其输入是无限制的（`ω`）。
+在第一个函数中，我们可以看到`x`在`id`的输入中被使用了一次，
+所以`x`在整个表达式中的量值是`ω * 1 = ω`。
+在第二个函数中，`x`在`id`的输入中被使用了零次，
+所以它在整个表达式中的量值是`ω * 0 = 0`。
+如果你将函数`g`的输入标记为擦除型，它将通过类型检查，
+但函数`f`不会。
 
-As another simplified case, let's assume that `F` is a linear function,
-meaning that `r = 1`. Then `x`'s full quantity is `qf + qe`, the simple sum
-of the quantities of each part. Here's a function that demonstrates this:
+作为另一个简化的情况，假设`F`是一个线性函数，即`r = 1`。那么`x`的完整量值是`qf +
+qe`，即每个部分量值的简单和。这里有一个函数演示了这一点：
 
 ```idris
 ldup x = (#) x x
 ```
 
-The linear pair constructor `(#)` is linear in both arguments, so to find
-the quantity of `x` in the full expression we can just add up the quantities
-in each part. `x` is used zero times in `(#)` and one time in `x`, so the
-total quantity is `0 + 1 + 1 = ω`. If the second `x` were replaced by
-something else, like a literal, the quantity would only be `0 + 1 + 0 =
-1`. Intuitively, you can think of these as "parallel expressions", and the
-addition operation tells you how quantities combine in parallel.
+线性对构造器`(#)`在两个参数中都是线性的，所以为了找到完整表达式中`x`的量值，我们只需将每个部分中的量值相加。`x`在`(#)`中被使用了零次，在`x`中被使用了1次，所以总量值是`0
++ 1 + 1 = ω`。如果第二个`x`被替换为其他东西，比如一个字面量，那么量值只会是`0 + 1 + 0 =
+1`。直观地说，你可以将这些视为"并行表达式"，而加法操作告诉你量值如何在并行表达式中组合。
 
-### Subusaging
+### 子用量
 
 ```repl
  q x : T
@@ -243,37 +189,27 @@ E : T'
 E : T'
 ```
 
-This rule is where the order relation on quantities comes in. It allows us
-to convert a quantity in our context to another one, given that the new
-context is greater than or equal to the old one. Type theorists call this
-*subusaging*, as it lets us use variables less often than we claim in our
-types.
+这条规则是量值顺序关系的作用。它允许我们将上下文中的量值转换为另一个量值，前提是新上下文大于或等于旧上下文。类型理论家称其为"子用量"，因为它允许我们比在类型中声明的次数更少地使用变量。
 
-Subusaging is why this function definition is allowed:
+子用量是为什么这个函数定义是允许的：
 
 ```idris
 ignore : a -> Int
 ignore x = 42
 ```
 
-The input `x` is used zero times, which would normally mean its quantity
-would have to be `0`; however, since `0 ≤ ω`, we can use subusaging to
-increase the quantity to `ω`.
+输入`x`被使用了零次，这通常意味着它的量值必须为`0`；然而，由于`0 ≤ ω`，我们可以使用子用量将量值增加到`ω`。
 
-This also explains the mysterious fact we pointed out earlier, that `0 ≰ 1`
-in our quantity ordering. If it were true that `0 ≤ 1`, then we could also
-increase the quantity of `x` from `0` to `1`:
+这也解释了我们之前指出的神秘事实，即`0 ≰ 1`在量值顺序中。如果`0 ≤ 1`是真的，那么我们也可以将`x`的量值从`0`增加到`1`：
 
 ```idris
 ignoreLinear : (1 x : a) -> Int
 ignoreLinear x = 42
 ```
 
-This would mean that the quantity `1` would be for variables used *at most*
-once, rather than *exactly* once. Idris's designers decided that they wanted
-linearity to have the second meaning, not the first.
+这意味着量值`1`将用于*最多*使用一次的变量，而不是*恰好*使用一次的变量。Idris的设计者决定他们希望线性具有第二种含义，而不是第一种。
 
-### Lambdas and Other Bindings
+### Lambda和其它绑定
 
 ```repl
  q x : A
@@ -283,79 +219,55 @@ E : B
 (\q x => E) : (q x : A) -> B
 ```
 
-This rule is the most important, as it is the only one in which
-quantities actually impact typechecking. It is also one of the most
-straightforward: a lambda expression `\q x => E` is only valid if `x`
-is used `q` times inside `E`. This rule doesn't only apply to lambdas,
-actually - it applies to any syntax where a variable that has a
-quantity is bound, such as function parameters, `let`, `case`, `with`,
-and so on.
+这个规则是最重要的，因为它是在量值检查中唯一影响类型检查的规则。它也是最简单的规则之一：lambda表达式`\q x => E`只有在`x`在`E`中被使用`q`次时才有效。这条规则不仅适用于lambda，实际上，它适用于任何语法，其中具有量值的变量被绑定，例如函数参数、`let`、`case`、`with`等。
 
 ```idris
 let x = 1 in x + x
 ```
 
-To see how quantity checking would work with this let-expression, we can
-simply desugar it into its equivalent lambda form:
+为了了解量值检查如何与这个`let`表达式一起工作，我们可以简单地将其转换为等价的lambda形式：
 
 ```idris
 (\x => x + x) 1
 ```
 
-An explicit quantity `q` isn't given for the lambda in this expression, so
-Idris will try to infer the quantity, then check to see if it's valid. In
-this case, Idris will infer that `x` is unrestricted.
+在这个表达式中，lambda的量值`q`没有显式给出，所以Idris会尝试推断量值，然后检查是否有效。在这种情况下，Idris会推断出`x`是无限制的。
 
 #### 模式匹配
 
-All of the binding constructs that this rule applies to support pattern
-matching, so we need to determine how quantities interact with patterns. To
-be more specific, if we have a function that pattern-matches like this:
+这条规则适用于所有支持模式匹配的绑定构造。为了更具体地说，如果我们有一个像这样的模式匹配函数：
 
 ```idris
 func : (1 _ : LPair a b) -> c
 func (x # y) = ?impl
 ```
 
-How does the linear quantity of this function's input "descend" into the
-bindings `x` and `y`?
+这个函数的线性量值如何"下降"到绑定`x`和`y`中？
 
-A simple rule is to apply the same function-application rule we looked at
-earlier, but to the left side of the equation. For example, here's how we
-compute the quantity required for `x` in this function definition:
+一个简单的规则是应用我们之前看到的相同函数应用规则，但应用于等式的左侧。例如，这里是我们如何计算这个函数定义中`x`所需的量值：
 
 ```idris
 func      (((#)      x)       y)
   0 + 1 * (( 0 + 1 * 1) + 1 * 0)  = 1
 ```
 
-We start from the outside and work our way inwards, applying the `qf + r*qe`
-rule as we go. `x` is used zero times in the constant `func`, and its
-argument is linear. We know that `x` is used once inside of the linear pair
-`(x # y)` (aside from being obvious, we can compute this fact ourselves), so
-the number of times `x` must be used in `func`'s definition is `0 + 1 * 1 =
-1`.
+我们从外部开始，逐步向内应用`qf + r*qe`规则。`x`在常量`func`中被使用了零次，它的参数是线性的。我们知道`x`在线性对`(x #
+y)`中被使用了一次（除了显而易见的，我们可以自己计算这个事实），所以`x`在`func`的定义中必须被使用`0 + 1 * 1 = 1`次。
 
-The same argument applies to `y`, meaning that `y` should also be used once
-inside of `func` for this definition to pass quantity checking.  And in
-fact, if we look at the context of the hole `?impl`, that's exactly what we
-see!
+同样的论点也适用于`y`，这意味着`y`也应该在`func`中被使用一次，以便这个定义通过量值检查。事实上，如果我们查看洞`?impl`的上下文，那就是我们看到的！
 
 ```repl
-Tutorial.Functions2> :t impl_0
- 0 b : Type
  0 a : Type
- 0 e : Type
-   fun : a -> Either e b
+ 0 b : Type
+ 0 c : Type
+ 1 x : a
+ 1 y : b
 ------------------------------
-impl_0 : Either e (List b)
+impl : c
 ```
 
-As a final note, pattern matching in Idris 2 is only allowed when the value
-in question exists at runtime, meaning that it isn't erased.  This is
-because in QTT, a value must be constructed before it can be
-pattern-matched: if you match on a variable `x`, the resources required to
-make that variable's value are added to the total count.
+作为最后一点，Idris
+2中的模式匹配仅在值存在时才被允许，这意味着它没有被擦除。这是因为QTT中，一个值必须在被模式匹配之前被构造：如果你匹配一个变量`x`，那么为了构造该变量的值而需要的资源被添加到总数中。
 
 ```repl
  1 x : T
@@ -371,37 +283,24 @@ E : T'
 (case x of ... => E) : T'
 ```
 
-For this reason, the total uses of the variable `x` when pattern-matching on
-it must be `1 + q`, where `q` is the uses of `x` after the pattern-match
-(`x` is still possible to use with an as-pattern `x@...`). This prevents the
-quantity from being `0`.
+出于这个原因，当在它上面进行模式匹配时，变量`x`的总使用次数必须是`1 +
+q`，其中`q`是模式匹配后`x`的使用次数（`x`仍然可以与`x@...`的as-pattern一起使用）。这防止了量值变为`0`。
 
-## The Erased Fragment
+## 擦除片段
 
-Earlier I stated that only variables in the context can have quantities,
-which in particular means top-level definitions cannot have them. This is
-*mostly* true, but there is one slight exception: a function can be marked
-as erased by placing a `0` before its name.
+之前我曾说过，只有上下文中的变量可以具有量值，这特别意味着顶层定义不能具有量值。这*大部分*是正确的，但有一个小小的例外：一个函数可以通过在其名称前放置一个`0`来标记为擦除。
 
 ```idris
 0 erasedId : (0 x : a) -> a
 erasedId x = x
 ```
 
-This tells the type system to define this function within the *erased
-fragment*, which is a fragment of the type system wherein all quantity
-checks are ignored. In the `erasedId` function above, we use the function's
-input `x` once despite labeling it as erased. This would normally result in
-a quantity error, but this function is allowed due to being defined in the
-erased fragment.
+这告诉类型系统在*擦除片段*中定义这个函数，这是一个类型系统片段，其中所有量值检查都被忽略。在上面的`erasedId`函数中，我们使用函数输入`x`一次，尽管将其标记为擦除。这通常会导致量值错误，但由于定义在擦除片段中，这个函数是允许的。
 
-This quantity freedom the erased fragment gives us comes with a big
-drawback, though - erased functions are banned from being used at
-runtime. In terms of the type theory, what this means is that an erased
-function can only ever be used in these two places:
+擦除片段为我们提供的这种量值自由性带来了一个很大的缺点，尽管擦除函数被禁止在运行时使用。在类型理论方面，这意味着擦除函数只能在这些两个地方使用：
 
-1. Inside of another erased-fragment function or expression;
-2. Inside of a function argument that's erased:
+1. 在另一个擦除片段函数或表达式内部；
+2. 在擦除的函数参数内部；
 
 ```idris
 constInt : (0 _ : a) -> Int
@@ -411,69 +310,37 @@ erased2 : Int
 erased2 = constInt (erasedId 1)
 ```
 
-This makes sure that quantities are always handled correctly at runtime,
-which is where it matters!
+这确保了量值在运行时总是被正确处理，这就是它重要的地方！
 
-There is another important place where the erased fragment comes into play,
-and that's in type signatures. The type signatures of definitions are always
-erased, so erased functions can be used inside of them.
+另一个重要的位置是类型签名。定义的类型签名总是被擦除，所以擦除函数可以在它们内部使用。
 
 ```idris
 erasedPrf : erasedId 0 = 0
 erasedPrf = Refl
 ```
 
-For this reason, erased functions are sometimes thought of as "exclusively
-type-level functions", though as we've seen, that's not entirely accurate.
+出于这个原因，擦除函数有时被认为是"仅限类型级别的函数"，尽管正如我们所见，这并不完全准确。
 
 ## 结论
 
-This concludes our thorough discussion of Quantitative Type Theory. In this
-section, we learned about the various operations on quantities: their
-addition, multiplication, and ordering. We saw how quantities were linked to
-the context, and how to properly think about the context when analyzing type
-systems (bottom-to-top instead of top-to-bottom). We then moved on to
-studying QTT proper, and we saw how the quantities in our context change as
-the expressions we write grow more complex. Finally, we looked at the erased
-fragment, and how we can define erased functions.
+这结束了我们对量值类型理论的全面讨论。在本节中，我们了解了量值的各种操作：它们的加法、乘法和顺序。我们看到了量值如何与上下文相关联，以及如何在分析类型系统时正确地考虑上下文（自下而上而不是自上而下）。然后，我们继续研究QTT本身，并看到随着我们编写的表达式变得越来越复杂，上下文中的量值如何变化。最后，我们看了擦除片段，以及我们如何定义擦除函数。
 
-In Idris 2's current state, most of this information is still entirely
-unnecessary for learning the language. That may not always be the case,
-though: there have been some discussions to change the quantity semiring
-that Idris 2 uses, or even to allow the programmer to choose which set of
-quantities to use. Whether those discussions lead to anything or not, it can
-still useful to better understand how Quantitative Type Theory functions in
-order to write better Idris 2 code.
+在Idris 2的当前状态中，大多数这些信息对于学习语言来说仍然是完全不必要的。这可能并不总是如此：已经有一些讨论要改变Idris
+2使用的量值半环，或者甚至允许程序员选择要使用的量值集。无论这些讨论是否导致任何结果，了解量值类型理论如何运作以编写更好的Idris
+2代码仍然是有用的。
 
-### A Note on Mathematical Accuracy
+### 关于数学精确性的说明
 
-The information in this appendix is partially based on Robert Atkey's 2018
-paper [Syntax and Semantics of Quantitative Type
-Theory](https://bentnib.org/quantitative-type-theory.pdf), which outlines
-QTT in the standard language of type theory. The QTT presented in Atkey's
-paper is roughly similar to Idris 2's type system except for these
-differences:
+本附录中的信息部分基于Robert Atkey的2018年论文[Syntax and Semantics of Quantitative Type
+Theory](https://bentnib.org/quantitative-type-theory.pdf)，该论文概述了QTT在类型理论的标准语言中的情况。Atkey的论文中介绍的QTT大致与Idris
+2的类型系统相似，除了这些差异：
 
-1. Atkey's theory does not have subusaging, and so the quantity semiring in
-   Atkey's paper is not ordered.
-2. In Atkey's theory, types can only be constructed in the erased fragment,
-   which means it is impossible to construct a type at runtime. Idris 2
-   allows constructing types at runtime, but still uses the erased fragment
-   when inside of type signatures.
+1. Atkey的理论没有子用量，因此Atkey的论文中的量值半环不是有序的。
+2. 在Atkey的理论中，类型只能在擦除片段中构造，这意味着在运行时不可能构造类型。Idris
+   2允许在运行时构造类型，但在类型签名内部仍然使用擦除片段。
 
-To resolve these differences, I directly observed how Idris 2's type system
-behaved in practice in order to determine where to deviate from Atkey's
-paper.
+为了解决这些差异，我直接观察了Idris 2的类型系统在实践中是如何表现的，以确定偏离Atkey的论文的地方。
 
-While I tried to be as mathematically accurate as possible in this section,
-some accuracy had to be sacrificed for the sake of simplicity. In
-particular, the description of pattern matching given here is substantially
-oversimplified. A proper formal treatment of pattern matching would require
-introducing an eliminator function for each datatype; this eliminator would
-serve to determine how that datatype's constructors interacted with quantity
-checking. The details of how this would work for a few simple types (such as
-the boolean type `Bool`) are in Atkey's paper above. I did not include these
-details because I decided that what I was describing was complicated enough
-already.
+虽然我试图在这部分尽可能精确，但有些精确性必须为了简单性而牺牲。特别是，这里给出的模式匹配的描述被大大简化了。对模式匹配的适当正式处理需要为每个数据类型引入一个消除器函数；这个消除器将用于确定该数据类型的构造函数如何与量值检查交互。关于如何为一些简单类型（如布尔类型`Bool`）工作的细节，在Atkey的论文中。我没有包含这些细节，因为我决定我所描述的内容已经足够复杂了。
 
 <!-- vi: filetype=idris2:syntax=markdown -->

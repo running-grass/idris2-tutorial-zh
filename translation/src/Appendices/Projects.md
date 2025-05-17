@@ -1,54 +1,34 @@
 # [构造 Idris 项目](src/Appendices/Projects.md)
 
-In this section I'm going to show how to organize, install, and depend on
-larger Idris projects. We will have a look at Idris packages, the module
-system, visibility of types and functions, writing comments and doc strings,
-and using pack for managing our libraries.
+在本节中，我将展示如何组织、安装和依赖更大的Idris项目。我们将看看Idris包、模块系统、类型和函数的可见性、编写注释和文档字符串，以及使用pack来管理我们的库。
 
-This section should be useful for all readers who have already written a bit
-of Idris code. We will not do any fancy type level wizardry in here, but
-I'll demonstrate several concepts using `failing` code blocks, which you
-might not have seen before.  This rather new addition to the language allows
-us to write code that is expected to fail during elaboration (type
-checking). For instance:
+本节应该对已经编写了一些Idris代码的读者有用。我们在这里不会做任何花哨的类型级别魔法，但我会使用`failing`代码块来演示几个概念，你可能之前没有见过。这种新的语言特性允许我们编写在类型检查期间应该失败的代码。例如：
 
 ```repl
-failing "Can't find an implementation\nfor NotNil []."
-  errHead : Nat
-  errHead = Predicates.head []
+failing "Can't find an implementation for FromString Bits8."
+  ohno : Bits8
+  ohno = "Oh no!"
 ```
 
-As part of a failing block, we can give a substring of the compiler's error
-message for documentation purposes and to make sure the block fails with the
-expected error.
+作为失败块的一部分，我们可以给编译器错误消息的子字符串，用于文档目的，并确保块失败时出现预期的错误。
 
-## Modules
+## 模块
 
-每个 Idris 源文件通常应该以模块名称和一些必要的导入开头，本文档也不例外。
+每个Idris源文件都定义了一个*模块*，通常以如下所示的模块头开始：
 
 ```idris
 module Appendices.Projects
 ```
 
-A module's name consists of several upper case identifiers separated by
-dots, which must reflect the path of the `.idr` file where the module is
-stored. For instance, this module is stored in file
-`Appendices/Projects.md`, so the module's name is `Appendices.Projects`.
+模块的名称由几个大写字母标识符组成，用点分隔，必须反映存储模块的`.idr`文件的路径。例如，这个模块存储在文件`Appendices/Projects.md`中，所以模块的名称是`Appendices.Projects`。
 
-"But wait!", I hear you say, "What about the parent folder(s) of
-`Appendices`? Why aren't those part of the module's name?" In order to
-understand this, we must talk about the concept of the *source
-directory*. The source directory is where Idris is looking for source
-files. It defaults to the directory, from which the Idris executable is
-run. For instance, when in folder `src` of this project, you can open this
-source file like so:
+但是，等待！"，你可能会说，"`Appendices`的父文件夹呢？为什么那些不是模块名称的一部分？"为了理解这一点，我们必须谈谈*源目录*的概念。源目录是Idris寻找源文件的地方。它默认为运行Idris可执行文件的目录。例如，当在项目中的`src`文件夹中时，你可以像这样打开这个源文件：
 
 ```sh
-[构造 Idris 项目](src/Appendices/Projects.md)
+idris2 Appendices/Projects.md
 ```
 
-This will not work, however, if you try the same thing from this project's
-root folder:
+但是，如果你从项目根文件夹尝试同样的事情，这不会起作用：
 
 ```sh
 $ idris2 src/Appendices/Projects.md
@@ -57,34 +37,23 @@ Error: Module name Appendices.Projects does not match file name "src/Appendices/
 ...
 ```
 
-So, which folder names to include in a module name depends on the parent
-folder we consider to be our source directory. It is common practice to name
-the source directory `src`, although this is not mandatory (as I said above,
-the default is actually the directory, from which we run Idris). It is
-possible to change the source directory with the `--source-dir` command-line
-option. The following works from within this project's root directory:
+所以，哪些文件夹名称应该包含在模块名称中，取决于我们认为我们的源目录是哪个父文件夹。通常的做法是将源目录命名为`src`，尽管这不是强制性的（正如我之前所说，默认情况下，实际上是运行Idris的目录）。可以使用`--source-dir`命令行选项更改源目录。以下工作从项目根目录：
 
 ```sh
-[构造 Idris 项目](src/Appendices/Projects.md)
+idris2 --source-dir src src/Appendices/Projects.md
 ```
 
-And the following would work from a parent directory (assuming this tutorial
-is stored in folder `tutorial`):
+并且以下也会从父文件夹工作（假设这个教程存储在文件夹`tutorial`中）：
 
 ```sh
-[构造 Idris 项目](src/Appendices/Projects.md)
+idris2 --source-dir tutorial/src tutorial/src/Appendices/Projects.md
 ```
 
-Most of the time, however, you will specify an `.ipkg` file for your project
-(see later in this section) and define the source directory
-there. Afterwards, you can use pack (instead of the `idris2` executable) to
-start REPL sessions and load your source files.
+大多数时候，你会为你的项目指定一个`.ipkg`文件（稍后在本节中可以看到），并在那里定义源目录。之后，你可以使用pack（而不是`idris2`可执行文件）来启动REPL会话并加载你的源文件。
 
-### Module Imports
+### 模块导入
 
-You often need to import functions and data types from other modules when
-writing Idris code. This can be done with an `import` statement. Here are
-several examples showing how these might look like:
+当你编写Idris代码时，你经常需要从其他模块导入函数和数据类型。这可以通过`import`语句来完成。这里有一些例子，展示了这些可能是什么样子的：
 
 ```idris
 import Data.String
@@ -95,54 +64,29 @@ import Data.Vect as V
 import public Data.List1 as L
 ```
 
-The first two lines import modules from another *package* (we will learn
-about packages below): `Data.List` from the *base* package, which will be
-installed as part of your Idris installation.
+前两行从另一个*包*导入模块（我们将在下面学习包）：`Data.List`从*base*包中导入，它将作为Idris安装的一部分安装。
 
-The second line imports module `Text.CSV` from within our own source
-directory `src`. It is always possible to import modules that are part of
-the same source directory as the file we are working on.
+第二行从我们自己的源目录`src`中导入模块`Text.CSV`。总是可以导入与正在处理的文件位于相同源目录的模块。
 
-The third line imports module `Appendices.Neovim`, again from our own source
-directory. Note, however, that this `import` statement comes with an
-additional `public` keyword. This allows us to *re-export* a module, so that
-it is available from within other modules in addition to the current module:
-If another module imports `Appendices.Projects`, module `Appendices.Neovim`
-will be imported as well without the need of an additional `import`
-statement. This is useful when we split some complex functionality across
-different modules and want to import the lot via a single catch-all module
-See module `Control.Monad.State` in *base* for an example. You can look at
-the Idris sources on GitHub or locally after cloning the [Idris2
-project](https://github.com/idris-lang/Idris2).  The base library can be
-found in the `libs/base` subfolder.
+第三行从我们自己的源目录导入模块`Appendices.Neovim`。请注意，这个`import`语句有一个额外的`public`关键字。这允许我们*重新导出*一个模块，因此它不仅在当前模块中可用，而且在其他模块中也可用：如果另一个模块导入`Appendices.Projects`，模块`Appendices.Neovim`也将被导入，而不需要额外的`import`语句。这在将一些复杂功能拆分到不同模块并希望通过单个全能模块导入所有功能时很有用。参见*base*中的模块`Control.Monad.State`作为示例。你可以在克隆[Idris2项目](https://github.com/idris-lang/Idris2)后在GitHub或本地查看Idris源代码。基础库可以在`libs/base`子文件夹中找到。
 
-It often happens that in order to make use of functions from some module `A`
-we also require utilities from another module `B`, so `A` should re-export
-`B`. For instance, `Data.Vect` in *base* re-exports `Data.Fin`, because the
-latter is often required when working with vectors.
+通常，为了使用来自某个模块`A`的函数，我们也需要来自另一个模块`B`的实用程序，所以`A`应该重新导出`B`。例如，*base*中的`Data.Vect`重新导出`Data.Fin`，因为后者在处理向量时经常需要。
 
-The fourth line imports module `Data.Vect`, giving it a new name `V`, to be
-used as a shorter prefix. If you often need to disambiguate identifiers by
-prefixing them with a module's name, this can help making your code more
-concise:
+第四行导入模块`Data.Vect`，给它一个新名称`V`，用作更短的前缀。如果你经常需要通过模块名称前缀来消除歧义，这可以帮助使你的代码更简洁：
 
 ```idris
 vectSum : Nat
 vectSum = sum $ V.fromList [1..10]
 ```
 
-Finally, on the fifth line we publicly import a module and give it a new
-name. This name will then be the one seen when we transitively import
-`Data.List1` via `Appendices.Projects`. To see this, start a REPL session
-(after type checking the tutorial)  without loading a source file from this
-project's root folder:
+最后，在第五行，我们公开导入一个模块并给它一个新名称。这个名称将在我们通过`Appendices.Projects`间接导入`Data.List1`时被看到。要看到这一点，请启动一个REPL会话（在类型检查教程之后），而不从项目根文件夹加载源文件：
 
 ```sh
 pack typecheck tutorial
 pack repl
 ```
 
-Now load module `Appendices.Projects` and checkout the type of `singleton`:
+现在加载模块`Appendices.Projects`并检查`singleton`的类型：
 
 ```repl
 Main> :module Appendices.Projects
@@ -153,9 +97,7 @@ Data.List.singleton : a -> List a
 L.singleton : a -> List1 a
 ```
 
-As you can see, the `List1` version of `singleton` is now prefixed with `L`
-instead of `Data.List1`. It is still possible to use the "official" prefix,
-though:
+正如你所看到的，`List1`版本的`singleton`现在以`L`而不是`Data.List1`为前缀。仍然可以使用"官方"前缀：
 
 ```repl
 Main> List1.singleton 12
@@ -166,13 +108,7 @@ Main> L.singleton 12
 
 ### 模块和命名空间
 
-At times, we want to define several functions or data types with the same
-name in a single module. Idris does not allow this, because every name must
-be unique in its *namespace*, and the namespace of a module is just the
-fully qualified module name.  However, it is possible to define additional
-namespaces within a module by using the `namespace` keyword followed by the
-name of the namespace. All functions which should belong to this namespace
-must then be indented by the same amount of whitespace.
+有时，我们希望在单个模块中定义具有相同名称的几个函数或数据类型。Idris不允许这样做，因为每个名称在其*命名空间*中必须是唯一的，而模块的命名空间只是完全限定的模块名称。然而，通过使用`namespace`关键字，可以在模块中定义额外的命名空间。所有应该属于这个命名空间的功能必须缩进相同的空格量。
 
 这是另一个例子：
 
@@ -202,17 +138,7 @@ namespace HVect
   tail (_ :: vs) = vs
 ```
 
-Function names `HVect.head` and `HVect.tail` as well as constructors
-`HVect.Nil` and `HVect.(::)` would clash with functions and constructors of
-the same names from the outer namespace (`Appendices.Projects`), so we had
-to put them in their own namespace. In order to be able to use them from
-outside their namespace, they need to be exported (see the section on
-visibility below). In case we need to disambiguate between these names, we
-can prefix them with part of their namespace. For instance, the following
-fails with a disambiguation error, because there are several functions
-called `head` in scope and it is not clear from `head`'s argument (some data
-type supporting list syntax, of which again several are in scope), which
-version we want:
+函数名称`HVect.head`和`HVect.tail`以及构造函数`HVect.Nil`和`HVect.(::)`与外部命名空间（`Appendices.Projects`）中的同名函数和构造函数冲突，所以我们不得不将它们放在自己的命名空间中。为了能够从外部使用它们，它们需要被导出（参见下面的可见性部分）。如果我们需要区分这些名称，我们可以用它们的命名空间的前缀来区分它们。例如，以下由于作用域中有几个名为`head`的函数，所以会出现歧义错误，并且不清楚`head`的参数（一些支持列表语法的类型，其中再次有几个在作用域中），我们想要哪个版本：
 
 ```idris
 failing "Ambiguous elaboration."
@@ -220,24 +146,18 @@ failing "Ambiguous elaboration."
   whatHead = head [12,"foo"]
 ```
 
-By prefixing `head` with part of its namespace, we can resolve both
-ambiguities. It is now immediately clear, that `[12,"foo"]` must be an
-`HVect`, because that's the type of `HVect.head`'s argument:
+通过用命名空间的一部分前缀`head`，我们可以解决歧义。现在很明显，`[12,"foo"]`必须是一个`HVect`，因为那是`HVect.head`的参数的类型：
 
 ```idris
-headEx3 : Nat
-headEx3 = Predicates.head [1,2,3]
+thisHead : Nat
+thisHead = HVect.head [12,"foo"]
 ```
 
-In the following subsection I'll make use of namespaces to demonstrate the
-principles of visibility.
+在接下来的子部分中，我将使用命名空间来演示可见性的原则。
 
-### Visibility
+### 可见性
 
-In order to use functions and data types outside of the module or namespace
-they were defined in, we need to change their *visibility*. The default
-visibility is `private`: Such a function or data type is not visible from
-outside its module or namespace:
+为了在模块或命名空间之外使用函数和数据类型，我们需要改变它们的*可见性*。默认可见性是`private`：这样的函数或数据类型在模块或命名空间之外不可见：
 
 ```idris
 namespace Foo
@@ -249,7 +169,7 @@ failing "Name Appendices.Projects.Foo.foo is private."
   bar = 2 * foo
 ```
 
-To make a function visible, annotate it with the `export` keyword:
+要使函数可见，请使用`export`关键字注释它：
 
 ```idris
 namespace Square
@@ -258,16 +178,14 @@ namespace Square
   square v = v * v
 ```
 
-This will allow us to invoke function `square` from within other modules or
-namespaces (after importing `Appendices.Projects`):
+这将允许我们从其他模块或命名空间（在导入`Appendices.Projects`之后）调用函数`square`：
 
 ```idris
 OneHundred : Bits8
 OneHundred = square 10
 ```
 
-However, the *implementation* of `square` will not be exported, so `square`
-will not reduce during elaboration:
+然而，`square`的*实现*不会被导出，所以`square`在类型检查期间不会减少：
 
 ```idris
 failing "Can't solve constraint between: 100 and square 10."
@@ -275,7 +193,7 @@ failing "Can't solve constraint between: 100 and square 10."
   checkOneHundred = Refl
 ```
 
-For this to work, we need to *publicly export* `square`:
+为此，我们需要*公开导出*`square`：
 
 ```idris
 namespace SquarePub
@@ -290,10 +208,8 @@ checkOneHundredAgain : OneHundredAgain === 100
 checkOneHundredAgain = Refl
 ```
 
-Therefore, if you need a function to reduce during elaboration, annotate it
-with `public export` instead of `export`.  This is especially important if
-you use a function to compute a type. Such function's *must* reduce during
-elaboration, otherwise they are completely useless:
+因此，如果你需要一个在类型检查期间减少的函数，请使用`public
+export`而不是`export`。这在使用函数计算类型时特别重要。这样的函数*必须*在类型检查期间减少，否则它们是完全无用的：
 
 ```idris
 namespace Stupid
@@ -306,7 +222,7 @@ failing "Can't solve constraint between: Either String ?b and NatOrString."
   natOrString = Left "foo"
 ```
 
-If we publicly export our type alias, everything type checks fine:
+如果我们公开导出我们的类型别名，一切类型检查都很好：
 
 ```idris
 namespace Better
@@ -318,20 +234,16 @@ natOrString : Better.NatOrString
 natOrString = Left "bar"
 ```
 
-### Visibility of Data Types
+### 数据类型的可见性
 
-Visibility of data types behaves slightly differently. If set to `private`
-(the default), neither the *type constructor* nor the *data constructors*
-are visible outside of the namespace they where defined in. If annotated
-with `export`, the type constructor is exported but not the data
-constructors:
+数据类型的可见性行为略有不同。如果设置为`private`（默认值），则*类型构造器*和*数据构造器*在定义它们的命名空间之外不可见。如果用`export`注释，则类型构造器被导出，但数据构造器不被导出：
 
 ```idris
 namespace Export
   export
   data Foo : Type where
-    Foo1 : String -> Foo
-    Foo2 : Nat -> Foo
+    Foo1 : String -> Export.Foo
+    Foo2 : Nat -> Export.Foo
 
   export
   mkFoo1 : String -> Export.Foo
@@ -341,9 +253,7 @@ foo1 : Export.Foo
 foo1 = mkFoo1 "foo"
 ```
 
-As you can see, we can use the type `Foo` as well as function `mkFoo1`
-outside of namespace `Export`. However, we cannot use the `Foo1` constructor
-to create a value of type `Foo` directly:
+正如你所看到的，我们可以在命名空间`Export`之外使用类型`Foo`以及函数`mkFoo1`。然而，我们不能直接使用`Foo1`构造函数来创建类型`Foo`的值：
 
 ```idris
 failing "Export.Foo1 is private."
@@ -351,7 +261,7 @@ failing "Export.Foo1 is private."
   foo = Foo1 "foo"
 ```
 
-This changes when we publicly export the data type:
+当我们公开导出数据类型时，情况会发生变化：
 
 ```idris
 namespace PublicExport
@@ -364,9 +274,7 @@ foo2 : PublicExport.Foo
 foo2 = Foo2 12
 ```
 
-The same goes for interfaces: If they are publicly exported, the interface
-(a type constructor) plus all its functions are exported and you can write
-implementations outside the namespace where they where defined:
+同样适用于接口：如果它们被公开导出，则接口（一个类型构造器）及其所有函数都被导出，你可以在定义它们的命名空间之外编写实现：
 
 ```idris
 namespace PEI
@@ -380,9 +288,7 @@ sumSizes : Foldable t => Sized a => t a -> Nat
 sumSizes = foldl (\n,e => n + size e) 0
 ```
 
-If they are not publicly exported, you will not be able to write
-implementations outside the namespace they were defined in (but you can
-still use the type and its functions in your code):
+如果它们没有被公开导出，你将无法在定义它们的命名空间之外编写实现（但你仍然可以在你的代码中使用类型及其函数）：
 
 ```idris
 namespace EI
@@ -404,12 +310,9 @@ nonEmpty : Empty a => a -> Bool
 nonEmpty = not . empty
 ```
 
-### 模块和命名空间
+### 子命名空间
 
-Sometimes, it is necessary to access a private function in another module or
-namespace. This is possible from within child namespaces (for want of a
-better name): Modules and namespaces sharing the parent module's or
-namespace's prefix. For instance:
+有时，在另一个模块或命名空间中访问私有函数是必要的。这在子命名空间中是可能的（出于更好的名称）：与父模块或命名空间共享父模块或命名空间前缀的模块和命名空间。例如：
 
 ```idris
 namespace Inner
@@ -417,42 +320,18 @@ namespace Inner
   testEmpty = nonEmpty (the (List Nat) [12])
 ```
 
-As you can see, we can access function `nonEmpty` from within namespace
-`Appendices.Projects.Inner`, although it is a private function of module
-`Appendices.Projects`. This is even possible for modules: If we were to
-write a module `Data.List.Magic`, we'd have access to private utility
-functions defined in module `Data.List` in *base*. Actually, I did just that
-and added module `Data.List.Magic` demonstrating this quirk of the Idris
-module system (go have a look!).  In general, this is a rather hacky way to
-work around visibility constraints, but it can be useful at times.
+正如你所看到的，我们可以在命名空间`Appendices.Projects.Inner`中访问函数`nonEmpty`，尽管它是模块`Appendices.Projects`中的私有函数。这甚至适用于模块：如果我们编写一个模块`Data.List.Magic`，我们就可以访问*base*模块中定义的私有实用函数。实际上，我确实这样做了，并添加了模块`Data.List.Magic`来演示Idris模块系统的一个怪癖（去看看吧！）。一般来说，这是一种绕过可见性约束的相当hacky的方式，但有时可能会有用。
 
-## Parameter Blocks
+## 参数块（Parameter Blocks）
 
-In this subsection, we are going to have a look at a language construct
-called a `parameters` block, which enables us to share a set of common
-read-only arguments (parameters)  across several functions, thus allowing us
-to write more concise function signatures. I'm going to demonstrate their
-usability with a small example program.
+在本节中，我们将研究一个称为`parameters`块的语言结构，它允许我们在几个函数之间共享一组只读参数（参数），从而允许我们编写更简洁的函数签名。我将通过一个小示例程序来演示它们的实用性。
 
-The most basic way to make some piece of external information available to a
-function is by passing it as an additional argument. In object-orientied
-programming, this principle is sometimes called [dependency
-injection](https://en.wikipedia.org/wiki/Dependency_injection), and a lot of
-fuss is being made about it, and whole libraries and frameworks have been
-built around it.
+将一些外部信息提供给函数的最基本方法是将其作为附加参数传递。在面向对象编程中，这个原则有时被称为[依赖注入](https://en.wikipedia.org/wiki/Dependency_injection)，并且对此有很多讨论，整个库和框架都是围绕它构建的。
 
-In functional programming, we can be perfectly relaxed about all of this:
-Need access to some configuration data for your application? Pass it as an
-additional argument to your functions. Want to use some local mutable state?
-Pass the corresponding `IORef` as an additional argument to your
-functions. This is both highly efficient and incredibly simple. The only
-drawback it has: It can blow up our function signatures. There is even a
-monad for abstracting over this concept, called the `Reader` monad. It can
-be found in module `Control.Monad.Reader`, in the base library.
+在函数式编程中，我们可以完全放松地处理所有这些问题：需要访问一些配置数据来运行你的应用程序？将其作为附加参数传递给你的函数。想要使用一些本地可变状态？将相应的`IORef`作为附加参数传递给你的函数。这既高效又简单。唯一的缺点是：它可能会使我们的函数签名膨胀。实际上，有一个抽象这个概念的monad，称为`Reader`
+monad。它可以在*base*库中的模块`Control.Monad.Reader`中找到。
 
-In Idris, however, there is an even simpler approach: We can use proof
-search with auto implicit arguments for dependency injection. Here's some
-example code:
+在Idris中，有一个更简单的方法：我们可以使用自动隐式参数的证明搜索来进行依赖注入。这里有一些示例代码：
 
 ```idris
 data Error : Type where
@@ -487,35 +366,11 @@ prog' = do
   c.put "Read \{show n} lines and \{show . sum $ map length ls} characters."
 ```
 
-The example program reads input from and prints output to some `Console`
-type, the implementation of which is left to the caller of the
-function. This is a typical example of dependency injection: Our `IO`
-actions know nothing about how to read and write lines of text (they do, for
-instance, not invoke `putStrLn` or `getLine` directly), but rely on an
-external *object* to handle these tasks for us. This allows us to use a
-simple *mock object* during testing, while using - for instance - two file
-handles or data base connections when running the application for
-real. These are typical techniques often found in object-oriented
-programming, and in fact, this example emulates typical object-oriented
-patterns in a purely functional programming language: A type like `Console`
-can be viewed as a *class* providing pieces of functionality (*methods*
-`read` and `put`), and a value of type `Console` can be viewed as an
-*object* of this class, on which we can invoke those methods.
+示例程序从一些`Console`类型读取输入并打印输出，其实现留给函数的调用者。这是一个典型的依赖注入示例：我们的`IO`操作对如何读取和写入文本行一无所知（例如，它们不会直接调用`putStrLn`或`getLine`），而是依赖于一个外部*对象*来为我们处理这些任务。这允许我们在测试期间使用一个简单的*模拟对象*，而在运行应用程序时使用例如两个文件句柄或数据库连接。这些是典型的技术，通常在面向对象编程中找到，事实上，这个示例模拟了典型的面向对象模式，在纯函数式编程语言中：一个像`Console`这样的类型可以被视为一个*类*，提供一些功能（*方法*`read`和`put`），而一个类型为`Console`的值可以被视为这个类的*对象*，我们可以调用这些方法。
 
-The same goes for error handling: Our error handler could just silently
-ignore any error that occurs, or it could print it to `stderr` and write it
-to a log file at the same time. Whatever it does, our functions need not
-care.
+同样适用于错误处理：我们的错误处理程序可以默默地忽略任何发生的错误，或者它可以将其打印到`stderr`并同时写入一个日志文件。无论它做什么，我们的函数都不需要关心。
 
-Note, however, that even in this very simple example we already introduced
-two additional function arguments, and we can easily see how in a real-world
-application we might need many more of those and how this would quickly blow
-up our function signatures.  Luckily, there is a very clean and simple
-solution to this in Idris: `parameter` blocks. These allow us to specify
-lists of *parameters* (unchanging function arguments) shared by all
-functions listed inside the block. These arguments need then no longer be
-listed with each function, thus decluttering our function signatures.
-Here's the example from above in a parameter block:
+请注意，即使在这样一个非常简单的示例中，我们引入了两个额外的函数参数，并且我们可以很容易地看到在现实世界的应用程序中我们可能需要更多这样的参数，并且这会迅速使我们的函数签名膨胀。幸运的是，Idris有一个非常干净和简单的解决方案：`parameter`块。这些允许我们指定一个*参数*列表（不变的函数参数），由块中列出的所有函数共享。这些参数现在不再需要与每个函数一起列出，从而使我们的函数签名更简洁。以下是上面示例中的参数块：
 
 ```idris
 parameters {auto c : Console} {auto h : ErrorHandler}
@@ -538,16 +393,9 @@ parameters {auto c : Console} {auto h : ErrorHandler}
     c.put "Read \{show n} lines and \{show . sum $ map length ls} characters."
 ```
 
-We are free to list arbitrary arguments (implicit, explicit, auto-implicit,
-named and unnamed) of any quantity as the parameters in a `parameters`
-block, but it works best with implicit and auto implicit arguments. Explicit
-arguments will have to be passed explicitly to functions in a parameter
-block, even when invoking them from other parameter blocks with the same
-explicit argument. This can be rather confusing.
+我们可以将任意数量的参数（隐式、显式、自动隐式、命名和未命名）作为`parameters`块中的参数列出，但它最好与隐式和自动隐式参数一起使用。显式参数必须显式地传递给参数块中的函数，即使从具有相同显式参数的其他参数块调用它们也是如此。这可能会相当混乱。
 
-To complete this example, here is a main function for running the
-program. Note, how we explicitly assemble the `Console` and `ErrorHandler`
-to be used when invoking `prog`.
+为了完成这个示例，这里是一个运行程序的主函数。请注意，我们如何显式组装`Console`和`ErrorHandler`，以便在调用`prog`时使用。
 
 ```idris
 main : IO ()
@@ -557,22 +405,15 @@ main =
    in prog
 ```
 
-Dependency injection via auto-implicit arguments is only one possible
-application of parameter blocks. They are useful in general whenever we have
-repeating argument lists for several functions.
+通过自动隐式参数的依赖注入只是参数块的一种可能应用。它们在一般情况下的有用性在于我们有许多重复的参数列表。
 
-## 枚举
+## 文档
 
-Documentation is key. Be it for other programmers using a library we wrote,
-or for people (including our future selves) trying to understand our code,
-it is important to annotate our code with comments explaining non-trivial
-implementation details and docstrings describing the intent and
-functionality of exported data types and functions.
+文档是关键。无论是其他程序员使用我们编写的库，还是我们自己将来试图理解我们的代码，重要的是用注释来注释我们的代码，解释非平凡的实现细节和描述导出数据类型和函数的意图和功能。
 
-### Comments
+### 注释
 
-Writing a comment in an Idris source file is as simple as adding some text
-after two hyphens:
+在Idris源文件中写注释就像在两个连字符后添加一些文本一样简单：
 
 ```idris
 -- this is a truly boring comment
@@ -580,11 +421,9 @@ boring : Bits8 -> Bits8
 boring a = a -- probably I should just use `id` from the Prelude
 ```
 
-Whenever a line contains two hyphens that are not part of a string literal,
-the remainder of the line will be interpreted as a comment by Idris.
+每当一行包含两个连字符，而这些连字符不是字符串文字的一部分时，Idris会将该行的其余部分解释为注释。
 
-It is also possible to write multiline comments using delimiters `{-` and
-`-}`:
+也可以使用分隔符`{-`和`-}`来编写多行注释：
 
 ```idris
 {-
@@ -594,13 +433,11 @@ It is also possible to write multiline comments using delimiters `{-` and
 -}
 ```
 
-### Doc Strings
+### 文档字符串
 
-While comments are targeted at programmers reading and trying to understand
-our source code, doc strings provide documentation for exported functions
-and data types, explaining their intent and behavior to others.
+虽然注释是针对阅读和试图理解我们源代码的程序员，但文档字符串提供了导出函数和数据类型的文档，解释它们的意图和行为给其他人。
 
-这是函数的类型：
+这是一个文档化函数的例子：
 
 ```idris
 ||| Tries to extract the first two elements from the beginning
@@ -629,71 +466,51 @@ Appendices.Projects.firstTwo : List a -> Maybe (a,a)
   Visibility: export
 ```
 
-We can document data types and their constructors in a similar manner:
+我们也可以以类似的方式记录数据类型及其构造函数：
 
 ```idris
-||| A binary tree index by the number of values it holds.
+||| 一个按其持有的值数量索引的二叉树。
 |||
-||| @param `n` : Number of values stored in the `Tree`
-||| @param `a` : Type of values stored in the `Tree`
+||| @param `n` : 存储在`Tree`中的值的数量
+||| @param `a` : 存储在`Tree`中的值的类型
 public export
 data Tree : (n : Nat) -> (a : Type) -> Type where
-  ||| A single value stored at the leaf of a binary tree.
+  ||| 存储在二叉树叶子中的单个值。
   Leaf   : (v : a) -> Tree 1 a
 
-  ||| A branch unifying two subtrees.
+  ||| 连接两个子树的分支。
   Branch : Tree m a -> Tree n a -> Tree (m + n) a
 ```
 
 像往常一样，我们应该看看 REPL 的结果：
 
-Documenting our code is very important. You will realize this, once you try
-to understand other people's code, or when you come back to a non-trivial
-piece of source code you wrote yourself a couple of months a ago and since
-then haven't looked at. If it is not well documented, this can be an
-unpleasant experience. Idris provides us with the tools necessary to
-document and annotate our code, so should take our time and do so. It is
-time well spent.
+记录我们的代码非常重要。当你试图理解其他人的代码，或者当你几个月前写了一段非平凡的源代码，然后一直没有再看它时，你会意识到这一点。如果它没有很好地记录，这可能是一种不愉快的体验。Idris为我们提供了必要的工具来记录和注释我们的代码，所以应该花时间去做。这是值得的。
 
-## Packages
+## 包
 
-Idris packages allow us to assemble several modules into a logical unit and
-make them available to other Idris projects by *installing* the packages. In
-this section, we are going to learn about the structure of an Idris package
-and how to depend on other packages in our projects.
+Idris包允许我们将几个模块组装成一个逻辑单元，并通过*安装*包使它们对其他Idris项目可用。在本节中，我们将学习Idris包的结构以及如何在项目中依赖其他包。
 
-### The `.ipkg` File
+### `.ipkg`文件
 
-At the heart of an Idris package lies its `.ipkg` file, which is usually but
-not necessarily stored at a project's root directory.  For instance, for
-this Idris tutorial, there is file `tutorial.ipkg` at the tutorial's root
-directory.
+Idris包的核心是一个`.ipkg`文件，通常但不一定存储在项目根目录中。例如，对于这个Idris教程，有一个文件`tutorial.ipkg`在教程的根目录中。
 
-An `.ipkg` file consists of several key-value pairs (most of them optional),
-the most important of which I'll describe here. By far the easiest way to
-setup a new Idris project is by letting pack or Idris itself do it for
-you. Just run
+一个`.ipkg`文件由几个键值对（大多数是可选的）组成，其中最重要的是我将在这里描述的。到目前为止，设置一个新的Idris项目最简单的方法是让pack或Idris本身为你做这件事。只需运行
 
 ```sh
 pack new lib pkgname
 ```
 
-to create the skeleton of a new library or
+创建一个新的库的骨架或
 
 ```sh
 pack new bin appname
 ```
 
-to setup a new application. In addition to creating a new directory plus a
-suitable `.ipkg` file, these commands will also add a `pack.toml` file,
-which we will discuss further below.
+创建一个新的应用程序。除了创建一个新的目录和合适的`.ipkg`文件外，这些命令还将添加一个`pack.toml`文件，我们将在下面进一步讨论。
 
-### 依值对
+### 依赖
 
-One of the most important aspects of an `.ipkg` file is listing the packages
-the library depends on in the `depends` field. Here is an example from the
-[*hedgehog* package](https://github.com/stefan-hoeck/idris2-hedgehog), a
-framework for writing property tests in Idris:
+`.ipkg`文件最重要的方面之一是列出库依赖的包。这是来自[*hedgehog*包](https://github.com/stefan-hoeck/idris2-hedgehog)的一个例子，这是一个在Idris中编写属性测试的框架：
 
 ```ipkg
 depends    = base         >= 0.5.1
@@ -703,31 +520,13 @@ depends    = base         >= 0.5.1
            , sop          >= 0.5.0
 ```
 
-As you can see, *hedgehog* depends on *base* and *contrib*, both of which
-are part of every Idris installation, but also on
-[*elab-util*](https://github.com/stefan-hoeck/idris2-elab-util), a library
-of utilities for writing elaborator scripts (a powerful technique for
-creating Idris declarations by writing Idris code; it comes with its own
-lengthy tutorial if you are interested),
-[*sop*](https://github.com/stefan-hoeck/idris2-sop), a library for
-generically deriving interface implementations via a *sum of products*
-representation (this is a useful thing you might want to check out some
-day), and
-[*pretty-show*](https://github.com/stefan-hoeck/idris2-pretty-show), a
-library for pretty printing Idris values (*hedgehog* makes use of this in
-case a test fails).
+正如你所看到的，*hedgehog*依赖于*base*和*contrib*，它们都是每个Idris安装的一部分，但也依赖于[*elab-util*](https://github.com/stefan-hoeck/idris2-elab-util)，一个用于编写推导器脚本的实用程序库（一种强大的技术，通过编写Idris代码创建Idris声明；如果你感兴趣，它还附带了一个冗长的教程），[*sop*](https://github.com/stefan-hoeck/idris2-sop)，一个通过*积和*表示法泛型派生接口实现的库（这是一个你可能想在某个时候检查的有用东西），以及[*pretty-show*](https://github.com/stefan-hoeck/idris2-pretty-show)，一个用于漂亮打印Idris值的库（*hedgehog*在这种情况下使用它，以防测试失败）。
 
-So, before you actually can use *hedgehog* to write some property tests for
-your own project, you will need to install the packages it depends on before
-installing *hedgehog* itself. Since this can be tedious to do manually, it
-is best let a package manager like pack handle this task for you.
+因此，在你实际上可以使用*hedgehog*为你的项目编写一些属性测试之前，你需要先安装它依赖的包。由于这可能很繁琐，最好让一个包管理器（如pack）为你处理这个任务。
 
-#### 依值对
+#### 依赖版本
 
-You might want to specify a certain version (or a range)  Idris should use
-for your dependencies. This might be useful if you have several versions of
-the same package installed and not all of them are compatible with your
-project.  Here are several examples:
+你可能想要指定一个特定的版本（或范围）Idris应该用于你的依赖。这在你有几个版本的相同包安装并且它们都不兼容你的项目时可能很有用。以下是几个例子：
 
 ```ipkg
 depends    = base         == 0.5.1
@@ -737,14 +536,9 @@ depends    = base         == 0.5.1
            , sop          >= 0.5.0 && < 0.6.0
 ```
 
-This will look for packages *base* and *contrib* of exactly the given
-version, package *elab-util* of a version greater than or equal to `0.5.0`,
-package *pretty-show* of any version, and package *sop* of a version in the
-given range. In all cases, if several installed versions of a package match
-the specified range, the latest version will be used.
+这将查找版本完全符合给定版本的包*base*和*contrib*，包*elab-util*的版本大于或等于`0.5.0`，包*pretty-show*的任何版本，以及包*sop*的版本在给定范围内。在所有情况下，如果一个包的几个安装版本符合指定的范围，将使用最新版本。
 
-In order to make use of this for your own packages, every `.ipkg` file
-should give the package's name and current version:
+为了在你的包中使用这个功能，每个`.ipkg`文件都应该给出包的名称和当前版本：
 
 ```ipkg
 package tutorial
@@ -752,26 +546,13 @@ package tutorial
 version    = 0.1.0
 ```
 
-As I'll show below, package versions play a much less crucial role when
-using pack and its curated package collection. But even then you might want
-to consider restricting the versions of packages you accept in order to make
-sure you catch any braking changes introduced upstream.
+正如我将在下面展示的，当使用pack和它的精选包集合时，包版本扮演一个不那么重要的角色。但即使如此，你可能也想考虑限制你接受的包的版本，以确保你抓住任何上游引入的破坏性变化。
 
-### Library Modules
+### 库模块
 
-Many if not most Idris packages available on GitHub are programming
-*libraries*: They implement some piece of functionality and make it
-available to all projects depending on the given package. This is unlike
-Idris *applications*, which are supposed to be compiled to an executable
-that can then be run on your computer. The Idris project itself provides
-both: The Idris compiler application, which we use to type check and build
-other Idris libraries and applications, and several libraries like
-*prelude*, *base*, and *contrib*, which provide basic data types and
-functions useful in most Idris projects.
+许多（如果不是大多数）在GitHub上可用的Idris包是编程*库*：它们实现一些功能并使其对所有依赖于给定包的项目可用。这与Idris*应用程序*不同，后者应该被编译为可执行文件，然后可以在你的计算机上运行。Idris项目本身提供了两者：Idris编译器应用程序，我们用它来类型检查和构建其他Idris库和应用程序，以及一些库，如*prelude*、*base*和*contrib*，它们提供在大多数Idris项目中有用的基本数据类型和函数。
 
-In order to type check and install the modules you wrote in a library, you
-must list them in the `.ipkg` file's `modules` field.  Here is an excerpt
-from the *sop* package:
+为了类型检查和安装你在库中编写的模块，你必须在`.ipkg`文件的`modules`字段中列出它们。以下是*sop*包的一个摘录：
 
 ```ipkg
 modules = Data.Lazy
@@ -784,35 +565,17 @@ modules = Data.Lazy
         , Data.SOP.Utils
 ```
 
-Modules missing from this list will *not* be installed and hence will not be
-available for other packages depending on the sop library.
+此列表中缺少的模块将*不会*被安装，因此对依赖于sop库的其他包不可用。
 
-### Pack and its curated Collection of Packages
+### Pack 和它的精选包集合
 
-When the dependency graph of your project is getting large and complex, that
-is, when your project depends on many libraries, which themselves depend on
-yet other libraries, it can happen that two packages depend both on
-different - and, possibly, incompatible - versions of a third package.  This
-situation can be nigh to impossible to resolve, and can lead to a lot of
-frustration when working with conflicting libraries.
+当你的项目的依赖图变得庞大而复杂时，也就是说，当你的项目依赖于许多库，而这些库本身又依赖于其他库时，可能会发生两个包都依赖于第三个包的不同版本的情况。这种情况几乎不可能解决，并且在处理冲突库时会导致很多挫败感。
 
-It is therefore the philosophy of the pack project to avoid such a situation
-from the very beginning by making use of *curated package collections*. A
-pack collection consists of a specific Git commit of the Idris compiler and
-a set of packages, again each at a specific Git commit, all of which have
-been tested to work well and without issues together. You can see a list of
-packages available to pack
-[here](https://github.com/stefan-hoeck/idris2-pack-db/blob/main/STATUS.md).
+因此，pack项目的哲学是从一开始就避免这种情况，通过使用*精选包集合*。一个pack集合由Idris编译器的特定Git提交和一个包集组成，每个包再次在特定的Git提交中，所有这些包都经过测试，可以很好地协同工作，没有问题。你可以在这里看到pack可用的包列表[here](https://github.com/stefan-hoeck/idris2-pack-db/blob/main/STATUS.md)。
 
-Whenever a project you are working on depends on one of the libraries listed
-in pack's package collection, pack will automatically install it and all of
-its dependencies for you. However, you might also want to depend on a
-library that is not yet part of pack's collection. In that case, you must
-specify the library in question in one of your `pack.toml` files - the
-global one found at `$HOME/.pack/user/pack.toml`, or one local to your
-current project or one of its parent directories (if any).  There, you can
-either specify a dependency local to your system or a Git project (local or
-remote). An example for each is shown below:
+每当一个你正在工作的项目依赖于pack的包集合中列出的一个库时，pack会自动为你安装它和它的所有依赖。然而，你可能也想依赖一个尚未成为pack集合一部分的库。在这种情况下，你必须在你的`pack.toml`文件之一中指定该库的问题
+-
+在`$HOME/.pack/user/pack.toml`中找到的全局文件，或者一个本地到你的当前项目或其父目录之一（如果有的话）。在那里，你可以指定一个本地到你的系统的依赖或一个Git项目（本地或远程）。以下是每种情况的示例：
 
 ```toml
 [custom.all.foo]
@@ -827,27 +590,16 @@ commit = "latest:main"
 ipkg   = "bar.ipkg"
 ```
 
-As you can see, in both cases you have to specify where the project can be
-found as well as the name and location of its `.ipkg` file. In case of a Git
-project, you also need to tell pack the commit it should use.  In the
-example above, we want to use the latest commit from the `main` branch. We
-can use `pack fetch` to fetch and store the currently latest commit hash.
+正如你所看到的，在两种情况下，你必须指定项目可以找到的位置以及`.ipkg`文件的名称和位置。在Git项目的情况下，你还需要告诉pack应该使用哪个提交。在上面的例子中，我们想要使用`main`分支的最新提交。我们可以使用`pack
+fetch`来获取并存储当前的最新提交哈希。
 
-Entries like the ones given above are all that is needed to add support to
-custom libraries to pack. You can now list these libraries as dependencies
-in your own project's `.ipkg` file and pack will automatically install them
-for you.
+像上面给出的条目足以添加对自定义库的支持到pack。你现在可以在你自己的项目中将这些库列为依赖，pack会自动为你安装它们。
 
 ## 结论
 
-This concludes our section about structuring Idris projects. We have learned
-about several types of code blocks - `failing` blocks for showing that a
-piece of code fails to elaborate, `namespace`s for having overloaded names
-in the same source file, and parameter blocks for sharing lists of
-parameters between functions - and how to group several source files into an
-Idris library or application. Finally, we learned how to include external
-libraries in an Idris project and how to use pack to help us keep track of
-these dependencies.
+这结束了我们对Idris项目结构化的章节。我们已经学习了几种代码块 -
+`failing`块用于显示一段代码无法推导，`namespace`用于在同一个源文件中重载名称，以及参数块用于在函数之间共享参数列表 -
+以及如何将几个源文件组装成一个Idris库或应用程序。最后，我们学习了如何在Idris项目中包含外部库以及如何使用pack来帮助我们跟踪这些依赖。
 
 <!-- vi: filetype=idris2:syntax=markdown
 -->

@@ -2783,4 +2783,4 @@ msgstr ""
 #. type: Plain text
 #: ../src/Tutorial/Predicates.md:1369
 msgid "[Next chapter](./Prim.md)"
-msgstr ""
+msgstr "[下一章](./Prim.md)"

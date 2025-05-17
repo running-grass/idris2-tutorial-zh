@@ -1023,7 +1023,7 @@ Goodbye.
 谓词允许我们描述类型之间的契约并细化我们接受为有效函数参数的值。它们允许我们通过将它们用作自动隐式参数来使函数在运行时 *和* 编译时安全且方便地使用
 ，如果Idris有足够的关于函数参数结构的信息，Idris 应该尝试自己构造它。
 
-[Next chapter](./Prim.md)
+[下一章](./Prim.md)
 
 <!-- vi: filetype=idris2:syntax=markdown
 -->

@@ -2315,4 +2315,4 @@ msgstr ""
 #. type: Plain text
 #: ../src/Tutorial/Eq.md:1098
 msgid "[Next chapter](./Predicates.md)"
-msgstr ""
+msgstr "[下一章](./Predicates.md)"

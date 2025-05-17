@@ -823,7 +823,7 @@ revOnto {n = S len} xs (x :: ys) =
 的概念是编写可证明正确的程序的非常强大的工具。因此，我们将花更多时间定义数据类型来描述值之间的协议，并将这些类型的值作为合约持有的证据。这将允许我们为我们的函数描述必要的前置条件和后置条件，从而减少返回
 `Maybe` 或其他故障类型的需要，因为由于输入受限，我们的函数不能再失败。
 
-[Next chapter](./Predicates.md)
+[下一章](./Predicates.md)
 
 <!-- vi: filetype=idris2:syntax=markdown
 -->
